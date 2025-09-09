@@ -20,32 +20,32 @@ const Dashboard = () => {
           </div>
           
           <div className="flex gap-3">
-            <button className="px-4 py-2 text-sm font-medium text-orange-600 bg-orange-50 rounded-xl hover:bg-orange-100 transition-colors">
+            <button className="px-4 py-2 text-sm font-medium text-warning bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors">
               Deze week
             </button>
-            <button className="px-4 py-2 text-sm font-medium text-gray-600 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+            <button className="px-4 py-2 text-sm font-medium text-muted-foreground bg-muted rounded-lg hover:bg-muted/80 transition-colors">
               Deze maand
             </button>
-            <button className="px-4 py-2 text-sm font-medium text-white gradient-brand rounded-xl hover:scale-105 transition-transform shadow-brand">
+            <button className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors shadow-brand">
               Stuur naar email
             </button>
           </div>
         </div>
 
         {/* Growth Banner */}
-        <div className="mb-8 p-6 gradient-brand rounded-2xl text-white shadow-brand animate-fade-in">
+        <div className="mb-8 p-6 gradient-brand rounded-xl text-white shadow-brand animate-fade-in">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-xl font-bold mb-2">Jouw website groeit elke dag!</h2>
-              <p className="text-white/90 mb-3">Zichtbaarheid in Google ten opzichte van vorige maand. Geweldig! 🚀</p>
+              <h2 className="text-xl font-semibold mb-2">Jouw website groeit elke dag!</h2>
+              <p className="text-white/90 mb-3">Zichtbaarheid in Google ten opzichte van vorige maand.</p>
               <div className="flex items-center gap-2 text-sm">
                 <span>Je bent nu</span>
-                <span className="font-bold text-2xl">64% beter vindbaar</span>
-                <span>dan vorige maand. Geweldig! 🚀</span>
+                <span className="font-semibold text-2xl">64% beter vindbaar</span>
+                <span>dan vorige maand</span>
               </div>
             </div>
             <div className="text-right">
-              <div className="text-4xl font-bold mb-1">+64%</div>
+              <div className="text-4xl font-semibold mb-1">+64%</div>
               <div className="text-white/80 text-sm">groei deze maand</div>
             </div>
           </div>

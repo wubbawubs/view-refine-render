@@ -31,10 +31,10 @@ const Sidebar = () => {
       {/* Logo */}
       <div className="p-6 border-b border-border">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 gradient-brand rounded-lg flex items-center justify-center shadow-brand">
-            <Zap className="w-4 h-4 text-white" />
+          <div className="w-10 h-10 gradient-brand rounded-xl flex items-center justify-center shadow-brand">
+            <Zap className="w-5 h-5 text-white" />
           </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <span className="text-xl font-semibold text-foreground">
             KlikKlaar
           </span>
         </div>
@@ -51,9 +51,9 @@ const Sidebar = () => {
               key={item.label}
               onClick={() => setActiveItem(item.label)}
               className={cn(
-                "w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-200 group",
+                "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-200 group",
                 isActive 
-                  ? "gradient-brand text-white shadow-brand" 
+                  ? "bg-primary text-primary-foreground shadow-brand" 
                   : item.danger
                   ? "hover:bg-red-50 text-red-600 hover:text-red-700"
                   : "hover:bg-accent text-muted-foreground hover:text-foreground"

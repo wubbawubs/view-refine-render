@@ -41,15 +41,15 @@ const typeStyles = {
 
 const SuccessInsights = () => {
   return (
-    <Card className="p-6 border-0 bg-white shadow-md animate-slide-up">
+    <Card className="p-6 border bg-card shadow-md animate-slide-up">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 gradient-brand rounded-xl flex items-center justify-center shadow-brand">
+          <div className="w-10 h-10 gradient-brand rounded-lg flex items-center justify-center shadow-brand">
             <Zap className="w-5 h-5 text-white" />
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-gray-900">Success Insights</h3>
-            <p className="text-sm text-gray-600">Jouw prestaties deze week</p>
+            <h3 className="text-lg font-semibold text-card-foreground">Success Insights</h3>
+            <p className="text-sm text-muted-foreground">Jouw prestaties deze week</p>
           </div>
         </div>
       </div>
@@ -60,16 +60,16 @@ const SuccessInsights = () => {
           return (
             <div 
               key={index}
-              className="flex gap-4 p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-200"
+              className="flex gap-4 p-4 rounded-lg bg-muted hover:bg-muted/80 transition-colors duration-200"
             >
               <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${typeStyles[insight.type]}`}>
                 <Icon className="w-5 h-5 text-white" />
               </div>
               
               <div className="flex-1 min-w-0">
-                <h4 className="font-medium text-gray-900 mb-1">{insight.title}</h4>
-                <p className="text-sm text-gray-600 mb-2">{insight.description}</p>
-                <span className="text-xs text-gray-500">{insight.time}</span>
+                <h4 className="font-medium text-card-foreground mb-1">{insight.title}</h4>
+                <p className="text-sm text-muted-foreground mb-2">{insight.description}</p>
+                <span className="text-xs text-muted-foreground/70">{insight.time}</span>
               </div>
             </div>
           );

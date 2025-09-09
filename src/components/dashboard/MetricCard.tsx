@@ -23,9 +23,9 @@ const MetricCard = ({
 }: MetricCardProps) => {
   const gradientClasses = {
     brand: "gradient-brand shadow-brand",
-    success: "gradient-success shadow-success", 
-    warning: "gradient-warning shadow-warning",
-    neutral: "bg-gradient-to-br from-white to-gray-50"
+    success: "bg-success text-success-foreground shadow-md", 
+    warning: "bg-warning text-warning-foreground shadow-orange",
+    neutral: "bg-card border border-border shadow-md"
   };
 
   const trendColors = {
@@ -36,18 +36,18 @@ const MetricCard = ({
 
   return (
     <Card className={cn(
-      "p-6 border-0 transition-all duration-300 hover:scale-105 animate-fade-in",
+      "p-6 border transition-all duration-200 hover:shadow-lg animate-fade-in",
       gradientClasses[gradient],
       className
     )}>
       <div className="flex items-start justify-between mb-4">
         <div className={cn(
-          "w-12 h-12 rounded-xl flex items-center justify-center",
-          gradient === "neutral" ? "bg-purple-100" : "bg-white/20"
+          "w-12 h-12 rounded-lg flex items-center justify-center",
+          gradient === "neutral" ? "bg-accent" : "bg-white/20"
         )}>
           <div className={cn(
             "w-6 h-6",
-            gradient === "neutral" ? "text-purple-600" : "text-white"
+            gradient === "neutral" ? "text-accent-foreground" : "text-white"
           )}>
             {icon}
           </div>
@@ -64,7 +64,7 @@ const MetricCard = ({
         
         <div className={cn(
           "text-sm font-medium",
-          gradient === "neutral" ? "text-gray-600" : "text-white/80"
+          gradient === "neutral" ? "text-muted-foreground" : "text-white/90"
         )}>
           {label}
         </div>
