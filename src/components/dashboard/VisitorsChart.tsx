@@ -27,10 +27,10 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 const VisitorsChart = () => {
   return (
-    <Card className="p-6 border bg-card shadow-md animate-slide-up">
+    <Card className="p-6 border bg-white shadow-enterprise animate-slide-up">
       <div className="mb-6">
-        <h3 className="text-lg font-semibold text-card-foreground mb-1">Aantal Bezoekers</h3>
-        <p className="text-sm text-muted-foreground">Ontwikkeling afgelopen maand</p>
+        <h3 className="text-lg font-semibold text-foreground mb-1">Organische bezoekers</h3>
+        <p className="text-sm text-muted-foreground">Ontwikkeling afgelopen maand vs. concurrenten</p>
       </div>
       
       <div className="h-64 mb-6">
@@ -38,8 +38,8 @@ const VisitorsChart = () => {
           <AreaChart data={data}>
             <defs>
               <linearGradient id="colorVisitors" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="hsl(25 95% 53%)" stopOpacity={0.3}/>
-                <stop offset="95%" stopColor="hsl(280 87% 65%)" stopOpacity={0}/>
+                <stop offset="5%" stopColor="hsl(25 95% 53%)" stopOpacity={0.1}/>
+                <stop offset="95%" stopColor="hsl(25 95% 53%)" stopOpacity={0}/>
               </linearGradient>
             </defs>
             <XAxis 
@@ -58,7 +58,7 @@ const VisitorsChart = () => {
               type="monotone"
               dataKey="visitors"
               stroke="hsl(25 95% 53%)"
-              strokeWidth={3}
+              strokeWidth={2}
               fill="url(#colorVisitors)"
             />
           </AreaChart>
@@ -67,16 +67,16 @@ const VisitorsChart = () => {
       
       <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border">
         <div className="text-center">
-          <div className="text-2xl font-semibold text-warning">9,847</div>
+          <div className="text-xl font-semibold text-foreground">9,847</div>
           <div className="text-xs text-muted-foreground">Totaal afgelopen maand</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-semibold text-success">+74%</div>
+          <div className="text-xl font-semibold text-growth">+74%</div>
           <div className="text-xs text-muted-foreground">Groei t.o.v. vorige maand</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-semibold text-primary">582</div>
-          <div className="text-xs text-muted-foreground">Beste dag</div>
+          <div className="text-xl font-semibold text-warning-accent">582</div>
+          <div className="text-xs text-muted-foreground">Beste dag (5 nov)</div>
         </div>
       </div>
     </Card>

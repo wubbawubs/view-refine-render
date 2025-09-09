@@ -2,26 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-/* KlikKlaar Professional SEO Dashboard - Clean and Professional Design */
+/* KlikKlaar Enterprise SEO Dashboard - Professional & Clean */
 
 @layer base {
   :root {
-    /* Background System - Clean and Professional */
+    /* Clean Professional Background System */
     --background: 0 0% 100%;
     --foreground: 240 10% 15%;
-    --background-subtle: 250 50% 98%;
+    --background-subtle: 0 0% 98%;
     
-    /* KlikKlaar Brand Colors - Orange to Purple Gradient */
+    /* KlikKlaar Brand Colors - Refined Professional Palette */
     --brand-orange: 25 95% 53%;
     --brand-purple: 280 87% 65%;
+    --brand-blue: 217 91% 60%;
     --brand-dark: 240 10% 15%;
-    --brand-light: 280 30% 95%;
+    --brand-light: 0 0% 98%;
     
-    /* Professional Gradient System */
-    --gradient-brand: linear-gradient(135deg, hsl(25 95% 53%), hsl(280 87% 65%));
-    --gradient-brand-subtle: linear-gradient(135deg, hsl(25 20% 95%), hsl(280 15% 97%));
-    --gradient-orange: linear-gradient(135deg, hsl(25 95% 53%), hsl(35 85% 55%));
-    --gradient-purple: linear-gradient(135deg, hsl(280 87% 65%), hsl(270 80% 70%));
+    /* Enterprise Status Colors */
+    --growth-green: 142 69% 45%;
+    --warning-orange: 25 95% 53%;
+    --neutral-gray: 220 9% 46%;
+    
+    /* Minimal Professional Gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(280 87% 65%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(25 95% 53% / 0.05) 0%, hsl(280 87% 65% / 0.05) 100%);
     
     /* UI System */
     --card: 0 0% 100%;
@@ -52,16 +56,19 @@
     --warning: 25 95% 53%;
     --warning-foreground: 0 0% 100%;
     
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+    
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 280 87% 65%;
 
-    /* Professional Shadows */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-brand: 0 4px 20px -4px rgb(168 85 247 / 0.15);
-    --shadow-orange: 0 4px 20px -4px rgb(251 146 60 / 0.15);
+    /* Enterprise Shadow System */
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.08);
+    --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.08);
+    --shadow-lg: 0 8px 25px -5px rgb(0 0 0 / 0.08);
+    --shadow-enterprise: 0 2px 8px -2px rgb(0 0 0 / 0.05);
+    --shadow-brand: 0 4px 12px -2px rgb(168 85 247 / 0.08);
 
     --radius: 8px;
 
@@ -115,29 +122,42 @@
     --sidebar-ring: 280 87% 65%;
   }
 
-  /* Professional Utility Classes */
+  /* Enterprise Utility Classes */
   .gradient-brand {
     background: var(--gradient-brand);
   }
   
-  .gradient-brand-subtle {
-    background: var(--gradient-brand-subtle);
-  }
-  
-  .gradient-orange {
-    background: var(--gradient-orange);
-  }
-  
-  .gradient-purple {
-    background: var(--gradient-purple);
+  .gradient-hero {
+    background: var(--gradient-hero);
+    border: 1px solid hsl(var(--border));
   }
   
   .shadow-brand {
     box-shadow: var(--shadow-brand);
   }
   
-  .shadow-orange {
-    box-shadow: var(--shadow-orange);
+  .shadow-enterprise {
+    box-shadow: var(--shadow-enterprise);
+  }
+  
+  .bg-growth {
+    background-color: hsl(var(--success));
+  }
+  
+  .bg-warning-soft {
+    background-color: hsl(var(--warning));
+  }
+  
+  .bg-neutral-soft {
+    background-color: hsl(var(--neutral-gray));
+  }
+  
+  .text-growth {
+    color: hsl(var(--success));
+  }
+  
+  .text-warning-accent {
+    color: hsl(var(--warning));
   }
   
   .animate-fade-in {
