@@ -6,69 +6,91 @@
 
 @layer base {
   :root {
-    /* Clean Professional Background System */
+    /* Professional Background System */
     --background: 0 0% 100%;
     --foreground: 240 10% 15%;
-    --background-subtle: 0 0% 98%;
+    --background-subtle: 220 14% 98%;
     
-    /* KlikKlaar Brand Colors - Refined Professional Palette */
-    --brand-orange: 25 95% 53%;
-    --brand-purple: 280 87% 65%;
-    --brand-blue: 217 91% 60%;
-    --brand-dark: 240 10% 15%;
-    --brand-light: 0 0% 98%;
+    /* KlikKlaar Professional Palette - One Primary Accent */
+    --kk-primary: 217 91% 60%;        /* Primary blue accent */
+    --kk-secondary: 25 95% 53%;       /* Brand yellow as nuance */
+    --kk-gray-50: 220 14% 98%;
+    --kk-gray-100: 220 13% 95%;
+    --kk-gray-200: 220 13% 91%;
+    --kk-gray-300: 220 9% 86%;
+    --kk-gray-400: 220 9% 68%;
+    --kk-gray-500: 220 9% 46%;
+    --kk-gray-600: 220 9% 32%;
+    --kk-gray-700: 220 10% 23%;
+    --kk-gray-800: 220 10% 15%;
+    --kk-gray-900: 220 10% 8%;
     
     /* Enterprise Status Colors */
-    --growth-green: 142 69% 45%;
-    --warning-orange: 25 95% 53%;
-    --neutral-gray: 220 9% 46%;
+    --kk-success: 142 71% 45%;
+    --kk-warning: 38 92% 50%;
+    --kk-error: 0 72% 51%;
     
-    /* Minimal Professional Gradients */
-    --gradient-brand: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(280 87% 65%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(25 95% 53% / 0.05) 0%, hsl(280 87% 65% / 0.05) 100%);
+    /* Professional Hero Section */
+    --hero-bg: var(--kk-gray-50);
+    --hero-accent: var(--kk-primary);
     
-    /* UI System */
+    /* UI System - Updated for KlikKlaar */
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 15%;
-    --card-border: 220 13% 91%;
+    --card-foreground: var(--kk-gray-800);
+    --card-border: var(--kk-gray-200);
     
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 15%;
+    --popover-foreground: var(--kk-gray-800);
     
-    --primary: 280 87% 65%;
+    --primary: var(--kk-primary);
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 240 10% 15%;
+    --secondary: var(--kk-gray-100);
+    --secondary-foreground: var(--kk-gray-800);
     
-    --muted: 220 14% 96%;
-    --muted-foreground: 240 5% 45%;
+    --muted: var(--kk-gray-100);
+    --muted-foreground: var(--kk-gray-500);
     
-    --accent: 280 15% 97%;
-    --accent-foreground: 280 87% 65%;
+    --accent: var(--kk-gray-50);
+    --accent-foreground: var(--kk-primary);
     
-    --destructive: 0 72% 51%;
+    --destructive: var(--kk-error);
     --destructive-foreground: 0 0% 100%;
     
-    --success: 142 69% 45%;
+    --success: var(--kk-success);
     --success-foreground: 0 0% 100%;
     
-    --warning: 25 95% 53%;
+    --warning: var(--kk-warning);
     --warning-foreground: 0 0% 100%;
     
-    --info: 217 91% 60%;
+    --info: var(--kk-primary);
     --info-foreground: 0 0% 100%;
     
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 280 87% 65%;
+    --border: var(--kk-gray-200);
+    --input: var(--kk-gray-200);
+    --ring: var(--kk-primary);
+
+    /* Professional Typography Scale */
+    --text-hero: 3rem;           /* 48px */
+    --text-h1: 2rem;             /* 32px */
+    --text-h2: 1.5rem;           /* 24px */
+    --text-h3: 1.25rem;          /* 20px */
+    --text-body: 1rem;           /* 16px */
+    --text-small: 0.875rem;      /* 14px */
+    --text-xs: 0.75rem;          /* 12px */
+
+    /* Professional Spacing Scale */
+    --space-xs: 0.25rem;         /* 4px */
+    --space-sm: 0.5rem;          /* 8px */
+    --space-md: 1rem;            /* 16px */
+    --space-lg: 1.5rem;          /* 24px */
+    --space-xl: 2rem;            /* 32px */
+    --space-2xl: 3rem;           /* 48px */
 
     /* Enterprise Shadow System */
-    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.08);
-    --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.08);
-    --shadow-lg: 0 8px 25px -5px rgb(0 0 0 / 0.08);
-    --shadow-enterprise: 0 2px 8px -2px rgb(0 0 0 / 0.05);
-    --shadow-brand: 0 4px 12px -2px rgb(168 85 247 / 0.08);
+    --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.08);
+    --shadow-elevated: 0 4px 12px -2px rgb(0 0 0 / 0.08);
+    --shadow-hero: 0 2px 8px -2px hsl(var(--kk-primary) / 0.08);
 
     --radius: 8px;
 
@@ -122,42 +144,105 @@
     --sidebar-ring: 280 87% 65%;
   }
 
-  /* Enterprise Utility Classes */
-  .gradient-brand {
-    background: var(--gradient-brand);
+  /* Professional Utility Classes */
+  .hero-bg {
+    background-color: hsl(var(--hero-bg));
   }
   
-  .gradient-hero {
-    background: var(--gradient-hero);
-    border: 1px solid hsl(var(--border));
+  .shadow-card {
+    box-shadow: var(--shadow-card);
   }
   
-  .shadow-brand {
-    box-shadow: var(--shadow-brand);
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
   }
   
-  .shadow-enterprise {
-    box-shadow: var(--shadow-enterprise);
+  .shadow-hero {
+    box-shadow: var(--shadow-hero);
   }
   
-  .bg-growth {
-    background-color: hsl(var(--success));
+  .text-kk-primary {
+    color: hsl(var(--kk-primary));
   }
   
-  .bg-warning-soft {
-    background-color: hsl(var(--warning));
+  .text-kk-secondary {
+    color: hsl(var(--kk-secondary));
   }
   
-  .bg-neutral-soft {
-    background-color: hsl(var(--neutral-gray));
+  .text-kk-success {
+    color: hsl(var(--kk-success));
   }
   
-  .text-growth {
-    color: hsl(var(--success));
+  .text-kk-warning {
+    color: hsl(var(--kk-warning));
   }
   
-  .text-warning-accent {
-    color: hsl(var(--warning));
+  .text-kk-gray-500 {
+    color: hsl(var(--kk-gray-500));
+  }
+  
+  .text-kk-gray-600 {
+    color: hsl(var(--kk-gray-600));
+  }
+  
+  .bg-kk-primary {
+    background-color: hsl(var(--kk-primary));
+  }
+  
+  .bg-kk-success {
+    background-color: hsl(var(--kk-success));
+  }
+  
+  .bg-kk-gray-50 {
+    background-color: hsl(var(--kk-gray-50));
+  }
+  
+  .bg-kk-gray-100 {
+    background-color: hsl(var(--kk-gray-100));
+  }
+  
+  .border-kk-gray-200 {
+    border-color: hsl(var(--kk-gray-200));
+  }
+  
+  /* Professional Typography Classes */
+  .text-hero {
+    font-size: var(--text-hero);
+    line-height: 1.1;
+    font-weight: 700;
+  }
+  
+  .text-h1 {
+    font-size: var(--text-h1);
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  
+  .text-h2 {
+    font-size: var(--text-h2);
+    line-height: 1.3;
+    font-weight: 600;
+  }
+  
+  .text-h3 {
+    font-size: var(--text-h3);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  
+  .text-body {
+    font-size: var(--text-body);
+    line-height: 1.5;
+  }
+  
+  .text-small {
+    font-size: var(--text-small);
+    line-height: 1.4;
+  }
+  
+  .text-xs-custom {
+    font-size: var(--text-xs);
+    line-height: 1.3;
   }
   
   .animate-fade-in {
