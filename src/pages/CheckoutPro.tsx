@@ -3,13 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
-import { createClient } from "@supabase/supabase-js";
 import { toast } from "@/hooks/use-toast";
-
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
 
 const CheckoutPro = () => {
   const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'quarterly' | 'biannual'>('monthly');
@@ -43,38 +37,34 @@ const CheckoutPro = () => {
     setIsLoading(true);
     
     try {
-      const currentOrigin = window.location.origin;
       const plan = plans[selectedPlan];
       
-      const { data, error } = await supabase.functions.invoke('create-mollie-payment', {
-        body: {
+      // Call your backend API to create Mollie payment
+      const response = await fetch('/api/create-mollie-payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
           amount: plan.total.toFixed(2),
           description: `KlikKlaar Pro - ${plan.description}`,
-          redirectUrl: `${currentOrigin}/payment-success`,
-          webhookUrl: `${currentOrigin}/api/mollie-webhook`,
-          metadata: {
-            plan: 'pro',
-            billing: selectedPlan,
-            price: plan.price
-          }
-        }
+          planType: 'pro',
+          billingPeriod: selectedPlan,
+          price: plan.price
+        })
       });
 
-      if (error) {
-        console.error('Error creating payment:', error);
-        toast({
-          title: "Fout bij aanmaken betaling",
-          description: "Er is een fout opgetreden. Probeer het opnieuw.",
-          variant: "destructive",
-        });
-        return;
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Payment creation failed');
       }
 
-      if (data.success && data.paymentUrl) {
+      if (data.paymentUrl) {
         // Redirect to Mollie payment page
         window.location.href = data.paymentUrl;
       } else {
-        throw new Error('Failed to create payment');
+        throw new Error('No payment URL received');
       }
     } catch (error) {
       console.error('Payment error:', error);
