@@ -17,18 +17,18 @@ const HeroMetric = () => {
           </div>
           
           {/* Benchmark Pills */}
-          <div className="grid grid-cols-3 gap-4">
-            <div className="bg-muted/40 rounded-xl border border-border/60 p-4 text-center">
+          <div className="grid grid-cols-3 gap-6 border border-border/30 rounded-xl p-6">
+            <div className="text-center">
               <div className="text-kk-label font-semibold text-foreground mb-2">Totale aanpassingen gemaakt</div>
-              <div className="text-kk-kpi text-foreground">127</div>
+              <div className="text-xl font-bold text-foreground">127</div>
             </div>
-            <div className="bg-muted/40 rounded-xl border border-border/60 p-4 text-center">
+            <div className="text-center border-l border-r border-border/30 px-6">
               <div className="text-kk-label font-semibold text-foreground mb-2">Totale groei</div>
-              <div className="text-kk-kpi text-[hsl(var(--kk-success))]">+64%</div>
+              <div className="text-xl font-bold text-foreground">+64%</div>
             </div>
-            <div className="bg-muted/40 rounded-xl border border-border/60 p-4 text-center">
+            <div className="text-center">
               <div className="text-kk-label font-semibold text-foreground mb-2">Geschatte groei aankomende maand</div>
-              <div className="text-kk-kpi text-[hsl(var(--kk-success))]">+78%</div>
+              <div className="text-xl font-bold text-foreground">+78%</div>
             </div>
           </div>
         </div>
