@@ -25,33 +25,56 @@ const KPICard = ({
   return (
     <Card 
       className={cn(
-        "p-5 shadow-card transition-all duration-200 hover:shadow-elevated animate-fade-in cursor-pointer rounded-2xl border border-slate-200",
-        onClick && "hover:shadow-elevated"
+        "group relative overflow-hidden bg-white/60 backdrop-blur-sm border border-white/20 shadow-card hover:shadow-elevated transition-all duration-300 cursor-pointer rounded-2xl",
+        "before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/40 before:to-transparent before:pointer-events-none",
+        onClick && "hover:shadow-elevated hover:-translate-y-1"
       )}
       onClick={onClick}
     >
-      <div className="flex items-center gap-2 mb-4">
-        <span className="p-2 rounded-lg bg-slate-100">
-          <div className="w-4 h-4 text-[hsl(var(--kk-gray-700))]">
-            {icon}
-          </div>
-        </span>
-        <span className="text-kk-label text-[hsl(var(--kk-gray-500))]">{label}</span>
-      </div>
+      {/* Subtle top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-kk-gradient opacity-60"></div>
       
-      <div className="space-y-2">
-        <div className="text-kk-kpi text-[hsl(var(--kk-eggplant))]">
-          {value}
+      <div className="relative p-6">
+        {/* Header with icon and label */}
+        <div className="flex items-center gap-3 mb-6">
+          <div className="relative">
+            <div className="w-10 h-10 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl flex items-center justify-center border border-slate-200/50 shadow-sm">
+              <div className="w-5 h-5 text-[hsl(var(--kk-gray-700))] group-hover:text-[hsl(var(--kk-violet))] transition-colors duration-300">
+                {icon}
+              </div>
+            </div>
+            {/* Subtle glow effect */}
+            <div className="absolute inset-0 rounded-xl bg-[hsl(var(--kk-violet))] opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-md"></div>
+          </div>
+          <div>
+            <h3 className="text-kk-label font-medium text-[hsl(var(--kk-gray-600))] uppercase tracking-wide">
+              {label}
+            </h3>
+          </div>
         </div>
         
-        <div className="flex items-center gap-1 text-sm text-[hsl(var(--kk-success))]">
-          {deltaType === "up" && <ArrowUp className="w-3 h-3" />}
-          {deltaType === "down" && <ArrowDown className="w-3 h-3" />}
-          {delta}
-        </div>
-        
-        <div className="text-kk-caption text-[hsl(var(--kk-gray-500))] mt-1">
-          {helpText}
+        {/* Value section */}
+        <div className="space-y-3">
+          <div className="text-kk-kpi font-bold text-[hsl(var(--kk-eggplant))] leading-none">
+            {value}
+          </div>
+          
+          {/* Delta indicator */}
+          <div className={cn(
+            "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold",
+            deltaType === "up" && "bg-emerald-50 text-emerald-700 border border-emerald-200",
+            deltaType === "down" && "bg-red-50 text-red-700 border border-red-200",
+            deltaType === "neutral" && "bg-slate-50 text-slate-700 border border-slate-200"
+          )}>
+            {deltaType === "up" && <ArrowUp className="w-3 h-3" />}
+            {deltaType === "down" && <ArrowDown className="w-3 h-3" />}
+            <span>{delta}</span>
+          </div>
+          
+          {/* Help text */}
+          <p className="text-kk-caption text-[hsl(var(--kk-gray-500))] leading-relaxed">
+            {helpText}
+          </p>
         </div>
       </div>
     </Card>
