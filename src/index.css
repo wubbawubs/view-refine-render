@@ -2,249 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-/* KlikKlaar Enterprise SEO Dashboard - Professional Brand System */
-
 @layer base {
   :root {
-    /* Professional Background System */
     --background: 0 0% 100%;
-    --foreground: 221 39% 11%;  /* kk-eggplant for main text */
-    --background-subtle: 214 32% 97%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* KlikKlaar Brand Colors */
+    --kk-orange: 15 100% 61%;
+    --kk-fuchsia: 334 100% 66%;
+    --kk-violet: 251 100% 65%;
+    --kk-eggplant: 250 25% 15%;
     
-    /* KlikKlaar Brand Colors (from logo) */
-    --kk-orange: 14 100% 62%;     /* #FF6A3D */
-    --kk-fuchsia: 339 100% 65%;   /* #FF4D8D */  
-    --kk-violet: 251 98% 65%;     /* #6B4EFF */
-    --kk-eggplant: 221 39% 11%;   /* #221B2E */
-    
-    /* Professional Neutrals */
-    --kk-gray-100: 214 32% 97%;   /* #F1F5F9 */
-    --kk-gray-300: 214 14% 84%;   /* #CBD5E1 */
-    --kk-gray-500: 215 16% 47%;   /* #64748B */
-    --kk-gray-700: 215 25% 27%;   /* #334155 */
+    /* Neutrals */
+    --kk-gray-100: 214 32% 96%;
+    --kk-gray-300: 214 17% 77%;
+    --kk-gray-500: 213 19% 55%;
+    --kk-gray-700: 215 20% 30%;
     --kk-gray-900: 222 84% 5%;
     
-    /* Enterprise Status Colors */
+    /* Status Colors */
     --kk-success: 142 71% 45%;
     --kk-warning: 38 92% 50%;
-    --kk-error: 0 72% 51%;
-    
-    /* UI System - Professional & Clean */
-    --card: 0 0% 100%;
-    --card-foreground: var(--kk-eggplant);
-    --card-border: var(--kk-gray-300);
-    
-    --popover: 0 0% 100%;
-    --popover-foreground: var(--kk-eggplant);
-    
-    --primary: var(--kk-violet);
-    --primary-foreground: 0 0% 100%;
-    
-    --secondary: var(--kk-gray-100);
-    --secondary-foreground: var(--kk-eggplant);
-    
-    --muted: var(--kk-gray-100);
-    --muted-foreground: var(--kk-gray-500);
-    
-    --accent: var(--kk-gray-100);
-    --accent-foreground: var(--kk-violet);
-    
-    --destructive: var(--kk-error);
-    --destructive-foreground: 0 0% 100%;
-    
-    --success: var(--kk-success);
-    --success-foreground: 0 0% 100%;
-    
-    --warning: var(--kk-warning);
-    --warning-foreground: 0 0% 100%;
-    
-    --info: var(--kk-violet);
-    --info-foreground: 0 0% 100%;
-    
-    --border: var(--kk-gray-300);
-    --input: var(--kk-gray-300);
-    --ring: var(--kk-violet);
-
-    /* KlikKlaar Typography Scale */
-    --text-h1: 1.75rem;          /* 28px - H1 headings */
-    --text-h2: 1.375rem;         /* 22px - H2 headings */ 
-    --text-kpi: 2rem;            /* 32px - KPI values */
-    --text-label: 0.875rem;      /* 14px - labels */
-    --text-caption: 0.75rem;     /* 12px - captions */
-    --text-body: 1rem;           /* 16px - body text */
-
-    /* Professional Spacing Scale */
-    --space-xs: 0.25rem;         /* 4px */
-    --space-sm: 0.5rem;          /* 8px */
-    --space-md: 1rem;            /* 16px */
-    --space-lg: 1.5rem;          /* 24px */
-    --space-xl: 2rem;            /* 32px */
-
-    /* Enterprise Shadow System */
-    --shadow-card: 0 8px 24px rgba(15,23,42,0.06);
-    --shadow-elevated: 0 12px 32px rgba(15,23,42,0.08);
-
-    --radius: 10px;
-
-    /* Sidebar Variables */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 240 10% 15%;
-    --sidebar-primary: 280 87% 65%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 280 15% 97%;
-    --sidebar-accent-foreground: 280 87% 65%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 280 87% 65%;
+    --kk-danger: 0 74% 52%;
   }
 
   .dark {
-    --background: 240 10% 8%;
-    --foreground: 0 0% 95%;
-
-    --card: 240 10% 8%;
-    --card-foreground: 0 0% 95%;
-
-    --popover: 240 10% 8%;
-    --popover-foreground: 0 0% 95%;
-
-    --primary: 280 87% 65%;
-    --primary-foreground: 240 10% 8%;
-
-    --secondary: 240 10% 12%;
-    --secondary-foreground: 0 0% 95%;
-
-    --muted: 240 10% 12%;
-    --muted-foreground: 240 5% 65%;
-
-    --accent: 240 10% 12%;  
-    --accent-foreground: 280 87% 65%;
-
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 95%;
-
-    --border: 240 10% 18%;
-    --input: 240 10% 18%;
-    --ring: 280 87% 65%;
-    
-    --sidebar-background: 240 10% 8%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 280 87% 65%;
-    --sidebar-primary-foreground: 240 10% 8%;
-    --sidebar-accent: 240 10% 12%;
-    --sidebar-accent-foreground: 280 87% 65%;
-    --sidebar-border: 240 10% 18%;
-    --sidebar-ring: 280 87% 65%;
-  }
-
-  /* KlikKlaar Brand Gradients */
-  .bg-kk-gradient {
-    background: linear-gradient(135deg, #FF6A3D 0%, #FF4D8D 40%, #6B4EFF 100%);
-  }
-  
-  .bg-kk-gradient-soft {
-    background: linear-gradient(135deg, rgba(255,106,61,0.4) 0%, rgba(255,77,141,0.4) 40%, rgba(107,78,255,0.4) 100%);
-  }
-  
-  .text-kk-gradient {
-    background: linear-gradient(135deg, #FF6A3D, #6B4EFF);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  
-  /* Shadow Utilities */
-  .shadow-card {
-    box-shadow: var(--shadow-card);
-  }
-  
-  .shadow-elevated {
-    box-shadow: var(--shadow-elevated);
-  }
-  
-  /* Brand Color Utilities */
-  .text-kk-eggplant {
-    color: hsl(var(--kk-eggplant));
-  }
-  
-  .text-kk-violet {
-    color: hsl(var(--kk-violet));
-  }
-  
-  .text-kk-gray-500 {
-    color: hsl(var(--kk-gray-500));
-  }
-  
-  .text-kk-gray-700 {
-    color: hsl(var(--kk-gray-700));
-  }
-  
-  .bg-kk-gray-100 {
-    background-color: hsl(var(--kk-gray-100));
-  }
-  
-  .border-kk-gray-300 {
-    border-color: hsl(var(--kk-gray-300));
-  }
-  
-  /* KlikKlaar Typography Classes */
-  .text-kk-h1 {
-    font-size: var(--text-h1);
-    line-height: 1.2;
-    font-weight: 700;
-  }
-  
-  .text-kk-h2 {
-    font-size: var(--text-h2);
-    line-height: 1.3;
-    font-weight: 700;
-  }
-  
-  .text-kk-kpi {
-    font-size: var(--text-kpi);
-    line-height: 1.1;
-    font-weight: 700;
-  }
-  
-  .text-kk-label {
-    font-size: var(--text-label);
-    line-height: 1.4;
-    font-weight: 500;
-  }
-  
-  .text-kk-caption {
-    font-size: var(--text-caption);
-    line-height: 1.3;
-    font-weight: 500;
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.3s ease-out;
-  }
-  
-  .animate-slide-up {
-    animation: slideUp 0.2s ease-out;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(5px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
@@ -252,8 +89,86 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Gradient utilities */
+  .bg-kk-gradient {
+    background: linear-gradient(135deg, hsl(var(--kk-orange)) 0%, hsl(var(--kk-fuchsia)) 40%, hsl(var(--kk-violet)) 100%);
+  }
+  
+  .text-kk-gradient {
+    background: linear-gradient(135deg, hsl(var(--kk-orange)), hsl(var(--kk-violet)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  
+  .border-kk-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, hsl(var(--kk-orange)), hsl(var(--kk-violet))) border-box;
+  }
+
+  /* Typography scale */
+  .text-kk-h1 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  .text-kk-h2 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  
+  .text-kk-kpi {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  
+  .text-kk-label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  
+  .text-kk-caption {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  /* Shadow utilities */
+  .shadow-card {
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  }
+  
+  .shadow-elevated {
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

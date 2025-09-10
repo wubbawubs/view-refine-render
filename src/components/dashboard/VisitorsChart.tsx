@@ -1,23 +1,38 @@
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Area, AreaChart, Tooltip } from 'recharts';
 import { Card } from "@/components/ui/card";
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { date: '26 Sep', visitors: 146 },
-  { date: '1 Okt', visitors: 178 },
-  { date: '8 Okt', visitors: 234 },
-  { date: '15 Okt', visitors: 312 },
-  { date: '22 Okt', visitors: 437 },
-  { date: '29 Okt', visitors: 482 },
-  { date: '5 Nov', visitors: 582 },
+  { date: '1 Sep', visitors: 1200, benchmark: 950 },
+  { date: '3 Sep', visitors: 1350, benchmark: 980 },
+  { date: '5 Sep', visitors: 1180, benchmark: 920 },
+  { date: '7 Sep', visitors: 1420, benchmark: 1100 },
+  { date: '9 Sep', visitors: 1650, benchmark: 1200 },
+  { date: '11 Sep', visitors: 1380, benchmark: 1050 },
+  { date: '13 Sep', visitors: 1750, benchmark: 1300 },
+  { date: '15 Sep', visitors: 1890, benchmark: 1350 },
+  { date: '17 Sep', visitors: 2100, benchmark: 1400 },
+  { date: '19 Sep', visitors: 1980, benchmark: 1380 },
+  { date: '21 Sep', visitors: 2250, benchmark: 1500 },
+  { date: '23 Sep', visitors: 2347, benchmark: 1520 }
 ];
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
+    const visitors = payload[0]?.value || 0;
+    const benchmark = payload[1]?.value || 0;
+    const diff = ((visitors - benchmark) / benchmark * 100).toFixed(1);
+    
     return (
-      <div className="bg-card p-3 border border-border rounded-lg shadow-lg">
-        <p className="text-sm font-medium text-card-foreground">{`${label}`}</p>
-        <p className="text-sm text-primary">
-          {`Bezoekers: ${payload[0].value}`}
+      <div className="bg-white p-3 border border-slate-200 rounded-lg shadow-card">
+        <p className="text-kk-caption text-[hsl(var(--kk-gray-500))] mb-1">{label}</p>
+        <p className="text-kk-label font-semibold text-[hsl(var(--kk-eggplant))]">
+          Jouw bezoekers: {visitors.toLocaleString()}
+        </p>
+        <p className="text-kk-caption text-[hsl(var(--kk-gray-500))]">
+          Benchmark: {benchmark.toLocaleString()}
+        </p>
+        <p className="text-kk-caption text-[hsl(var(--kk-success))]">
+          +{diff}% vs gemiddeld
         </p>
       </div>
     );
@@ -27,56 +42,68 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 const VisitorsChart = () => {
   return (
-    <Card className="p-6 border bg-white shadow-enterprise animate-slide-up">
+    <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-slate-200">
       <div className="mb-6">
-        <h3 className="text-lg font-semibold text-foreground mb-1">Organische bezoekers</h3>
-        <p className="text-sm text-muted-foreground">Ontwikkeling afgelopen maand vs. concurrenten</p>
+        <h3 className="text-kk-h2 text-[hsl(var(--kk-eggplant))] mb-1">Organische bezoekers</h3>
+        <p className="text-kk-caption text-[hsl(var(--kk-gray-500))]">Ontwikkeling afgelopen maand vs. concurrenten</p>
       </div>
       
-      <div className="h-64 mb-6">
+      <div className="h-64 mb-4">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
             <defs>
-              <linearGradient id="colorVisitors" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="hsl(25 95% 53%)" stopOpacity={0.1}/>
-                <stop offset="95%" stopColor="hsl(25 95% 53%)" stopOpacity={0}/>
+              <linearGradient id="visitorsGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="hsl(var(--kk-violet))" stopOpacity={0.1}/>
+                <stop offset="95%" stopColor="hsl(var(--kk-violet))" stopOpacity={0}/>
               </linearGradient>
             </defs>
+            <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
             <XAxis 
               dataKey="date" 
               axisLine={false}
               tickLine={false}
-              tick={{ fontSize: 12, fill: '#6B7280' }}
+              tick={{ fontSize: 12, fill: 'hsl(var(--kk-gray-500))' }}
             />
             <YAxis 
               axisLine={false}
               tickLine={false}
-              tick={{ fontSize: 12, fill: '#6B7280' }}
+              tick={{ fontSize: 12, fill: 'hsl(var(--kk-gray-500))' }}
+              tickFormatter={(value) => `${(value / 1000).toFixed(1)}k`}
             />
             <Tooltip content={<CustomTooltip />} />
             <Area
               type="monotone"
-              dataKey="visitors"
-              stroke="hsl(25 95% 53%)"
+              dataKey="benchmark"
+              stroke="hsl(var(--kk-gray-300))"
               strokeWidth={2}
-              fill="url(#colorVisitors)"
+              strokeDasharray="4 4"
+              fill="transparent"
+              name="Benchmark"
+            />
+            <Area
+              type="monotone"
+              dataKey="visitors"
+              stroke="hsl(var(--kk-violet))"
+              strokeWidth={3}
+              fill="url(#visitorsGradient)"
+              name="Jouw bezoekers"
             />
           </AreaChart>
         </ResponsiveContainer>
       </div>
       
-      <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border">
+      <div className="flex items-center justify-between pt-4 border-t border-slate-100">
         <div className="text-center">
-          <div className="text-xl font-semibold text-foreground">9,847</div>
-          <div className="text-xs text-muted-foreground">Totaal afgelopen maand</div>
+          <div className="text-kk-label font-semibold text-[hsl(var(--kk-eggplant))]">Totaal bezoekers</div>
+          <div className="text-kk-caption text-[hsl(var(--kk-gray-500))]">21.450 deze maand</div>
         </div>
         <div className="text-center">
-          <div className="text-xl font-semibold text-growth">+74%</div>
-          <div className="text-xs text-muted-foreground">Groei t.o.v. vorige maand</div>
+          <div className="text-kk-label font-semibold text-[hsl(var(--kk-success))]">Groei</div>
+          <div className="text-kk-caption text-[hsl(var(--kk-gray-500))]">+24,7% vs vorige maand</div>
         </div>
         <div className="text-center">
-          <div className="text-xl font-semibold text-warning-accent">582</div>
-          <div className="text-xs text-muted-foreground">Beste dag (5 nov)</div>
+          <div className="text-kk-label font-semibold text-[hsl(var(--kk-violet))]">Best day</div>
+          <div className="text-kk-caption text-[hsl(var(--kk-gray-500))]">23 Sep: 2.347</div>
         </div>
       </div>
     </Card>
