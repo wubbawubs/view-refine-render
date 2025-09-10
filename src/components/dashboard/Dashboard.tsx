@@ -84,32 +84,44 @@ const Dashboard = () => {
         </Button>
       </div>
       
-      <main className="flex-1 px-4 lg:px-8 py-6 overflow-auto relative z-10">
+      <main className="flex-1 px-3 sm:px-4 lg:px-8 py-4 sm:py-6 overflow-auto relative z-10 max-w-full">
         {/* Header */}
-        <div className="flex items-center justify-between mb-6 lg:mb-8 pb-4 border-b border-border">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 lg:mb-8 pb-4 border-b border-border">
+          <div className="flex items-center gap-3 min-w-0 flex-1">
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="sm"
-              className="lg:hidden"
+              className="lg:hidden shrink-0 p-2"
               onClick={() => setSidebarOpen(true)}
             >
               <Menu className="w-5 h-5" />
             </Button>
-            <div>
-              <h1 className="text-xl lg:text-kk-h1 text-foreground mb-1">{t.title}</h1>
-              <div className="flex items-center gap-2 text-sm lg:text-kk-label text-muted-foreground">
-                <Clock className="w-3 h-3 lg:w-4 lg:h-4" />
-                <span className="hidden sm:inline">{t.lastUpdated}</span>
+            
+            {/* Mobile Branding - Only show when sidebar is closed */}
+            <div className="flex items-center gap-2 lg:hidden shrink-0">
+              <div className="w-7 h-7 bg-kk-gradient rounded-lg flex items-center justify-center shadow-sm">
+                <span className="text-white font-bold text-xs">K</span>
+              </div>
+              <span className="text-base font-bold text-foreground">KlikKlaar</span>
+            </div>
+            
+            {/* Title Section */}
+            <div className="min-w-0 flex-1 lg:flex-initial">
+              <h1 className="text-lg sm:text-xl lg:text-kk-h1 text-foreground mb-1 lg:mb-1 truncate">{t.title}</h1>
+              <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-kk-label text-muted-foreground">
+                <Clock className="w-3 h-3 lg:w-4 lg:h-4 shrink-0" />
+                <span className="hidden sm:inline truncate">{t.lastUpdated}</span>
                 <span className="sm:hidden">Sep 9, 2025</span>
               </div>
             </div>
           </div>
           
-          <div className="flex gap-2 lg:gap-3 items-center">
+          {/* Controls */}
+          <div className="flex gap-2 lg:gap-3 items-center justify-center sm:justify-end flex-wrap">
+            {/* Language Selector */}
             <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
-              <SelectTrigger className="w-[100px] lg:w-[140px] text-xs lg:text-sm">
+              <SelectTrigger className="w-[80px] sm:w-[100px] lg:w-[140px] text-xs lg:text-sm shrink-0">
                 <Globe className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
                 <SelectValue />
               </SelectTrigger>
@@ -118,16 +130,22 @@ const Dashboard = () => {
                 <SelectItem value="en">EN</SelectItem>
               </SelectContent>
             </Select>
+            
+            {/* Theme Toggle */}
             <ThemeToggle />
+            
+            {/* Time Period Buttons - Hidden on mobile */}
             <div className="hidden md:flex gap-2 lg:gap-3">
-              <button className="px-3 lg:px-4 py-2 text-xs lg:text-kk-label font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-accent transition-colors">
+              <button className="px-3 lg:px-4 py-2 text-xs lg:text-kk-label font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-accent transition-colors whitespace-nowrap">
                 {t.thisWeek}
               </button>
-              <button className="px-3 lg:px-4 py-2 text-xs lg:text-kk-label font-medium text-[hsl(var(--kk-violet))] bg-card border border-[hsl(var(--kk-violet))] rounded-lg">
+              <button className="px-3 lg:px-4 py-2 text-xs lg:text-kk-label font-medium text-[hsl(var(--kk-violet))] bg-card border border-[hsl(var(--kk-violet))] rounded-lg whitespace-nowrap">
                 {t.thisMonth}
               </button>
             </div>
-            <button className="px-3 lg:px-4 py-2 text-xs lg:text-kk-label font-medium text-white bg-kk-gradient rounded-lg hover:opacity-90 transition-opacity shadow-card hidden sm:flex items-center gap-2">
+            
+            {/* Download Button */}
+            <button className="px-3 lg:px-4 py-2 text-xs lg:text-kk-label font-medium text-white bg-kk-gradient rounded-lg hover:opacity-90 transition-opacity shadow-card hidden sm:flex items-center gap-2 shrink-0 whitespace-nowrap">
               <Download className="w-3 h-3 lg:w-4 lg:h-4" />
               <span className="hidden lg:inline">{t.downloadReport}</span>
               <span className="lg:hidden">PDF</span>
@@ -136,12 +154,12 @@ const Dashboard = () => {
         </div>
 
         {/* Hero Metric */}
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6 w-full max-w-none">
           <HeroMetric language={language} />
         </div>
 
         {/* KPI Cards Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6 mb-6 mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 mt-4 sm:mt-6 w-full max-w-none">
           <KPICard
             icon={<Eye />}
             label={t.seoScore}
@@ -177,14 +195,14 @@ const Dashboard = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 mb-6 w-full max-w-none">
           {/* Left Column - Chart */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 w-full">
             <VisitorsChart />
           </div>
 
           {/* Right Column - Updates Feed */}
-          <div className="space-y-4 lg:space-y-6">
+          <div className="space-y-4 lg:space-y-6 w-full">
             <UpdatesFeed />
           </div>
         </div>
