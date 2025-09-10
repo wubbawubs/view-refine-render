@@ -26,13 +26,13 @@ const CustomTooltip = ({ active, payload, label }: any) => {
       <div className="bg-card p-3 border border-border rounded-lg shadow-card">
         <p className="text-kk-caption text-muted-foreground mb-1">{label}</p>
         <p className="text-kk-label font-semibold text-foreground">
-          Jouw bezoekers: {visitors.toLocaleString()} sessies
+          Jouw bezoekers: {visitors.toLocaleString()}
         </p>
         <p className="text-kk-caption text-muted-foreground">
-          Concurrenten: {benchmark.toLocaleString()} sessies
+          Benchmark: {benchmark.toLocaleString()}
         </p>
         <p className="text-kk-caption text-[hsl(var(--kk-success))]">
-          Δ vs vorige week · Δ vs concurrenten: +{diff}%
+          +{diff}% vs gemiddeld
         </p>
       </div>
     );
@@ -45,7 +45,7 @@ const VisitorsChart = () => {
     <Card className="glass-card p-8 shadow-luxury animate-fade-in rounded-2xl border border-border smooth-hover hover:shadow-elevated hover:scale-[1.01]">
       <div className="mb-8">
         <h3 className="text-kk-h2 text-foreground mb-2">Organische bezoekers</h3>
-        <p className="text-kk-caption text-muted-foreground">Jij vs Gemiddelde concurrenten (top 3)</p>
+        <p className="text-kk-caption text-muted-foreground">Ontwikkeling afgelopen maand vs. concurrenten</p>
       </div>
       
       <div className="h-64 mb-4">
@@ -68,8 +68,7 @@ const VisitorsChart = () => {
               axisLine={false}
               tickLine={false}
               tick={{ fontSize: 12, fill: 'hsl(var(--muted-foreground))' }}
-              tickFormatter={(value) => `${(value / 1000).toFixed(1)}k sessies`}
-              label={{ value: 'Sessies', angle: -90, position: 'insideLeft' }}
+              tickFormatter={(value) => `${(value / 1000).toFixed(1)}k`}
             />
             <Tooltip content={<CustomTooltip />} />
             <Area

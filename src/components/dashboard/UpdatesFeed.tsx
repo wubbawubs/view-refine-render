@@ -5,7 +5,7 @@ const UpdatesFeed = () => {
   const updates = [
     {
       type: "ranking",
-      title: "Ranking gestegen: 'kapper hoorn' van #5 → #3",
+      title: "Nieuwe ranking: #3 voor 'kapper hoorn' (+2)",
       impact: "+15% verwacht organisch verkeer",
       timestamp: "2 uur geleden",
       badge: "Ranking"
@@ -36,7 +36,8 @@ const UpdatesFeed = () => {
   return (
     <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
       <div className="mb-6 pb-4 border-b border-border/50">
-        <h3 className="text-kk-h2 text-foreground">Belangrijkste wijzigingen</h3>
+        <h3 className="text-kk-h2 text-foreground">Recente updates</h3>
+        <p className="text-kk-caption text-muted-foreground mt-1">Data-gedreven inzichten van deze week</p>
       </div>
       
       <div className="space-y-6">
@@ -59,7 +60,7 @@ const UpdatesFeed = () => {
               </p>
               
               <button className="text-kk-caption text-[hsl(var(--kk-violet))] hover:underline font-medium">
-                Bekijk analyse
+                Bekijk details
               </button>
             </div>
           </div>
