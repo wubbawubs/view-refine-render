@@ -17,18 +17,22 @@ const HeroMetric = () => {
           </div>
           
           {/* Benchmark Pills */}
-          <div className="grid grid-cols-3 gap-6 border border-border/30 rounded-xl p-6">
-            <div className="text-center">
-              <div className="text-kk-label font-semibold text-foreground mb-2">Totale aanpassingen gemaakt</div>
-              <div className="text-xl font-bold text-foreground">127</div>
-            </div>
-            <div className="text-center border-l border-r border-border/30 px-6">
-              <div className="text-kk-label font-semibold text-foreground mb-2">Totale groei</div>
-              <div className="text-xl font-bold text-foreground">+64%</div>
-            </div>
-            <div className="text-center">
-              <div className="text-kk-label font-semibold text-foreground mb-2">Geschatte groei aankomende maand</div>
-              <div className="text-xl font-bold text-foreground">+78%</div>
+          <div className="bg-muted/20 rounded-lg border border-border/40 p-5">
+            <div className="flex items-center justify-between">
+              <div className="text-center flex-1">
+                <div className="text-sm font-medium text-muted-foreground mb-1">Totale aanpassingen gemaakt</div>
+                <div className="text-lg font-bold text-foreground">127</div>
+              </div>
+              <div className="w-px h-10 bg-border mx-4"></div>
+              <div className="text-center flex-1">
+                <div className="text-sm font-medium text-muted-foreground mb-1">Totale groei</div>
+                <div className="text-lg font-bold text-foreground">+64%</div>
+              </div>
+              <div className="w-px h-10 bg-border mx-4"></div>
+              <div className="text-center flex-1">
+                <div className="text-sm font-medium text-muted-foreground mb-1">Geschatte groei aankomende maand</div>
+                <div className="text-lg font-bold text-foreground">+78%</div>
+              </div>
             </div>
           </div>
         </div>
