@@ -4,10 +4,9 @@ import {
   LayoutDashboard, 
   HelpCircle, 
   Settings, 
-  BarChart3, 
-  CreditCard, 
-  Package, 
-  Sliders, 
+  FileSearch, 
+  Info, 
+  User, 
   LogOut
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -21,12 +20,11 @@ interface SidebarItem {
 
 const sidebarItems: SidebarItem[] = [
   { name: "Dashboard", path: "/", icon: LayoutDashboard },
-  { name: "Hulp", path: "/help", icon: HelpCircle },
-  { name: "Aanpassingen", path: "/changes", icon: Settings },
-  { name: "Website Analyse", path: "/analytics", icon: BarChart3 },
-  { name: "Facturen", path: "/billing", icon: CreditCard },
-  { name: "Pakket", path: "/package", icon: Package },
-  { name: "Instellingen", path: "/settings", icon: Sliders },
+  { name: "Aanpassingen", path: "/aanpassingen", icon: Settings },
+  { name: "Audit", path: "/audit", icon: FileSearch },
+  { name: "Informatie", path: "/informatie", icon: Info },
+  { name: "Hulp", path: "/hulp", icon: HelpCircle },
+  { name: "Account", path: "/account", icon: User },
   { name: "Uitloggen", path: "/logout", icon: LogOut, danger: true },
 ];
 
