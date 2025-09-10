@@ -1,4 +1,4 @@
-import { User, CreditCard, Settings, Shield, Bell } from "lucide-react";
+import { User, CreditCard, Settings, Shield, Bell, Globe, Save } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import Sidebar from "@/components/dashboard/Sidebar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,8 +7,53 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useState } from "react";
 
 const Account = () => {
+  const [language, setLanguage] = useState<'nl' | 'en'>('nl');
+
+  const texts = {
+    nl: {
+      title: 'Account',
+      subtitle: 'Beheer uw account instellingen en abonnement',
+      save: 'Wijzigingen opslaan',
+      profileInfo: 'Profiel informatie',
+      profileInfoDesc: 'Uw persoonlijke account gegevens',
+      firstName: 'Voornaam',
+      lastName: 'Achternaam',
+      email: 'E-mailadres',
+      phone: 'Telefoonnummer',
+      subscription: 'Abonnement',
+      subscriptionDesc: 'Uw huidige abonnement en facturatie',
+      notifications: 'Notificaties',
+      notificationsDesc: 'Configureer wanneer u meldingen wilt ontvangen',
+      security: 'Beveiliging',
+      securityDesc: 'Account beveiliging en wachtwoord instellingen',
+      language: 'Taal'
+    },
+    en: {
+      title: 'Account',
+      subtitle: 'Manage your account settings and subscription',
+      save: 'Save Changes',
+      profileInfo: 'Profile Information',
+      profileInfoDesc: 'Your personal account details',
+      firstName: 'First Name',
+      lastName: 'Last Name',
+      email: 'Email Address',
+      phone: 'Phone Number',
+      subscription: 'Subscription',
+      subscriptionDesc: 'Your current subscription and billing',
+      notifications: 'Notifications',
+      notificationsDesc: 'Configure when you want to receive notifications',
+      security: 'Security',
+      securityDesc: 'Account security and password settings',
+      language: 'Language'
+    }
+  };
+
+  const t = texts[language];
+
   return (
     <div className="flex min-h-screen premium-dashboard-bg">
       <Sidebar />
@@ -17,16 +62,27 @@ const Account = () => {
         {/* Header */}
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-border">
           <div>
-            <h1 className="text-kk-h1 text-foreground mb-1">Account</h1>
+            <h1 className="text-kk-h1 text-foreground mb-1">{t.title}</h1>
             <p className="text-kk-label text-muted-foreground">
-              Beheer uw account instellingen en abonnement
+              {t.subtitle}
             </p>
           </div>
           
           <div className="flex gap-3 items-center">
+            <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
+              <SelectTrigger className="w-[140px]">
+                <Globe className="w-4 h-4 mr-2" />
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="nl">Nederlands</SelectItem>
+                <SelectItem value="en">English</SelectItem>
+              </SelectContent>
+            </Select>
             <ThemeToggle />
             <Button className="bg-kk-gradient text-white hover:opacity-90">
-              Wijzigingen opslaan
+              <Save className="w-4 h-4 mr-2" />
+              {t.save}
             </Button>
           </div>
         </div>
@@ -34,32 +90,32 @@ const Account = () => {
         {/* Account Sections */}
         <div className="space-y-8">
           {/* Profile Information */}
-          <Card>
+          <Card className="border border-border/50">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <User className="w-5 h-5" />
-                Profiel informatie
+                <User className="w-5 h-5 text-[hsl(var(--kk-violet))]" />
+                {t.profileInfo}
               </CardTitle>
               <CardDescription>
-                Uw persoonlijke account gegevens
+                {t.profileInfoDesc}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="first-name">Voornaam</Label>
+                  <Label htmlFor="first-name">{t.firstName}</Label>
                   <Input id="first-name" placeholder="Jan" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="last-name">Achternaam</Label>
+                  <Label htmlFor="last-name">{t.lastName}</Label>
                   <Input id="last-name" placeholder="Janssen" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">E-mailadres</Label>
+                  <Label htmlFor="email">{t.email}</Label>
                   <Input id="email" type="email" placeholder="jan@voorbeeld.nl" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="phone">Telefoonnummer</Label>
+                  <Label htmlFor="phone">{t.phone}</Label>
                   <Input id="phone" placeholder="+31 6 12345678" />
                 </div>
               </div>
@@ -67,14 +123,14 @@ const Account = () => {
           </Card>
 
           {/* Subscription */}
-          <Card>
+          <Card className="border border-border/50">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <CreditCard className="w-5 h-5" />
-                Abonnement
+                <CreditCard className="w-5 h-5 text-[hsl(var(--kk-violet))]" />
+                {t.subscription}
               </CardTitle>
               <CardDescription>
-                Uw huidige abonnement en facturatie
+                {t.subscriptionDesc}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
