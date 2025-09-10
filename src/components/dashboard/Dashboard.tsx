@@ -1,4 +1,5 @@
 import { Eye, Users, Target, Download, Clock } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import Sidebar from "./Sidebar";
 import HeroMetric from "./HeroMetric";
 import KPICard from "./KPICard";
@@ -22,11 +23,12 @@ const Dashboard = () => {
             </div>
           </div>
           
-          <div className="flex gap-3">
-            <button className="px-4 py-2 text-kk-label font-medium text-[hsl(var(--kk-gray-700))] bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors">
+          <div className="flex gap-3 items-center">
+            <ThemeToggle />
+            <button className="px-4 py-2 text-kk-label font-medium text-[hsl(var(--kk-gray-700))] bg-card border border-border rounded-lg hover:bg-accent transition-colors">
               Deze week
             </button>
-            <button className="px-4 py-2 text-kk-label font-medium text-[hsl(var(--kk-violet))] bg-white border border-[hsl(var(--kk-violet))] rounded-lg">
+            <button className="px-4 py-2 text-kk-label font-medium text-[hsl(var(--kk-violet))] bg-card border border-[hsl(var(--kk-violet))] rounded-lg">
               Deze maand
             </button>
             <button className="px-4 py-2 text-kk-label font-medium text-white bg-kk-gradient rounded-lg hover:opacity-90 transition-opacity shadow-card flex items-center gap-2">
