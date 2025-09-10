@@ -32,7 +32,7 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="w-64 premium-sidebar-bg min-h-screen flex flex-col">
+    <div className="w-64 premium-sidebar-bg h-screen flex flex-col">
       {/* Logo */}
       <div className="p-5 border-b border-sidebar-border">
         <div className="flex items-center gap-3 h-14">
@@ -54,12 +54,12 @@ const Sidebar = () => {
               key={item.name}
               to={item.path}
               className={cn(
-                "w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left transition-colors relative block",
+                "w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left transition-all duration-200 relative block",
                 isActive
-                  ? "bg-sidebar-accent text-sidebar-accent-foreground shadow-sm border-l-2 border-[hsl(var(--kk-violet))]"
+                  ? "bg-kk-gradient text-white shadow-lg border-l-2 border-white/20"
                   : item.danger
-                  ? "text-destructive hover:bg-destructive/10"
-                  : "text-sidebar-foreground hover:bg-sidebar-accent/50"
+                  ? "text-destructive hover:bg-gradient-to-r hover:from-destructive/10 hover:to-destructive/5"
+                  : "text-sidebar-foreground hover:bg-gradient-to-r hover:from-sidebar-accent/70 hover:to-sidebar-accent/30"
               )}
             >
               <Icon className="w-5 h-5 flex-shrink-0" />

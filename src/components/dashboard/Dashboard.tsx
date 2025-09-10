@@ -69,7 +69,7 @@ const Dashboard = () => {
       
       {/* Sidebar */}
       <div className={`
-        fixed lg:relative lg:block z-50 min-h-screen transition-transform duration-300 ease-in-out
+        fixed lg:relative lg:block z-50 h-screen transition-transform duration-300 ease-in-out
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         <div className="relative h-full">
