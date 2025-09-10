@@ -26,7 +26,7 @@ const KPICard = ({
     <Card 
       className={cn(
         "group relative overflow-hidden bg-card/95 backdrop-blur-xl border border-border",
-        "h-44 w-full", // Increased height to fit all content
+        "min-h-44 w-full", // Flexible height that adjusts to content
         "shadow-sm hover:shadow-md transition-all duration-300 ease-out cursor-pointer rounded-xl",
         "hover:scale-[1.02]"
       )}
@@ -35,9 +35,9 @@ const KPICard = ({
       {/* Simplified background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--kk-violet))]/3 via-transparent to-[hsl(var(--kk-violet))]/3 rounded-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
       
-      <div className="relative p-5 h-full flex flex-col">
+      <div className="relative p-6 flex flex-col space-y-4">
         {/* Header with icon and label */}
-        <div className="flex items-center gap-3 mb-3">
+        <div className="flex items-center gap-3">
           <div className="shrink-0">
             <div className="w-10 h-10 bg-gradient-to-br from-[hsl(var(--kk-violet))]/10 to-[hsl(var(--kk-fuchsia))]/10 rounded-lg flex items-center justify-center border border-border/40">
               <div className="w-5 h-5 text-[hsl(var(--kk-violet))] stroke-[1.5] flex items-center justify-center">
@@ -52,15 +52,15 @@ const KPICard = ({
           </div>
         </div>
         
-        {/* Main value */}
-        <div className="mb-3">
-          <div className="text-3xl font-bold text-foreground leading-none mb-2">
+        {/* Main value - responsive sizing */}
+        <div>
+          <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground leading-none">
             {value}
           </div>
         </div>
         
         {/* Delta indicator */}
-        <div className="mb-3">
+        <div>
           <div className={cn(
             "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium w-fit",
             (deltaType === "up" || deltaType === "neutral") && "bg-emerald-50 text-emerald-700 border border-emerald-200/60",
@@ -72,9 +72,9 @@ const KPICard = ({
           </div>
         </div>
         
-        {/* Help text at bottom */}
-        <div className="mt-auto">
-          <p className="text-xs text-muted-foreground leading-relaxed">
+        {/* Help text - with better spacing */}
+        <div>
+          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
             {helpText}
           </p>
         </div>
