@@ -1,6 +1,7 @@
-import { Eye, Users, Target, Download, Clock, Settings, TrendingUp, Globe } from "lucide-react";
+import { Eye, Users, Target, Download, Clock, Settings, TrendingUp, Globe, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import HeroMetric from "./HeroMetric";
@@ -11,6 +12,7 @@ import ActionsAlerts from "./ActionsAlerts";
 
 const Dashboard = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const texts = {
     nl: {
@@ -57,51 +59,89 @@ const Dashboard = () => {
 
   return (
     <div className="flex min-h-screen premium-dashboard-bg">
-      <Sidebar />
+      {/* Mobile Sidebar Overlay */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
       
-      <main className="flex-1 px-8 py-6 overflow-auto relative z-10">
+      {/* Sidebar */}
+      <div className={`
+        fixed lg:relative lg:block z-50 h-full transition-transform duration-300 ease-in-out
+        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+      `}>
+        <Sidebar />
+        {/* Mobile Close Button */}
+        <Button
+          variant="ghost"
+          size="sm"
+          className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent"
+          onClick={() => setSidebarOpen(false)}
+        >
+          <X className="w-4 h-4" />
+        </Button>
+      </div>
+      
+      <main className="flex-1 px-4 lg:px-8 py-6 overflow-auto relative z-10">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8 pb-4 border-b border-border">
-          <div>
-            <h1 className="text-kk-h1 text-foreground mb-1">{t.title}</h1>
-            <div className="flex items-center gap-2 text-kk-label text-muted-foreground">
-              <Clock className="w-4 h-4" />
-              <span>{t.lastUpdated}</span>
+        <div className="flex items-center justify-between mb-6 lg:mb-8 pb-4 border-b border-border">
+          <div className="flex items-center gap-4">
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="lg:hidden"
+              onClick={() => setSidebarOpen(true)}
+            >
+              <Menu className="w-5 h-5" />
+            </Button>
+            <div>
+              <h1 className="text-xl lg:text-kk-h1 text-foreground mb-1">{t.title}</h1>
+              <div className="flex items-center gap-2 text-sm lg:text-kk-label text-muted-foreground">
+                <Clock className="w-3 h-3 lg:w-4 lg:h-4" />
+                <span className="hidden sm:inline">{t.lastUpdated}</span>
+                <span className="sm:hidden">Sep 9, 2025</span>
+              </div>
             </div>
           </div>
           
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-2 lg:gap-3 items-center">
             <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
-              <SelectTrigger className="w-[140px]">
-                <Globe className="w-4 h-4 mr-2" />
+              <SelectTrigger className="w-[100px] lg:w-[140px] text-xs lg:text-sm">
+                <Globe className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="nl">Nederlands</SelectItem>
-                <SelectItem value="en">English</SelectItem>
+                <SelectItem value="nl">NL</SelectItem>
+                <SelectItem value="en">EN</SelectItem>
               </SelectContent>
             </Select>
             <ThemeToggle />
-            <button className="px-4 py-2 text-kk-label font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-accent transition-colors">
-              {t.thisWeek}
-            </button>
-            <button className="px-4 py-2 text-kk-label font-medium text-[hsl(var(--kk-violet))] bg-card border border-[hsl(var(--kk-violet))] rounded-lg">
-              {t.thisMonth}
-            </button>
-            <button className="px-4 py-2 text-kk-label font-medium text-white bg-kk-gradient rounded-lg hover:opacity-90 transition-opacity shadow-card flex items-center gap-2">
-              <Download className="w-4 h-4" />
-              {t.downloadReport}
+            <div className="hidden md:flex gap-2 lg:gap-3">
+              <button className="px-3 lg:px-4 py-2 text-xs lg:text-kk-label font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-accent transition-colors">
+                {t.thisWeek}
+              </button>
+              <button className="px-3 lg:px-4 py-2 text-xs lg:text-kk-label font-medium text-[hsl(var(--kk-violet))] bg-card border border-[hsl(var(--kk-violet))] rounded-lg">
+                {t.thisMonth}
+              </button>
+            </div>
+            <button className="px-3 lg:px-4 py-2 text-xs lg:text-kk-label font-medium text-white bg-kk-gradient rounded-lg hover:opacity-90 transition-opacity shadow-card hidden sm:flex items-center gap-2">
+              <Download className="w-3 h-3 lg:w-4 lg:h-4" />
+              <span className="hidden lg:inline">{t.downloadReport}</span>
+              <span className="lg:hidden">PDF</span>
             </button>
           </div>
         </div>
 
         {/* Hero Metric */}
         <div className="mb-6">
-          <HeroMetric />
+          <HeroMetric language={language} />
         </div>
 
         {/* KPI Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 mt-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6 mb-6 mt-6">
           <KPICard
             icon={<Eye />}
             label={t.seoScore}
@@ -137,14 +177,14 @@ const Dashboard = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
           {/* Left Column - Chart */}
           <div className="lg:col-span-2">
             <VisitorsChart />
           </div>
 
           {/* Right Column - Updates Feed */}
-          <div className="space-y-6">
+          <div className="space-y-4 lg:space-y-6">
             <UpdatesFeed />
           </div>
         </div>
