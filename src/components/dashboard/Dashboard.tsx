@@ -23,11 +23,12 @@ const Dashboard = () => {
       downloadReport: 'Download rapport (PDF)',
       seoScore: 'SEO Score',
       seoScoreHelp: 'Hoe Google jou ziet',
-      totalAdjustments: 'Totale aanpassingen gemaakt',
+      totalAdjustments: 'Totale aanpassingen',
       totalAdjustmentsHelp: 'Automatische optimalisaties',
-      estimatedGrowth: 'Geschatte groei aankomende maand',
+      estimatedGrowth: 'Geschatte groei',
+      estimatedGrowthSubtitle: 'Komende maand',
       estimatedGrowthHelp: 'Verwachte verbetering',
-      totalVisitors: 'Totaal aantal bezoekers',
+      totalVisitors: 'Aantal bezoekers',
       totalVisitorsHelp: 'Alle verkeersbronnen',
       weekDelta: 'deze week',
       monthDelta: 'deze maand',
@@ -42,11 +43,12 @@ const Dashboard = () => {
       downloadReport: 'Download report (PDF)',
       seoScore: 'SEO Score',
       seoScoreHelp: 'How Google sees you',
-      totalAdjustments: 'Total adjustments made',
+      totalAdjustments: 'Total adjustments',
       totalAdjustmentsHelp: 'Automatic optimizations',
-      estimatedGrowth: 'Estimated growth next month',
+      estimatedGrowth: 'Estimated growth',
+      estimatedGrowthSubtitle: 'Next month',
       estimatedGrowthHelp: 'Expected improvement',
-      totalVisitors: 'Total visitors',
+      totalVisitors: 'Visitors',
       totalVisitorsHelp: 'All traffic sources',
       weekDelta: 'this week',
       monthDelta: 'this month',
@@ -172,7 +174,12 @@ const Dashboard = () => {
           />
           <KPICard
             icon={<TrendingUp />}
-            label={t.estimatedGrowth}
+            label={
+              <div>
+                <div>{t.estimatedGrowth}</div>
+                <div className="text-xs text-muted-foreground font-normal">{t.estimatedGrowthSubtitle}</div>
+              </div>
+            }
             value="+78%"
             delta={t.prognosisBased}
             deltaType="up"

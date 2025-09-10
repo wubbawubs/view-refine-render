@@ -4,7 +4,7 @@ import { ArrowUp, ArrowDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface KPICardProps {
-  label: string;
+  label: string | ReactNode;
   value: string | number;
   delta: string;
   deltaType?: "up" | "down" | "neutral";
