@@ -9,7 +9,7 @@ const HeroMetric = () => {
           <h2 className="text-kk-h1 text-[hsl(var(--kk-eggplant))] mb-2">Jouw zichtbaarheid deze maand</h2>
           <div className="h-0.5 w-24 rounded-full bg-kk-gradient mb-4"></div>
           <div className="text-kk-kpi text-[hsl(var(--kk-eggplant))] mb-3">+64%</div>
-          <p className="text-kk-label text-[hsl(var(--kk-gray-500))] mb-6">Verbetering t.o.v. vorige maand. Updates elke week.</p>
+          <p className="text-kk-label text-[hsl(var(--kk-gray-500))] mb-6">Verbetering t.o.v. vorige maand.</p>
           
           {/* Benchmark Pills */}
           <div className="flex items-center justify-between p-5 bg-slate-50/50 rounded-xl border border-slate-200">
