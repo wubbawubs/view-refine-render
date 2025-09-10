@@ -34,11 +34,11 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="w-64 bg-sidebar-background border-r border-sidebar-border h-screen flex flex-col">
+    <div className="w-64 premium-sidebar-bg h-screen flex flex-col relative z-20">
       {/* Logo */}
-      <div className="p-5 border-b border-sidebar-border">
+      <div className="p-5 border-b border-sidebar-border relative z-10">
         <div className="flex items-center gap-3 h-14">
-          <div className="w-8 h-8 bg-kk-gradient rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-kk-gradient rounded-lg flex items-center justify-center premium-glow-border shadow-lg">
             <span className="text-white font-bold text-sm">K</span>
           </div>
           <span className="text-lg font-bold text-sidebar-foreground">KlikKlaar</span>
@@ -46,7 +46,7 @@ const Sidebar = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 p-4 space-y-1">
+      <nav className="flex-1 p-4 space-y-1 relative z-10">
         {sidebarItems.map((item) => {
           const Icon = item.icon;
           const isActive = location.pathname === item.path;

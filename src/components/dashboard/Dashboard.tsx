@@ -9,10 +9,10 @@ import ActionsAlerts from "./ActionsAlerts";
 
 const Dashboard = () => {
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="flex min-h-screen premium-dashboard-bg">
       <Sidebar />
       
-      <main className="flex-1 px-8 py-6 overflow-auto bg-background">
+      <main className="flex-1 px-8 py-6 overflow-auto relative z-10">
         {/* Header */}
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-border">
           <div>
