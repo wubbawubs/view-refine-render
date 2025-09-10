@@ -26,7 +26,6 @@ const Dashboard = () => {
       totalAdjustments: 'Totale aanpassingen',
       totalAdjustmentsHelp: 'Automatische optimalisaties',
       estimatedGrowth: 'Geschatte groei',
-      estimatedGrowthSubtitle: 'Komende maand',
       estimatedGrowthHelp: 'Verwachte verbetering',
       totalVisitors: 'Aantal bezoekers',
       totalVisitorsHelp: 'Alle verkeersbronnen',
@@ -46,7 +45,6 @@ const Dashboard = () => {
       totalAdjustments: 'Total adjustments',
       totalAdjustmentsHelp: 'Automatic optimizations',
       estimatedGrowth: 'Estimated growth',
-      estimatedGrowthSubtitle: 'Next month',
       estimatedGrowthHelp: 'Expected improvement',
       totalVisitors: 'Visitors',
       totalVisitorsHelp: 'All traffic sources',
@@ -174,12 +172,7 @@ const Dashboard = () => {
           />
           <KPICard
             icon={<TrendingUp />}
-            label={
-              <div>
-                <div>{t.estimatedGrowth}</div>
-                <div className="text-xs text-muted-foreground font-normal">{t.estimatedGrowthSubtitle}</div>
-              </div>
-            }
+            label={t.estimatedGrowth}
             value="+78%"
             delta={t.prognosisBased}
             deltaType="up"
