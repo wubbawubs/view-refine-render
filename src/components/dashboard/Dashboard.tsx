@@ -5,7 +5,6 @@ import KPICard from "./KPICard";
 import VisitorsChart from "./VisitorsChart";
 import UpdatesFeed from "./UpdatesFeed";
 import ActionsAlerts from "./ActionsAlerts";
-import TopKeywords from "./TopKeywords";
 
 const Dashboard = () => {
   return (
@@ -84,9 +83,8 @@ const Dashboard = () => {
         </div>
 
         {/* Bottom Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="max-w-2xl">
           <ActionsAlerts />
-          <TopKeywords />
         </div>
       </main>
     </div>
