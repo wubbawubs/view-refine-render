@@ -35,32 +35,34 @@ const UpdatesFeed = () => {
 
   return (
     <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
-      <div className="mb-6">
+      <div className="mb-6 pb-4 border-b border-border/50">
         <h3 className="text-kk-h2 text-foreground">Recente updates</h3>
         <p className="text-kk-caption text-muted-foreground mt-1">Data-gedreven inzichten van deze week</p>
       </div>
       
-      <div className="space-y-4">
+      <div className="space-y-6">
         {updates.map((update, index) => (
-          <div key={index} className="border-l-2 border-border pl-4 pb-4 last:pb-0">
-            <div className="flex items-start justify-between mb-2">
-              <span className="px-2 py-1 rounded-full text-kk-caption font-medium bg-muted text-muted-foreground">
+          <div key={index} className="bg-muted/20 rounded-lg p-4 border border-border/30">
+            <div className="flex items-start justify-between mb-3">
+              <span className="px-3 py-1 rounded-full text-kk-caption font-medium bg-muted/60 text-muted-foreground border border-border/30">
                 {update.badge}
               </span>
               <span className="text-kk-caption text-muted-foreground">{update.timestamp}</span>
             </div>
             
-            <h4 className="text-kk-label font-semibold text-foreground mb-1">
-              {update.title}
-            </h4>
-            
-            <p className="text-kk-caption text-muted-foreground mb-2">
-              {update.impact}
-            </p>
-            
-            <button className="text-kk-caption text-[hsl(var(--kk-violet))] hover:underline">
-              Bekijk details
-            </button>
+            <div className="space-y-2">
+              <h4 className="text-kk-label font-semibold text-foreground leading-tight">
+                {update.title}
+              </h4>
+              
+              <p className="text-kk-caption text-muted-foreground">
+                {update.impact}
+              </p>
+              
+              <button className="text-kk-caption text-[hsl(var(--kk-violet))] hover:underline font-medium">
+                Bekijk details
+              </button>
+            </div>
           </div>
         ))}
       </div>

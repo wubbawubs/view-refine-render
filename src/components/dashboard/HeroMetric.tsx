@@ -6,26 +6,29 @@ const HeroMetric = () => {
     <Card className="p-8 shadow-card animate-fade-in rounded-2xl border border-border bg-card">
       <div className="flex items-center justify-between">
         <div className="flex-1">
-          <h2 className="text-kk-h1 text-foreground mb-2">Jouw zichtbaarheid deze maand</h2>
-          <div className="h-0.5 w-full max-w-md rounded-full bg-kk-gradient mb-4"></div>
-          <div className="text-kk-kpi text-foreground mb-3">+64%</div>
-          <p className="text-kk-label text-muted-foreground mb-6">Verbetering t.o.v. vorige maand.</p>
+          <div className="mb-6">
+            <h2 className="text-kk-h1 text-foreground mb-2">Jouw zichtbaarheid deze maand</h2>
+            <div className="h-0.5 w-full max-w-md rounded-full bg-kk-gradient mb-4"></div>
+          </div>
+          
+          <div className="mb-6">
+            <div className="text-kk-kpi text-foreground mb-2">+64%</div>
+            <p className="text-kk-label text-muted-foreground">Verbetering t.o.v. vorige maand.</p>
+          </div>
           
           {/* Benchmark Pills */}
-          <div className="flex items-center justify-between p-5 bg-muted/50 rounded-xl border border-border">
-            <div className="flex items-center gap-6">
+          <div className="bg-muted/30 rounded-xl border border-border/50 p-6">
+            <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-kk-label font-semibold text-foreground">Totale aanpassingen gemaakt</div>
+                <div className="text-kk-label font-semibold text-foreground mb-1">Totale aanpassingen gemaakt</div>
                 <div className="text-kk-caption text-muted-foreground">127</div>
               </div>
-              <div className="w-px h-8 bg-border"></div>
-              <div className="text-center">
-                <div className="text-kk-label font-semibold text-foreground">Totale groei</div>
+              <div className="text-center border-l border-r border-border/50 px-4">
+                <div className="text-kk-label font-semibold text-foreground mb-1">Totale groei</div>
                 <div className="text-kk-caption text-muted-foreground">+64%</div>
               </div>
-              <div className="w-px h-8 bg-border"></div>
               <div className="text-center">
-                <div className="text-kk-label font-semibold text-foreground">Geschatte groei aankomende maand</div>
+                <div className="text-kk-label font-semibold text-foreground mb-1">Geschatte groei aankomende maand</div>
                 <div className="text-kk-caption text-muted-foreground">+78%</div>
               </div>
             </div>
