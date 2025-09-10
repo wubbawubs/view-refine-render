@@ -14,18 +14,26 @@ export default {
     },
     extend: {
       colors: {
-        // KlikKlaar Brand Colors
+        // KlikKlaar Brand Colors using semantic tokens
         kk: {
-          orange: "#FF6A3D",
-          fuchsia: "#FF4D8D", 
-          violet: "#6B4EFF",
-          eggplant: "#221B2E",
+          orange: "hsl(var(--kk-orange))",
+          fuchsia: "hsl(var(--kk-fuchsia))", 
+          violet: "hsl(var(--kk-violet))",
+          eggplant: "hsl(var(--kk-eggplant))",
+          primary: "hsl(var(--kk-orange))",
+          success: "hsl(var(--kk-success))",
+          warning: "hsl(var(--kk-warning))",
+          danger: "hsl(var(--kk-danger))",
           gray: {
-            100: "#F1F5F9",
-            300: "#CBD5E1", 
-            500: "#64748B",
-            700: "#334155",
-            900: "#0F172A"
+            50: "hsl(var(--kk-gray-100) / 0.3)",
+            100: "hsl(var(--kk-gray-100))",
+            200: "hsl(var(--kk-gray-300) / 0.4)",
+            300: "hsl(var(--kk-gray-300))", 
+            400: "hsl(var(--kk-gray-500) / 0.7)",
+            500: "hsl(var(--kk-gray-500))",
+            600: "hsl(var(--kk-gray-700) / 0.8)",
+            700: "hsl(var(--kk-gray-700))",
+            900: "hsl(var(--kk-gray-900))"
           }
         },
         // System colors using semantic tokens

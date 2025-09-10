@@ -155,10 +155,31 @@
   .shadow-elevated {
     box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
   }
+  
+  .shadow-glass {
+    box-shadow: 
+      0 4px 16px rgba(15, 23, 42, 0.08),
+      0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  }
+  
+  .shadow-luxury {
+    box-shadow: 
+      0 20px 40px rgba(15, 23, 42, 0.1),
+      0 4px 16px rgba(15, 23, 42, 0.06),
+      0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  }
 
   /* Animation utilities */
   .animate-fade-in {
     animation: fadeIn 0.4s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   @keyframes fadeIn {
@@ -170,5 +191,40 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Glass morphism utility */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Hover transition utility */
+  .smooth-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }

@@ -42,10 +42,10 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 const VisitorsChart = () => {
   return (
-    <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-slate-200">
-      <div className="mb-6">
-        <h3 className="text-kk-h2 text-[hsl(var(--kk-eggplant))] mb-1">Organische bezoekers</h3>
-        <p className="text-kk-caption text-[hsl(var(--kk-gray-500))]">Ontwikkeling afgelopen maand vs. concurrenten</p>
+    <Card className="glass-card p-8 shadow-luxury animate-fade-in rounded-2xl border border-white/20 smooth-hover hover:shadow-elevated hover:scale-[1.01]">
+      <div className="mb-8">
+        <h3 className="text-kk-h2 text-kk-eggplant mb-2">Organische bezoekers</h3>
+        <p className="text-kk-caption text-kk-gray-500">Ontwikkeling afgelopen maand vs. concurrenten</p>
       </div>
       
       <div className="h-64 mb-4">

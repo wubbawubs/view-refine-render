@@ -41,7 +41,7 @@ const Dashboard = () => {
         <HeroMetric />
 
         {/* KPI Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           <KPICard
             icon={<Eye />}
             label="SEO-score"
@@ -69,20 +69,20 @@ const Dashboard = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
           {/* Left Column - Chart */}
           <div className="lg:col-span-2">
             <VisitorsChart />
           </div>
 
           {/* Right Column - Updates Feed */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <UpdatesFeed />
           </div>
         </div>
 
         {/* Bottom Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <ActionsAlerts />
           <TopKeywords />
         </div>
