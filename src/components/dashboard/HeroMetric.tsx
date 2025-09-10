@@ -17,20 +17,18 @@ const HeroMetric = () => {
           </div>
           
           {/* Benchmark Pills */}
-          <div className="bg-muted/30 rounded-xl border border-border/50 p-6">
-            <div className="grid grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-kk-label font-semibold text-foreground mb-1">Totale aanpassingen gemaakt</div>
-                <div className="text-kk-caption text-muted-foreground">127</div>
-              </div>
-              <div className="text-center border-l border-r border-border/50 px-4">
-                <div className="text-kk-label font-semibold text-foreground mb-1">Totale groei</div>
-                <div className="text-kk-caption text-muted-foreground">+64%</div>
-              </div>
-              <div className="text-center">
-                <div className="text-kk-label font-semibold text-foreground mb-1">Geschatte groei aankomende maand</div>
-                <div className="text-kk-caption text-muted-foreground">+78%</div>
-              </div>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-muted/40 rounded-xl border border-border/60 p-4 text-center">
+              <div className="text-kk-label font-semibold text-foreground mb-2">Totale aanpassingen gemaakt</div>
+              <div className="text-kk-kpi text-foreground">127</div>
+            </div>
+            <div className="bg-muted/40 rounded-xl border border-border/60 p-4 text-center">
+              <div className="text-kk-label font-semibold text-foreground mb-2">Totale groei</div>
+              <div className="text-kk-kpi text-[hsl(var(--kk-success))]">+64%</div>
+            </div>
+            <div className="bg-muted/40 rounded-xl border border-border/60 p-4 text-center">
+              <div className="text-kk-label font-semibold text-foreground mb-2">Geschatte groei aankomende maand</div>
+              <div className="text-kk-kpi text-[hsl(var(--kk-success))]">+78%</div>
             </div>
           </div>
         </div>
