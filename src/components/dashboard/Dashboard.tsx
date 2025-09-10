@@ -69,19 +69,21 @@ const Dashboard = () => {
       
       {/* Sidebar */}
       <div className={`
-        fixed lg:relative lg:block z-50 h-full transition-transform duration-300 ease-in-out
+        fixed lg:relative lg:block z-50 min-h-screen transition-transform duration-300 ease-in-out
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
-        <Sidebar />
-        {/* Mobile Close Button */}
-        <Button
-          variant="ghost"
-          size="sm"
-          className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent"
-          onClick={() => setSidebarOpen(false)}
-        >
-          <X className="w-4 h-4" />
-        </Button>
+        <div className="relative h-full">
+          <Sidebar />
+          {/* Mobile Close Button */}
+          <Button
+            variant="ghost"
+            size="sm"
+            className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent z-10"
+            onClick={() => setSidebarOpen(false)}
+          >
+            <X className="w-4 h-4" />
+          </Button>
+        </div>
       </div>
       
       <main className="flex-1 px-3 sm:px-4 lg:px-8 py-4 sm:py-6 overflow-x-hidden overflow-y-auto relative z-10 w-full min-w-0">
