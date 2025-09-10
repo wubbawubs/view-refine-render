@@ -25,8 +25,6 @@ const Login = () => {
       forgotPassword: 'Wachtwoord vergeten?',
       noAccount: 'Nog geen account?',
       signUp: 'Registreren',
-      orContinueWith: 'Of ga verder met',
-      googleLogin: 'Inloggen met Google',
       language: 'Taal'
     },
     en: {
@@ -40,8 +38,6 @@ const Login = () => {
       forgotPassword: 'Forgot password?',
       noAccount: 'Don\'t have an account?',
       signUp: 'Sign up',
-      orContinueWith: 'Or continue with',
-      googleLogin: 'Sign in with Google',
       language: 'Language'
     }
   };
@@ -163,33 +159,6 @@ const Login = () => {
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </form>
-
-          {/* Divider */}
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t border-border" />
-            </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-card px-2 text-muted-foreground">
-                {t.orContinueWith}
-              </span>
-            </div>
-          </div>
-
-          {/* Google Login Button */}
-          <Button 
-            type="button" 
-            variant="outline" 
-            className="w-full h-11 border-border hover:bg-accent"
-          >
-            <svg className="w-4 h-4 mr-2" viewBox="0 0 20 20">
-              <path fill="#4285F4" d="m19.6 10.23c0-.82-.1-1.42-.25-2.05H10v3.72h5.5c-.15.96-.74 2.31-2.04 3.22v2.45h3.16c1.89-1.73 2.98-4.3 2.98-7.34Z"/>
-              <path fill="#34A853" d="M10 20c2.7 0 4.96-.89 6.62-2.41l-3.16-2.45c-.88.59-2.03.94-3.46.94-2.65 0-4.92-1.8-5.74-4.21H1.1v2.52C2.78 17.13 6.13 20 10 20Z"/>
-              <path fill="#FBBC04" d="M4.26 11.88c-.22-.65-.35-1.35-.35-2.05s.13-1.4.35-2.05V5.26H1.1C.4 6.68 0 8.25 0 9.83s.4 3.15 1.1 4.57l3.16-2.52Z"/>
-              <path fill="#EA4335" d="M10 3.88c1.54 0 2.59.53 3.18 1.2l2.33-2.33C14.96.99 12.7 0 10 0 6.13 0 2.78 2.87 1.1 6.61l3.16 2.52C5.08 5.68 7.35 3.88 10 3.88Z"/>
-            </svg>
-            {t.googleLogin}
-          </Button>
 
           {/* Sign Up Link */}
           <div className="text-center text-sm">
