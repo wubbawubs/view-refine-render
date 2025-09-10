@@ -12,6 +12,8 @@ import Hulp from "./pages/Hulp";
 import Account from "./pages/Account";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
+import CheckoutBasis from "./pages/CheckoutBasis";
+import CheckoutPro from "./pages/CheckoutPro";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +34,8 @@ const App = () => (
             <Route path="/account" element={<Account />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/checkout/basis" element={<CheckoutBasis />} />
+            <Route path="/checkout/pro" element={<CheckoutPro />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
