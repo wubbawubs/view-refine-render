@@ -15,20 +15,19 @@ const HeroMetric = () => {
           <div className="flex items-center justify-between p-5 bg-slate-50/50 rounded-xl border border-slate-200">
             <div className="flex items-center gap-6">
               <div className="text-center">
-                <div className="text-kk-label font-semibold text-[hsl(var(--kk-eggplant))]">Jouw groei</div>
+                <div className="text-kk-label font-semibold text-[hsl(var(--kk-eggplant))]">Totale aanpassingen gemaakt</div>
+                <div className="text-kk-caption text-[hsl(var(--kk-gray-500))]">127</div>
+              </div>
+              <div className="w-px h-8 bg-slate-300"></div>
+              <div className="text-center">
+                <div className="text-kk-label font-semibold text-[hsl(var(--kk-eggplant))]">Totale groei</div>
                 <div className="text-kk-caption text-[hsl(var(--kk-gray-500))]">+64%</div>
               </div>
               <div className="w-px h-8 bg-slate-300"></div>
               <div className="text-center">
-                <div className="text-kk-label font-semibold text-[hsl(var(--kk-gray-700))]">Concurrentgemiddelde</div>
-                <div className="text-kk-caption text-[hsl(var(--kk-gray-500))]">+26%</div>
+                <div className="text-kk-label font-semibold text-[hsl(var(--kk-eggplant))]">Geschatte groei aankomende maand</div>
+                <div className="text-kk-caption text-[hsl(var(--kk-gray-500))]">+78%</div>
               </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-kk-gradient rounded-full"></div>
-              <span className="text-kk-caption font-medium text-[hsl(var(--kk-gray-700))]">
-                24% beter dan gemiddeld
-              </span>
             </div>
           </div>
         </div>
