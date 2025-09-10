@@ -86,43 +86,42 @@ const Dashboard = () => {
       
       <main className="flex-1 px-3 sm:px-4 lg:px-8 py-4 sm:py-6 overflow-auto relative z-10 max-w-full">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 lg:mb-8 pb-4 border-b border-border">
-          <div className="flex items-center gap-3 min-w-0 flex-1">
+        <div className="flex items-center justify-between mb-4 sm:mb-6 lg:mb-8 pb-3 sm:pb-4 border-b border-border">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="sm"
-              className="lg:hidden shrink-0 p-2"
+              className="lg:hidden shrink-0 p-1.5"
               onClick={() => setSidebarOpen(true)}
             >
-              <Menu className="w-5 h-5" />
+              <Menu className="w-4 h-4" />
             </Button>
             
-            {/* Mobile Branding - Only show when sidebar is closed */}
+            {/* Mobile Branding */}
             <div className="flex items-center gap-2 lg:hidden shrink-0">
-              <div className="w-7 h-7 bg-kk-gradient rounded-lg flex items-center justify-center shadow-sm">
+              <div className="w-6 h-6 bg-kk-gradient rounded-md flex items-center justify-center shadow-sm">
                 <span className="text-white font-bold text-xs">K</span>
               </div>
-              <span className="text-base font-bold text-foreground">KlikKlaar</span>
+              <span className="text-sm font-bold text-foreground">KlikKlaar</span>
             </div>
             
-            {/* Title Section */}
-            <div className="min-w-0 flex-1 lg:flex-initial">
-              <h1 className="text-lg sm:text-xl lg:text-kk-h1 text-foreground mb-1 lg:mb-1 truncate">{t.title}</h1>
-              <div className="flex items-center gap-2 text-xs sm:text-sm lg:text-kk-label text-muted-foreground">
-                <Clock className="w-3 h-3 lg:w-4 lg:h-4 shrink-0" />
-                <span className="hidden sm:inline truncate">{t.lastUpdated}</span>
-                <span className="sm:hidden">Sep 9, 2025</span>
+            {/* Title Section - Desktop */}
+            <div className="hidden lg:block min-w-0 flex-1">
+              <h1 className="text-xl lg:text-kk-h1 text-foreground mb-1 truncate">{t.title}</h1>
+              <div className="flex items-center gap-2 text-sm lg:text-kk-label text-muted-foreground">
+                <Clock className="w-4 h-4 shrink-0" />
+                <span className="truncate">{t.lastUpdated}</span>
               </div>
             </div>
           </div>
           
           {/* Controls */}
-          <div className="flex gap-2 lg:gap-3 items-center justify-center sm:justify-end flex-wrap">
+          <div className="flex gap-2 items-center">
             {/* Language Selector */}
             <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
-              <SelectTrigger className="w-[80px] sm:w-[100px] lg:w-[140px] text-xs lg:text-sm shrink-0">
-                <Globe className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
+              <SelectTrigger className="w-[70px] sm:w-[80px] lg:w-[120px] text-xs h-8 lg:h-9">
+                <Globe className="w-3 h-3 mr-1" />
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -132,24 +131,19 @@ const Dashboard = () => {
             </Select>
             
             {/* Theme Toggle */}
-            <ThemeToggle />
+            <div className="[&>button]:h-8 [&>button]:w-8 lg:[&>button]:h-9 lg:[&>button]:w-9">
+              <ThemeToggle />
+            </div>
             
             {/* Time Period Buttons - Hidden on mobile */}
-            <div className="hidden md:flex gap-2 lg:gap-3">
-              <button className="px-3 lg:px-4 py-2 text-xs lg:text-kk-label font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-accent transition-colors whitespace-nowrap">
+            <div className="hidden md:flex gap-2">
+              <button className="px-2 lg:px-3 py-1.5 text-xs font-medium text-muted-foreground bg-card border border-border rounded-md hover:bg-accent transition-colors">
                 {t.thisWeek}
               </button>
-              <button className="px-3 lg:px-4 py-2 text-xs lg:text-kk-label font-medium text-[hsl(var(--kk-violet))] bg-card border border-[hsl(var(--kk-violet))] rounded-lg whitespace-nowrap">
+              <button className="px-2 lg:px-3 py-1.5 text-xs font-medium text-[hsl(var(--kk-violet))] bg-card border border-[hsl(var(--kk-violet))] rounded-md">
                 {t.thisMonth}
               </button>
             </div>
-            
-            {/* Download Button */}
-            <button className="px-3 lg:px-4 py-2 text-xs lg:text-kk-label font-medium text-white bg-kk-gradient rounded-lg hover:opacity-90 transition-opacity shadow-card hidden sm:flex items-center gap-2 shrink-0 whitespace-nowrap">
-              <Download className="w-3 h-3 lg:w-4 lg:h-4" />
-              <span className="hidden lg:inline">{t.downloadReport}</span>
-              <span className="lg:hidden">PDF</span>
-            </button>
           </div>
         </div>
 
@@ -159,7 +153,7 @@ const Dashboard = () => {
         </div>
 
         {/* KPI Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 mt-4 sm:mt-6 w-full max-w-none">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-6 mb-4 sm:mb-6 mt-4 w-full max-w-none">
           <KPICard
             icon={<Eye />}
             label={t.seoScore}

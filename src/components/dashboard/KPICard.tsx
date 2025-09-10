@@ -47,12 +47,12 @@ const KPICard = ({
       {/* Floating glow effect - desktop only */}
       <div className="hidden lg:block absolute -inset-1 bg-gradient-to-r from-[hsl(var(--kk-violet))]/10 via-transparent to-[hsl(var(--kk-violet))]/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
       
-      <div className="relative p-4 sm:p-5 lg:p-8 h-full flex flex-col">
+      <div className="relative p-3 sm:p-4 lg:p-8 h-full flex flex-col">
         {/* Responsive header */}
-        <div className="flex items-center gap-3 lg:gap-4 mb-4 sm:mb-5 lg:mb-8 min-h-0">
+        <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 mb-3 sm:mb-4 lg:mb-8 min-h-0">
           <div className="relative shrink-0">
-            <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-gradient-to-br from-muted via-background to-muted/80 rounded-lg lg:rounded-2xl flex items-center justify-center border border-border shadow-sm lg:shadow-lg lg:group-hover:shadow-xl transition-all duration-300 lg:duration-500 lg:group-hover:scale-110">
-              <div className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-muted-foreground group-hover:text-[hsl(var(--kk-violet))] transition-all duration-300 lg:duration-500 lg:group-hover:scale-110">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 lg:w-12 lg:h-12 bg-gradient-to-br from-muted via-background to-muted/80 rounded-md sm:rounded-lg lg:rounded-2xl flex items-center justify-center border border-border shadow-sm lg:shadow-lg lg:group-hover:shadow-xl transition-all duration-300 lg:duration-500 lg:group-hover:scale-110">
+              <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-6 lg:h-6 text-muted-foreground group-hover:text-[hsl(var(--kk-violet))] transition-all duration-300 lg:duration-500 lg:group-hover:scale-110">
                 {icon}
               </div>
             </div>
@@ -67,24 +67,24 @@ const KPICard = ({
         </div>
         
         {/* Value section with responsive spacing */}
-        <div className="space-y-3 sm:space-y-3 lg:space-y-4 flex-1 flex flex-col justify-center">
-          <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground leading-none tracking-tight group-hover:text-[hsl(var(--kk-violet))] transition-colors duration-300 lg:duration-500">
+        <div className="space-y-2 sm:space-y-3 lg:space-y-4 flex-1 flex flex-col justify-center">
+          <div className="text-lg sm:text-2xl lg:text-4xl font-bold text-foreground leading-none tracking-tight group-hover:text-[hsl(var(--kk-violet))] transition-colors duration-300 lg:duration-500">
             {value}
           </div>
           
           {/* Responsive delta indicator */}
           <div className={cn(
-            "inline-flex items-center gap-1 sm:gap-1 lg:gap-2 px-2 sm:px-3 lg:px-4 py-1 sm:py-1 lg:py-2 rounded-full text-xs sm:text-xs lg:text-sm font-semibold transition-all duration-300 lg:group-hover:scale-105 self-start",
+            "inline-flex items-center gap-1 lg:gap-2 px-1.5 sm:px-2 lg:px-4 py-0.5 sm:py-1 lg:py-2 rounded-full text-xs lg:text-sm font-semibold transition-all duration-300 lg:group-hover:scale-105 self-start",
             (deltaType === "up" || deltaType === "neutral") && "bg-gradient-to-r from-emerald-50 to-emerald-100/80 text-emerald-700 border border-emerald-200/60 shadow-sm",
             deltaType === "down" && "bg-gradient-to-r from-red-50 to-red-100/80 text-red-700 border border-red-200/60 shadow-sm"
           )}>
-            {deltaType === "up" && <ArrowUp className="w-3 h-3 sm:w-3 sm:h-3 lg:w-4 lg:h-4 shrink-0" />}
-            {deltaType === "down" && <ArrowDown className="w-3 h-3 sm:w-3 sm:h-3 lg:w-4 lg:h-4 shrink-0" />}
-            <span className="truncate text-xs sm:text-xs lg:text-sm">{delta}</span>
+            {deltaType === "up" && <ArrowUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 shrink-0" />}
+            {deltaType === "down" && <ArrowDown className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 shrink-0" />}
+            <span className="truncate text-xs lg:text-sm">{delta}</span>
           </div>
           
           {/* Help text - responsive */}
-          <p className="text-xs sm:text-xs lg:text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300 line-clamp-2 mt-auto">
+          <p className="text-xs lg:text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300 line-clamp-2 mt-auto">
             {helpText}
           </p>
         </div>
