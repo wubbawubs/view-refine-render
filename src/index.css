@@ -2,57 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* KlikKlaar Enterprise SEO Dashboard - Professional & Clean */
+/* KlikKlaar Enterprise SEO Dashboard - Professional Brand System */
 
 @layer base {
   :root {
     /* Professional Background System */
     --background: 0 0% 100%;
-    --foreground: 240 10% 15%;
-    --background-subtle: 220 14% 98%;
+    --foreground: 221 39% 11%;  /* kk-eggplant for main text */
+    --background-subtle: 214 32% 97%;
     
-    /* KlikKlaar Professional Palette - One Primary Accent */
-    --kk-primary: 217 91% 60%;        /* Primary blue accent */
-    --kk-secondary: 25 95% 53%;       /* Brand yellow as nuance */
-    --kk-gray-50: 220 14% 98%;
-    --kk-gray-100: 220 13% 95%;
-    --kk-gray-200: 220 13% 91%;
-    --kk-gray-300: 220 9% 86%;
-    --kk-gray-400: 220 9% 68%;
-    --kk-gray-500: 220 9% 46%;
-    --kk-gray-600: 220 9% 32%;
-    --kk-gray-700: 220 10% 23%;
-    --kk-gray-800: 220 10% 15%;
-    --kk-gray-900: 220 10% 8%;
+    /* KlikKlaar Brand Colors (from logo) */
+    --kk-orange: 14 100% 62%;     /* #FF6A3D */
+    --kk-fuchsia: 339 100% 65%;   /* #FF4D8D */  
+    --kk-violet: 251 98% 65%;     /* #6B4EFF */
+    --kk-eggplant: 221 39% 11%;   /* #221B2E */
+    
+    /* Professional Neutrals */
+    --kk-gray-100: 214 32% 97%;   /* #F1F5F9 */
+    --kk-gray-300: 214 14% 84%;   /* #CBD5E1 */
+    --kk-gray-500: 215 16% 47%;   /* #64748B */
+    --kk-gray-700: 215 25% 27%;   /* #334155 */
+    --kk-gray-900: 222 84% 5%;
     
     /* Enterprise Status Colors */
     --kk-success: 142 71% 45%;
     --kk-warning: 38 92% 50%;
     --kk-error: 0 72% 51%;
     
-    /* Professional Hero Section */
-    --hero-bg: var(--kk-gray-50);
-    --hero-accent: var(--kk-primary);
-    
-    /* UI System - Updated for KlikKlaar */
+    /* UI System - Professional & Clean */
     --card: 0 0% 100%;
-    --card-foreground: var(--kk-gray-800);
-    --card-border: var(--kk-gray-200);
+    --card-foreground: var(--kk-eggplant);
+    --card-border: var(--kk-gray-300);
     
     --popover: 0 0% 100%;
-    --popover-foreground: var(--kk-gray-800);
+    --popover-foreground: var(--kk-eggplant);
     
-    --primary: var(--kk-primary);
+    --primary: var(--kk-violet);
     --primary-foreground: 0 0% 100%;
     
     --secondary: var(--kk-gray-100);
-    --secondary-foreground: var(--kk-gray-800);
+    --secondary-foreground: var(--kk-eggplant);
     
     --muted: var(--kk-gray-100);
     --muted-foreground: var(--kk-gray-500);
     
-    --accent: var(--kk-gray-50);
-    --accent-foreground: var(--kk-primary);
+    --accent: var(--kk-gray-100);
+    --accent-foreground: var(--kk-violet);
     
     --destructive: var(--kk-error);
     --destructive-foreground: 0 0% 100%;
@@ -63,21 +58,20 @@
     --warning: var(--kk-warning);
     --warning-foreground: 0 0% 100%;
     
-    --info: var(--kk-primary);
+    --info: var(--kk-violet);
     --info-foreground: 0 0% 100%;
     
-    --border: var(--kk-gray-200);
-    --input: var(--kk-gray-200);
-    --ring: var(--kk-primary);
+    --border: var(--kk-gray-300);
+    --input: var(--kk-gray-300);
+    --ring: var(--kk-violet);
 
-    /* Professional Typography Scale */
-    --text-hero: 3rem;           /* 48px */
-    --text-h1: 2rem;             /* 32px */
-    --text-h2: 1.5rem;           /* 24px */
-    --text-h3: 1.25rem;          /* 20px */
-    --text-body: 1rem;           /* 16px */
-    --text-small: 0.875rem;      /* 14px */
-    --text-xs: 0.75rem;          /* 12px */
+    /* KlikKlaar Typography Scale */
+    --text-h1: 1.75rem;          /* 28px - H1 headings */
+    --text-h2: 1.375rem;         /* 22px - H2 headings */ 
+    --text-kpi: 2rem;            /* 32px - KPI values */
+    --text-label: 0.875rem;      /* 14px - labels */
+    --text-caption: 0.75rem;     /* 12px - captions */
+    --text-body: 1rem;           /* 16px - body text */
 
     /* Professional Spacing Scale */
     --space-xs: 0.25rem;         /* 4px */
@@ -85,14 +79,12 @@
     --space-md: 1rem;            /* 16px */
     --space-lg: 1.5rem;          /* 24px */
     --space-xl: 2rem;            /* 32px */
-    --space-2xl: 3rem;           /* 48px */
 
     /* Enterprise Shadow System */
-    --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.08);
-    --shadow-elevated: 0 4px 12px -2px rgb(0 0 0 / 0.08);
-    --shadow-hero: 0 2px 8px -2px hsl(var(--kk-primary) / 0.08);
+    --shadow-card: 0 8px 24px rgba(15,23,42,0.06);
+    --shadow-elevated: 0 12px 32px rgba(15,23,42,0.08);
 
-    --radius: 8px;
+    --radius: 10px;
 
     /* Sidebar Variables */
     --sidebar-background: 0 0% 100%;
@@ -144,11 +136,23 @@
     --sidebar-ring: 280 87% 65%;
   }
 
-  /* Professional Utility Classes */
-  .hero-bg {
-    background-color: hsl(var(--hero-bg));
+  /* KlikKlaar Brand Gradients */
+  .bg-kk-gradient {
+    background: linear-gradient(135deg, #FF6A3D 0%, #FF4D8D 40%, #6B4EFF 100%);
   }
   
+  .bg-kk-gradient-soft {
+    background: linear-gradient(135deg, rgba(255,106,61,0.4) 0%, rgba(255,77,141,0.4) 40%, rgba(107,78,255,0.4) 100%);
+  }
+  
+  .text-kk-gradient {
+    background: linear-gradient(135deg, #FF6A3D, #6B4EFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  /* Shadow Utilities */
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
@@ -157,92 +161,60 @@
     box-shadow: var(--shadow-elevated);
   }
   
-  .shadow-hero {
-    box-shadow: var(--shadow-hero);
+  /* Brand Color Utilities */
+  .text-kk-eggplant {
+    color: hsl(var(--kk-eggplant));
   }
   
-  .text-kk-primary {
-    color: hsl(var(--kk-primary));
-  }
-  
-  .text-kk-secondary {
-    color: hsl(var(--kk-secondary));
-  }
-  
-  .text-kk-success {
-    color: hsl(var(--kk-success));
-  }
-  
-  .text-kk-warning {
-    color: hsl(var(--kk-warning));
+  .text-kk-violet {
+    color: hsl(var(--kk-violet));
   }
   
   .text-kk-gray-500 {
     color: hsl(var(--kk-gray-500));
   }
   
-  .text-kk-gray-600 {
-    color: hsl(var(--kk-gray-600));
-  }
-  
-  .bg-kk-primary {
-    background-color: hsl(var(--kk-primary));
-  }
-  
-  .bg-kk-success {
-    background-color: hsl(var(--kk-success));
-  }
-  
-  .bg-kk-gray-50 {
-    background-color: hsl(var(--kk-gray-50));
+  .text-kk-gray-700 {
+    color: hsl(var(--kk-gray-700));
   }
   
   .bg-kk-gray-100 {
     background-color: hsl(var(--kk-gray-100));
   }
   
-  .border-kk-gray-200 {
-    border-color: hsl(var(--kk-gray-200));
+  .border-kk-gray-300 {
+    border-color: hsl(var(--kk-gray-300));
   }
   
-  /* Professional Typography Classes */
-  .text-hero {
-    font-size: var(--text-hero);
+  /* KlikKlaar Typography Classes */
+  .text-kk-h1 {
+    font-size: var(--text-h1);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  
+  .text-kk-h2 {
+    font-size: var(--text-h2);
+    line-height: 1.3;
+    font-weight: 700;
+  }
+  
+  .text-kk-kpi {
+    font-size: var(--text-kpi);
     line-height: 1.1;
     font-weight: 700;
   }
   
-  .text-h1 {
-    font-size: var(--text-h1);
-    line-height: 1.2;
-    font-weight: 600;
-  }
-  
-  .text-h2 {
-    font-size: var(--text-h2);
-    line-height: 1.3;
-    font-weight: 600;
-  }
-  
-  .text-h3 {
-    font-size: var(--text-h3);
+  .text-kk-label {
+    font-size: var(--text-label);
     line-height: 1.4;
     font-weight: 500;
   }
   
-  .text-body {
-    font-size: var(--text-body);
-    line-height: 1.5;
-  }
-  
-  .text-small {
-    font-size: var(--text-small);
-    line-height: 1.4;
-  }
-  
-  .text-xs-custom {
-    font-size: var(--text-xs);
+  .text-kk-caption {
+    font-size: var(--text-caption);
     line-height: 1.3;
+    font-weight: 500;
   }
   
   .animate-fade-in {

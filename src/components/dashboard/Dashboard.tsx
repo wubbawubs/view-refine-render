@@ -12,25 +12,25 @@ const Dashboard = () => {
     <div className="flex min-h-screen bg-background">
       <Sidebar />
       
-      <main className="flex-1 px-8 py-6 overflow-auto bg-kk-gray-50">
+      <main className="flex-1 px-8 py-6 overflow-auto bg-kk-gray-100">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-8 pb-4 border-b border-kk-gray-300">
           <div>
-            <h1 className="text-h1 text-foreground mb-1">SEO Dashboard</h1>
-            <div className="flex items-center gap-2 text-small text-kk-gray-500">
+            <h1 className="text-kk-h1 text-kk-eggplant mb-1">SEO Dashboard</h1>
+            <div className="flex items-center gap-2 text-kk-label text-kk-gray-500">
               <Clock className="w-4 h-4" />
               <span>Laatst bijgewerkt: 9 september 2025, 14:32</span>
             </div>
           </div>
           
           <div className="flex gap-3">
-            <button className="px-4 py-2 text-small font-medium text-kk-gray-600 bg-white border border-kk-gray-200 rounded-lg hover:bg-kk-gray-50 transition-colors">
+            <button className="px-4 py-2 text-kk-label font-medium text-kk-gray-700 bg-white border border-kk-gray-300 rounded-lg hover:bg-kk-gray-100 transition-colors">
               Deze week
             </button>
-            <button className="px-4 py-2 text-small font-medium text-kk-primary bg-kk-primary/10 border border-kk-primary/20 rounded-lg">
+            <button className="px-4 py-2 text-kk-label font-medium text-kk-violet bg-white border border-kk-violet rounded-lg">
               Deze maand
             </button>
-            <button className="px-4 py-2 text-small font-medium text-white bg-kk-primary rounded-lg hover:bg-kk-primary/90 transition-colors shadow-card flex items-center gap-2">
+            <button className="px-4 py-2 text-kk-label font-medium text-white bg-kk-gradient rounded-lg hover:opacity-90 transition-opacity shadow-card flex items-center gap-2">
               <Download className="w-4 h-4" />
               Download rapport (PDF)
             </button>

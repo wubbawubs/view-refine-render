@@ -14,6 +14,21 @@ export default {
     },
     extend: {
       colors: {
+        // KlikKlaar Brand Colors
+        kk: {
+          orange: "#FF6A3D",
+          fuchsia: "#FF4D8D", 
+          violet: "#6B4EFF",
+          eggplant: "#221B2E",
+          gray: {
+            100: "#F1F5F9",
+            300: "#CBD5E1", 
+            500: "#64748B",
+            700: "#334155",
+            900: "#0F172A"
+          }
+        },
+        // System colors using semantic tokens
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -62,6 +77,13 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "16px",
+      },
+      boxShadow: {
+        card: "0 8px 24px rgba(15,23,42,0.06)",
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {

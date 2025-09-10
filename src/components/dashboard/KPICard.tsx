@@ -31,39 +31,36 @@ const KPICard = ({
   return (
     <Card 
       className={cn(
-        "p-6 bg-white border-kk-gray-200 shadow-card transition-all duration-200 hover:shadow-elevated animate-fade-in",
-        onClick && "cursor-pointer"
+        "p-5 shadow-card transition-all duration-200 hover:shadow-elevated animate-fade-in cursor-pointer rounded-xl",
+        onClick && "hover:shadow-elevated"
       )}
       onClick={onClick}
     >
-      <div className="flex items-start justify-between mb-6">
-        <div className="w-12 h-12 bg-kk-gray-100 rounded-lg flex items-center justify-center">
-          <div className="w-6 h-6 text-kk-gray-600">
+      <div className="inline-flex items-center gap-2 mb-4">
+        <span className="p-2 rounded-lg bg-kk-gray-100">
+          <div className="w-4 h-4 text-kk-gray-700">
             {icon}
           </div>
-        </div>
+        </span>
+        <span className="text-kk-label font-medium text-kk-gray-500">{label}</span>
       </div>
       
-      <div className="space-y-3">
-        <div className="text-h1 text-foreground">
+      <div className="space-y-2">
+        <div className="text-kk-kpi text-kk-eggplant">
           {value}
         </div>
         
-        <div className="text-small font-medium text-kk-gray-600">
-          {label}
-        </div>
-        
-        <div className="text-xs-custom text-kk-gray-500">
-          {helpText}
-        </div>
-        
         <div className={cn(
-          "inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs-custom font-medium",
+          "inline-flex items-center gap-1 px-2 py-1 rounded-full text-kk-caption font-medium",
           deltaColors[deltaType]
         )}>
           {deltaType === "up" && <ArrowUp className="w-3 h-3" />}
           {deltaType === "down" && <ArrowDown className="w-3 h-3" />}
           {delta}
+        </div>
+        
+        <div className="text-kk-caption text-kk-gray-500 mt-1">
+          {helpText}
         </div>
       </div>
     </Card>
