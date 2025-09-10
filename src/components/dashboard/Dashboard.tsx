@@ -84,9 +84,9 @@ const Dashboard = () => {
         </Button>
       </div>
       
-      <main className="flex-1 px-3 sm:px-4 lg:px-8 py-4 sm:py-6 overflow-auto relative z-10 max-w-full">
+      <main className="flex-1 px-3 sm:px-4 lg:px-8 py-4 sm:py-6 overflow-x-hidden overflow-y-auto relative z-10 w-full min-w-0">
         {/* Header */}
-        <div className="flex items-center justify-between mb-4 sm:mb-6 lg:mb-8 pb-3 sm:pb-4 border-b border-border">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 sm:mb-6 lg:mb-8 pb-3 sm:pb-4 border-b border-border">
           <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
             {/* Mobile Menu Button */}
             <Button
@@ -117,12 +117,12 @@ const Dashboard = () => {
           </div>
           
           {/* Controls */}
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center shrink-0">
             {/* Language Selector */}
             <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
-              <SelectTrigger className="w-[70px] sm:w-[80px] lg:w-[120px] text-xs h-8 lg:h-9">
-                <Globe className="w-3 h-3 mr-1" />
-                <SelectValue />
+              <SelectTrigger className="w-[60px] sm:w-[70px] lg:w-[120px] text-xs h-8 lg:h-9">
+                <Globe className="w-3 h-3 sm:mr-1" />
+                <SelectValue className="hidden sm:inline" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="nl">NL</SelectItem>
@@ -131,16 +131,16 @@ const Dashboard = () => {
             </Select>
             
             {/* Theme Toggle */}
-            <div className="[&>button]:h-8 [&>button]:w-8 lg:[&>button]:h-9 lg:[&>button]:w-9">
+            <div className="[&>button]:h-8 [&>button]:w-8 lg:[&>button]:h-9 lg:[&>button]:w-9 shrink-0">
               <ThemeToggle />
             </div>
             
             {/* Time Period Buttons - Hidden on mobile */}
             <div className="hidden md:flex gap-2">
-              <button className="px-2 lg:px-3 py-1.5 text-xs font-medium text-muted-foreground bg-card border border-border rounded-md hover:bg-accent transition-colors">
+              <button className="px-2 lg:px-3 py-1.5 text-xs font-medium text-muted-foreground bg-card border border-border rounded-md hover:bg-accent transition-colors whitespace-nowrap">
                 {t.thisWeek}
               </button>
-              <button className="px-2 lg:px-3 py-1.5 text-xs font-medium text-[hsl(var(--kk-violet))] bg-card border border-[hsl(var(--kk-violet))] rounded-md">
+              <button className="px-2 lg:px-3 py-1.5 text-xs font-medium text-[hsl(var(--kk-violet))] bg-card border border-[hsl(var(--kk-violet))] rounded-md whitespace-nowrap">
                 {t.thisMonth}
               </button>
             </div>

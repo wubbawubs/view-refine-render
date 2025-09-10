@@ -42,13 +42,13 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 const VisitorsChart = () => {
   return (
-    <Card className="glass-card p-8 shadow-luxury animate-fade-in rounded-2xl border border-border smooth-hover hover:shadow-elevated hover:scale-[1.01]">
-      <div className="mb-8">
-        <h3 className="text-kk-h2 text-foreground mb-2">Organische bezoekers</h3>
-        <p className="text-kk-caption text-muted-foreground">Ontwikkeling afgelopen maand vs. concurrenten</p>
+    <Card className="glass-card p-4 sm:p-6 lg:p-8 shadow-luxury animate-fade-in rounded-2xl border border-border smooth-hover hover:shadow-elevated hover:scale-[1.01]">
+      <div className="mb-4 sm:mb-6 lg:mb-8">
+        <h3 className="text-lg sm:text-xl lg:text-kk-h2 text-foreground mb-2">Organische bezoekers</h3>
+        <p className="text-xs sm:text-sm lg:text-kk-caption text-muted-foreground">Ontwikkeling afgelopen maand vs. concurrenten</p>
       </div>
       
-      <div className="h-64 mb-4">
+      <div className="h-48 sm:h-56 lg:h-64 mb-4 w-full overflow-hidden">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
             <defs>
@@ -92,18 +92,18 @@ const VisitorsChart = () => {
         </ResponsiveContainer>
       </div>
       
-      <div className="flex items-center justify-between pt-4 border-t border-border">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-border">
         <div className="text-center">
-          <div className="text-kk-label font-semibold text-foreground">Totaal bezoekers</div>
-          <div className="text-kk-caption text-muted-foreground">21.450 deze maand</div>
+          <div className="text-sm lg:text-kk-label font-semibold text-foreground">Totaal bezoekers</div>
+          <div className="text-xs lg:text-kk-caption text-muted-foreground">21.450 deze maand</div>
         </div>
         <div className="text-center">
-          <div className="text-kk-label font-semibold text-[hsl(var(--kk-success))]">Groei</div>
-          <div className="text-kk-caption text-muted-foreground">+24,7% vs vorige maand</div>
+          <div className="text-sm lg:text-kk-label font-semibold text-[hsl(var(--kk-success))]">Groei</div>
+          <div className="text-xs lg:text-kk-caption text-muted-foreground">+24,7% vs vorige maand</div>
         </div>
         <div className="text-center">
-          <div className="text-kk-label font-semibold text-[hsl(var(--kk-violet))]">Best day</div>
-          <div className="text-kk-caption text-muted-foreground">23 Sep: 2.347</div>
+          <div className="text-sm lg:text-kk-label font-semibold text-[hsl(var(--kk-violet))]">Best day</div>
+          <div className="text-xs lg:text-kk-caption text-muted-foreground">23 Sep: 2.347</div>
         </div>
       </div>
     </Card>

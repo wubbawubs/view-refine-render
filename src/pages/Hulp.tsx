@@ -77,7 +77,7 @@ const Hulp = () => {
         </Button>
       </div>
       
-      <main className="flex-1 px-4 lg:px-8 py-6 overflow-auto relative z-10">
+      <main className="flex-1 px-3 sm:px-4 lg:px-8 py-4 sm:py-6 overflow-x-hidden overflow-y-auto relative z-10 w-full min-w-0">
         {/* Header */}
         <div className="flex items-center justify-between mb-6 lg:mb-8 pb-4 border-b border-border">
           <div className="flex items-center gap-4">
