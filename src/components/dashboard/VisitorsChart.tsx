@@ -23,12 +23,12 @@ const CustomTooltip = ({ active, payload, label }: any) => {
     const diff = ((visitors - benchmark) / benchmark * 100).toFixed(1);
     
     return (
-      <div className="bg-white p-3 border border-slate-200 rounded-lg shadow-card">
-        <p className="text-kk-caption text-[hsl(var(--kk-gray-500))] mb-1">{label}</p>
-        <p className="text-kk-label font-semibold text-[hsl(var(--kk-eggplant))]">
+      <div className="bg-card p-3 border border-border rounded-lg shadow-card">
+        <p className="text-kk-caption text-muted-foreground mb-1">{label}</p>
+        <p className="text-kk-label font-semibold text-foreground">
           Jouw bezoekers: {visitors.toLocaleString()}
         </p>
-        <p className="text-kk-caption text-[hsl(var(--kk-gray-500))]">
+        <p className="text-kk-caption text-muted-foreground">
           Benchmark: {benchmark.toLocaleString()}
         </p>
         <p className="text-kk-caption text-[hsl(var(--kk-success))]">
@@ -42,10 +42,10 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 const VisitorsChart = () => {
   return (
-    <Card className="glass-card p-8 shadow-luxury animate-fade-in rounded-2xl border border-white/20 smooth-hover hover:shadow-elevated hover:scale-[1.01]">
+    <Card className="glass-card p-8 shadow-luxury animate-fade-in rounded-2xl border border-border smooth-hover hover:shadow-elevated hover:scale-[1.01]">
       <div className="mb-8">
-        <h3 className="text-kk-h2 text-kk-eggplant mb-2">Organische bezoekers</h3>
-        <p className="text-kk-caption text-kk-gray-500">Ontwikkeling afgelopen maand vs. concurrenten</p>
+        <h3 className="text-kk-h2 text-foreground mb-2">Organische bezoekers</h3>
+        <p className="text-kk-caption text-muted-foreground">Ontwikkeling afgelopen maand vs. concurrenten</p>
       </div>
       
       <div className="h-64 mb-4">
@@ -57,17 +57,17 @@ const VisitorsChart = () => {
                 <stop offset="95%" stopColor="hsl(var(--kk-violet))" stopOpacity={0}/>
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
             <XAxis 
               dataKey="date" 
               axisLine={false}
               tickLine={false}
-              tick={{ fontSize: 12, fill: 'hsl(var(--kk-gray-500))' }}
+              tick={{ fontSize: 12, fill: 'hsl(var(--muted-foreground))' }}
             />
             <YAxis 
               axisLine={false}
               tickLine={false}
-              tick={{ fontSize: 12, fill: 'hsl(var(--kk-gray-500))' }}
+              tick={{ fontSize: 12, fill: 'hsl(var(--muted-foreground))' }}
               tickFormatter={(value) => `${(value / 1000).toFixed(1)}k`}
             />
             <Tooltip content={<CustomTooltip />} />
@@ -92,18 +92,18 @@ const VisitorsChart = () => {
         </ResponsiveContainer>
       </div>
       
-      <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+      <div className="flex items-center justify-between pt-4 border-t border-border">
         <div className="text-center">
-          <div className="text-kk-label font-semibold text-[hsl(var(--kk-eggplant))]">Totaal bezoekers</div>
-          <div className="text-kk-caption text-[hsl(var(--kk-gray-500))]">21.450 deze maand</div>
+          <div className="text-kk-label font-semibold text-foreground">Totaal bezoekers</div>
+          <div className="text-kk-caption text-muted-foreground">21.450 deze maand</div>
         </div>
         <div className="text-center">
           <div className="text-kk-label font-semibold text-[hsl(var(--kk-success))]">Groei</div>
-          <div className="text-kk-caption text-[hsl(var(--kk-gray-500))]">+24,7% vs vorige maand</div>
+          <div className="text-kk-caption text-muted-foreground">+24,7% vs vorige maand</div>
         </div>
         <div className="text-center">
           <div className="text-kk-label font-semibold text-[hsl(var(--kk-violet))]">Best day</div>
-          <div className="text-kk-caption text-[hsl(var(--kk-gray-500))]">23 Sep: 2.347</div>
+          <div className="text-kk-caption text-muted-foreground">23 Sep: 2.347</div>
         </div>
       </div>
     </Card>

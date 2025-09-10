@@ -34,14 +34,14 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="w-64 bg-kk-gray-100 border-r border-kk-gray-300 h-screen flex flex-col">
+    <div className="w-64 bg-sidebar border-r border-sidebar-border h-screen flex flex-col">
       {/* Logo */}
-      <div className="p-5 border-b border-kk-gray-300">
+      <div className="p-5 border-b border-sidebar-border">
         <div className="flex items-center gap-3 h-14">
           <div className="w-8 h-8 bg-kk-gradient rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">K</span>
           </div>
-          <span className="text-lg font-bold text-kk-eggplant">KlikKlaar</span>
+          <span className="text-lg font-bold text-sidebar-foreground">KlikKlaar</span>
         </div>
       </div>
 
@@ -58,10 +58,10 @@ const Sidebar = () => {
               className={cn(
                 "w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left transition-colors relative",
                 isActive
-                  ? "bg-white text-kk-eggplant shadow-sm border-l-2 border-kk-violet"
+                  ? "bg-sidebar-accent text-sidebar-accent-foreground shadow-sm border-l-2 border-[hsl(var(--kk-violet))]"
                   : item.danger
-                  ? "text-red-600 hover:bg-red-50"
-                  : "text-kk-gray-700 hover:bg-white/50"
+                  ? "text-destructive hover:bg-destructive/10"
+                  : "text-sidebar-foreground hover:bg-sidebar-accent/50"
               )}
             >
               <Icon className="w-5 h-5" />

@@ -34,27 +34,27 @@ const UpdatesFeed = () => {
   ];
 
   return (
-    <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-slate-200">
+    <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
       <div className="mb-6">
-        <h3 className="text-kk-h2 text-[hsl(var(--kk-eggplant))]">Recente updates</h3>
-        <p className="text-kk-caption text-[hsl(var(--kk-gray-500))] mt-1">Data-gedreven inzichten van deze week</p>
+        <h3 className="text-kk-h2 text-foreground">Recente updates</h3>
+        <p className="text-kk-caption text-muted-foreground mt-1">Data-gedreven inzichten van deze week</p>
       </div>
       
       <div className="space-y-4">
         {updates.map((update, index) => (
-          <div key={index} className="border-l-2 border-slate-200 pl-4 pb-4 last:pb-0">
+          <div key={index} className="border-l-2 border-border pl-4 pb-4 last:pb-0">
             <div className="flex items-start justify-between mb-2">
-              <span className="px-2 py-1 rounded-full text-kk-caption font-medium bg-slate-100 text-[hsl(var(--kk-gray-700))]">
+              <span className="px-2 py-1 rounded-full text-kk-caption font-medium bg-muted text-muted-foreground">
                 {update.badge}
               </span>
-              <span className="text-kk-caption text-[hsl(var(--kk-gray-500))]">{update.timestamp}</span>
+              <span className="text-kk-caption text-muted-foreground">{update.timestamp}</span>
             </div>
             
-            <h4 className="text-kk-label font-semibold text-[hsl(var(--kk-eggplant))] mb-1">
+            <h4 className="text-kk-label font-semibold text-foreground mb-1">
               {update.title}
             </h4>
             
-            <p className="text-kk-caption text-[hsl(var(--kk-gray-500))] mb-2">
+            <p className="text-kk-caption text-muted-foreground mb-2">
               {update.impact}
             </p>
             

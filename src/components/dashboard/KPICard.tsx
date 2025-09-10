@@ -25,11 +25,11 @@ const KPICard = ({
   return (
     <Card 
       className={cn(
-        "group relative overflow-hidden bg-white/95 backdrop-blur-xl border border-slate-200/60",
-        "shadow-[0_8px_32px_rgba(15,23,42,0.08)] hover:shadow-[0_16px_48px_rgba(15,23,42,0.12)]",
+        "group relative overflow-hidden bg-card/95 backdrop-blur-xl border border-border",
+        "shadow-[0_8px_32px_rgba(15,23,42,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_16px_48px_rgba(15,23,42,0.12)] dark:hover:shadow-[0_16px_48px_rgba(0,0,0,0.4)]",
         "transition-all duration-500 ease-out cursor-pointer rounded-3xl",
         "hover:-translate-y-2 hover:scale-[1.02]",
-        "before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/50 before:via-transparent before:to-white/20 before:pointer-events-none before:opacity-0 before:transition-opacity before:duration-500",
+        "before:absolute before:inset-0 before:bg-gradient-to-br before:from-background/50 before:via-transparent before:to-background/20 before:pointer-events-none before:opacity-0 before:transition-opacity before:duration-500",
         "hover:before:opacity-100",
         "after:absolute after:inset-0 after:rounded-3xl after:bg-gradient-to-r after:from-transparent after:via-[hsl(var(--kk-violet))]/5 after:to-transparent after:opacity-0 after:transition-opacity after:duration-500",
         "hover:after:opacity-100"
@@ -46,8 +46,8 @@ const KPICard = ({
         {/* Header with enhanced icon and label */}
         <div className="flex items-center gap-4 mb-8">
           <div className="relative">
-            <div className="w-12 h-12 bg-gradient-to-br from-slate-50 via-white to-slate-100/80 rounded-2xl flex items-center justify-center border border-slate-200/70 shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:scale-110">
-              <div className="w-6 h-6 text-[hsl(var(--kk-gray-700))] group-hover:text-[hsl(var(--kk-violet))] transition-all duration-500 group-hover:scale-110">
+            <div className="w-12 h-12 bg-gradient-to-br from-muted via-background to-muted/80 rounded-2xl flex items-center justify-center border border-border shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:scale-110">
+              <div className="w-6 h-6 text-muted-foreground group-hover:text-[hsl(var(--kk-violet))] transition-all duration-500 group-hover:scale-110">
                 {icon}
               </div>
             </div>
@@ -55,7 +55,7 @@ const KPICard = ({
             <div className="absolute inset-0 rounded-2xl bg-[hsl(var(--kk-violet))] opacity-0 group-hover:opacity-20 transition-all duration-500 blur-xl scale-150"></div>
           </div>
           <div className="flex-1">
-            <h3 className="text-sm font-semibold text-[hsl(var(--kk-gray-600))] uppercase tracking-wider group-hover:text-[hsl(var(--kk-gray-700))] transition-colors duration-300">
+            <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider group-hover:text-foreground transition-colors duration-300">
               {label}
             </h3>
           </div>
@@ -63,7 +63,7 @@ const KPICard = ({
         
         {/* Value section with improved spacing */}
         <div className="space-y-4">
-          <div className="text-4xl font-bold text-[hsl(var(--kk-eggplant))] leading-none tracking-tight group-hover:text-[hsl(var(--kk-violet))] transition-colors duration-500">
+          <div className="text-4xl font-bold text-foreground leading-none tracking-tight group-hover:text-[hsl(var(--kk-violet))] transition-colors duration-500">
             {value}
           </div>
           
@@ -80,7 +80,7 @@ const KPICard = ({
           </div>
           
           {/* Enhanced help text */}
-          <p className="text-sm text-[hsl(var(--kk-gray-500))] leading-relaxed group-hover:text-[hsl(var(--kk-gray-600))] transition-colors duration-300">
+          <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
             {helpText}
           </p>
         </div>

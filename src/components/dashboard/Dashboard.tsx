@@ -12,12 +12,12 @@ const Dashboard = () => {
     <div className="flex min-h-screen bg-background">
       <Sidebar />
       
-      <main className="flex-1 px-8 py-6 overflow-auto bg-kk-gray-100">
+      <main className="flex-1 px-8 py-6 overflow-auto bg-background">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-200">
+        <div className="flex items-center justify-between mb-8 pb-4 border-b border-border">
           <div>
-            <h1 className="text-kk-h1 text-[hsl(var(--kk-eggplant))] mb-1">SEO Dashboard</h1>
-            <div className="flex items-center gap-2 text-kk-label text-[hsl(var(--kk-gray-500))]">
+            <h1 className="text-kk-h1 text-foreground mb-1">SEO Dashboard</h1>
+            <div className="flex items-center gap-2 text-kk-label text-muted-foreground">
               <Clock className="w-4 h-4" />
               <span>Laatst bijgewerkt: 9 september 2025, 14:32</span>
             </div>
@@ -25,7 +25,7 @@ const Dashboard = () => {
           
           <div className="flex gap-3 items-center">
             <ThemeToggle />
-            <button className="px-4 py-2 text-kk-label font-medium text-[hsl(var(--kk-gray-700))] bg-card border border-border rounded-lg hover:bg-accent transition-colors">
+            <button className="px-4 py-2 text-kk-label font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-accent transition-colors">
               Deze week
             </button>
             <button className="px-4 py-2 text-kk-label font-medium text-[hsl(var(--kk-violet))] bg-card border border-[hsl(var(--kk-violet))] rounded-lg">
