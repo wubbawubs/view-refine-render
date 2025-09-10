@@ -1,4 +1,4 @@
-import { Eye, Users, Target, Download, Clock } from "lucide-react";
+import { Eye, Users, Target, Download, Clock, Settings, TrendingUp } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import Sidebar from "./Sidebar";
 import HeroMetric from "./HeroMetric";
@@ -44,30 +44,38 @@ const Dashboard = () => {
         </div>
 
         {/* KPI Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 mt-6">
           <KPICard
             icon={<Eye />}
-            label="SEO-score"
+            label="SEO Score"
             value="3,8"
             delta="+0,3 deze week"
             deltaType="up"
             helpText="Hoe Google jou ziet"
           />
           <KPICard
-            icon={<Users />}
-            label="Organische bezoekers (7d)"
-            value="2.347"
-            delta="+12,7% deze week"
+            icon={<Settings />}
+            label="Totale aanpassingen gemaakt"
+            value="127"
+            delta="+8 deze week"
             deltaType="up"
-            helpText="Laatste 7 dagen"
+            helpText="Automatische optimalisaties"
           />
           <KPICard
-            icon={<Target />}
-            label="Verwachte klantengroei"
-            value="38,0%"
+            icon={<TrendingUp />}
+            label="Geschatte groei aankomende maand"
+            value="+78%"
             delta="Prognose op basis van trending"
-            deltaType="neutral"
-            helpText="Gebaseerd op CTR en rankings"
+            deltaType="up"
+            helpText="Verwachte verbetering"
+          />
+          <KPICard
+            icon={<Users />}
+            label="Totaal aantal bezoekers"
+            value="8.542"
+            delta="+15,2% deze maand"
+            deltaType="up"
+            helpText="Alle verkeersbronnen"
           />
         </div>
 

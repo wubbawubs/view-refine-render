@@ -15,26 +15,6 @@ const HeroMetric = () => {
             <div className="text-kk-kpi text-foreground mb-2">+64%</div>
             <p className="text-kk-label text-muted-foreground">Verbetering t.o.v. vorige maand.</p>
           </div>
-          
-          {/* Benchmark Pills */}
-          <div className="bg-muted/20 rounded-lg border border-border/40 p-5">
-            <div className="flex items-center justify-between">
-              <div className="text-center flex-1">
-                <div className="text-sm font-medium text-muted-foreground mb-1">Totale aanpassingen gemaakt</div>
-                <div className="text-lg font-bold text-foreground">127</div>
-              </div>
-              <div className="w-px h-10 bg-border mx-4"></div>
-              <div className="text-center flex-1">
-                <div className="text-sm font-medium text-muted-foreground mb-1">Totale groei</div>
-                <div className="text-lg font-bold text-foreground">+64%</div>
-              </div>
-              <div className="w-px h-10 bg-border mx-4"></div>
-              <div className="text-center flex-1">
-                <div className="text-sm font-medium text-muted-foreground mb-1">Geschatte groei aankomende maand</div>
-                <div className="text-lg font-bold text-foreground">+78%</div>
-              </div>
-            </div>
-          </div>
         </div>
         
         <div className="text-right ml-8">
