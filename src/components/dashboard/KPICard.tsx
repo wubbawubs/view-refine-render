@@ -35,9 +35,9 @@ const KPICard = ({
       {/* Simplified background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--kk-violet))]/3 via-transparent to-[hsl(var(--kk-violet))]/3 rounded-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
       
-      <div className="relative p-4 h-full flex flex-col">
-        {/* Header with icon and label - top section */}
-        <div className="flex items-center gap-3 mb-4">
+      <div className="relative p-5 h-full flex flex-col">
+        {/* Header with icon and label */}
+        <div className="flex items-center gap-3 mb-3">
           <div className="shrink-0">
             <div className="w-10 h-10 bg-gradient-to-br from-[hsl(var(--kk-violet))]/10 to-[hsl(var(--kk-fuchsia))]/10 rounded-lg flex items-center justify-center border border-border/40">
               <div className="w-5 h-5 text-[hsl(var(--kk-violet))] stroke-[1.5] flex items-center justify-center">
@@ -46,21 +46,23 @@ const KPICard = ({
             </div>
           </div>
           <div className="flex-1 min-w-0">
-            <h3 className="text-sm font-semibold text-foreground/90 leading-tight">
+            <h3 className="text-sm font-semibold text-foreground leading-tight">
               {label}
             </h3>
           </div>
         </div>
         
-        {/* Value section - main content area */}
-        <div className="flex-1 flex flex-col justify-start mb-4">
-          <div className="text-2xl font-bold text-foreground leading-none mb-3">
+        {/* Main value */}
+        <div className="mb-3">
+          <div className="text-3xl font-bold text-foreground leading-none mb-2">
             {value}
           </div>
-          
-          {/* Delta indicator - properly sized */}
+        </div>
+        
+        {/* Delta indicator */}
+        <div className="mb-3">
           <div className={cn(
-            "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium w-fit",
+            "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium w-fit",
             (deltaType === "up" || deltaType === "neutral") && "bg-emerald-50 text-emerald-700 border border-emerald-200/60",
             deltaType === "down" && "bg-red-50 text-red-700 border border-red-200/60"
           )}>
@@ -70,9 +72,9 @@ const KPICard = ({
           </div>
         </div>
         
-        {/* Help text - bottom section */}
+        {/* Help text at bottom */}
         <div className="mt-auto">
-          <p className="text-xs text-muted-foreground/80 leading-relaxed line-clamp-2">
+          <p className="text-xs text-muted-foreground leading-relaxed">
             {helpText}
           </p>
         </div>
