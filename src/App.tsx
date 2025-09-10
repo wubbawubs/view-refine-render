@@ -10,6 +10,8 @@ import Audit from "./pages/Audit";
 import Informatie from "./pages/Informatie";
 import Hulp from "./pages/Hulp";
 import Account from "./pages/Account";
+import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,8 @@ const App = () => (
             <Route path="/informatie" element={<Informatie />} />
             <Route path="/hulp" element={<Hulp />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
