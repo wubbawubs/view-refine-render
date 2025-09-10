@@ -3,9 +3,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
+import { createClient } from "@supabase/supabase-js";
+import { toast } from "@/hooks/use-toast";
+
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
 
 const CheckoutBasis = () => {
   const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'quarterly' | 'biannual'>('monthly');
+  const [isLoading, setIsLoading] = useState(false);
 
   const plans = {
     monthly: {
@@ -23,7 +31,7 @@ const CheckoutBasis = () => {
       discount: "10% KORTING"
     },
     biannual: {
-      price: 82.50,
+      price: 124.17,
       total: 495,
       period: "per maand", 
       description: "6 maanden - 1 maand gratis",
@@ -32,7 +40,52 @@ const CheckoutBasis = () => {
   };
 
   const handleMollieCheckout = async () => {
-    console.log(`Processing payment for ${selectedPlan} plan: €${plans[selectedPlan].total}`);
+    setIsLoading(true);
+    
+    try {
+      const currentOrigin = window.location.origin;
+      const plan = plans[selectedPlan];
+      
+      const { data, error } = await supabase.functions.invoke('create-mollie-payment', {
+        body: {
+          amount: plan.total.toFixed(2),
+          description: `KlikKlaar Basis - ${plan.description}`,
+          redirectUrl: `${currentOrigin}/payment-success`,
+          webhookUrl: `${currentOrigin}/api/mollie-webhook`,
+          metadata: {
+            plan: 'basis',
+            billing: selectedPlan,
+            price: plan.price
+          }
+        }
+      });
+
+      if (error) {
+        console.error('Error creating payment:', error);
+        toast({
+          title: "Fout bij aanmaken betaling",
+          description: "Er is een fout opgetreden. Probeer het opnieuw.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (data.success && data.paymentUrl) {
+        // Redirect to Mollie payment page
+        window.location.href = data.paymentUrl;
+      } else {
+        throw new Error('Failed to create payment');
+      }
+    } catch (error) {
+      console.error('Payment error:', error);
+      toast({
+        title: "Betaling mislukt",
+        description: "Er is een fout opgetreden bij het verwerken van je betaling.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -113,10 +166,11 @@ const CheckoutBasis = () => {
           <div className="space-y-4">
             <Button 
               onClick={handleMollieCheckout}
+              disabled={isLoading}
               className="w-full bg-kk-gradient hover:opacity-90 text-white font-medium py-6 text-lg"
               size="lg"
             >
-              Start voor €{plans[selectedPlan].price.toFixed(2)}/maand
+              {isLoading ? "Bezig met verwerken..." : `Start voor €${plans[selectedPlan].price.toFixed(2)}/maand`}
             </Button>
             
             <p className="text-xs text-center text-muted-foreground">
