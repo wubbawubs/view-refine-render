@@ -34,7 +34,7 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="w-64 bg-sidebar border-r border-sidebar-border h-screen flex flex-col">
+    <div className="w-64 bg-sidebar-background border-r border-sidebar-border h-screen flex flex-col">
       {/* Logo */}
       <div className="p-5 border-b border-sidebar-border">
         <div className="flex items-center gap-3 h-14">
