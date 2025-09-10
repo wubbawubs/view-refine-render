@@ -1,14 +1,16 @@
-import { FileSearch, AlertTriangle, CheckCircle, Clock, Target, Globe } from "lucide-react";
+import { FileSearch, AlertTriangle, CheckCircle, Clock, Target, Globe, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import Sidebar from "@/components/dashboard/Sidebar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const Audit = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const texts = {
     nl: {
@@ -67,31 +69,66 @@ const Audit = () => {
 
   return (
     <div className="flex min-h-screen premium-dashboard-bg">
-      <Sidebar />
+      {/* Mobile Sidebar Overlay */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
       
-      <main className="flex-1 px-8 py-6 overflow-auto relative z-10">
+      {/* Sidebar */}
+      <div className={`
+        fixed lg:relative lg:block z-50 h-full transition-transform duration-300 ease-in-out
+        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+      `}>
+        <Sidebar />
+        {/* Mobile Close Button */}
+        <Button
+          variant="ghost"
+          size="sm"
+          className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent"
+          onClick={() => setSidebarOpen(false)}
+        >
+          <X className="w-4 h-4" />
+        </Button>
+      </div>
+      
+      <main className="flex-1 px-4 lg:px-8 py-6 overflow-auto relative z-10">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8 pb-4 border-b border-border">
-          <div>
-            <h1 className="text-kk-h1 text-foreground mb-1">{t.title}</h1>
-            <p className="text-kk-label text-muted-foreground">
-              {t.subtitle}
-            </p>
+        <div className="flex items-center justify-between mb-6 lg:mb-8 pb-4 border-b border-border">
+          <div className="flex items-center gap-4">
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="lg:hidden"
+              onClick={() => setSidebarOpen(true)}
+            >
+              <Menu className="w-5 h-5" />
+            </Button>
+            <div>
+              <h1 className="text-xl lg:text-kk-h1 text-foreground mb-1">{t.title}</h1>
+              <p className="text-sm lg:text-kk-label text-muted-foreground">
+                {t.subtitle}
+              </p>
+            </div>
           </div>
           
-          <div className="flex gap-3 items-center">
-            <div className="flex items-center gap-2 text-kk-label text-muted-foreground">
-              <Clock className="w-4 h-4" />
-              <span>{t.lastAudit}</span>
+          <div className="flex gap-2 lg:gap-3 items-center">
+            <div className="flex items-center gap-2 text-xs lg:text-kk-label text-muted-foreground">
+              <Clock className="w-3 h-3 lg:w-4 lg:h-4" />
+              <span className="hidden sm:inline">{t.lastAudit}</span>
+              <span className="sm:hidden">Sep 9, 2025</span>
             </div>
             <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
-              <SelectTrigger className="w-[140px]">
-                <Globe className="w-4 h-4 mr-2" />
+              <SelectTrigger className="w-[100px] lg:w-[140px] text-xs lg:text-sm">
+                <Globe className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="nl">Nederlands</SelectItem>
-                <SelectItem value="en">English</SelectItem>
+                <SelectItem value="nl">NL</SelectItem>
+                <SelectItem value="en">EN</SelectItem>
               </SelectContent>
             </Select>
             <ThemeToggle />

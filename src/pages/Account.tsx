@@ -1,4 +1,4 @@
-import { User, CreditCard, Settings, Shield, Bell, Globe, Save } from "lucide-react";
+import { User, CreditCard, Settings, Shield, Bell, Globe, Save, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import Sidebar from "@/components/dashboard/Sidebar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,6 +12,7 @@ import { useState } from "react";
 
 const Account = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const texts = {
     nl: {
@@ -56,33 +57,68 @@ const Account = () => {
 
   return (
     <div className="flex min-h-screen premium-dashboard-bg">
-      <Sidebar />
+      {/* Mobile Sidebar Overlay */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
       
-      <main className="flex-1 px-8 py-6 overflow-auto relative z-10">
+      {/* Sidebar */}
+      <div className={`
+        fixed lg:relative lg:block z-50 h-full transition-transform duration-300 ease-in-out
+        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+      `}>
+        <Sidebar />
+        {/* Mobile Close Button */}
+        <Button
+          variant="ghost"
+          size="sm"
+          className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent"
+          onClick={() => setSidebarOpen(false)}
+        >
+          <X className="w-4 h-4" />
+        </Button>
+      </div>
+      
+      <main className="flex-1 px-4 lg:px-8 py-6 overflow-auto relative z-10">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8 pb-4 border-b border-border">
-          <div>
-            <h1 className="text-kk-h1 text-foreground mb-1">{t.title}</h1>
-            <p className="text-kk-label text-muted-foreground">
-              {t.subtitle}
-            </p>
+        <div className="flex items-center justify-between mb-6 lg:mb-8 pb-4 border-b border-border">
+          <div className="flex items-center gap-4">
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="lg:hidden"
+              onClick={() => setSidebarOpen(true)}
+            >
+              <Menu className="w-5 h-5" />
+            </Button>
+            <div>
+              <h1 className="text-xl lg:text-kk-h1 text-foreground mb-1">{t.title}</h1>
+              <p className="text-sm lg:text-kk-label text-muted-foreground">
+                {t.subtitle}
+              </p>
+            </div>
           </div>
           
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-2 lg:gap-3 items-center">
             <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
-              <SelectTrigger className="w-[140px]">
-                <Globe className="w-4 h-4 mr-2" />
+              <SelectTrigger className="w-[100px] lg:w-[140px] text-xs lg:text-sm">
+                <Globe className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="nl">Nederlands</SelectItem>
-                <SelectItem value="en">English</SelectItem>
+                <SelectItem value="nl">NL</SelectItem>
+                <SelectItem value="en">EN</SelectItem>
               </SelectContent>
             </Select>
             <ThemeToggle />
-            <Button className="bg-kk-gradient text-white hover:opacity-90">
-              <Save className="w-4 h-4 mr-2" />
-              {t.save}
+            <Button className="bg-kk-gradient text-white hover:opacity-90 text-xs lg:text-sm px-3 lg:px-4">
+              <Save className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
+              <span className="hidden sm:inline">{t.save}</span>
+              <span className="sm:hidden">Save</span>
             </Button>
           </div>
         </div>

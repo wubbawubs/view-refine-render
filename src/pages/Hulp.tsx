@@ -1,4 +1,4 @@
-import { HelpCircle, Phone, MessageCircle, Book, ExternalLink, Globe } from "lucide-react";
+import { HelpCircle, Phone, MessageCircle, Book, ExternalLink, Globe, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import Sidebar from "@/components/dashboard/Sidebar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,6 +9,7 @@ import { useState } from "react";
 
 const Hulp = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const texts = {
     nl: {
@@ -51,82 +52,117 @@ const Hulp = () => {
 
   return (
     <div className="flex min-h-screen premium-dashboard-bg">
-      <Sidebar />
+      {/* Mobile Sidebar Overlay */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
       
-      <main className="flex-1 px-8 py-6 overflow-auto relative z-10">
+      {/* Sidebar */}
+      <div className={`
+        fixed lg:relative lg:block z-50 h-full transition-transform duration-300 ease-in-out
+        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+      `}>
+        <Sidebar />
+        {/* Mobile Close Button */}
+        <Button
+          variant="ghost"
+          size="sm"
+          className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent"
+          onClick={() => setSidebarOpen(false)}
+        >
+          <X className="w-4 h-4" />
+        </Button>
+      </div>
+      
+      <main className="flex-1 px-4 lg:px-8 py-6 overflow-auto relative z-10">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8 pb-4 border-b border-border">
-          <div>
-            <h1 className="text-kk-h1 text-foreground mb-1">{t.title}</h1>
-            <p className="text-kk-label text-muted-foreground">
-              {t.subtitle}
-            </p>
+        <div className="flex items-center justify-between mb-6 lg:mb-8 pb-4 border-b border-border">
+          <div className="flex items-center gap-4">
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="lg:hidden"
+              onClick={() => setSidebarOpen(true)}
+            >
+              <Menu className="w-5 h-5" />
+            </Button>
+            <div>
+              <h1 className="text-xl lg:text-kk-h1 text-foreground mb-1">{t.title}</h1>
+              <p className="text-sm lg:text-kk-label text-muted-foreground">
+                {t.subtitle}
+              </p>
+            </div>
           </div>
           
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-2 lg:gap-3 items-center">
             <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
-              <SelectTrigger className="w-[140px]">
-                <Globe className="w-4 h-4 mr-2" />
+              <SelectTrigger className="w-[100px] lg:w-[140px] text-xs lg:text-sm">
+                <Globe className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="nl">Nederlands</SelectItem>
-                <SelectItem value="en">English</SelectItem>
+                <SelectItem value="nl">NL</SelectItem>
+                <SelectItem value="en">EN</SelectItem>
               </SelectContent>
             </Select>
             <ThemeToggle />
-            <Button className="bg-kk-gradient text-white hover:opacity-90">
-              <Phone className="w-4 h-4 mr-2" />
-              {t.planCall}
+            <Button className="bg-kk-gradient text-white hover:opacity-90 text-xs lg:text-sm px-3 lg:px-4">
+              <Phone className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
+              <span className="hidden sm:inline">{t.planCall}</span>
+              <span className="sm:hidden">Call</span>
             </Button>
           </div>
         </div>
 
         {/* Contact Options */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mb-6 lg:mb-8">
           <Card className="border border-border/50">
-            <CardHeader className="text-center">
-              <Phone className="w-8 h-8 mx-auto mb-2 text-[hsl(var(--kk-violet))]" />
-              <CardTitle>{t.personalCall}</CardTitle>
-              <CardDescription>
+            <CardHeader className="text-center pb-3 lg:pb-4">
+              <Phone className="w-6 h-6 lg:w-8 lg:h-8 mx-auto mb-2 text-[hsl(var(--kk-violet))]" />
+              <CardTitle className="text-base lg:text-lg">{t.personalCall}</CardTitle>
+              <CardDescription className="text-xs lg:text-sm">
                 {t.personalCallDesc}
               </CardDescription>
             </CardHeader>
-            <CardContent className="text-center">
-              <Button className="w-full" variant="outline">
-                <ExternalLink className="w-4 h-4 mr-2" />
+            <CardContent className="text-center pt-0">
+              <Button className="w-full text-xs lg:text-sm" variant="outline">
+                <ExternalLink className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
                 {t.scheduleAppointment}
               </Button>
             </CardContent>
           </Card>
 
           <Card className="border border-border/50">
-            <CardHeader className="text-center">
-              <MessageCircle className="w-8 h-8 mx-auto mb-2 text-[hsl(var(--kk-violet))]" />
-              <CardTitle>{t.liveChat}</CardTitle>
-              <CardDescription>
+            <CardHeader className="text-center pb-3 lg:pb-4">
+              <MessageCircle className="w-6 h-6 lg:w-8 lg:h-8 mx-auto mb-2 text-[hsl(var(--kk-violet))]" />
+              <CardTitle className="text-base lg:text-lg">{t.liveChat}</CardTitle>
+              <CardDescription className="text-xs lg:text-sm">
                 {t.liveChatDesc}
               </CardDescription>
             </CardHeader>
-            <CardContent className="text-center">
-              <Button className="w-full" variant="outline">  
-                <MessageCircle className="w-4 h-4 mr-2" />
+            <CardContent className="text-center pt-0">
+              <Button className="w-full text-xs lg:text-sm" variant="outline">  
+                <MessageCircle className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
                 {t.startChat}
               </Button>
             </CardContent>
           </Card>
 
           <Card className="border border-border/50">
-            <CardHeader className="text-center">
-              <Book className="w-8 h-8 mx-auto mb-2 text-[hsl(var(--kk-violet))]" />
-              <CardTitle>{t.knowledgeBase}</CardTitle>
-              <CardDescription>
+            <CardHeader className="text-center pb-3 lg:pb-4">
+              <Book className="w-6 h-6 lg:w-8 lg:h-8 mx-auto mb-2 text-[hsl(var(--kk-violet))]" />
+              <CardTitle className="text-base lg:text-lg">{t.knowledgeBase}</CardTitle>
+              <CardDescription className="text-xs lg:text-sm">
                 {t.knowledgeBaseDesc}
               </CardDescription>
             </CardHeader>
-            <CardContent className="text-center">
-              <Button className="w-full" variant="outline">
-                <ExternalLink className="w-4 h-4 mr-2" />
+            <CardContent className="text-center pt-0">
+              <Button className="w-full text-xs lg:text-sm" variant="outline">
+                <ExternalLink className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
                 {t.viewGuides}
               </Button>
             </CardContent>
