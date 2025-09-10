@@ -83,11 +83,6 @@ const Dashboard = () => {
             <UpdatesFeed />
           </div>
         </div>
-
-        {/* Bottom Row */}
-        <div className="max-w-2xl">
-          <ActionsAlerts />
-        </div>
       </main>
     </div>
   );
