@@ -111,7 +111,7 @@
   }
   
   .bg-kk-gradient-muted {
-    background: linear-gradient(135deg, hsl(var(--kk-orange) / 0.7) 0%, hsl(var(--kk-fuchsia) / 0.7) 40%, hsl(var(--kk-violet) / 0.7) 100%);
+    background: linear-gradient(135deg, hsl(var(--kk-orange) / 0.15) 0%, hsl(var(--kk-fuchsia) / 0.15) 40%, hsl(var(--kk-violet) / 0.15) 100%);
   }
   
   .text-kk-gradient {
