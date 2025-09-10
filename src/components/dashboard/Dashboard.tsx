@@ -49,7 +49,7 @@ const Dashboard = () => {
             icon={<Eye />}
             label="SEO-score"
             value="3,8"
-            delta="↑ +0,3 deze week"
+            delta="+0,3 deze week"
             deltaType="up"
             helpText="Hoe Google jou ziet"
           />
@@ -57,7 +57,7 @@ const Dashboard = () => {
             icon={<Users />}
             label="Organische bezoekers (7d)"
             value="2.347"
-            delta="↑ +12,7% deze week"
+            delta="+12,7% deze week"
             deltaType="up"
             helpText="Laatste 7 dagen"
           />

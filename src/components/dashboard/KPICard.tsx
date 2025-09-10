@@ -58,7 +58,7 @@ const KPICard = ({
             <div className="absolute inset-0 rounded-2xl bg-[hsl(var(--kk-violet))] opacity-0 group-hover:opacity-20 transition-all duration-500 blur-xl scale-150"></div>
           </div>
           <div className="flex-1">
-            <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider group-hover:text-foreground transition-colors duration-300">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider group-hover:text-[hsl(var(--kk-violet))] transition-colors duration-300">
               {label}
             </h3>
           </div>
@@ -73,9 +73,8 @@ const KPICard = ({
           {/* Enhanced delta indicator */}
           <div className={cn(
             "inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 group-hover:scale-105",
-            deltaType === "up" && "bg-gradient-to-r from-emerald-50 to-emerald-100/80 text-emerald-700 border border-emerald-200/60 shadow-sm",
-            deltaType === "down" && "bg-gradient-to-r from-red-50 to-red-100/80 text-red-700 border border-red-200/60 shadow-sm",
-            deltaType === "neutral" && "bg-gradient-to-r from-slate-50 to-slate-100/80 text-slate-700 border border-slate-200/60 shadow-sm"
+            (deltaType === "up" || deltaType === "neutral") && "bg-gradient-to-r from-emerald-50 to-emerald-100/80 text-emerald-700 border border-emerald-200/60 shadow-sm",
+            deltaType === "down" && "bg-gradient-to-r from-red-50 to-red-100/80 text-red-700 border border-red-200/60 shadow-sm"
           )}>
             {deltaType === "up" && <ArrowUp className="w-4 h-4" />}
             {deltaType === "down" && <ArrowDown className="w-4 h-4" />}

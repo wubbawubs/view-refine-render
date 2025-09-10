@@ -7,7 +7,7 @@ const HeroMetric = () => {
       <div className="flex items-center justify-between">
         <div className="flex-1">
           <h2 className="text-kk-h1 text-foreground mb-2">Jouw zichtbaarheid deze maand</h2>
-          <div className="h-0.5 w-80 rounded-full bg-kk-gradient mb-4"></div>
+          <div className="h-0.5 w-full max-w-md rounded-full bg-kk-gradient mb-4"></div>
           <div className="text-kk-kpi text-foreground mb-3">+64%</div>
           <p className="text-kk-label text-muted-foreground mb-6">Verbetering t.o.v. vorige maand.</p>
           
