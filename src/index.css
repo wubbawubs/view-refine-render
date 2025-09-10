@@ -269,8 +269,8 @@
       linear-gradient(145deg, hsl(var(--sidebar-background)) 0%, hsl(var(--sidebar-background) / 0.95) 100%),
       radial-gradient(circle at 30% 30%, hsl(var(--kk-violet) / 0.04) 0%, transparent 70%);
     position: relative;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
   }
   
   .premium-sidebar-bg::before {
