@@ -37,7 +37,10 @@ const KPICard = ({
       onClick={onClick}
     >
       {/* Premium top accent with animated gradient */}
-      <div className="absolute top-0 left-6 right-6 h-0.5 bg-kk-gradient opacity-40 group-hover:opacity-80 transition-opacity duration-500 rounded-full"></div>
+      <div className="absolute top-0 left-0 right-0 h-1 bg-kk-gradient opacity-60 group-hover:opacity-100 transition-opacity duration-500 rounded-t-3xl"></div>
+      
+      {/* Full-width gradient background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--kk-violet))]/3 via-transparent to-[hsl(var(--kk-fuchsia))]/3 rounded-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
       
       {/* Floating glow effect */}
       <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--kk-violet))]/10 via-transparent to-[hsl(var(--kk-violet))]/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
