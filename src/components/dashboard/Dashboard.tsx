@@ -38,10 +38,12 @@ const Dashboard = () => {
         </div>
 
         {/* Hero Metric */}
-        <HeroMetric />
+        <div className="mb-6">
+          <HeroMetric />
+        </div>
 
         {/* KPI Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 mt-6">
           <KPICard
             icon={<Eye />}
             label="SEO-score"
