@@ -96,42 +96,44 @@ const Audit = () => {
       
       <main className="flex-1 px-3 sm:px-4 lg:px-8 py-4 sm:py-6 overflow-x-hidden overflow-y-auto relative z-10 w-full min-w-0">
         {/* Header */}
-        <div className="flex items-center justify-between mb-6 lg:mb-8 pb-4 border-b border-border">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 sm:mb-6 lg:mb-8 pb-3 sm:pb-4 border-b border-border">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="sm"
-              className="lg:hidden"
+              className="lg:hidden shrink-0 p-1.5"
               onClick={() => setSidebarOpen(true)}
             >
-              <Menu className="w-5 h-5" />
+              <Menu className="w-4 h-4" />
             </Button>
-            <div>
-              <h1 className="text-xl lg:text-kk-h1 text-foreground mb-1">{t.title}</h1>
-              <p className="text-sm lg:text-kk-label text-muted-foreground">
+            <div className="min-w-0 flex-1">
+              <h1 className="text-lg sm:text-xl lg:text-kk-h1 text-foreground mb-1 truncate">{t.title}</h1>
+              <p className="text-xs sm:text-sm lg:text-kk-label text-muted-foreground truncate">
                 {t.subtitle}
               </p>
             </div>
           </div>
           
-          <div className="flex gap-2 lg:gap-3 items-center">
-            <div className="flex items-center gap-2 text-xs lg:text-kk-label text-muted-foreground">
+          <div className="flex gap-2 items-center shrink-0 w-full sm:w-auto">
+            <div className="flex items-center gap-2 text-xs lg:text-kk-label text-muted-foreground shrink-0">
               <Clock className="w-3 h-3 lg:w-4 lg:h-4" />
-              <span className="hidden sm:inline">{t.lastAudit}</span>
+              <span className="hidden sm:inline truncate">{t.lastAudit}</span>
               <span className="sm:hidden">Sep 9, 2025</span>
             </div>
             <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
-              <SelectTrigger className="w-[100px] lg:w-[140px] text-xs lg:text-sm">
-                <Globe className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
-                <SelectValue />
+              <SelectTrigger className="w-[60px] sm:w-[80px] lg:w-[120px] text-xs lg:text-sm h-8 lg:h-9">
+                <Globe className="w-3 h-3 sm:mr-1" />
+                <SelectValue className="hidden sm:inline" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="nl">NL</SelectItem>
                 <SelectItem value="en">EN</SelectItem>
               </SelectContent>
             </Select>
-            <ThemeToggle />
+            <div className="[&>button]:h-8 [&>button]:w-8 lg:[&>button]:h-9 lg:[&>button]:w-9 shrink-0">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
 
