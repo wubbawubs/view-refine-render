@@ -116,41 +116,53 @@ const Homepage = () => {
 
           {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <Search className="w-6 h-6 text-white" />
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm" 
+                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <img 
+                  src="/lovable-uploads/f7c040a8-e765-409c-8105-454adef7ee84.png" 
+                  alt="AI Brain Icon" 
+                  className="w-12 h-12"
+                />
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-gray-900">Je eigen AI</h3>
+              <h3 className="font-semibold text-lg mb-4 text-gray-900">Je eigen AI</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Analyseer je branche, identificeer zoekwoorden en analyseer je concurrenten om een schat aan ideeën voor inhoud te genereren met onze AI-tekst schrijftool.
               </p>
             </Card>
 
-            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <BarChart3 className="w-6 h-6 text-white" />
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <img 
+                  src="/lovable-uploads/f7ccba7c-2683-47b9-ade5-c5ac50a4277d.png" 
+                  alt="Search Key Icon" 
+                  className="w-12 h-12"
+                />
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-gray-900">Trefwoord Analyse</h3>
+              <h3 className="font-semibold text-lg mb-4 text-gray-900">Trefwoord Analyse</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Onze zoekwoordanalyse richt zich op het ontdekken van het potentieel van microzoekwoorden voor uw bedrijf. De analyse is gebaseerd op zoekvolume, intentie en moeilijkheidsgraad van de zoekwoorden.
               </p>
             </Card>
 
-            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <Target className="w-6 h-6 text-white" />
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <Target className="w-12 h-12 text-orange-500" />
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-gray-900">Ideeëngeneratie</h3>
+              <h3 className="font-semibold text-lg mb-4 text-gray-900">Ideeëngeneratie</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Met behulp van kunstmatige intelligentie genereren SEO AI inhoud ideeën, tekstontwerpen, trefwoordgeoptimaliseerde titels en metabeschrijvingen.
               </p>
             </Card>
 
-            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <Zap className="w-6 h-6 text-white" />
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <Zap className="w-12 h-12 text-purple-600" />
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-gray-900">Inhoud creëren</h3>
+              <h3 className="font-semibold text-lg mb-4 text-gray-900">Inhoud creëren</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Zeg vaarwel tegen een writer's block en laat ons eigen AI-model eenvoudig goed geschreven, nuttige en boeiende content genereren voor je publiek.
               </p>
@@ -159,41 +171,45 @@ const Homepage = () => {
 
           {/* Second row of features */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="w-6 h-6 text-white" />
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <Shield className="w-12 h-12 text-blue-600" />
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-gray-900">Automatisch posten</h3>
+              <h3 className="font-semibold text-lg mb-4 text-gray-900">Automatisch posten</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Onze AI-tekst schrijftool bevat een planningsfunctie waarmee je de publicatie van je inhoud op de gewenste frequentie kunt automatiseren.
               </p>
             </Card>
 
-            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-white" />
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <Users className="w-12 h-12 text-red-500" />
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-gray-900">Volg je concurrent</h3>
+              <h3 className="font-semibold text-lg mb-4 text-gray-900">Volg je concurrent</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 We monitoren je concurrenten en hun rankings. Met behulp van de gegevens creëren we betere inhoud met de potentie om beter te presteren dan de concurrentie.
               </p>
             </Card>
 
-            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="w-6 h-6 text-white" />
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <TrendingUp className="w-12 h-12 text-green-600" />
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-gray-900">Rank Tracker</h3>
+              <h3 className="font-semibold text-lg mb-4 text-gray-900">Rank Tracker</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Volg de rangschikking van je zoekwoorden en vind nog meer ideeën voor inhoud met microzoekwoorden die topische autoriteit in je niche opbouwen.
               </p>
             </Card>
 
-            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <Clock className="w-6 h-6 text-white" />
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <Clock className="w-12 h-12 text-indigo-600" />
               </div>
-              <h3 className="font-semibold text-lg mb-3 text-gray-900">SEO Analyse</h3>
+              <h3 className="font-semibold text-lg mb-4 text-gray-900">SEO Analyse</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Analyseer je website regelmatig op technische en structurele problemen en krijg aanbevelingen om je website te verbeteren.
               </p>
