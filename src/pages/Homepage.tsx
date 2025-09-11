@@ -1,17 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, CheckCircle, Search, BarChart3, Target, Zap, Shield, Users, TrendingUp, Clock } from "lucide-react";
+import { IconGradientDefs } from "@/components/ui/icon-gradient-defs";
+import { IconBadge } from "@/components/ui/icon-badge";
+import { Star, CheckCircle, Brain, Search, Lightbulb, FileText, CalendarCheck, Binoculars, TrendingUp, ScanSearch } from "lucide-react";
 import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
-import { PhosphorBrain } from "@/components/icons/PhosphorBrain";
-import { PhosphorSearch } from "@/components/icons/PhosphorSearch";
-import { PhosphorChart } from "@/components/icons/PhosphorChart";
-import { PhosphorDocument } from "@/components/icons/PhosphorDocument";
 
 
 const Homepage = () => {
   return (
     <div className="min-h-screen bg-white">
+      <IconGradientDefs />
       {/* Trustpilot Badge */}
       <div className="bg-gradient-to-r from-gray-600 via-gray-700 to-gray-800 py-2">
         <div className="container mx-auto px-4 text-center">
@@ -122,8 +121,8 @@ const Homepage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm" 
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <PhosphorBrain />
+              <div className="mb-6">
+                <IconBadge Icon={Brain} />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Je eigen AI</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -133,8 +132,8 @@ const Homepage = () => {
 
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <PhosphorSearch />
+              <div className="mb-6">
+                <IconBadge Icon={Search} />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Trefwoord Analyse</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -144,8 +143,8 @@ const Homepage = () => {
 
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <PhosphorBrain />
+              <div className="mb-6">
+                <IconBadge Icon={Lightbulb} />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Ideeëngeneratie</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -155,8 +154,8 @@ const Homepage = () => {
 
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <PhosphorDocument />
+              <div className="mb-6">
+                <IconBadge Icon={FileText} />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Inhoud creëren</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -169,8 +168,8 @@ const Homepage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <Shield className="w-12 h-12 text-blue-600" />
+              <div className="mb-6">
+                <IconBadge Icon={CalendarCheck} />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Automatisch posten</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -180,8 +179,8 @@ const Homepage = () => {
 
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <Users className="w-12 h-12 text-red-500" />
+              <div className="mb-6">
+                <IconBadge Icon={Binoculars} />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Volg je concurrent</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -191,8 +190,8 @@ const Homepage = () => {
 
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <TrendingUp className="w-12 h-12 text-green-600" />
+              <div className="mb-6">
+                <IconBadge Icon={TrendingUp} />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Rank Tracker</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -202,8 +201,8 @@ const Homepage = () => {
 
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <PhosphorChart />
+              <div className="mb-6">
+                <IconBadge Icon={ScanSearch} />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">SEO Analyse</h3>
               <p className="text-gray-600 text-sm leading-relaxed">

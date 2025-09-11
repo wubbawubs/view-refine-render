@@ -24,6 +24,8 @@ export default {
           success: "hsl(var(--kk-success))",
           warning: "hsl(var(--kk-warning))",
           danger: "hsl(var(--kk-danger))",
+          gradStart: "hsl(var(--kk-grad-start))",
+          gradEnd: "hsl(var(--kk-grad-end))",
           gray: {
             50: "hsl(var(--kk-gray-100) / 0.3)",
             100: "hsl(var(--kk-gray-100))",

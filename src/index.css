@@ -44,6 +44,10 @@
     --kk-violet: 251 100% 65%;
     --kk-eggplant: 250 25% 15%;
     
+    /* KlikKlaar Icon Gradient Colors */
+    --kk-grad-start: 221 100% 56%;  /* #1F3BFF */
+    --kk-grad-end: 254 55% 69%;     /* #6A5CFF */
+    
     /* Neutrals */
     --kk-gray-100: 214 32% 96%;
     --kk-gray-300: 214 17% 77%;
