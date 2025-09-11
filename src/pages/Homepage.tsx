@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, CheckCircle, Search, BarChart3, Target, Zap, Shield, Users, TrendingUp, Clock } from "lucide-react";
-import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
+
 
 const Homepage = () => {
   return (
@@ -92,8 +92,8 @@ const Homepage = () => {
           <div className="max-w-5xl mx-auto">
             <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-200 p-1">
               <img 
-                src={dashboardScreenshot} 
-                alt="KlikKlaar SEO Dashboard Screenshot"
+                src="/lovable-uploads/ee815528-acfa-4a83-9b46-76884753372b.png" 
+                alt="KlikKlaar SEO Dashboard showing visibility improvement, SEO scores, visitor analytics, and ranking tracking interface"
                 className="w-full rounded-xl"
               />
             </div>
