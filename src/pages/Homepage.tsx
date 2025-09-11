@@ -3,6 +3,10 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, CheckCircle, Search, BarChart3, Target, Zap, Shield, Users, TrendingUp, Clock } from "lucide-react";
 import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
+import { IconsaxBrain } from "@/components/icons/IconsaxBrain";
+import { IconsaxSearch } from "@/components/icons/IconsaxSearch";
+import { IconsaxChart } from "@/components/icons/IconsaxChart";
+import { IconsaxDocument } from "@/components/icons/IconsaxDocument";
 
 
 const Homepage = () => {
@@ -119,11 +123,7 @@ const Homepage = () => {
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm" 
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
               <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <img 
-                  src="/lovable-uploads/f7c040a8-e765-409c-8105-454adef7ee84.png" 
-                  alt="AI Brain Icon" 
-                  className="w-12 h-12"
-                />
+                <IconsaxBrain />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Je eigen AI</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -134,11 +134,7 @@ const Homepage = () => {
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
               <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <img 
-                  src="/lovable-uploads/f7ccba7c-2683-47b9-ade5-c5ac50a4277d.png" 
-                  alt="Search Key Icon" 
-                  className="w-12 h-12"
-                />
+                <IconsaxSearch />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Trefwoord Analyse</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -149,7 +145,7 @@ const Homepage = () => {
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
               <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <Target className="w-12 h-12 text-orange-500" />
+                <IconsaxBrain />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Ideeëngeneratie</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -160,7 +156,7 @@ const Homepage = () => {
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
               <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <Zap className="w-12 h-12 text-purple-600" />
+                <IconsaxDocument />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Inhoud creëren</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -207,7 +203,7 @@ const Homepage = () => {
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
               <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <Clock className="w-12 h-12 text-indigo-600" />
+                <IconsaxChart />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">SEO Analyse</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
