@@ -592,22 +592,10 @@ const Homepage = () => {
             <div>
               <h4 className="font-semibold mb-4">Menu</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>Direct starten</li>
-                <li>Over ons</li>
-                <li>Algemene voorwaarden</li>
-                <li>Neem contact op</li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Bedrijf</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>Blog</li>
-                <li>Team</li>
-                <li>Over ons</li>
-                <li>Neem contact op</li>
-                <li>Vacatures</li>
-                <li>Partner worden</li>
+                <li><a href="#" className="hover:text-white cursor-pointer">Direct starten</a></li>
+                <li><a href="#" className="hover:text-white cursor-pointer">Over ons</a></li>
+                <li><a href="#" className="hover:text-white cursor-pointer">Algemene voorwaarden</a></li>
+                <li><a href="#" className="hover:text-white cursor-pointer">Neem contact op</a></li>
               </ul>
             </div>
             
