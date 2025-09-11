@@ -370,31 +370,34 @@ const Homepage = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-br from-orange-400 via-pink-500 via-purple-600 to-blue-700 relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-4xl font-bold mb-4 text-white">
               Prijzen aangepast{" "}
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
                 aan jouw behoefte
               </span>
             </h2>
-            <p className="text-gray-600 text-lg">
-              Kies een plan dat bij je past en boek een afspraak met ons, waar wij je verwelkomen op een rondleiding door onze AI SEO Suite.
+            <p className="text-white/90 text-lg max-w-2xl mx-auto">
+              Kies een plan dat bij je past en boek een afspraak met ons, waar we je meenemen op een rondleiding door onze AI SEO Suite.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Basis Plan */}
-            <Card className="p-8 relative bg-white">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-semibold mb-4">Basis</h3>
-                <div className="text-4xl font-bold mb-1">€99,-</div>
-                <div className="text-gray-600 mb-2">Per maand</div>
+            <Card className="p-8 relative bg-white rounded-2xl shadow-xl border-0 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-100/30 via-transparent to-orange-200/40 pointer-events-none"></div>
+              <div className="relative z-10">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold mb-4 text-gray-800">Basis</h3>
+                  <div className="text-4xl font-bold mb-1 text-gray-900">€99,-</div>
+                  <div className="text-gray-600 mb-2">Per maand</div>
+                </div>
+                <Button className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg">
+                  Demo sessie plannen
+                </Button>
               </div>
-              <Button className="w-full mb-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
-                Demo sessie plannen
-              </Button>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -436,18 +439,21 @@ const Homepage = () => {
             </Card>
 
             {/* Plus Plan */}
-            <Card className="p-8 relative bg-white border-2 border-purple-500">
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white">
+            <Card className="p-8 relative bg-white rounded-2xl shadow-xl border-0 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-100/40 via-transparent to-purple-200/40 pointer-events-none"></div>
+              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-500 to-purple-600 text-white px-4 py-1 rounded-full font-semibold">
                 Populair
               </Badge>
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-semibold mb-4">Plus</h3>
-                <div className="text-4xl font-bold mb-1">€149,-</div>
-                <div className="text-gray-600 mb-2">Per maand</div>
+              <div className="relative z-10">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold mb-4 text-gray-800">Plus</h3>
+                  <div className="text-4xl font-bold mb-1 text-gray-900">€149,-</div>
+                  <div className="text-gray-600 mb-2">Per maand</div>
+                </div>
+                <Button className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg">
+                  Demo sessie plannen
+                </Button>
               </div>
-              <Button className="w-full mb-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
-                Demo sessie plannen
-              </Button>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -488,16 +494,19 @@ const Homepage = () => {
               </ul>
             </Card>
 
-            {/* Premium Plan */}
-            <Card className="p-8 relative bg-white">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-semibold mb-4">Pro</h3>
-                <div className="text-4xl font-bold mb-1">TBA</div>
-                <div className="text-gray-600 mb-2">Prijs op aanvraag</div>
+            {/* Pro Plan */}
+            <Card className="p-8 relative bg-white rounded-2xl shadow-xl border-0 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-100/40 via-transparent to-blue-200/40 pointer-events-none"></div>
+              <div className="relative z-10">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold mb-4 text-gray-800">Pro</h3>
+                  <div className="text-4xl font-bold mb-1 text-gray-900">TBA</div>
+                  <div className="text-gray-600 mb-2">Prijs op aanvraag</div>
+                </div>
+                <Button className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg">
+                  Demo sessie plannen
+                </Button>
               </div>
-              <Button className="w-full mb-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
-                Demo sessie plannen
-              </Button>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
