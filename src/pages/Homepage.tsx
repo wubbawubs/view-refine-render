@@ -453,7 +453,7 @@ const Homepage = () => {
             </Card>
 
             {/* Plus Plan */}
-            <Card className="p-8 relative bg-white rounded-2xl shadow-2xl border-0 overflow-hidden">
+            <Card className="p-8 relative bg-white rounded-2xl shadow-2xl border-0 overflow-hidden transform scale-105 mt-4 mb-4">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-30">
                 <Badge className="bg-gradient-to-r from-orange-500 to-purple-600 text-white px-6 py-2 rounded-full font-semibold text-sm">
                   Populair
