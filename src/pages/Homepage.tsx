@@ -1,272 +1,201 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, CheckCircle, Search, BarChart3, Target, Zap, Shield, Users, TrendingUp, Clock, ArrowRight, Play } from "lucide-react";
+import { Star, CheckCircle, Search, BarChart3, Target, Zap, Shield, Users, TrendingUp, Clock } from "lucide-react";
 import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
 
 
 const Homepage = () => {
   return (
     <div className="min-h-screen bg-white">
+      {/* Trustpilot Badge */}
+      <div className="bg-gradient-to-r from-orange-400 via-purple-500 to-blue-600 py-3">
+        <div className="container mx-auto px-4 text-center">
+          <div className="flex items-center justify-center space-x-4 text-white">
+            <span className="font-semibold">Excellent</span>
+            <div className="flex items-center space-x-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-green-400 text-green-400" />
+              ))}
+            </div>
+            <span className="text-sm">63 reviews on</span>
+            <span className="font-semibold">Trustpilot</span>
+          </div>
+        </div>
+      </div>
+
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100">
+      <header className="bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png" 
               alt="KlikKlaar SEO Logo"
-              className="h-16 w-auto"
+              className="h-24 w-auto"
             />
-            <nav className="hidden md:flex items-center space-x-6">
-              <a href="#hoe-het-werkt" className="text-gray-600 hover:text-kk-blue transition-colors">Hoe het werkt</a>
-              <a href="#resultaten" className="text-gray-600 hover:text-kk-blue transition-colors">Resultaten</a>
-              <a href="#prijzen" className="text-gray-600 hover:text-kk-blue transition-colors">Prijzen</a>
-            </nav>
           </div>
-          <div className="flex items-center space-x-3">
-            <Button variant="ghost" className="text-kk-blue hover:bg-kk-bg">
+          <div className="flex items-center space-x-4">
+            <Button variant="outline" className="text-purple-600 border-purple-300 hover:bg-purple-50">
               Login
             </Button>
-            <Button className="button-primary inline-flex items-center space-x-2">
-              <span>Gratis scan</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <Button className="bg-gray-800 hover:bg-gray-700 text-white">
+              Start nu
             </Button>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="hero-bg py-20 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Copy & CTA */}
-            <div className="lg:pr-8 animate-fade-in">
-              <h1 className="text-hero text-kk-ink mb-6">
-                Meer klanten uit Google.{" "}
-                <span className="text-kk-blue">Automatisch.</span>
-              </h1>
-              <p className="text-lead text-kk-muted mb-8 max-w-lg">
-                KlikKlaar verbetert je website en Google-profiel zonder gedoe.
-              </p>
-              
-              {/* CTA Form */}
-              <div className="mb-6">
-                <div className="flex flex-col sm:flex-row gap-3 max-w-md">
-                  <input
-                    type="url"
-                    placeholder="jouwbedrijf.nl"
-                    className="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-kk-blue focus:border-kk-blue outline-none"
-                  />
-                  <Button className="button-primary group">
-                    <span>Gratis scan</span>
-                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </div>
-                <p className="text-sm text-kk-muted mt-2">Binnen 60 seconden. Geen verplichtingen.</p>
-              </div>
-              
-              {/* Trust Badge */}
-              <div className="flex items-center space-x-2 mb-8">
-                <div className="flex items-center">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <span className="text-sm font-medium text-kk-ink">4.8/5</span>
-                <span className="text-sm text-kk-muted">uit 63 reviews</span>
-              </div>
-              
-              {/* Secondary CTA */}
-              <Button variant="ghost" className="button-secondary inline-flex items-center space-x-2">
-                <Play className="w-4 h-4" />
-                <span>Bekijk demo</span>
-              </Button>
-              
-              {/* Outcome Bullets */}
-              <div className="grid grid-cols-1 gap-4 mt-12">
-                <div className="flex items-start space-x-3">
-                  <div className="icon-card">
-                    <CheckCircle className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-kk-ink">Meer vindbaar in jouw buurt</h3>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="icon-card">
-                    <CheckCircle className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-kk-ink">Nieuwe klanten zonder website-gedoe</h3>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="icon-card">
-                    <CheckCircle className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-kk-ink">Automatische verbeteringen elke week</h3>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Reassurance */}
-              <div className="flex flex-wrap gap-4 mt-8 text-sm text-kk-muted">
-                <span className="flex items-center space-x-1">
-                  <div className="w-1 h-1 bg-kk-muted rounded-full"></div>
-                  <span>Geen IT nodig</span>
-                </span>
-                <span className="flex items-center space-x-1">
-                  <div className="w-1 h-1 bg-kk-muted rounded-full"></div>
-                  <span>Maandelijks opzegbaar</span>
-                </span>
-                <span className="flex items-center space-x-1">
-                  <div className="w-1 h-1 bg-kk-muted rounded-full"></div>
-                  <span>Nederlandse support</span>
-                </span>
-              </div>
-            </div>
-            
-            {/* Right Column - Product Mock */}
-            <div className="relative animate-slide-up lg:animate-none">
-              <div className="relative">
-                <div className="card p-1 max-w-lg mx-auto">
-                  <img 
-                    src="/lovable-uploads/f506cedb-82da-4a28-94aa-4ba7d6af1922.png" 
-                    alt="KlikKlaar Dashboard"
-                    className="w-full rounded-xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/5 rounded-xl"></div>
-                </div>
-                
-                {/* Floating Stat Chips */}
-                <div className="absolute -top-4 -left-8 stat-chip animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                  <div className="text-lg font-bold text-kk-blue">+64%</div>
-                  <div className="text-xs text-kk-muted">zichtbaarheid</div>
-                </div>
-                <div className="absolute -bottom-6 -right-6 stat-chip animate-fade-in" style={{ animationDelay: '0.7s' }}>
-                  <div className="text-lg font-bold text-kk-blue">127</div>
-                  <div className="text-xs text-kk-muted">optimalisaties toegepast</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Voor Wie Section */}
-      <section className="py-12 bg-white">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-kk-muted font-medium mb-6">Voor wie?</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-kk-ink">
-            <span className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-kk-yellow rounded-full"></div>
-              <span>Kapper</span>
+          <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
+            Master jouw SEO met de{" "}
+            <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-600 bg-clip-text text-transparent">
+              Power van AI
             </span>
-            <span className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-kk-yellow rounded-full"></div>
-              <span>Tandarts</span>
-            </span>
-            <span className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-kk-yellow rounded-full"></div>
-              <span>Makelaar</span>
-            </span>
-            <span className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-kk-yellow rounded-full"></div>
-              <span>Coach</span>
-            </span>
-            <span className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-kk-yellow rounded-full"></div>
-              <span>Installateur</span>
-            </span>
+          </h1>
+          <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+            Betere rankings voor je website in minder tijd
+          </p>
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="mb-16 px-8 py-4 text-lg border-2 border-gray-400 hover:bg-gray-50 rounded-lg"
+          >
+            Boek hier je Demo
+          </Button>
+          
+          {/* Trust indicators */}
+          <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 text-gray-700 mb-20">
+            <div className="flex items-center space-x-3">
+              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
+                <CheckCircle className="w-4 h-4 text-white" />
+              </div>
+              <span>Vind micro keywords met AI</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
+                <CheckCircle className="w-4 h-4 text-white" />
+              </div>
+              <span>Produceer content met hoge conversie</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
+                <CheckCircle className="w-4 h-4 text-white" />
+              </div>
+              <span>Verbeter bestaande content met AI</span>
+            </div>
+          </div>
+
+          {/* Dashboard Preview */}
+          <div className="max-w-5xl mx-auto">
+            <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-200 p-1">
+              <img 
+                src="/lovable-uploads/f506cedb-82da-4a28-94aa-4ba7d6af1922.png" 
+                alt="KlikKlaar SEO Dashboard showing +64% visibility improvement, SEO score 3.8, 127 total adjustments, +78% estimated growth, and 8,542 visitors"
+                className="w-full rounded-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* SEO Tools Section */}
-      <section className="py-20 bg-white" id="hoe-het-werks">
+      {/* SEO AI Toolset Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          {/* 3-Step Process */}
-          <div className="text-center mb-20">
-            <h2 className="text-h2 text-kk-ink mb-6">Hoe het werkt</h2>
-            <div className="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12 max-w-4xl mx-auto">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-kk-blue text-white flex items-center justify-center font-bold text-lg mb-4">01</div>
-                <h3 className="font-semibold text-kk-ink mb-2">Website scannen</h3>
-                <p className="text-kk-muted text-sm max-w-48">We analyseren je website en vinden alle verbeterpunten</p>
-              </div>
-              <div className="hidden md:block w-16 h-px bg-gray-200"></div>
-              <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-kk-blue text-white flex items-center justify-center font-bold text-lg mb-4">02</div>
-                <h3 className="font-semibold text-kk-ink mb-2">Automatisch verbeteren</h3>
-                <p className="text-kk-muted text-sm max-w-48">Onze AI past je website en Google-profiel automatisch aan</p>
-              </div>
-              <div className="hidden md:block w-16 h-px bg-gray-200"></div>
-              <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-kk-blue text-white flex items-center justify-center font-bold text-lg mb-4">03</div>
-                <h3 className="font-semibold text-kk-ink mb-2">Meer klanten</h3>
-                <p className="text-kk-muted text-sm max-w-48">Volg je groei in ons dashboard en ontvang meer aanvragen</p>
-              </div>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">
+              <span className="text-purple-600">SEO AI</span> Toolset voor meer
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+              Bij KlikKlaar zorgen wij ervoor dat jij op de juiste onderwerpen commerciële gezochtheden en kunnen beurten bestelen 
+              voor marketingteam om nauwkeurig voor hun bedrijven. Onze gecombineerde AI-ondersteuning ondersteunt je op de 
+              belangrijke gebieden.
+            </p>
           </div>
 
-          {/* Results Strip */}
-          <div className="bg-kk-bg rounded-2xl p-8 mb-20">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-4xl font-bold text-kk-blue mb-2" style={{ fontFamily: 'Monaco, monospace' }}>+64%</div>
-                <div className="text-kk-muted">gemiddelde zichtbaarheidsverbetering</div>
+          {/* First row of features */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Search className="w-8 h-8 text-purple-600" />
               </div>
-              <div>
-                <div className="text-4xl font-bold text-kk-blue mb-2" style={{ fontFamily: 'Monaco, monospace' }}>8.5k</div>
-                <div className="text-kk-muted">extra bezoekers per maand</div>
+              <h3 className="font-semibold text-lg mb-3">Je eigen AI</h3>
+              <p className="text-gray-600 text-sm">
+                Een eigen gepersonaliseerd en op maat gesneden AI-assistent die speciaal voor jouw bedrijf en branche is geoptimaliseerd voor de beste resultaten.
+              </p>
+            </Card>
+
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <BarChart3 className="w-8 h-8 text-purple-600" />
               </div>
-              <div>
-                <div className="text-4xl font-bold text-kk-blue mb-2" style={{ fontFamily: 'Monaco, monospace' }}>127</div>
-                <div className="text-kk-muted">automatische optimalisaties</div>
+              <h3 className="font-semibold text-lg mb-3">Trefwoord Analyse</h3>
+              <p className="text-gray-600 text-sm">
+                Vind snel de meest interessante trefwoord gegevens met behulp van geavanceerde AI-algoritmen die de markt analyseren.
+              </p>
+            </Card>
+
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-purple-600" />
               </div>
-            </div>
+              <h3 className="font-semibold text-lg mb-3">Ideegeneratie</h3>
+              <p className="text-gray-600 text-sm">
+                Intelligente gevarenzicht SEO en innovatieve content ideeën die perfect aansluiten bij jouw doelgroep en markt.
+              </p>
+            </Card>
+
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="font-semibold text-lg mb-3">Inhoud creëren</h3>
+              <p className="text-gray-600 text-sm">
+                Schrijf gefocuste en snelle content voor uitstekende en verschillende rapportages die je concurrentie overtreffen.
+              </p>
+            </Card>
           </div>
 
-          {/* Feature Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="card card-hover p-6">
-              <div className="icon-card mb-4">
-                <Search className="w-5 h-5" />
+          {/* Second row of features */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="font-semibold text-kk-ink mb-3">Lokale zoekopdrachten</h3>
-              <p className="text-sm text-kk-muted">
-                Optimalisatie voor 'kapper Amsterdam' en andere lokale zoektermen in jouw gebied.
+              <h3 className="font-semibold text-lg mb-3">Automatisch posten</h3>
+              <p className="text-gray-600 text-sm">
+                Alles wat je schrijft automatisch publiceren om tijd te besparen en consistentie te waarborgen.
               </p>
             </Card>
 
-            <Card className="card card-hover p-6">
-              <div className="icon-card mb-4">
-                <BarChart3 className="w-5 h-5" />
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="font-semibold text-kk-ink mb-3">Google My Business</h3>
-              <p className="text-sm text-kk-muted">
-                Automatische verbetering van je Google-profiel voor meer zichtbaarheid en reviews.
+              <h3 className="font-semibold text-lg mb-3">Volg je concurrenten</h3>
+              <p className="text-gray-600 text-sm">
+                Volg stap voor stap van je grootste tegenstanders en blijf altijd een stap voor op de concurrentie.
               </p>
             </Card>
 
-            <Card className="card card-hover p-6">
-              <div className="icon-card mb-4">
-                <Target className="w-5 h-5" />
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="font-semibold text-kk-ink mb-3">Website optimalisatie</h3>
-              <p className="text-sm text-kk-muted">
-                Technische SEO verbeteringen die zorgen voor betere rankings in Google.
+              <h3 className="font-semibold text-lg mb-3">Rank Tracker</h3>
+              <p className="text-gray-600 text-sm">
+                Bekijk performance voor je belangrijkste zoekwoorden en monitor je vooruitgang in real-time.
               </p>
             </Card>
 
-            <Card className="card card-hover p-6">
-              <div className="icon-card mb-4">
-                <TrendingUp className="w-5 h-5" />
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="font-semibold text-kk-ink mb-3">Live rapportage</h3>
-              <p className="text-sm text-kk-muted">
-                Dagelijks overzicht van je rankings, bezoekers en nieuwe klanten via ons dashboard.
+              <h3 className="font-semibold text-lg mb-3">SEO Analyse</h3>
+              <p className="text-gray-600 text-sm">
+                Ontdek verbeteringen en ondersteuning waar je website optimalisatie nodig heeft voor betere rankings.
               </p>
             </Card>
           </div>
@@ -274,47 +203,38 @@ const Homepage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-kk-blue text-white">
+      <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-h2 mb-6">
-            Klaar om meer klanten te krijgen?
+          <h2 className="text-4xl font-bold mb-6">
+            Ontdek hoe we binnen enkele seconden
           </h2>
-          <p className="text-lead opacity-90 mb-8 max-w-2xl mx-auto">
-            Start vandaag nog met je gratis website-scan en ontdek binnen 60 seconden 
-            hoe je meer zichtbaar wordt in Google.
+          <p className="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
+            Wetendurig je veld dag nou kijk werkstructuur? Laat dans voor je beginnen krant waar elke progressieve SEO tool die helpen zo je plaats deze wensen lui heel gemakkelijk te realiseren binnen enkele seconden.
           </p>
-          <Button size="lg" className="bg-white text-kk-blue hover:bg-gray-50 font-bold px-8 py-4 text-lg group">
-            <span>Start gratis scan</span>
-            <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+          <Button size="lg" className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white border-0 px-8 py-4 text-lg">
+            Boost Actie met ons
           </Button>
         </div>
       </section>
 
       {/* Blog Section */}
-      <section className="py-20 bg-kk-bg">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-h2 text-kk-ink mb-8">Laatste nieuws</h2>
+            <h2 className="text-4xl font-bold mb-8">Nieuwe Blog</h2>
           </div>
           
           <div className="max-w-2xl mx-auto">
-            <Card className="card overflow-hidden">
-              <div className="h-64 bg-gradient-to-br from-kk-blue via-kk-blue to-kk-yellow relative">
-                <div className="absolute inset-0 bg-kk-blue opacity-90"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white text-center">
-                    <h3 className="text-2xl font-bold mb-2">KlikKlaar succesverhalen</h3>
-                    <p className="opacity-90">Hoe lokale ondernemers hun omzet verdubbelden</p>
-                  </div>
-                </div>
+            <Card className="overflow-hidden">
+              <div className="h-64 bg-gradient-to-br from-blue-400 via-purple-500 to-orange-400 relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-500 to-orange-400 opacity-80"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-kk-ink mb-4">
+                <h3 className="text-xl font-semibold mb-4">
                   KlikKlaar behoort tot de beste SEO-diensten in Nederland op Trustpilot
                 </h3>
-                <Button className="button-primary group">
-                  <span>Lees meer</span>
-                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                <Button className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white">
+                  Lees meer →
                 </Button>
               </div>
             </Card>
@@ -322,71 +242,60 @@ const Homepage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white" id="resultaten">
+      {/* Social Proof Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-h2 text-kk-ink mb-6">Wat klanten zeggen</h2>
-            <p className="text-kk-muted text-lead max-w-2xl mx-auto">
-              Ontdek hoe lokale ondernemers hun zichtbaarheid hebben verbeterd met KlikKlaar
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
+            <div className="text-center">
+              <div className="text-6xl font-bold text-purple-600 mb-2">+50%</div>
+              <div className="text-gray-600 text-lg">organic traffic</div>
+            </div>
+            <div className="text-center">
+              <div className="text-6xl font-bold text-purple-600 mb-2">2x</div>
+              <div className="text-gray-600 text-lg">Verhoging in sales</div>
+            </div>
           </div>
           
-          {/* Testimonial Cards with Photos */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <Card className="card p-6">
-              <blockquote className="text-kk-muted mb-6">
-                "+41% meer afspraken in 30 dagen. KlikKlaar heeft onze online zichtbaarheid compleet getransformeerd."
+          {/* Testimonials */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="p-6">
+              <blockquote className="text-gray-600 italic mb-4">
+                "SEO AI helpt ons eenvoudig content te creëren en versnelt ons hele proces."
               </blockquote>
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-kk-yellow rounded-full flex items-center justify-center">
-                  <span className="font-bold text-kk-ink text-sm">SH</span>
-                </div>
+                <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
                 <div>
-                  <div className="font-semibold text-kk-ink">Schoonheidssalon Susan</div>
-                  <div className="text-sm text-kk-muted">Hoorn</div>
+                  <div className="font-medium">Tommy Blix</div>
+                  <div className="text-sm text-gray-500">Founder at MyApp</div>
                 </div>
               </div>
             </Card>
             
-            <Card className="card p-6">
-              <blockquote className="text-kk-muted mb-6">
-                "Eindelijk bovenaan in Google voor 'tandarts Utrecht'. Mijn agenda zit nu vol met nieuwe patiënten."
+            <Card className="p-6">
+              <blockquote className="text-gray-600 italic mb-4">
+                "Met KlikKlaar hebben we meerdere #1 posities behaald, echt super blij mee!"
               </blockquote>
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-kk-yellow rounded-full flex items-center justify-center">
-                  <span className="font-bold text-kk-ink text-sm">PV</span>
-                </div>
+                <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
                 <div>
-                  <div className="font-semibold text-kk-ink">Tandartspraktijk Vos</div>
-                  <div className="text-sm text-kk-muted">Utrecht</div>
+                  <div className="font-medium">Ana Gheorghiu</div>
+                  <div className="text-sm text-gray-500">CEO at Derby Systems</div>
                 </div>
               </div>
             </Card>
             
-            <Card className="card p-6">
-              <blockquote className="text-kk-muted mb-6">
-                "Van 0 naar 50+ online aanvragen per maand. KlikKlaar werkt echt voor lokale makelaars."
+            <Card className="p-6">
+              <blockquote className="text-gray-600 italic mb-4">
+                "Dankzij KlikKlaar positioneren we top in toekomstige zoekopdrachten en besparen we veel tijd in SEO."
               </blockquote>
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-kk-yellow rounded-full flex items-center justify-center">
-                  <span className="font-bold text-kk-ink text-sm">MK</span>
-                </div>
+                <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
                 <div>
-                  <div className="font-semibold text-kk-ink">Makelaar Janssen</div>
-                  <div className="text-sm text-kk-muted">Alkmaar</div>
+                  <div className="font-medium">Karl Toerink</div>
+                  <div className="text-sm text-gray-500">Head SEO Strategist</div>
                 </div>
               </div>
             </Card>
-          </div>
-          
-          {/* Pricing Teaser */}
-          <div className="text-center">
-            <p className="text-kk-muted mb-4">Vanaf €99 per maand. Maandelijks opzegbaar.</p>
-            <Button className="button-primary group">
-              <span>Bekijk alle prijzen</span>
-              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-            </Button>
           </div>
         </div>
       </section>
