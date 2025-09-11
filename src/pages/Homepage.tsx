@@ -92,7 +92,7 @@ const Homepage = () => {
           <div className="max-w-5xl mx-auto">
             <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-200 p-1">
               <img 
-                src="/lovable-uploads/ee815528-acfa-4a83-9b46-76884753372b.png" 
+                src="/lovable-uploads/618a0cc7-36df-46f5-a4b2-c2b9c935b524.png" 
                 alt="KlikKlaar SEO Dashboard showing visibility improvement, SEO scores, visitor analytics, and ranking tracking interface"
                 className="w-full rounded-xl"
               />
