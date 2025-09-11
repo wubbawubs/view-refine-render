@@ -590,37 +590,33 @@ const Homepage = () => {
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Features</h4>
+              <h4 className="font-semibold mb-4">Menu</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white">Trefwoord AI</a></li>
-                <li><a href="#" className="hover:text-white">Technische SEO Audit</a></li>
-                <li><a href="#" className="hover:text-white">Website deployment</a></li>
-                <li><a href="#" className="hover:text-white">Website geïntegreerd AI</a></li>
-                <li><a href="#" className="hover:text-white">Geavanceerde positie</a></li>
-                <li><a href="#" className="hover:text-white">Geoptimiseerde tagmetriek</a></li>
-                <li><a href="#" className="hover:text-white">Content verstrekking</a></li>
-                <li><a href="#" className="hover:text-white">AI technofacts</a></li>
+                <li>Direct starten</li>
+                <li>Over ons</li>
+                <li>Algemene voorwaarden</li>
+                <li>Neem contact op</li>
               </ul>
             </div>
             
             <div>
               <h4 className="font-semibold mb-4">Bedrijf</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white">Blog</a></li>
-                <li><a href="#" className="hover:text-white">Team</a></li>
-                <li><a href="#" className="hover:text-white">Over ons</a></li>
-                <li><a href="#" className="hover:text-white">Neem contact op</a></li>
-                <li><a href="#" className="hover:text-white">Vacatures</a></li>
-                <li><a href="#" className="hover:text-white">Partner worden</a></li>
+                <li>Blog</li>
+                <li>Team</li>
+                <li>Over ons</li>
+                <li>Neem contact op</li>
+                <li>Vacatures</li>
+                <li>Partner worden</li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Directions</h4>
+              <h4 className="font-semibold mb-4">Onze gegevens</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>Zakstraat office</li>
-                <li>Oosteenvegen 1<br />1031AM, Amsterdam</li>
-                <li><a href="#" className="hover:text-white">Contact us</a></li>
+                <li>Klikklaar SEO</li>
+                <li>Olieslagers poort 1<br />1601AW Enkhuizen</li>
+                <li>Contact us</li>
               </ul>
             </div>
           </div>
