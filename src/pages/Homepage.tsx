@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { IconGradientDefs } from "@/components/ui/icon-gradient-defs";
 import { IconBadge } from "@/components/ui/icon-badge";
-import { Star, CheckCircle, Brain, Search, Lightbulb, FileText, CalendarCheck, Binoculars, TrendingUp, ScanSearch } from "lucide-react";
+import { Star, CheckCircle, Brain, Search, Lightbulb, FileText, CalendarCheck, Binoculars, TrendingUp, ScanSearch, Zap, Clock, Target } from "lucide-react";
 import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
 
 
@@ -72,21 +72,21 @@ const Homepage = () => {
           <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 text-gray-700 mb-20">
             <div className="flex items-center space-x-3">
               <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
-                <CheckCircle className="w-4 h-4 text-white" />
+                <Zap className="w-4 h-4 text-white" />
               </div>
-              <span>Vind micro keywords met AI</span>
+              <span>Volledig geautomatiseerd</span>
             </div>
             <div className="flex items-center space-x-3">
               <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
-                <CheckCircle className="w-4 h-4 text-white" />
+                <Clock className="w-4 h-4 text-white" />
               </div>
-              <span>Produceer content met hoge conversie</span>
+              <span>Nooit meer tijd kwijt aan SEO taken</span>
             </div>
             <div className="flex items-center space-x-3">
               <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
-                <CheckCircle className="w-4 h-4 text-white" />
+                <Target className="w-4 h-4 text-white" />
               </div>
-              <span>Verbeter bestaande content met AI</span>
+              <span>wij optimaliseren voor zoekmachines zowel als AI</span>
             </div>
           </div>
 
