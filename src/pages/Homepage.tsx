@@ -371,26 +371,25 @@ const Homepage = () => {
 
       {/* Pricing Section */}
       <section className="py-20 relative overflow-hidden">
-        {/* Gradient background that fades to transparent much sooner */}
-        <div className="absolute inset-0 bg-gradient-to-t from-orange-400 via-pink-500 via-purple-600 to-blue-700 opacity-100"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-transparent from-20% to-white to-60%"></div>
+        {/* Left to right gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-400 via-pink-500 via-purple-600 to-blue-700"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-white">
+            <h2 className="text-4xl font-bold mb-4 text-black">
               Prijzen aangepast{" "}
-              <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 aan jouw behoefte
               </span>
             </h2>
-            <p className="text-white/90 text-lg max-w-2xl mx-auto">
+            <p className="text-black/80 text-lg max-w-2xl mx-auto">
               Kies een plan dat bij je past en boek een afspraak met ons, waar we je meenemen op een rondleiding door onze AI SEO Suite.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Basis Plan */}
-            <Card className="p-8 relative bg-white rounded-2xl shadow-xl border-0 overflow-hidden">
+            <Card className="p-8 relative bg-white rounded-2xl shadow-2xl border-0 overflow-hidden">
               <div className="relative z-10">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-4 text-gray-800">Basis</h3>
@@ -442,10 +441,12 @@ const Homepage = () => {
             </Card>
 
             {/* Plus Plan */}
-            <Card className="p-8 relative bg-white rounded-2xl shadow-xl border-0 overflow-hidden">
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-500 to-purple-600 text-white px-4 py-1 rounded-full font-semibold z-20">
-                Populair
-              </Badge>
+            <Card className="p-8 relative bg-white rounded-2xl shadow-2xl border-0 overflow-hidden">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-30">
+                <Badge className="bg-gradient-to-r from-orange-500 to-purple-600 text-white px-6 py-2 rounded-full font-semibold text-sm">
+                  Populair
+                </Badge>
+              </div>
               <div className="relative z-10">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-4 text-gray-800">Plus</h3>
@@ -497,7 +498,7 @@ const Homepage = () => {
             </Card>
 
             {/* Pro Plan */}
-            <Card className="p-8 relative bg-white rounded-2xl shadow-xl border-0 overflow-hidden">
+            <Card className="p-8 relative bg-white rounded-2xl shadow-2xl border-0 overflow-hidden">
               <div className="relative z-10">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-4 text-gray-800">Pro</h3>
