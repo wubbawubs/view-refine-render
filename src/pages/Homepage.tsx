@@ -389,9 +389,8 @@ const Homepage = () => {
             <Card className="p-8 relative bg-white">
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-semibold mb-4">Basis</h3>
-                <div className="text-4xl font-bold mb-1">€1188,-</div>
-                <div className="text-gray-600 mb-2">Jaarlijks</div>
-                <div className="text-sm text-gray-500">+ €240 start-up fee</div>
+                <div className="text-4xl font-bold mb-1">€99,-</div>
+                <div className="text-gray-600 mb-2">Per maand</div>
               </div>
               <Button className="w-full mb-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
                 Demo sessie plannen
@@ -443,9 +442,8 @@ const Homepage = () => {
               </Badge>
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-semibold mb-4">Plus</h3>
-                <div className="text-4xl font-bold mb-1">€1668,-</div>
-                <div className="text-gray-600 mb-2">Jaarlijks</div>
-                <div className="text-sm text-gray-500">+ €360 start-up fee</div>
+                <div className="text-4xl font-bold mb-1">€149,-</div>
+                <div className="text-gray-600 mb-2">Per maand</div>
               </div>
               <Button className="w-full mb-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
                 Demo sessie plannen
@@ -493,10 +491,9 @@ const Homepage = () => {
             {/* Premium Plan */}
             <Card className="p-8 relative bg-white">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-semibold mb-4">Premium</h3>
-                <div className="text-4xl font-bold mb-1">€2388,-</div>
-                <div className="text-gray-600 mb-2">Jaarlijks</div>
-                <div className="text-sm text-gray-500">+ €480 start-up fee</div>
+                <h3 className="text-2xl font-semibold mb-4">Pro</h3>
+                <div className="text-4xl font-bold mb-1">TBA</div>
+                <div className="text-gray-600 mb-2">Prijs op aanvraag</div>
               </div>
               <Button className="w-full mb-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
                 Demo sessie plannen
