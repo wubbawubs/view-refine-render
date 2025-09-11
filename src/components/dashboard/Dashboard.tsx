@@ -105,7 +105,7 @@ const Dashboard = () => {
               <img 
                 src="/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png" 
                 alt="KlikKlaar SEO Logo"
-                className="h-6 w-auto"
+                className="h-9 w-auto"
               />
             </div>
             
