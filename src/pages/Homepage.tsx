@@ -3,10 +3,10 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, CheckCircle, Search, BarChart3, Target, Zap, Shield, Users, TrendingUp, Clock } from "lucide-react";
 import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
-import { IconsaxBrain } from "@/components/icons/IconsaxBrain";
-import { IconsaxSearch } from "@/components/icons/IconsaxSearch";
-import { IconsaxChart } from "@/components/icons/IconsaxChart";
-import { IconsaxDocument } from "@/components/icons/IconsaxDocument";
+import { PhosphorBrain } from "@/components/icons/PhosphorBrain";
+import { PhosphorSearch } from "@/components/icons/PhosphorSearch";
+import { PhosphorChart } from "@/components/icons/PhosphorChart";
+import { PhosphorDocument } from "@/components/icons/PhosphorDocument";
 
 
 const Homepage = () => {
@@ -123,7 +123,7 @@ const Homepage = () => {
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm" 
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
               <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <IconsaxBrain />
+                <PhosphorBrain />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Je eigen AI</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -134,7 +134,7 @@ const Homepage = () => {
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
               <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <IconsaxSearch />
+                <PhosphorSearch />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Trefwoord Analyse</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -145,7 +145,7 @@ const Homepage = () => {
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
               <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <IconsaxBrain />
+                <PhosphorBrain />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Ideeëngeneratie</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -156,7 +156,7 @@ const Homepage = () => {
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
               <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <IconsaxDocument />
+                <PhosphorDocument />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Inhoud creëren</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -203,7 +203,7 @@ const Homepage = () => {
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
               <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <IconsaxChart />
+                <PhosphorChart />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">SEO Analyse</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
