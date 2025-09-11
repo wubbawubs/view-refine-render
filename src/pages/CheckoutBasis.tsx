@@ -103,7 +103,7 @@ const CheckoutBasis = () => {
           <div className="text-center mb-8">
             <h1 className="text-kk-h1 mb-2">KlikKlaar Basis</h1>
             <p className="text-muted-foreground">
-              Volledige optimalisatie. Opzeggen kan maandelijks.
+              Klik, Klaar, Gevonden. SEO zonder gedoe.
             </p>
           </div>
 
