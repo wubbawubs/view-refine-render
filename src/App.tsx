@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import Index from "./pages/Index";
+import Homepage from "./pages/Homepage";
 import Aanpassingen from "./pages/Aanpassingen";
 import Audit from "./pages/Audit";
 import Informatie from "./pages/Informatie";
@@ -29,6 +30,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/homepage" element={<Homepage />} />
             <Route path="/aanpassingen" element={<Aanpassingen />} />
             <Route path="/audit" element={<Audit />} />
             <Route path="/informatie" element={<Informatie />} />
