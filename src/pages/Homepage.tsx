@@ -373,8 +373,10 @@ const Homepage = () => {
       <section className="py-20 relative overflow-hidden animate-fade-in">
         {/* Subtle left to right gradient background with fading */}
         <div className="absolute inset-0 bg-gradient-to-r from-orange-200/60 via-pink-200/50 via-purple-200/60 to-blue-200/70"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/60"></div>
+        {/* Strong fade to white at the top */}
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent from-30% to-white to-80%"></div>
+        {/* Subtle fade at the bottom */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-70% to-white/40"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16 animate-fade-in">
