@@ -214,15 +214,15 @@ const Homepage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 -my-12 relative overflow-hidden animate-fade-in">
+      <section className="py-40 -my-20 relative overflow-hidden animate-fade-in">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-300/40 via-purple-400/30 to-orange-300/40"></div>
         
         {/* Fade in from top */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white from-0% to-transparent to-50%"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white from-0% to-transparent to-25%"></div>
         
         {/* Fade out to bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white from-0% to-transparent to-50%"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-white from-0% to-transparent to-25%"></div>
         
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
