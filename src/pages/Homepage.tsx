@@ -370,7 +370,11 @@ const Homepage = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-400 via-pink-500 via-purple-600 to-blue-700 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
+        {/* Gradient background that fades to transparent at top */}
+        <div className="absolute inset-0 bg-gradient-to-t from-orange-400 via-pink-500 via-purple-600 to-blue-700 opacity-100"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white"></div>
+        
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-white">
