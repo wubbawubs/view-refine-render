@@ -37,9 +37,9 @@ const Sidebar = () => {
       <div className="p-5 border-b border-sidebar-border">
         <div className="flex items-center gap-3 h-14">
           <img 
-            src="/lovable-uploads/c21cc8a8-db9b-4d36-ae23-32b403152794.png" 
+            src="/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png" 
             alt="KlikKlaar SEO Logo"
-            className="h-8 w-auto brightness-0 invert"
+            className="h-8 w-auto"
           />
         </div>
       </div>

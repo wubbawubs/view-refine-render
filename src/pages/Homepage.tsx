@@ -29,7 +29,7 @@ const Homepage = () => {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/c21cc8a8-db9b-4d36-ae23-32b403152794.png" 
+              src="/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png" 
               alt="KlikKlaar SEO Logo"
               className="h-10 w-auto"
             />
@@ -482,9 +482,9 @@ const Homepage = () => {
             <div>
               <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/lovable-uploads/c21cc8a8-db9b-4d36-ae23-32b403152794.png" 
+                src="/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png" 
                 alt="KlikKlaar SEO Logo"
-                className="h-10 w-auto brightness-0 invert"
+                className="h-10 w-auto"
               />
               </div>
               <p className="text-gray-400 text-sm mb-4">
