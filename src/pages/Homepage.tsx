@@ -244,22 +244,35 @@ const Homepage = () => {
       </section>
 
       {/* Blog Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-8">Nieuwe Blog</h2>
+            <h2 className="text-4xl font-bold mb-8 text-gray-900">Nieuwe Blog</h2>
           </div>
           
-          <div className="max-w-2xl mx-auto">
-            <Card className="overflow-hidden">
-              <div className="h-64 bg-gradient-to-br from-blue-400 via-purple-500 to-orange-400 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-500 to-orange-400 opacity-80"></div>
+          <div className="max-w-4xl mx-auto">
+            <Card className="overflow-hidden shadow-luxury bg-white border-0 rounded-2xl animate-fade-in">
+              <div className="h-80 bg-gradient-to-br from-blue-500 via-purple-600 to-orange-500 relative">
+                {/* Subtle overlay for better text contrast */}
+                <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent"></div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-4">
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <Badge variant="outline" className="text-purple-600 border-purple-200 bg-purple-50">
+                    Nieuws
+                  </Badge>
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <div className="w-6 h-6 bg-gray-200 rounded-full"></div>
+                    <span>Luuk Wubs</span>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-6 text-gray-900 leading-tight">
                   KlikKlaar behoort tot de beste SEO-diensten in Nederland op Trustpilot
                 </h3>
-                <Button className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white">
+                <Button 
+                  className="bg-gradient-to-r from-kk-orange to-kk-fuchsia hover:from-kk-orange/90 hover:to-kk-fuchsia/90 
+                             text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
+                >
                   Lees meer →
                 </Button>
               </div>
