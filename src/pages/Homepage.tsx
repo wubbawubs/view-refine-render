@@ -72,15 +72,15 @@ const Homepage = () => {
           <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 text-gray-700 mb-20">
             <div className="flex items-center space-x-3">
               <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white" />
-              </div>
-              <span>Volledig geautomatiseerd</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
                 <Clock className="w-4 h-4 text-white" />
               </div>
               <span>Nooit meer tijd kwijt aan SEO taken</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
+                <Zap className="w-4 h-4 text-white" />
+              </div>
+              <span>Volledig geautomatiseerd</span>
             </div>
             <div className="flex items-center space-x-3">
               <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
