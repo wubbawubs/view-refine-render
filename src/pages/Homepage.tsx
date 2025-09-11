@@ -250,15 +250,20 @@ const Homepage = () => {
             <h2 className="text-4xl font-bold mb-8 text-gray-900">Nieuwe Blog</h2>
           </div>
           
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <Card className="overflow-hidden shadow-luxury bg-white border-0 rounded-2xl animate-fade-in">
-              <div className="h-80 bg-gradient-to-br from-blue-500 via-purple-600 to-orange-500 relative">
-                {/* Subtle overlay for better text contrast */}
+              <div className="h-96 relative">
+                <img 
+                  src="/lovable-uploads/cf789301-8b7c-420c-9ce0-2aa864c3b2ca.png"
+                  alt="Abstract watercolor art with blue, purple, and orange tones"
+                  className="w-full h-full object-cover"
+                />
+                {/* Subtle overlay for better text contrast if needed */}
                 <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent"></div>
               </div>
-              <div className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <Badge variant="outline" className="text-purple-600 border-purple-200 bg-purple-50">
+              <div className="p-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <Badge variant="outline" className="text-purple-600 border-purple-200 bg-purple-50 px-3 py-1">
                     Nieuws
                   </Badge>
                   <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -266,12 +271,12 @@ const Homepage = () => {
                     <span>Luuk Wubs</span>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-6 text-gray-900 leading-tight">
+                <h3 className="text-3xl font-bold mb-8 text-gray-900 leading-tight">
                   KlikKlaar behoort tot de beste SEO-diensten in Nederland op Trustpilot
                 </h3>
                 <Button 
                   className="bg-gradient-to-r from-kk-orange to-kk-fuchsia hover:from-kk-orange/90 hover:to-kk-fuchsia/90 
-                             text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
+                             text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 text-lg"
                 >
                   Lees meer →
                 </Button>
