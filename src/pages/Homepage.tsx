@@ -38,10 +38,10 @@ const Homepage = () => {
           </div>
           <div className="flex items-center space-x-4">
             <Button variant="outline" className="text-purple-600 border-purple-300 hover:bg-purple-50">
-              Vacatures
+              Login
             </Button>
             <Button className="bg-gray-800 hover:bg-gray-700 text-white">
-              Product demo
+              Start nu
             </Button>
           </div>
         </div>
