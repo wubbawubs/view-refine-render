@@ -102,10 +102,11 @@ const Dashboard = () => {
             
             {/* Mobile Branding */}
             <div className="flex items-center gap-2 lg:hidden shrink-0">
-              <div className="w-6 h-6 bg-kk-gradient rounded-md flex items-center justify-center shadow-sm">
-                <span className="text-white font-bold text-xs">K</span>
-              </div>
-              <span className="text-sm font-bold text-foreground">KlikKlaar</span>
+              <img 
+                src="/lovable-uploads/c21cc8a8-db9b-4d36-ae23-32b403152794.png" 
+                alt="KlikKlaar SEO Logo"
+                className="h-6 w-auto"
+              />
             </div>
             
             {/* Title Section - Desktop */}

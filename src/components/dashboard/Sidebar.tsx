@@ -36,10 +36,11 @@ const Sidebar = () => {
       {/* Logo */}
       <div className="p-5 border-b border-sidebar-border">
         <div className="flex items-center gap-3 h-14">
-          <div className="w-8 h-8 bg-kk-gradient rounded-lg flex items-center justify-center premium-glow-border shadow-lg">
-            <span className="text-white font-bold text-sm">K</span>
-          </div>
-          <span className="text-lg font-bold text-sidebar-foreground">KlikKlaar</span>
+          <img 
+            src="/lovable-uploads/c21cc8a8-db9b-4d36-ae23-32b403152794.png" 
+            alt="KlikKlaar SEO Logo"
+            className="h-8 w-auto brightness-0 invert"
+          />
         </div>
       </div>
 

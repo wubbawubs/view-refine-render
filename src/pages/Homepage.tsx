@@ -28,13 +28,11 @@ const Homepage = () => {
       <header className="bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-500 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-lg">K</span>
-            </div>
-            <div>
-              <span className="font-bold text-xl text-gray-800">KlikKlaar</span>
-              <span className="text-sm text-gray-500 ml-1">SEO</span>
-            </div>
+            <img 
+              src="/lovable-uploads/c21cc8a8-db9b-4d36-ae23-32b403152794.png" 
+              alt="KlikKlaar SEO Logo"
+              className="h-10 w-auto"
+            />
           </div>
           <div className="flex items-center space-x-4">
             <Button variant="outline" className="text-purple-600 border-purple-300 hover:bg-purple-50">
@@ -483,10 +481,11 @@ const Homepage = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-500 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">K</span>
-                </div>
-                <span className="font-bold text-xl">KlikKlaar</span>
+              <img 
+                src="/lovable-uploads/c21cc8a8-db9b-4d36-ae23-32b403152794.png" 
+                alt="KlikKlaar SEO Logo"
+                className="h-10 w-auto brightness-0 invert"
+              />
               </div>
               <p className="text-gray-400 text-sm mb-4">
                 Geavanceerde automatische content met je doelgroep optimaliseren SEO om gericht van mijn business proces behouden.
