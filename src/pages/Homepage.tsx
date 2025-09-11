@@ -370,13 +370,15 @@ const Homepage = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 relative overflow-hidden">
-        {/* Left to right gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-400 via-pink-500 via-purple-600 to-blue-700"></div>
+      <section className="py-20 relative overflow-hidden animate-fade-in">
+        {/* Subtle left to right gradient background with fading */}
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-200/60 via-pink-200/50 via-purple-200/60 to-blue-200/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/60"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-black">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl font-bold mb-4 text-black animate-scale-in">
               Prijzen aangepast{" "}
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 aan jouw behoefte
