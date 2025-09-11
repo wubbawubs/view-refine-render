@@ -214,7 +214,7 @@ const Homepage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-400/70 via-purple-500/60 to-orange-400/70 text-white relative overflow-hidden">
+      <section className="py-19 bg-gradient-to-r from-blue-300/40 via-purple-400/30 to-orange-300/40 text-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
