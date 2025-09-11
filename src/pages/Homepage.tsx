@@ -292,54 +292,69 @@ const Homepage = () => {
       {/* Social Proof Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
+          {/* Top Stats */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
             <div className="text-center">
-              <div className="text-6xl font-bold text-purple-600 mb-2">+50%</div>
+              <div className="text-6xl font-bold text-gray-900 mb-2">+50%</div>
               <div className="text-gray-600 text-lg">organic traffic</div>
             </div>
             <div className="text-center">
-              <div className="text-6xl font-bold text-purple-600 mb-2">2x</div>
+              <div className="text-6xl font-bold text-gray-900 mb-2">2x</div>
               <div className="text-gray-600 text-lg">Verhoging in sales</div>
             </div>
           </div>
+
+          {/* Featured Testimonial */}
+          <div className="text-center mb-16 max-w-4xl mx-auto">
+            <blockquote className="text-xl text-gray-700 italic mb-8 leading-relaxed">
+              "Onze marketing had iets effectievers nodig. Ik wilde AI inzetten, maar had geen tijd om alles zelf te leren. KlikKlaar automatiseert nu al onze SEO."
+            </blockquote>
+            <div className="flex items-center justify-center space-x-4">
+              <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+              <div className="text-left">
+                <div className="font-semibold text-gray-900">Eveliina Salminen</div>
+                <div className="text-sm text-orange-500">Marketing Manager at TuKu Music Festival</div>
+              </div>
+            </div>
+          </div>
           
-          {/* Testimonials */}
+          {/* Three Testimonial Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-6">
-              <blockquote className="text-gray-600 italic mb-4">
+            <Card className="p-6 bg-gray-50 border-gray-200">
+              <blockquote className="text-gray-700 italic mb-6 text-sm leading-relaxed">
                 "SEO AI helpt ons eenvoudig content te creëren en versnelt ons hele proces."
               </blockquote>
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
+                <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
                 <div>
-                  <div className="font-medium">Tommy Blix</div>
-                  <div className="text-sm text-gray-500">Founder at MyApp</div>
+                  <div className="font-semibold text-gray-900">Tommy Siro</div>
+                  <div className="text-sm text-blue-500">Co-Founder at Jobilla</div>
                 </div>
               </div>
             </Card>
             
-            <Card className="p-6">
-              <blockquote className="text-gray-600 italic mb-4">
-                "Met KlikKlaar hebben we meerdere #1 posities behaald, echt super blij mee!"
+            <Card className="p-6 bg-gray-50 border-gray-200">
+              <blockquote className="text-gray-700 italic mb-6 text-sm leading-relaxed">
+                "Met KlikKlaar hebben we meerdere #1-posities behaald, echt super blij mee!"
               </blockquote>
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
+                <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
                 <div>
-                  <div className="font-medium">Ana Gheorghiu</div>
-                  <div className="text-sm text-gray-500">CEO at Derby Systems</div>
+                  <div className="font-semibold text-gray-900">Anu Sinisalo</div>
+                  <div className="text-sm text-purple-500">CEO at Wanha Satama</div>
                 </div>
               </div>
             </Card>
             
-            <Card className="p-6">
-              <blockquote className="text-gray-600 italic mb-4">
-                "Dankzij KlikKlaar positioneren we top in toekomstige zoekopdrachten en besparen we veel tijd in SEO."
+            <Card className="p-6 bg-gray-50 border-gray-200">
+              <blockquote className="text-gray-700 italic mb-6 text-sm leading-relaxed">
+                "Dankzij KlikKlaar presteren we top in belangrijke zoekresultaten en besparen we veel tijd in SEO."
               </blockquote>
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
+                <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
                 <div>
-                  <div className="font-medium">Karl Toerink</div>
-                  <div className="text-sm text-gray-500">Head SEO Strategist</div>
+                  <div className="font-semibold text-gray-900">Kati Tommila</div>
+                  <div className="text-sm text-orange-500">CEO at Raiteille Oy</div>
                 </div>
               </div>
             </Card>
