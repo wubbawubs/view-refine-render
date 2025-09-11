@@ -105,7 +105,7 @@ const Homepage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
-              <span className="text-orange-500">SEO AI</span> <span className="text-purple-600">Toolset</span> voor meer
+              <span className="bg-gradient-to-r from-orange-500 via-purple-600 to-blue-600 bg-clip-text text-transparent">SEO AI Toolset</span> voor meer
             </h2>
             <p className="text-gray-600 max-w-4xl mx-auto text-lg leading-relaxed">
               Bij KlikKlaar vragen we ons elke dag af hoe we zoekmachine optimalisatie gemakkelijker en sneller kunnen maken 
@@ -117,7 +117,7 @@ const Homepage = () => {
           {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <Search className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-3 text-gray-900">Je eigen AI</h3>
@@ -127,7 +127,7 @@ const Homepage = () => {
             </Card>
 
             <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <BarChart3 className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-3 text-gray-900">Trefwoord Analyse</h3>
@@ -137,7 +137,7 @@ const Homepage = () => {
             </Card>
 
             <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <Target className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-3 text-gray-900">Ideeëngeneratie</h3>
@@ -147,7 +147,7 @@ const Homepage = () => {
             </Card>
 
             <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-3 text-gray-900">Inhoud creëren</h3>
@@ -160,7 +160,7 @@ const Homepage = () => {
           {/* Second row of features */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-3 text-gray-900">Automatisch posten</h3>
@@ -170,7 +170,7 @@ const Homepage = () => {
             </Card>
 
             <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <Users className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-3 text-gray-900">Volg je concurrent</h3>
@@ -180,7 +180,7 @@ const Homepage = () => {
             </Card>
 
             <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <TrendingUp className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-3 text-gray-900">Rank Tracker</h3>
@@ -190,7 +190,7 @@ const Homepage = () => {
             </Card>
 
             <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
-              <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <Clock className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-3 text-gray-900">SEO Analyse</h3>
