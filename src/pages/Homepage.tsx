@@ -311,7 +311,7 @@ const Homepage = () => {
                     <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
                     <div className="text-left">
                       <div className="font-semibold text-gray-900">Eveliina Salminen</div>
-                      <div className="text-sm text-orange-500">Marketing Manager at TuKu Music Festival</div>
+                      <div className="text-sm text-gray-500">Marketing Manager at TuKu Music Festival</div>
                     </div>
                   </div>
                 </div>
@@ -335,7 +335,7 @@ const Homepage = () => {
                 <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
                 <div>
                   <div className="font-semibold text-gray-900">Tommy Siro</div>
-                  <div className="text-sm text-blue-500">Co-Founder at Jobilla</div>
+                  <div className="text-sm text-gray-500">Co-Founder at Jobilla</div>
                 </div>
               </div>
             </Card>
@@ -348,7 +348,7 @@ const Homepage = () => {
                 <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
                 <div>
                   <div className="font-semibold text-gray-900">Anu Sinisalo</div>
-                  <div className="text-sm text-purple-500">CEO at Wanha Satama</div>
+                  <div className="text-sm text-gray-500">CEO at Wanha Satama</div>
                 </div>
               </div>
             </Card>
@@ -361,7 +361,7 @@ const Homepage = () => {
                 <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
                 <div>
                   <div className="font-semibold text-gray-900">Kati Tommila</div>
-                  <div className="text-sm text-orange-500">CEO at Raiteille Oy</div>
+                  <div className="text-sm text-gray-500">CEO at Raiteille Oy</div>
                 </div>
               </div>
             </Card>
