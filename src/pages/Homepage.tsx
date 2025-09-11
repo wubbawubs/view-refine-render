@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { IconGradientDefs } from "@/components/ui/icon-gradient-defs";
 import { IconBadge } from "@/components/ui/icon-badge";
 import { Star, CheckCircle, Brain, Search, Lightbulb, FileText, CalendarCheck, Binoculars, TrendingUp, ScanSearch } from "lucide-react";
 import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
@@ -10,7 +9,6 @@ import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
 const Homepage = () => {
   return (
     <div className="min-h-screen bg-white">
-      <IconGradientDefs />
       {/* Trustpilot Badge */}
       <div className="bg-gradient-to-r from-gray-600 via-gray-700 to-gray-800 py-2">
         <div className="container mx-auto px-4 text-center">
