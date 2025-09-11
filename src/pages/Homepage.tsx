@@ -371,9 +371,9 @@ const Homepage = () => {
 
       {/* Pricing Section */}
       <section className="py-20 relative overflow-hidden">
-        {/* Gradient background that fades to transparent at top */}
+        {/* Gradient background that fades to transparent much sooner */}
         <div className="absolute inset-0 bg-gradient-to-t from-orange-400 via-pink-500 via-purple-600 to-blue-700 opacity-100"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent from-20% to-white to-60%"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
@@ -391,7 +391,6 @@ const Homepage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Basis Plan */}
             <Card className="p-8 relative bg-white rounded-2xl shadow-xl border-0 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-100/30 via-transparent to-orange-200/40 pointer-events-none"></div>
               <div className="relative z-10">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-4 text-gray-800">Basis</h3>
@@ -401,51 +400,50 @@ const Homepage = () => {
                 <Button className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg">
                   Demo sessie plannen
                 </Button>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>50 selected keywords to create content</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>1-2 blog posts per month</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>+30 languages to translate content</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Automated content publishing</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Supervision of max. 3 competitors</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Monthly SEO audit for max. 500 pages</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Dedicated Customer Success Manager</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Technical installation and commissioning</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>1 check-in meeting per year</span>
+                  </li>
+                </ul>
               </div>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>50 selected keywords to create content</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>1-2 blog posts per month</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>+30 languages to translate content</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Automated content publishing</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Supervision of max. 3 competitors</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Monthly SEO audit for max. 500 pages</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Dedicated Customer Success Manager</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Technical installation and commissioning</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>1 check-in meeting per year</span>
-                </li>
-              </ul>
             </Card>
 
             {/* Plus Plan */}
             <Card className="p-8 relative bg-white rounded-2xl shadow-xl border-0 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-100/40 via-transparent to-purple-200/40 pointer-events-none"></div>
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-500 to-purple-600 text-white px-4 py-1 rounded-full font-semibold">
+              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-500 to-purple-600 text-white px-4 py-1 rounded-full font-semibold z-20">
                 Populair
               </Badge>
               <div className="relative z-10">
@@ -457,50 +455,49 @@ const Homepage = () => {
                 <Button className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg">
                   Demo sessie plannen
                 </Button>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>100 selected keywords to create content</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>3-6 blog posts per month</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>+30 languages to translate content</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Automated content publishing</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Supervision of max. 10 competitors</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Monthly SEO audit for max. 500 pages</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Dedicated Customer Success Manager</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Technical installation and commissioning</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>4 check-in meetings per year</span>
+                  </li>
+                </ul>
               </div>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>100 selected keywords to create content</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>3-6 blog posts per month</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>+30 languages to translate content</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Automated content publishing</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Supervision of max. 10 competitors</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Monthly SEO audit for max. 500 pages</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Dedicated Customer Success Manager</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Technical installation and commissioning</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>4 check-in meetings per year</span>
-                </li>
-              </ul>
             </Card>
 
             {/* Pro Plan */}
             <Card className="p-8 relative bg-white rounded-2xl shadow-xl border-0 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-100/40 via-transparent to-blue-200/40 pointer-events-none"></div>
               <div className="relative z-10">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold mb-4 text-gray-800">Pro</h3>
@@ -510,45 +507,45 @@ const Homepage = () => {
                 <Button className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg">
                   Demo sessie plannen
                 </Button>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>500 selected keywords to create content</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>8+ blog posts per month</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>+30 languages to translate content</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Automated content publishing</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Supervision of max. 20 competitors</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Monthly SEO audit for max. 1500 pages</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Dedicated Customer Success Manager</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Technical installation and commissioning</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>12 check-in meetings per year</span>
+                  </li>
+                </ul>
               </div>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>500 selected keywords to create content</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>8+ blog posts per month</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>+30 languages to translate content</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Automated content publishing</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Supervision of max. 20 competitors</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Monthly SEO audit for max. 1500 pages</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Dedicated Customer Success Manager</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Technical installation and commissioning</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>12 check-in meetings per year</span>
-                </li>
-              </ul>
             </Card>
           </div>
         </div>
