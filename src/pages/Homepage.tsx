@@ -326,8 +326,8 @@ const Homepage = () => {
           </div>
           
           {/* Three Testimonial Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-6 bg-gray-50 border-gray-200">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="p-6 bg-white border border-gray-200 rounded-2xl shadow-sm">
               <blockquote className="text-gray-700 italic mb-6 text-sm leading-relaxed">
                 "SEO AI helpt ons eenvoudig content te creëren en versnelt ons hele proces."
               </blockquote>
@@ -340,7 +340,7 @@ const Homepage = () => {
               </div>
             </Card>
             
-            <Card className="p-6 bg-gray-50 border-gray-200">
+            <Card className="p-6 bg-white border border-gray-200 rounded-2xl shadow-sm">
               <blockquote className="text-gray-700 italic mb-6 text-sm leading-relaxed">
                 "Met KlikKlaar hebben we meerdere #1-posities behaald, echt super blij mee!"
               </blockquote>
@@ -353,7 +353,7 @@ const Homepage = () => {
               </div>
             </Card>
             
-            <Card className="p-6 bg-gray-50 border-gray-200">
+            <Card className="p-6 bg-white border border-gray-200 rounded-2xl shadow-sm">
               <blockquote className="text-gray-700 italic mb-6 text-sm leading-relaxed">
                 "Dankzij KlikKlaar presteren we top in belangrijke zoekresultaten en besparen we veel tijd in SEO."
               </blockquote>
