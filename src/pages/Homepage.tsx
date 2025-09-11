@@ -9,7 +9,7 @@ import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
 
 const Homepage = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-white via-gray-50/30 to-purple-50/20">
       <IconGradientDefs />
       {/* Trustpilot Badge */}
       <div className="bg-gradient-to-r from-gray-600 via-gray-700 to-gray-800 py-2">
@@ -49,7 +49,7 @@ const Homepage = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
+      <section className="py-20 bg-gradient-to-br from-transparent via-gray-50/20 to-purple-50/30">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
             Master jouw SEO met de{" "}
@@ -65,7 +65,7 @@ const Homepage = () => {
             variant="outline" 
             className="mb-16 px-8 py-4 text-lg border-2 border-gray-400 hover:bg-gray-50 rounded-lg"
           >
-            Boek hier je Demo
+            Even met elkaar bellen
           </Button>
           
           {/* Trust indicators */}
