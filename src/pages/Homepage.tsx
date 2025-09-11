@@ -214,7 +214,7 @@ const Homepage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 relative overflow-hidden animate-fade-in">
+      <section className="py-24 -my-12 relative overflow-hidden animate-fade-in">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-300/40 via-purple-400/30 to-orange-300/40"></div>
         
