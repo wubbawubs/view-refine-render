@@ -409,7 +409,7 @@ const Homepage = () => {
                   <div className="text-gray-600 mb-2">Per maand</div>
                 </div>
                 <Button className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg">
-                  Demo sessie plannen
+                  Nu starten
                 </Button>
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-start space-x-3">
@@ -466,7 +466,7 @@ const Homepage = () => {
                   <div className="text-gray-600 mb-2">Per maand</div>
                 </div>
                 <Button className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg">
-                  Demo sessie plannen
+                  Nu starten
                 </Button>
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-start space-x-3">
@@ -518,7 +518,7 @@ const Homepage = () => {
                   <div className="text-gray-600 mb-2">Prijs op aanvraag</div>
                 </div>
                 <Button className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg">
-                  Demo sessie plannen
+                  Nu starten
                 </Button>
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-start space-x-3">
