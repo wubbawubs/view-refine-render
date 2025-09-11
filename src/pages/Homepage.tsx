@@ -214,17 +214,32 @@ const Homepage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Ontdek hoe we binnen enkele seconden
-          </h2>
-          <p className="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
-            Wetendurig je veld dag nou kijk werkstructuur? Laat dans voor je beginnen krant waar elke progressieve SEO tool die helpen zo je plaats deze wensen lui heel gemakkelijk te realiseren binnen enkele seconden.
-          </p>
-          <Button size="lg" className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white border-0 px-8 py-4 text-lg">
-            Boost Actie met ons
-          </Button>
+      <section className="py-24 bg-gradient-to-br from-kk-violet via-kk-fuchsia to-kk-violet text-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+              Ontdek hoe we binnen enkele seconden
+            </h2>
+            <p className="text-xl md:text-2xl opacity-95 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Wetendurig je veld dag nou kijk werkstructuur? Laat dans voor je beginnen krant waar 
+              elke progressieve SEO tool die helpen zo je plaats deze wensen lui heel gemakkelijk te 
+              realiseren binnen enkele seconden.
+            </p>
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-kk-orange to-kk-fuchsia hover:from-kk-orange/90 hover:to-kk-fuchsia/90 
+                         text-white border-0 px-12 py-6 text-xl font-semibold rounded-xl 
+                         shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+            >
+              Boost Actie met ons
+            </Button>
+          </div>
         </div>
       </section>
 
