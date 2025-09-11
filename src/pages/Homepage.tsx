@@ -455,8 +455,8 @@ const Homepage = () => {
             {/* Plus Plan */}
             <Card className="p-8 pt-14 pb-14 relative bg-white rounded-2xl shadow-2xl border-0 overflow-visible min-h-[680px] -mt-4 mb-8">
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-30">
-                <Badge className="bg-gradient-to-r from-orange-500 to-purple-600 text-white px-6 py-2 rounded-full font-semibold text-sm">
-                  Populair
+                <Badge className="bg-gradient-to-r from-orange-500 to-purple-600 text-white px-4 py-2 rounded-full font-semibold text-xs shadow-lg">
+                  Meest gekozen
                 </Badge>
               </div>
               <div className="relative z-10">
