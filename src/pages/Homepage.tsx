@@ -399,7 +399,7 @@ const Homepage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
             {/* Basis Plan */}
             <Card className="p-8 relative bg-white rounded-2xl shadow-2xl border-0 overflow-hidden">
               <div className="relative z-10">
@@ -453,8 +453,8 @@ const Homepage = () => {
             </Card>
 
             {/* Plus Plan */}
-            <Card className="p-8 pt-12 pb-12 relative bg-white rounded-2xl shadow-2xl border-0 overflow-hidden min-h-[600px] -mt-4 mb-8">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-30">
+            <Card className="p-8 pt-14 pb-14 relative bg-white rounded-2xl shadow-2xl border-0 overflow-visible min-h-[680px] -mt-4 mb-8">
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-30">
                 <Badge className="bg-gradient-to-r from-orange-500 to-purple-600 text-white px-6 py-2 rounded-full font-semibold text-sm">
                   Populair
                 </Badge>
