@@ -292,30 +292,37 @@ const Homepage = () => {
       {/* Social Proof Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          {/* Top Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
-            <div className="text-center">
-              <div className="text-6xl font-bold text-gray-900 mb-2">+50%</div>
-              <div className="text-gray-600 text-lg">organic traffic</div>
-            </div>
-            <div className="text-center">
-              <div className="text-6xl font-bold text-gray-900 mb-2">2x</div>
-              <div className="text-gray-600 text-lg">Verhoging in sales</div>
-            </div>
-          </div>
+          {/* Main Testimonial Card */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <Card className="p-12 bg-white border border-gray-200 rounded-3xl shadow-lg">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                {/* Left Stat */}
+                <div className="text-center lg:text-left">
+                  <div className="text-6xl font-bold text-gray-900 mb-2">+50%</div>
+                  <div className="text-gray-600 text-lg">organic traffic</div>
+                </div>
 
-          {/* Featured Testimonial */}
-          <div className="text-center mb-16 max-w-4xl mx-auto">
-            <blockquote className="text-xl text-gray-700 italic mb-8 leading-relaxed">
-              "Onze marketing had iets effectievers nodig. Ik wilde AI inzetten, maar had geen tijd om alles zelf te leren. KlikKlaar automatiseert nu al onze SEO."
-            </blockquote>
-            <div className="flex items-center justify-center space-x-4">
-              <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
-              <div className="text-left">
-                <div className="font-semibold text-gray-900">Eveliina Salminen</div>
-                <div className="text-sm text-orange-500">Marketing Manager at TuKu Music Festival</div>
+                {/* Center Testimonial */}
+                <div className="text-center">
+                  <blockquote className="text-lg text-gray-700 italic mb-6 leading-relaxed">
+                    "Onze marketing had iets effectievers nodig. Ik wilde AI inzetten, maar had geen tijd om alles zelf te leren. KlikKlaar automatiseert nu al onze SEO."
+                  </blockquote>
+                  <div className="flex items-center justify-center space-x-3">
+                    <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+                    <div className="text-left">
+                      <div className="font-semibold text-gray-900">Eveliina Salminen</div>
+                      <div className="text-sm text-orange-500">Marketing Manager at TuKu Music Festival</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Stat */}
+                <div className="text-center lg:text-right">
+                  <div className="text-6xl font-bold text-gray-900 mb-2">2x</div>
+                  <div className="text-gray-600 text-lg">Verhoging in sales</div>
+                </div>
               </div>
-            </div>
+            </Card>
           </div>
           
           {/* Three Testimonial Cards */}
