@@ -101,101 +101,101 @@ const Homepage = () => {
       </section>
 
       {/* SEO AI Toolset Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
-              <span className="text-purple-600">SEO AI</span> Toolset voor meer
+            <h2 className="text-4xl font-bold mb-6">
+              <span className="text-orange-500">SEO AI</span> <span className="text-purple-600">Toolset</span> voor meer
             </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-              Bij KlikKlaar zorgen wij ervoor dat jij op de juiste onderwerpen commerciële gezochtheden en kunnen beurten bestelen 
-              voor marketingteam om nauwkeurig voor hun bedrijven. Onze gecombineerde AI-ondersteuning ondersteunt je op de 
-              belangrijke gebieden.
+            <p className="text-gray-600 max-w-4xl mx-auto text-lg leading-relaxed">
+              Bij KlikKlaar vragen we ons elke dag af hoe we zoekmachine optimalisatie gemakkelijker en sneller kunnen maken 
+              voor marketeers en succesvoller voor hun bedrijven. Onze geautomatiseerde AI-oplossing ondersteunt je op de 
+              volgende gebieden, allemaal te bedienen vanaf één dashboard.
             </p>
           </div>
 
-          {/* First row of features */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Search className="w-8 h-8 text-purple-600" />
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                <Search className="w-6 h-6 text-white" />
               </div>
-              <h3 className="font-semibold text-lg mb-3">Je eigen AI</h3>
-              <p className="text-gray-600 text-sm">
-                Een eigen gepersonaliseerd en op maat gesneden AI-assistent die speciaal voor jouw bedrijf en branche is geoptimaliseerd voor de beste resultaten.
+              <h3 className="font-semibold text-lg mb-3 text-gray-900">Je eigen AI</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Analyseer je branche, identificeer zoekwoorden en analyseer je concurrenten om een schat aan ideeën voor inhoud te genereren met onze AI-tekst schrijftool.
               </p>
             </Card>
 
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <BarChart3 className="w-8 h-8 text-purple-600" />
+            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                <BarChart3 className="w-6 h-6 text-white" />
               </div>
-              <h3 className="font-semibold text-lg mb-3">Trefwoord Analyse</h3>
-              <p className="text-gray-600 text-sm">
-                Vind snel de meest interessante trefwoord gegevens met behulp van geavanceerde AI-algoritmen die de markt analyseren.
+              <h3 className="font-semibold text-lg mb-3 text-gray-900">Trefwoord Analyse</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Onze zoekwoordanalyse richt zich op het ontdekken van het potentieel van microzoekwoorden voor uw bedrijf. De analyse is gebaseerd op zoekvolume, intentie en moeilijkheidsgraad van de zoekwoorden.
               </p>
             </Card>
 
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-purple-600" />
+            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                <Target className="w-6 h-6 text-white" />
               </div>
-              <h3 className="font-semibold text-lg mb-3">Ideegeneratie</h3>
-              <p className="text-gray-600 text-sm">
-                Intelligente gevarenzicht SEO en innovatieve content ideeën die perfect aansluiten bij jouw doelgroep en markt.
+              <h3 className="font-semibold text-lg mb-3 text-gray-900">Ideeëngeneratie</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Met behulp van kunstmatige intelligentie genereren SEO AI inhoud ideeën, tekstontwerpen, trefwoordgeoptimaliseerde titels en metabeschrijvingen.
               </p>
             </Card>
 
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-purple-600" />
+            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                <Zap className="w-6 h-6 text-white" />
               </div>
-              <h3 className="font-semibold text-lg mb-3">Inhoud creëren</h3>
-              <p className="text-gray-600 text-sm">
-                Schrijf gefocuste en snelle content voor uitstekende en verschillende rapportages die je concurrentie overtreffen.
+              <h3 className="font-semibold text-lg mb-3 text-gray-900">Inhoud creëren</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Zeg vaarwel tegen een writer's block en laat ons eigen AI-model eenvoudig goed geschreven, nuttige en boeiende content genereren voor je publiek.
               </p>
             </Card>
           </div>
 
           {/* Second row of features */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-purple-600" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                <Shield className="w-6 h-6 text-white" />
               </div>
-              <h3 className="font-semibold text-lg mb-3">Automatisch posten</h3>
-              <p className="text-gray-600 text-sm">
-                Alles wat je schrijft automatisch publiceren om tijd te besparen en consistentie te waarborgen.
+              <h3 className="font-semibold text-lg mb-3 text-gray-900">Automatisch posten</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Onze AI-tekst schrijftool bevat een planningsfunctie waarmee je de publicatie van je inhoud op de gewenste frequentie kunt automatiseren.
               </p>
             </Card>
 
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-purple-600" />
+            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                <Users className="w-6 h-6 text-white" />
               </div>
-              <h3 className="font-semibold text-lg mb-3">Volg je concurrenten</h3>
-              <p className="text-gray-600 text-sm">
-                Volg stap voor stap van je grootste tegenstanders en blijf altijd een stap voor op de concurrentie.
+              <h3 className="font-semibold text-lg mb-3 text-gray-900">Volg je concurrent</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                We monitoren je concurrenten en hun rankings. Met behulp van de gegevens creëren we betere inhoud met de potentie om beter te presteren dan de concurrentie.
               </p>
             </Card>
 
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-8 h-8 text-purple-600" />
+            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-lg flex items-center justify-center mb-4">
+                <TrendingUp className="w-6 h-6 text-white" />
               </div>
-              <h3 className="font-semibold text-lg mb-3">Rank Tracker</h3>
-              <p className="text-gray-600 text-sm">
-                Bekijk performance voor je belangrijkste zoekwoorden en monitor je vooruitgang in real-time.
+              <h3 className="font-semibold text-lg mb-3 text-gray-900">Rank Tracker</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Volg de rangschikking van je zoekwoorden en vind nog meer ideeën voor inhoud met microzoekwoorden die topische autoriteit in je niche opbouwen.
               </p>
             </Card>
 
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-purple-600" />
+            <Card className="p-6 text-left hover:shadow-lg transition-shadow bg-white border-0 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                <Clock className="w-6 h-6 text-white" />
               </div>
-              <h3 className="font-semibold text-lg mb-3">SEO Analyse</h3>
-              <p className="text-gray-600 text-sm">
-                Ontdek verbeteringen en ondersteuning waar je website optimalisatie nodig heeft voor betere rankings.
+              <h3 className="font-semibold text-lg mb-3 text-gray-900">SEO Analyse</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Analyseer je website regelmatig op technische en structurele problemen en krijg aanbevelingen om je website te verbeteren.
               </p>
             </Card>
           </div>
