@@ -62,7 +62,7 @@ const Homepage = () => {
           </p>
           <Button 
             size="lg" 
-            className="mb-12 sm:mb-16 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 hover:from-orange-600 hover:via-pink-600 hover:to-purple-700 text-white border-0 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="mb-12 sm:mb-16 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-gradient-to-r from-orange-400/70 via-pink-400/70 to-purple-500/70 hover:from-orange-500/80 hover:via-pink-500/80 hover:to-purple-600/80 text-white border-0 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Even met elkaar bellen
           </Button>
