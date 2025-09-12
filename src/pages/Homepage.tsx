@@ -105,17 +105,6 @@ const Homepage = () => {
                   ))}
                 </div>
               </div>
-              {/* Scroll indicator dots */}
-              <div className="flex justify-center space-x-2 mt-4">
-                {trustIndicators.map((_, index) => (
-                  <div 
-                    key={index}
-                    className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                      index === currentSlide ? 'bg-kk-orange' : 'bg-gray-300'
-                    }`}
-                  />
-                ))}
-              </div>
             </div>
             
             {/* Desktop layout */}
