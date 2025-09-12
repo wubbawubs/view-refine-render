@@ -1,5 +1,6 @@
+import { useState, useEffect } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { IconGradientDefs } from "@/components/ui/icon-gradient-defs";
 import { IconBadge } from "@/components/ui/icon-badge";
@@ -8,6 +9,22 @@ import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
 
 
 const Homepage = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const trustIndicators = [
+    { icon: Clock, text: "Nooit meer tijd kwijt aan SEO taken" },
+    { icon: Zap, text: "Volledig geautomatiseerd" },
+    { icon: Target, text: "wij optimaliseren voor zoekmachines zowel als AI" }
+  ];
+
+  // Auto-rotate carousel on mobile
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % trustIndicators.length);
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [trustIndicators.length]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50/30 to-purple-50/20">
       <IconGradientDefs />
@@ -71,56 +88,46 @@ const Homepage = () => {
           <div className="mb-16 sm:mb-20 px-4">
             {/* Mobile carousel */}
             <div className="sm:hidden">
-              <div className="overflow-x-auto scrollbar-hide">
-                <div className="flex space-x-6 pb-4 animate-fade-in" style={{ width: 'max-content' }}>
-                  <div className="flex items-center space-x-3 text-center flex-shrink-0 bg-white/50 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm">
-                    <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-4 h-4 text-white" />
+              <div className="overflow-hidden">
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                  {trustIndicators.map((indicator, index) => (
+                    <div key={index} className="w-full flex-shrink-0 flex justify-center">
+                      <div className="flex items-center space-x-3 text-center bg-white/50 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm">
+                        <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <indicator.icon className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-sm text-gray-700">{indicator.text}</span>
+                      </div>
                     </div>
-                    <span className="text-sm whitespace-nowrap text-gray-700">Nooit meer tijd kwijt aan SEO taken</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-center flex-shrink-0 bg-white/50 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm">
-                    <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Zap className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="text-sm whitespace-nowrap text-gray-700">Volledig geautomatiseerd</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-center flex-shrink-0 bg-white/50 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm">
-                    <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Target className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="text-sm whitespace-nowrap text-gray-700">wij optimaliseren voor zoekmachines zowel als AI</span>
-                  </div>
+                  ))}
                 </div>
               </div>
               {/* Scroll indicator dots */}
               <div className="flex justify-center space-x-2 mt-4">
-                <div className="w-2 h-2 bg-kk-orange rounded-full animate-pulse"></div>
-                <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                {trustIndicators.map((_, index) => (
+                  <div 
+                    key={index}
+                    className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                      index === currentSlide ? 'bg-kk-orange' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
               </div>
             </div>
             
             {/* Desktop layout */}
             <div className="hidden sm:flex flex-row items-center justify-center space-x-6 lg:space-x-12 text-gray-700">
-              <div className="flex items-center space-x-3 text-center sm:text-left">
-                <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-4 h-4 text-white" />
+              {trustIndicators.map((indicator, index) => (
+                <div key={index} className="flex items-center space-x-3 text-center sm:text-left">
+                  <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <indicator.icon className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-sm sm:text-base">{indicator.text}</span>
                 </div>
-                <span className="text-sm sm:text-base">Nooit meer tijd kwijt aan SEO taken</span>
-              </div>
-              <div className="flex items-center space-x-3 text-center sm:text-left">
-                <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Zap className="w-4 h-4 text-white" />
-                </div>
-                <span className="text-sm sm:text-base">Volledig geautomatiseerd</span>
-              </div>
-              <div className="flex items-center space-x-3 text-center sm:text-left">
-                <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Target className="w-4 h-4 text-white" />
-                </div>
-                <span className="text-sm sm:text-base">wij optimaliseren voor zoekmachines zowel als AI</span>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -150,94 +157,94 @@ const Homepage = () => {
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-8">
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm" 
-                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="mb-6">
+                  style={{ borderRadius: '10px', padding: '20px' }}>
+              <div className="mb-4">
                 <IconBadge Icon={Brain} />
               </div>
-              <h3 className="font-semibold text-lg mb-4 text-gray-900">KlikKlaar AI</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">KlikKlaar AI</h3>
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
                 Onze ontwikkelde AI-assistent leert jouw branche begrijpen, concurrenten analyseren en direct optimalisaties aandraagt. Altijd relevant, nooit meer stilvallen.
               </p>
             </Card>
 
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
-                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="mb-6">
+                  style={{ borderRadius: '10px', padding: '20px' }}>
+              <div className="mb-4">
                 <IconBadge Icon={Search} />
               </div>
-              <h3 className="font-semibold text-lg mb-4 text-gray-900">Keyword Analyse</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">Keyword Analyse</h3>
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
                 Wij vinden de zoekwoorden die écht klanten opleveren. Wij analyseren volume, intentie en moeilijkheid, zodat jij weet waar je de meeste winst pakt.
               </p>
             </Card>
 
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
-                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="mb-6">
+                  style={{ borderRadius: '10px', padding: '20px' }}>
+              <div className="mb-4">
                 <IconBadge Icon={Lightbulb} />
               </div>
-              <h3 className="font-semibold text-lg mb-4 text-gray-900">Ideeëngeneratie</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">Ideeëngeneratie</h3>
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
                 Stop met gokken. Onze AI genereert concrete SEO-ideeën, pakkende titels en metateksten die klikken opleveren.
               </p>
             </Card>
 
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
-                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="mb-6">
+                  style={{ borderRadius: '10px', padding: '20px' }}>
+              <div className="mb-4">
                 <IconBadge Icon={Atom} />
               </div>
-              <h3 className="font-semibold text-lg mb-4 text-gray-900">Vindbaar op AI</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">Vindbaar op AI</h3>
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
                 Onze software is ingericht om ook op AI vindbaar te zijn: KlikKlaar SEO is gebouwd om markt breed vindbaar te zijn en te blijven.
               </p>
             </Card>
           </div>
 
           {/* Second row of features */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
-                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="mb-6">
+                  style={{ borderRadius: '10px', padding: '20px' }}>
+              <div className="mb-4">
                 <IconBadge Icon={CalendarCheck} />
               </div>
-              <h3 className="font-semibold text-lg mb-4 text-gray-900">Automatisch Geoptimaliseerd</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">Automatisch Geoptimaliseerd</h3>
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
                 Onze software kan via een slimme laag op je website ten aller tijde optimaliseren. 15 minuten opzet werk en je AI zorgt dat er consistent vindbaar blijft, zonder gedoe.
               </p>
             </Card>
 
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
-                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="mb-6">
+                  style={{ borderRadius: '10px', padding: '20px' }}>
+              <div className="mb-4">
                 <IconBadge Icon={Binoculars} />
               </div>
-              <h3 className="font-semibold text-lg mb-4 text-gray-900">Volg je concurrent</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">Volg je concurrent</h3>
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
                 Zie precies hoe je concurrenten scoren en gebruik hun zwakke plekken om ze in te halen. Jij krijgt de inzichten, wij doen het werk.
               </p>
             </Card>
 
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
-                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="mb-6">
+                  style={{ borderRadius: '10px', padding: '20px' }}>
+              <div className="mb-4">
                 <IconBadge Icon={TrendingUp} />
               </div>
-              <h3 className="font-semibold text-lg mb-4 text-gray-900">Rank Tracker</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">Rank Tracker</h3>
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
                 Hou dagelijks zicht op je posities in Google. Ontdek nieuwe groeikansen en bouw stap voor stap meer autoriteit op.
               </p>
             </Card>
 
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
-                  style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
-              <div className="mb-6">
+                  style={{ borderRadius: '10px', padding: '20px' }}>
+              <div className="mb-4">
                 <IconBadge Icon={ScanSearch} />
               </div>
-              <h3 className="font-semibold text-lg mb-4 text-gray-900">SEO Analyse</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">SEO Analyse</h3>
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
                 Krijg een voortdurende check van je website. Van technische fouten tot optimalisatie-gaten: wij signaleren het en optimaliseren het direct.
               </p>
             </Card>
