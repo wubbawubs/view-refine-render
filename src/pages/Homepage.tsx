@@ -68,24 +68,59 @@ const Homepage = () => {
           </Button>
           
           {/* Trust indicators */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-12 text-gray-700 mb-16 sm:mb-20 px-4">
-            <div className="flex items-center space-x-3 text-center sm:text-left">
-              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
-                <Clock className="w-4 h-4 text-white" />
+          <div className="mb-16 sm:mb-20 px-4">
+            {/* Mobile carousel */}
+            <div className="sm:hidden">
+              <div className="overflow-x-auto scrollbar-hide">
+                <div className="flex space-x-6 pb-4 animate-fade-in" style={{ width: 'max-content' }}>
+                  <div className="flex items-center space-x-3 text-center flex-shrink-0 bg-white/50 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm">
+                    <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-sm whitespace-nowrap text-gray-700">Nooit meer tijd kwijt aan SEO taken</span>
+                  </div>
+                  <div className="flex items-center space-x-3 text-center flex-shrink-0 bg-white/50 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm">
+                    <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Zap className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-sm whitespace-nowrap text-gray-700">Volledig geautomatiseerd</span>
+                  </div>
+                  <div className="flex items-center space-x-3 text-center flex-shrink-0 bg-white/50 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm">
+                    <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Target className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-sm whitespace-nowrap text-gray-700">wij optimaliseren voor zoekmachines zowel als AI</span>
+                  </div>
+                </div>
               </div>
-              <span className="text-sm sm:text-base">Nooit meer tijd kwijt aan SEO taken</span>
+              {/* Scroll indicator dots */}
+              <div className="flex justify-center space-x-2 mt-4">
+                <div className="w-2 h-2 bg-kk-orange rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+              </div>
             </div>
-            <div className="flex items-center space-x-3 text-center sm:text-left">
-              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
-                <Zap className="w-4 h-4 text-white" />
+            
+            {/* Desktop layout */}
+            <div className="hidden sm:flex flex-row items-center justify-center space-x-6 lg:space-x-12 text-gray-700">
+              <div className="flex items-center space-x-3 text-center sm:text-left">
+                <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-4 h-4 text-white" />
+                </div>
+                <span className="text-sm sm:text-base">Nooit meer tijd kwijt aan SEO taken</span>
               </div>
-              <span className="text-sm sm:text-base">Volledig geautomatiseerd</span>
-            </div>
-            <div className="flex items-center space-x-3 text-center sm:text-left">
-              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
-                <Target className="w-4 h-4 text-white" />
+              <div className="flex items-center space-x-3 text-center sm:text-left">
+                <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Zap className="w-4 h-4 text-white" />
+                </div>
+                <span className="text-sm sm:text-base">Volledig geautomatiseerd</span>
               </div>
-              <span className="text-sm sm:text-base">wij optimaliseren voor zoekmachines zowel als AI</span>
+              <div className="flex items-center space-x-3 text-center sm:text-left">
+                <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Target className="w-4 h-4 text-white" />
+                </div>
+                <span className="text-sm sm:text-base">wij optimaliseren voor zoekmachines zowel als AI</span>
+              </div>
             </div>
           </div>
 
