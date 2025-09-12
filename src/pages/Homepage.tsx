@@ -51,7 +51,7 @@ const Homepage = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-transparent via-gray-50/20 to-purple-50/30">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight bg-gradient-to-r from-gray-900 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
             Master jouw SEO met de Power van AI
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto px-4 sm:px-0">
@@ -59,7 +59,7 @@ const Homepage = () => {
           </p>
           <Button 
             size="lg" 
-            className="mb-12 sm:mb-16 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="mb-12 sm:mb-16 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 hover:from-orange-600 hover:via-pink-600 hover:to-purple-700 text-white border-0 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Even met elkaar bellen
           </Button>
