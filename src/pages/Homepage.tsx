@@ -107,7 +107,7 @@ const Homepage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 via-purple-600 to-blue-600 bg-clip-text text-transparent">SEO AI Toolset</span> voor meer
+              KlikKlaar SEO zorgt dat jouw website vindbaar blijft
             </h2>
             <p className="text-gray-600 max-w-4xl mx-auto text-lg leading-relaxed">
               Bij KlikKlaar vragen we ons elke dag af hoe we zoekmachine optimalisatie gemakkelijker en sneller kunnen maken 
