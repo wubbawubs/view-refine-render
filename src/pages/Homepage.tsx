@@ -240,12 +240,18 @@ const Homepage = () => {
               realiseren binnen enkele seconden.
             </p>
             <Button 
+              onClick={() => {
+                const pricingSection = document.getElementById('pricing');
+                if (pricingSection) {
+                  pricingSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
               size="lg" 
               className="bg-gradient-to-r from-kk-orange/80 to-kk-fuchsia/80 hover:from-kk-orange/90 hover:to-kk-fuchsia/90 
                          text-white border-0 px-12 py-6 text-xl font-semibold rounded-xl 
                          shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 animate-scale-in"
             >
-              Boost Actie met ons
+              Direct starten
             </Button>
           </div>
         </div>
@@ -375,7 +381,7 @@ const Homepage = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 relative overflow-hidden animate-fade-in">
+      <section id="pricing" className="py-20 relative overflow-hidden animate-fade-in">
         {/* Subtle left to right gradient background with fading */}
         <div className="absolute inset-0 bg-gradient-to-r from-orange-200/60 via-pink-200/50 via-purple-200/60 to-blue-200/70"></div>
         {/* Strong fade to white at the top */}
@@ -405,7 +411,10 @@ const Homepage = () => {
                   <div className="text-4xl font-bold mb-1 text-gray-900">€99,-</div>
                   <div className="text-gray-600 mb-2">/ maand</div>
                 </div>
-                <Button className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg">
+                <Button 
+                  onClick={() => window.location.href = '/checkout/basis'}
+                  className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg"
+                >
                   Nu starten
                 </Button>
                 <ul className="space-y-3 text-sm">
@@ -453,7 +462,10 @@ const Homepage = () => {
                   <div className="text-4xl font-bold mb-1 text-gray-900">€149,-</div>
                   <div className="text-gray-600 mb-2">/ maand</div>
                 </div>
-                <Button className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg">
+                <Button 
+                  onClick={() => window.location.href = '/checkout/pro'}
+                  className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg"
+                >
                   Nu starten
                 </Button>
                 <ul className="space-y-3 text-sm">
@@ -535,9 +547,21 @@ const Homepage = () => {
             <div>
               <h4 className="font-semibold mb-4">Menu</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white cursor-pointer">Direct starten</a></li>
-                <li><a href="#" className="hover:text-white cursor-pointer">Over ons</a></li>
-                <li><a href="#" className="hover:text-white cursor-pointer">Algemene voorwaarden</a></li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      const pricingSection = document.getElementById('pricing');
+                      if (pricingSection) {
+                        pricingSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                    className="hover:text-white cursor-pointer"
+                  >
+                    Direct starten
+                  </button>
+                </li>
+                <li><a href="/over-ons" className="hover:text-white cursor-pointer">Over ons</a></li>
+                <li><a href="/algemene-voorwaarden" className="hover:text-white cursor-pointer">Algemene voorwaarden</a></li>
                 <li><a href="#" className="hover:text-white cursor-pointer">Neem contact op</a></li>
               </ul>
             </div>

@@ -17,6 +17,8 @@ import CheckoutBasis from "./pages/CheckoutBasis";
 import CheckoutPro from "./pages/CheckoutPro";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentCancelled from "./pages/PaymentCancelled";
+import OverOns from "./pages/OverOns";
+import AlgemeneVoorwaarden from "./pages/AlgemeneVoorwaarden";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +44,8 @@ const App = () => (
             <Route path="/checkout/pro" element={<CheckoutPro />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
             <Route path="/payment-cancelled" element={<PaymentCancelled />} />
+            <Route path="/over-ons" element={<OverOns />} />
+            <Route path="/algemene-voorwaarden" element={<AlgemeneVoorwaarden />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
