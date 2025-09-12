@@ -146,8 +146,8 @@ const Homepage = () => {
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-8 grid-rows-1">
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col" 
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-8">
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm flex flex-col lg:h-[280px]" 
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={Brain} />
@@ -158,7 +158,7 @@ const Homepage = () => {
               </p>
             </Card>
 
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm flex flex-col lg:h-[280px]"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={Search} />
@@ -169,7 +169,7 @@ const Homepage = () => {
               </p>
             </Card>
 
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm flex flex-col lg:h-[280px]"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={Lightbulb} />
@@ -180,7 +180,7 @@ const Homepage = () => {
               </p>
             </Card>
 
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm flex flex-col lg:h-[280px]"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={Atom} />
@@ -193,8 +193,8 @@ const Homepage = () => {
           </div>
 
           {/* Second row of features */}
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 grid-rows-1">
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm flex flex-col lg:h-[280px]"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={CalendarCheck} />
@@ -205,7 +205,7 @@ const Homepage = () => {
               </p>
             </Card>
 
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm flex flex-col lg:h-[280px]"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={Binoculars} />
@@ -216,7 +216,7 @@ const Homepage = () => {
               </p>
             </Card>
 
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm flex flex-col lg:h-[280px]"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={TrendingUp} />
@@ -227,7 +227,7 @@ const Homepage = () => {
               </p>
             </Card>
 
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm flex flex-col lg:h-[280px]"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={ScanSearch} />
