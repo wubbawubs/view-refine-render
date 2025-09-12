@@ -58,7 +58,7 @@ const Homepage = () => {
             </span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto px-4 sm:px-0">
-            Betere rankings voor je website in minder tijd
+            Dé eerste volledig automatische SEO software.
           </p>
           <Button 
             size="lg" 
