@@ -51,42 +51,38 @@ const Homepage = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-transparent via-gray-50/20 to-purple-50/30">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
-            Master jouw SEO met de{" "}
-            <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-600 bg-clip-text text-transparent">
-              Power van AI
-            </span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight bg-gradient-to-r from-gray-900 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+            Master jouw SEO met de Power van AI
           </h1>
-          <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto px-4 sm:px-0">
             Betere rankings voor je website in minder tijd
           </p>
           <Button 
             size="lg" 
-            variant="outline" 
-            className="mb-16 px-8 py-4 text-lg border-2 border-gray-400 hover:bg-gray-50 rounded-lg"
+            className="mb-12 sm:mb-16 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Even met elkaar bellen
           </Button>
           
           {/* Trust indicators */}
-          <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 text-gray-700 mb-20">
-            <div className="flex items-center space-x-3">
-              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-12 text-gray-700 mb-16 sm:mb-20 px-4">
+            <div className="flex items-center space-x-3 text-center sm:text-left">
+              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
                 <Clock className="w-4 h-4 text-white" />
               </div>
-              <span>Nooit meer tijd kwijt aan SEO taken</span>
+              <span className="text-sm sm:text-base">Nooit meer tijd kwijt aan SEO taken</span>
             </div>
-            <div className="flex items-center space-x-3">
-              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
+            <div className="flex items-center space-x-3 text-center sm:text-left">
+              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
                 <Zap className="w-4 h-4 text-white" />
               </div>
-              <span>Volledig geautomatiseerd</span>
+              <span className="text-sm sm:text-base">Volledig geautomatiseerd</span>
             </div>
-            <div className="flex items-center space-x-3">
-              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
+            <div className="flex items-center space-x-3 text-center sm:text-left">
+              <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
                 <Target className="w-4 h-4 text-white" />
               </div>
-              <span>wij optimaliseren voor zoekmachines zowel als AI</span>
+              <span className="text-sm sm:text-base">wij optimaliseren voor zoekmachines zowel als AI</span>
             </div>
           </div>
 
