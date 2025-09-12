@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { IconGradientDefs } from "@/components/ui/icon-gradient-defs";
 import { IconBadge } from "@/components/ui/icon-badge";
-import { Star, CheckCircle, Brain, Search, Lightbulb, FileText, CalendarCheck, Binoculars, TrendingUp, ScanSearch, Zap, Clock, Target } from "lucide-react";
+import { Star, CheckCircle, Brain, Search, Lightbulb, Cpu, CalendarCheck, Binoculars, TrendingUp, ScanSearch, Zap, Clock, Target } from "lucide-react";
 import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
 
 
@@ -154,7 +154,7 @@ const Homepage = () => {
             <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
                   style={{ width: '273px', height: '397px', borderRadius: '10px', padding: '34px' }}>
               <div className="mb-6">
-                <IconBadge Icon={FileText} />
+                <IconBadge Icon={Cpu} />
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Vindbaar op AI</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
