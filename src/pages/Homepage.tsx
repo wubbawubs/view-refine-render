@@ -110,9 +110,7 @@ const Homepage = () => {
               Wat <span className="bg-gradient-to-r from-orange-500 via-purple-600 to-blue-600 bg-clip-text text-transparent">Klikklaar SEO</span> voor jou doet
             </h2>
             <p className="text-gray-600 max-w-4xl mx-auto text-lg leading-relaxed">
-              Bij KlikKlaar vragen we ons elke dag af hoe we zoekmachine optimalisatie gemakkelijker en sneller kunnen maken 
-              voor marketeers en succesvoller voor hun bedrijven. Onze geautomatiseerde AI-oplossing ondersteunt je op de 
-              volgende gebieden, allemaal te bedienen vanaf één dashboard.
+              KlikKlaar is de eerste tool die SEO en AI volledig automatisch optimaliseert. Jij zet het één keer op, wij zorgen dat je website altijd vindbaar blijft. Terwijl jij je focust op je bedrijf, bouwen wij continu door achter de schermen. Geen ingewikkelde instellingen, geen gedoe, wél blijvende zichtbaarheid en groei.
             </p>
           </div>
 
