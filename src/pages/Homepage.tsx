@@ -146,94 +146,94 @@ const Homepage = () => {
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-8">
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm" 
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-8 grid-rows-1">
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col" 
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={Brain} />
               </div>
               <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">KlikKlaar AI</h3>
-              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed flex-grow">
                 Onze ontwikkelde AI-assistent leert jouw branche begrijpen, concurrenten analyseren en direct optimalisaties aandraagt. Altijd relevant, nooit meer stilvallen.
               </p>
             </Card>
 
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={Search} />
               </div>
               <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">Keyword Analyse</h3>
-              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed flex-grow">
                 Wij vinden de zoekwoorden die écht klanten opleveren. Wij analyseren volume, intentie en moeilijkheid, zodat jij weet waar je de meeste winst pakt.
               </p>
             </Card>
 
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={Lightbulb} />
               </div>
               <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">Ideeëngeneratie</h3>
-              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed flex-grow">
                 Stop met gokken. Onze AI genereert concrete SEO-ideeën, pakkende titels en metateksten die klikken opleveren.
               </p>
             </Card>
 
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={Atom} />
               </div>
               <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">Vindbaar op AI</h3>
-              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed flex-grow">
                 Onze software is ingericht om ook op AI vindbaar te zijn: KlikKlaar SEO is gebouwd om markt breed vindbaar te zijn en te blijven.
               </p>
             </Card>
           </div>
 
           {/* Second row of features */}
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 grid-rows-1">
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={CalendarCheck} />
               </div>
               <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">Automatisch Geoptimaliseerd</h3>
-              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed flex-grow">
                 Onze software kan via een slimme laag op je website ten aller tijde optimaliseren. 15 minuten opzet werk en je AI zorgt dat er consistent vindbaar blijft, zonder gedoe.
               </p>
             </Card>
 
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={Binoculars} />
               </div>
               <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">Volg je concurrent</h3>
-              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed flex-grow">
                 Zie precies hoe je concurrenten scoren en gebruik hun zwakke plekken om ze in te halen. Jij krijgt de inzichten, wij doen het werk.
               </p>
             </Card>
 
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={TrendingUp} />
               </div>
               <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">Rank Tracker</h3>
-              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed flex-grow">
                 Hou dagelijks zicht op je posities in Google. Ontdek nieuwe groeikansen en bouw stap voor stap meer autoriteit op.
               </p>
             </Card>
 
-            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm"
+            <Card className="text-left hover:shadow-lg transition-shadow bg-white border border-gray-200 shadow-sm h-full flex flex-col"
                   style={{ borderRadius: '10px', padding: '20px' }}>
               <div className="mb-4">
                 <IconBadge Icon={ScanSearch} />
               </div>
               <h3 className="font-semibold text-base lg:text-lg mb-3 text-gray-900">SEO Analyse</h3>
-              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed">
+              <p className="text-gray-600 text-xs lg:text-sm leading-relaxed flex-grow">
                 Krijg een voortdurende check van je website. Van technische fouten tot optimalisatie-gaten: wij signaleren het en optimaliseren het direct.
               </p>
             </Card>
