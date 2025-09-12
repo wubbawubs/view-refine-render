@@ -388,11 +388,11 @@ const Homepage = () => {
             <h2 className="text-4xl font-bold mb-4 text-black animate-scale-in">
               Prijzen aangepast{" "}
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                aan jouw behoefte
+                aan jouw groei
               </span>
             </h2>
             <p className="text-black/80 text-lg max-w-2xl mx-auto">
-              Kies een plan dat bij je past en boek een afspraak met ons, waar we je meenemen op een rondleiding door onze AI SEO Suite.
+              Kies het plan dat bij je past. Beide pakketten geven je volledige toegang tot dashboards, automatische optimalisaties en voortdurende SEO + AI verbeteringen.
             </p>
           </div>
 
@@ -401,9 +401,9 @@ const Homepage = () => {
             <Card className="p-8 relative bg-white rounded-2xl shadow-2xl border-0 overflow-hidden">
               <div className="relative z-10">
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-4 text-gray-800">Basis</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-800">Basic</h3>
                   <div className="text-4xl font-bold mb-1 text-gray-900">€99,-</div>
-                  <div className="text-gray-600 mb-2">Per maand</div>
+                  <div className="text-gray-600 mb-2">/ maand</div>
                 </div>
                 <Button className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg">
                   Nu starten
@@ -411,41 +411,32 @@ const Homepage = () => {
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>50 selected keywords to create content</span>
+                    <span>Volledig automatische SEO + AI optimalisatie</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>1-2 blog posts per month</span>
+                    <span>Updates elke 4 weken</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>+30 languages to translate content</span>
+                    <span>Toegang tot alle dashboards & rapportages</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Automated content publishing</span>
+                    <span>Inzichten in snelheid, zoekwoorden & content</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Supervision of max. 3 competitors</span>
+                    <span>Analyse van marktkansen (gap-insights)</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Monthly SEO audit for max. 500 pages</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Dedicated Customer Success Manager</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Technical installation and commissioning</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>1 check-in meeting per year</span>
+                    <span>Focus op blijvende vindbaarheid zonder omkijken</span>
                   </li>
                 </ul>
+                <div className="mt-6 pt-4 border-t border-gray-100">
+                  <p className="text-sm text-gray-600 italic">🔗 Perfect voor bedrijven die willen dat SEO gewoon geregeld is.</p>
+                </div>
               </div>
             </Card>
 
@@ -458,9 +449,9 @@ const Homepage = () => {
               </div>
               <div className="relative z-10">
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-4 text-gray-800">Plus</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-800">Pro</h3>
                   <div className="text-4xl font-bold mb-1 text-gray-900">€149,-</div>
-                  <div className="text-gray-600 mb-2">Per maand</div>
+                  <div className="text-gray-600 mb-2">/ maand</div>
                 </div>
                 <Button className="w-full mb-6 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg">
                   Nu starten
@@ -468,41 +459,28 @@ const Homepage = () => {
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>100 selected keywords to create content</span>
+                    <span>Alles van Basic, plus:</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>3-6 blog posts per month</span>
+                    <span>Updates elke 2 weken</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>+30 languages to translate content</span>
+                    <span>Uitgebreide concurrentie-analyse & gap-inzichten</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Automated content publishing</span>
+                    <span>Sneller resultaat door dubbele optimalisatie­frequentie</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Supervision of max. 10 competitors</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Monthly SEO audit for max. 500 pages</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Dedicated Customer Success Manager</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Technical installation and commissioning</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>4 check-in meetings per year</span>
+                    <span>Extra focus op contentstrategie en marktdominantie</span>
                   </li>
                 </ul>
+                <div className="mt-6 pt-4 border-t border-gray-100">
+                  <p className="text-sm text-gray-600 italic">🔗 Voor ondernemers die hun concurrentie willen verslaan en sneller willen groeien.</p>
+                </div>
               </div>
             </Card>
 
@@ -510,9 +488,9 @@ const Homepage = () => {
             <Card className="p-8 relative bg-white rounded-2xl shadow-2xl border-0 overflow-hidden">
               <div className="relative z-10">
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-4 text-gray-800">Pro</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-800">Enterprise</h3>
                   <div className="text-4xl font-bold mb-1 text-gray-500">Coming soon</div>
-                  <div className="text-gray-500 mb-2">Coming soon</div>
+                  <div className="text-gray-500 mb-2">-</div>
                 </div>
                 <Button 
                   disabled 
@@ -521,7 +499,7 @@ const Homepage = () => {
                   Coming soon
                 </Button>
                 <div className="text-center text-gray-500 py-8">
-                  <p className="text-lg font-medium">Meer functies binnenkort beschikbaar</p>
+                  <p className="text-lg font-medium">Meer functies en maatwerk voor grotere organisaties.</p>
                 </div>
               </div>
             </Card>
