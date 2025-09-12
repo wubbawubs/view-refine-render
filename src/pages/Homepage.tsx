@@ -123,9 +123,9 @@ const Homepage = () => {
               <div className="mb-6">
                 <IconBadge Icon={Brain} />
               </div>
-              <h3 className="font-semibold text-lg mb-4 text-gray-900">Je eigen AI</h3>
+              <h3 className="font-semibold text-lg mb-4 text-gray-900">KlikKlaar AI</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Analyseer je branche, identificeer zoekwoorden en analyseer je concurrenten om een schat aan ideeën voor inhoud te genereren met onze AI-tekst schrijftool.
+                Onze ontwikkelde AI-assistent leert jouw branche begrijpen, concurrenten analyseren en direct optimalisaties aandraagt. Altijd relevant, nooit meer stilvallen.
               </p>
             </Card>
 
@@ -134,9 +134,9 @@ const Homepage = () => {
               <div className="mb-6">
                 <IconBadge Icon={Search} />
               </div>
-              <h3 className="font-semibold text-lg mb-4 text-gray-900">Trefwoord Analyse</h3>
+              <h3 className="font-semibold text-lg mb-4 text-gray-900">Keyword Analyse</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Onze zoekwoordanalyse richt zich op het ontdekken van het potentieel van microzoekwoorden voor uw bedrijf. De analyse is gebaseerd op zoekvolume, intentie en moeilijkheidsgraad van de zoekwoorden.
+                Wij vinden de zoekwoorden die écht klanten opleveren. Wij analyseren volume, intentie en moeilijkheid, zodat jij weet waar je de meeste winst pakt.
               </p>
             </Card>
 
@@ -147,7 +147,7 @@ const Homepage = () => {
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Ideeëngeneratie</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Met behulp van kunstmatige intelligentie genereren SEO AI inhoud ideeën, tekstontwerpen, trefwoordgeoptimaliseerde titels en metabeschrijvingen.
+                Stop met gokken. Onze AI genereert concrete SEO-ideeën, pakkende titels en metateksten die klikken opleveren.
               </p>
             </Card>
 
@@ -156,9 +156,9 @@ const Homepage = () => {
               <div className="mb-6">
                 <IconBadge Icon={FileText} />
               </div>
-              <h3 className="font-semibold text-lg mb-4 text-gray-900">Inhoud creëren</h3>
+              <h3 className="font-semibold text-lg mb-4 text-gray-900">Vindbaar op AI</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Zeg vaarwel tegen een writer's block en laat ons eigen AI-model eenvoudig goed geschreven, nuttige en boeiende content genereren voor je publiek.
+                Onze software is ingericht om ook op AI vindbaar te zijn: KlikKlaar SEO is gebouwd om markt breed vindbaar te zijn en te blijven.
               </p>
             </Card>
           </div>
@@ -170,9 +170,9 @@ const Homepage = () => {
               <div className="mb-6">
                 <IconBadge Icon={CalendarCheck} />
               </div>
-              <h3 className="font-semibold text-lg mb-4 text-gray-900">Automatisch posten</h3>
+              <h3 className="font-semibold text-lg mb-4 text-gray-900">Automatisch Geoptimaliseerd</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Onze AI-tekst schrijftool bevat een planningsfunctie waarmee je de publicatie van je inhoud op de gewenste frequentie kunt automatiseren.
+                Onze software kan via een slimme laag op je website ten aller tijde optimaliseren. 15 minuten opzet werk en je AI zorgt dat er consistent vindbaar blijft, zonder gedoe.
               </p>
             </Card>
 
@@ -183,7 +183,7 @@ const Homepage = () => {
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Volg je concurrent</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                We monitoren je concurrenten en hun rankings. Met behulp van de gegevens creëren we betere inhoud met de potentie om beter te presteren dan de concurrentie.
+                Zie precies hoe je concurrenten scoren en gebruik hun zwakke plekken om ze in te halen. Jij krijgt de inzichten, wij doen het werk.
               </p>
             </Card>
 
@@ -194,7 +194,7 @@ const Homepage = () => {
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">Rank Tracker</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Volg de rangschikking van je zoekwoorden en vind nog meer ideeën voor inhoud met microzoekwoorden die topische autoriteit in je niche opbouwen.
+                Hou dagelijks zicht op je posities in Google. Ontdek nieuwe groeikansen en bouw stap voor stap meer autoriteit op.
               </p>
             </Card>
 
@@ -205,7 +205,7 @@ const Homepage = () => {
               </div>
               <h3 className="font-semibold text-lg mb-4 text-gray-900">SEO Analyse</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Analyseer je website regelmatig op technische en structurele problemen en krijg aanbevelingen om je website te verbeteren.
+                Krijg een voortdurende check van je website. Van technische fouten tot optimalisatie-gaten: wij signaleren het en optimaliseren het direct.
               </p>
             </Card>
           </div>
