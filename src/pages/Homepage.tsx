@@ -4,10 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { IconGradientDefs } from "@/components/ui/icon-gradient-defs";
 import { IconBadge } from "@/components/ui/icon-badge";
-import { DesktopMockup } from "@/components/ui/desktop-mockup";
+import { ResponsiveMockupSection } from "@/components/ui/responsive-mockup-section";
 import { Star, CheckCircle, Brain, Search, Lightbulb, Atom, CalendarCheck, Binoculars, TrendingUp, ScanSearch, Zap, Clock, Target } from "lucide-react";
 import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
-import dashboardMockup from "@/assets/dashboard-mockup.png";
 
 
 const Homepage = () => {
@@ -288,11 +287,10 @@ const Homepage = () => {
               </Button>
             </div>
             
-            {/* Right Column - Desktop Mockup */}
+            {/* Right Column - Responsive Mockup */}
             <div className="lg:col-span-2 animate-fade-in">
-              <DesktopMockup 
+              <ResponsiveMockupSection 
                 className="transform hover:scale-105 transition-transform duration-500"
-                dashboardImage={dashboardMockup}
               />
             </div>
           </div>
