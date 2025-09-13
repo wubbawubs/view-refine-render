@@ -306,25 +306,13 @@ const Homepage = () => {
                 {/* Subtle overlay for better text contrast if needed */}
                 <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent"></div>
               </div>
-              <div className="p-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <Badge variant="outline" className="text-purple-600 border-purple-200 bg-purple-50 px-3 py-1">
-                    Nieuws
-                  </Badge>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <div className="w-6 h-6 bg-gray-200 rounded-full"></div>
-                    <span>Luuk Wubs</span>
-                  </div>
-                </div>
-                <h3 className="text-3xl font-bold mb-8 text-gray-900 leading-tight">
-                  KlikKlaar behoort tot de beste SEO-diensten in Nederland op Trustpilot
+              <div className="p-10 text-center">
+                <h3 className="text-3xl font-bold mb-4 text-gray-900 leading-tight">
+                  Coming Soon
                 </h3>
-                <Button 
-                  className="bg-gradient-to-r from-kk-orange to-kk-fuchsia hover:from-kk-orange/90 hover:to-kk-fuchsia/90 
-                             text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 text-lg"
-                >
-                  Lees meer →
-                </Button>
+                <p className="text-lg text-gray-600 mb-8">
+                  We zijn hard aan het werk aan nieuwe blog content. Blijf op de hoogte voor de laatste updates over SEO en digitale marketing.
+                </p>
               </div>
             </Card>
           </div>
