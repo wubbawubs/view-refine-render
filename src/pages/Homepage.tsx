@@ -6,8 +6,6 @@ import { IconGradientDefs } from "@/components/ui/icon-gradient-defs";
 import { IconBadge } from "@/components/ui/icon-badge";
 import { Star, CheckCircle, Brain, Search, Lightbulb, Atom, CalendarCheck, Binoculars, TrendingUp, ScanSearch, Zap, Clock, Target } from "lucide-react";
 import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
-import seoChaos from "@/assets/seo-chaos-before.png";
-import seoOrganized from "@/assets/seo-organized-after.png";
 
 
 const Homepage = () => {
@@ -130,71 +128,6 @@ const Homepage = () => {
                 alt="KlikKlaar SEO Dashboard showing +64% visibility improvement, SEO score 3.8, 127 total adjustments, +78% estimated growth, and 8,542 visitors"
                 className="w-full rounded-xl"
               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Before/After Comparison Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              Van <span className="text-red-500">Chaos</span> naar <span className="bg-gradient-to-r from-orange-500 via-purple-600 to-blue-600 bg-clip-text text-transparent">Controle</span>
-            </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-              Stop met jongleren tussen verschillende SEO tools. KlikKlaar brengt alles samen in één overzichtelijk dashboard.
-            </p>
-          </div>
-
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Before - Chaos */}
-              <div className="text-center">
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-red-500 mb-3">VOOR: SEO Chaos</h3>
-                  <p className="text-gray-600">Verschillende tools, versnipperde data, eindeloze taken</p>
-                </div>
-                <div className="relative bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-6 shadow-lg">
-                  <img 
-                    src={seoChaos}
-                    alt="Chaotic SEO workflow with scattered tools and tasks everywhere"
-                    className="w-full rounded-xl shadow-md"
-                  />
-                  <div className="absolute -top-2 -right-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Stressvol
-                  </div>
-                </div>
-              </div>
-
-              {/* After - KlikKlaar */}
-              <div className="text-center">
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-orange-500 via-purple-600 to-blue-600 bg-clip-text text-transparent mb-3">
-                    NA: KlikKlaar Dashboard
-                  </h3>
-                  <p className="text-gray-600">Alles geautomatiseerd, overzichtelijk en onder controle</p>
-                </div>
-                <div className="relative bg-gradient-to-br from-purple-50 to-orange-50 rounded-2xl p-6 shadow-lg">
-                  <img 
-                    src={seoOrganized}
-                    alt="Clean, organized KlikKlaar SEO dashboard with automated metrics and clear overview"
-                    className="w-full rounded-xl shadow-md"
-                  />
-                  <div className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Automatisch
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Arrow for desktop */}
-            <div className="flex justify-center mt-8 lg:mt-0 lg:absolute lg:left-1/2 lg:top-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2">
-              <div className="bg-gradient-to-r from-orange-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg lg:rotate-0 transform">
-                <span className="hidden lg:inline">→</span>
-                <span className="lg:hidden">↓</span>
-                <span className="ml-2">KlikKlaar</span>
-              </div>
             </div>
           </div>
         </div>
