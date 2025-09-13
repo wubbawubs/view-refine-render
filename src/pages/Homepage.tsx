@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { IconGradientDefs } from "@/components/ui/icon-gradient-defs";
 import { IconBadge } from "@/components/ui/icon-badge";
+import { DesktopMockup } from "@/components/ui/desktop-mockup";
+import Dashboard from "@/components/dashboard/Dashboard";
 import { Star, CheckCircle, Brain, Search, Lightbulb, Atom, CalendarCheck, Binoculars, TrendingUp, ScanSearch, Zap, Clock, Target } from "lucide-react";
 import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
 
@@ -260,28 +262,38 @@ const Homepage = () => {
         {/* Subtle overlay for more blending */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
         
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight animate-fade-in">
-              De eerste tool die SEO volledig automatiseert
-            </h2>
-            <p className="text-xl md:text-2xl opacity-90 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-              Met onze unieke toplayer-technologie, diepgaande research en maatwerk AI-modellen automatiseert KlikKlaar vrijwel alle SEO-taken. Je krijgt betere resultaten, sneller én voordeliger, ontwikkeld in een jaar van full-focus zonder concessies aan kwaliteit.
-            </p>
-            <Button 
-              onClick={() => {
-                const pricingSection = document.getElementById('pricing');
-                if (pricingSection) {
-                  pricingSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              size="lg" 
-              className="bg-gradient-to-r from-kk-orange/80 to-kk-fuchsia/80 hover:from-kk-orange/90 hover:to-kk-fuchsia/90 
-                         text-white border-0 px-12 py-6 text-xl font-semibold rounded-xl 
-                         shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 animate-scale-in"
-            >
-              Direct starten
-            </Button>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center max-w-7xl mx-auto">
+            {/* Left Column - Text Content */}
+            <div className="lg:col-span-3 text-left">
+              <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight animate-fade-in">
+                De eerste tool die SEO volledig automatiseert
+              </h2>
+              <p className="text-xl md:text-2xl opacity-90 mb-12 leading-relaxed animate-fade-in">
+                Met onze unieke toplayer-technologie, diepgaande research en maatwerk AI-modellen automatiseert KlikKlaar vrijwel alle SEO-taken. Je krijgt betere resultaten, sneller én voordeliger, ontwikkeld in een jaar van full-focus zonder concessies aan kwaliteit.
+              </p>
+              <Button 
+                onClick={() => {
+                  const pricingSection = document.getElementById('pricing');
+                  if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                size="lg" 
+                className="bg-gradient-to-r from-kk-orange/80 to-kk-fuchsia/80 hover:from-kk-orange/90 hover:to-kk-fuchsia/90 
+                           text-white border-0 px-12 py-6 text-xl font-semibold rounded-xl 
+                           shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 animate-scale-in"
+              >
+                Direct starten
+              </Button>
+            </div>
+            
+            {/* Right Column - Desktop Mockup */}
+            <div className="lg:col-span-2 animate-fade-in">
+              <DesktopMockup className="transform hover:scale-105 transition-transform duration-500">
+                <Dashboard />
+              </DesktopMockup>
+            </div>
           </div>
         </div>
       </section>
