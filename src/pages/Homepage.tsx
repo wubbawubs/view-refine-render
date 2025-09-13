@@ -265,7 +265,7 @@ const Homepage = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center max-w-7xl mx-auto">
             {/* Left Column - Text Content */}
-            <div className="lg:col-span-3 text-left">
+            <div className="lg:col-span-3 text-left flex flex-col justify-center">
               <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight animate-fade-in">
                 De eerste tool die SEO volledig automatiseert
               </h2>
