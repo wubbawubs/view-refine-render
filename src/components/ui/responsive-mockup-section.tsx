@@ -25,9 +25,9 @@ export const ResponsiveMockupSection = ({
   }
 
   return (
-    <div className={cn("w-full flex items-center justify-center gap-12 py-8", className)}>
+    <div className={cn("w-full flex items-end justify-center gap-16 py-8", className)}>
       {/* Desktop Mockup */}
-      <div className="flex-1 max-w-4xl">
+      <div className="flex-shrink-0">
         <DesktopMockup dashboardImage={desktopImage} />
       </div>
       
@@ -35,7 +35,7 @@ export const ResponsiveMockupSection = ({
       <div className="flex-shrink-0">
         <MobileMockup 
           dashboardImage={mobileImage}
-          className="transform scale-90 -translate-y-8"
+          className="transform scale-75"
         />
       </div>
     </div>
