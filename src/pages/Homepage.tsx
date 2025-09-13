@@ -69,7 +69,10 @@ const Homepage = () => {
       <section className="py-20 bg-gradient-to-br from-transparent via-gray-50/20 to-purple-50/30">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-black">
-            De eerste tool die SEO volledig automatiseert
+            Master jouw SEO met de{" "}
+            <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+              Power van AI
+            </span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto px-4 sm:px-0">
             Dé eerste volledig automatische SEO software.
