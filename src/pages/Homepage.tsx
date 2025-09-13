@@ -5,9 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { IconGradientDefs } from "@/components/ui/icon-gradient-defs";
 import { IconBadge } from "@/components/ui/icon-badge";
 import { DesktopMockup } from "@/components/ui/desktop-mockup";
-import Dashboard from "@/components/dashboard/Dashboard";
 import { Star, CheckCircle, Brain, Search, Lightbulb, Atom, CalendarCheck, Binoculars, TrendingUp, ScanSearch, Zap, Clock, Target } from "lucide-react";
 import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
+import dashboardMockup from "@/assets/dashboard-mockup.png";
 
 
 const Homepage = () => {
@@ -290,9 +290,10 @@ const Homepage = () => {
             
             {/* Right Column - Desktop Mockup */}
             <div className="lg:col-span-2 animate-fade-in">
-              <DesktopMockup className="transform hover:scale-105 transition-transform duration-500">
-                <Dashboard />
-              </DesktopMockup>
+              <DesktopMockup 
+                className="transform hover:scale-105 transition-transform duration-500"
+                dashboardImage={dashboardMockup}
+              />
             </div>
           </div>
         </div>
