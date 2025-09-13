@@ -263,12 +263,10 @@ const Homepage = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight animate-fade-in">
-              Ontdek hoe we binnen enkele seconden
+              KlikKlaar automatiseert bijna al je SEO | sneller, slimmer en goedkoper dan ooit.
             </h2>
             <p className="text-xl md:text-2xl opacity-90 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-              Wetendurig je veld dag nou kijk werkstructuur? Laat dans voor je beginnen krant waar 
-              elke progressieve SEO tool die helpen zo je plaats deze wensen lui heel gemakkelijk te 
-              realiseren binnen enkele seconden.
+              Met onze unieke toplayer-technologie, diepgaande research en maatwerk AI-modellen automatiseert KlikKlaar vrijwel alle SEO-taken. Je krijgt betere resultaten, sneller én voordeliger, ontwikkeld in een jaar van full-focus zonder concessies aan kwaliteit.
             </p>
             <Button 
               onClick={() => {
