@@ -6,12 +6,18 @@ import Footer from "@/components/layout/Footer";
 
 const OverOns = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-kk-orange/5 via-kk-fuchsia/5 to-kk-violet/5">
       <Header />
       
       {/* Header */}
-      <section className="py-20 bg-gradient-to-br from-kk-orange/10 via-kk-fuchsia/10 to-transparent">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-20 bg-gradient-to-br from-kk-orange/10 via-kk-fuchsia/10 to-transparent relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-kk-orange/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-kk-fuchsia/10 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-5xl font-bold mb-6 text-kk-gradient">Over KlikKlaar SEO</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Wij zijn KlikKlaar - de eerste volledig geautomatiseerde SEO-oplossing die zorgt dat 
@@ -21,13 +27,15 @@ const OverOns = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-16">
+      <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Text Content - Left Column */}
             <div className="text-left">
               <div className="mb-8">
-                <Target className="w-16 h-16 text-kk-orange mb-6" />
+                <div className="w-16 h-16 bg-kk-gradient rounded-2xl flex items-center justify-center mb-6">
+                  <Target className="w-8 h-8 text-white" />
+                </div>
                 <h2 className="text-3xl font-bold mb-6 text-gray-900">Onze Missie</h2>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed">
@@ -40,8 +48,8 @@ const OverOns = () => {
             
             {/* Image Placeholder - Right Column */}
             <div className="flex justify-center lg:justify-end">
-              <div className="w-full max-w-md h-96 bg-gray-200 rounded-2xl flex items-center justify-center">
-                <span className="text-gray-500">Afbeelding komt hier</span>
+              <div className="w-full max-w-md h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center shadow-lg">
+                <span className="text-gray-500 font-medium">Afbeelding komt hier</span>
               </div>
             </div>
           </div>
@@ -49,8 +57,9 @@ const OverOns = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gradient-to-r from-white to-kk-orange/5 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-kk-fuchsia/2 to-transparent"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">Wat ons drijft</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -59,8 +68,10 @@ const OverOns = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="p-8 text-center bg-white shadow-lg border-0 rounded-2xl hover:shadow-xl transition-shadow">
-              <Users className="w-12 h-12 text-kk-fuchsia mx-auto mb-6" />
+            <Card className="p-8 text-center bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 bg-gradient-to-br from-kk-fuchsia to-kk-violet rounded-xl flex items-center justify-center mx-auto mb-6">
+                <Users className="w-6 h-6 text-white" />
+              </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">Klantgericht</h3>
               <p className="text-gray-600">
                 Jouw succes is ons succes. We bouwen tools die echt werken voor ondernemers 
@@ -68,8 +79,10 @@ const OverOns = () => {
               </p>
             </Card>
             
-            <Card className="p-8 text-center bg-white shadow-lg border-0 rounded-2xl hover:shadow-xl transition-shadow">
-              <CheckCircle className="w-12 h-12 text-kk-orange mx-auto mb-6" />
+            <Card className="p-8 text-center bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 bg-gradient-to-br from-kk-orange to-kk-fuchsia rounded-xl flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="w-6 h-6 text-white" />
+              </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">Eenvoud</h3>
               <p className="text-gray-600">
                 Geen ingewikkelde instellingen of onduidelijke rapportages. Alles is 
@@ -77,8 +90,10 @@ const OverOns = () => {
               </p>
             </Card>
             
-            <Card className="p-8 text-center bg-white shadow-lg border-0 rounded-2xl hover:shadow-xl transition-shadow">
-              <Trophy className="w-12 h-12 text-kk-fuchsia mx-auto mb-6" />
+            <Card className="p-8 text-center bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 bg-gradient-to-br from-kk-violet to-kk-fuchsia rounded-xl flex items-center justify-center mx-auto mb-6">
+                <Trophy className="w-6 h-6 text-white" />
+              </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">Resultaat</h3>
               <p className="text-gray-600">
                 We meten ons succes aan jouw groei. Onze AI werkt 24/7 om jouw 

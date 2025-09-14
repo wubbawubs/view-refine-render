@@ -22,13 +22,13 @@ const Header = () => {
       {/* Main Header */}
       <header className="bg-white border-b border-gray-200">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center">
               <img 
                 src="/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png" 
                 alt="KlikKlaar SEO Logo"
-                className="h-12 w-auto"
+                className="h-18 w-auto"
               />
             </div>
 
