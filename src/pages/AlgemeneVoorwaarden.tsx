@@ -1,13 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const AlgemeneVoorwaarden = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Header />
+      
       {/* Header */}
       <section className="py-20 bg-gradient-to-br from-kk-orange/10 via-kk-fuchsia/10 to-transparent">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6 text-gray-900">Algemene Voorwaarden</h1>
+          <h1 className="text-5xl font-bold mb-6 text-kk-gradient">Algemene Voorwaarden</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Deze algemene voorwaarden zijn van toepassing op alle diensten van KlikKlaar SEO.
           </p>
@@ -179,6 +183,8 @@ const AlgemeneVoorwaarden = () => {
           </Button>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

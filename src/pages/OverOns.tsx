@@ -1,10 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Users, Target, Trophy } from "lucide-react";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const OverOns = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Header />
+      
       {/* Header */}
       <section className="py-20 bg-gradient-to-br from-kk-orange/10 via-kk-fuchsia/10 to-transparent">
         <div className="container mx-auto px-4 text-center">
@@ -176,6 +180,8 @@ const OverOns = () => {
           </Button>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };
