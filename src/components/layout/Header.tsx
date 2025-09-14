@@ -28,7 +28,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png" 
                 alt="KlikKlaar SEO Logo"
-                className="h-18 w-auto"
+                className="h-[72px] w-auto"
               />
             </div>
 
