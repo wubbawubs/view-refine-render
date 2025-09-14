@@ -330,7 +330,8 @@ const Homepage = () => {
         </div>
       </section>
 
-      {/* Social Proof Section */}
+      {/* Social Proof Section - Hidden until reviews are ready */}
+      {false && (
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           {/* Main Testimonial Card */}
@@ -409,6 +410,7 @@ const Homepage = () => {
           </div>
         </div>
       </section>
+      )}
 
       {/* Pricing Section */}
       <section id="pricing" className="py-20 relative overflow-hidden animate-fade-in">
