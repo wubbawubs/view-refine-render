@@ -8,7 +8,7 @@ const OverOns = () => {
       {/* Header */}
       <section className="py-20 bg-gradient-to-br from-kk-orange/10 via-kk-fuchsia/10 to-transparent">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6 text-gray-900">Over KlikKlaar</h1>
+          <h1 className="text-5xl font-bold mb-6 text-kk-gradient">Over KlikKlaar SEO</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Wij zijn KlikKlaar - de eerste volledig geautomatiseerde SEO-oplossing die zorgt dat 
             jouw website altijd vindbaar blijft, zonder dat jij er omkijken naar hebt.
@@ -19,19 +19,27 @@ const OverOns = () => {
       {/* Mission Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card className="p-12 bg-white shadow-luxury border-0 rounded-2xl">
-              <div className="text-center mb-8">
-                <Target className="w-16 h-16 text-kk-orange mx-auto mb-6" />
-                <h2 className="text-3xl font-bold mb-4 text-gray-900">Onze Missie</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            {/* Text Content - Left Column */}
+            <div className="text-left">
+              <div className="mb-8">
+                <Target className="w-16 h-16 text-kk-orange mb-6" />
+                <h2 className="text-3xl font-bold mb-6 text-gray-900">Onze Missie</h2>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed text-center">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 Bij KlikKlaar geloven we dat SEO niet ingewikkeld hoeft te zijn. Daarom hebben we de 
                 eerste volledig geautomatiseerde SEO-tool ontwikkeld die AI en machine learning combineert 
                 om jouw website continu te optimaliseren. Jij zet het één keer op, wij zorgen dat je 
                 website altijd vindbaar blijft.
               </p>
-            </Card>
+            </div>
+            
+            {/* Image Placeholder - Right Column */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="w-full max-w-md h-96 bg-gray-200 rounded-2xl flex items-center justify-center">
+                <span className="text-gray-500">Afbeelding komt hier</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
