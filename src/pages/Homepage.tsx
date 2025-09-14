@@ -291,7 +291,6 @@ const Homepage = () => {
             {/* Right Column - Desktop Mockup */}
             <div className="lg:col-span-2 animate-fade-in">
               <DesktopMockup 
-                className="transform hover:scale-105 transition-transform duration-500"
                 dashboardImage={dashboardMockup}
               />
             </div>
