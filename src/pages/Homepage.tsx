@@ -564,7 +564,7 @@ const Homepage = () => {
               />
               </div>
               <p className="text-gray-400 text-sm mb-4">
-                Geavanceerde automatische content met je doelgroep optimaliseren SEO om gericht van mijn business proces behouden.
+                KlikKlaar SEO maakt je vindbaar op zoekmachines zowel als AI, Volledig automatisch.
               </p>
               <div className="flex space-x-2">
                 <div className="w-8 h-8 bg-purple-600 rounded flex items-center justify-center">
