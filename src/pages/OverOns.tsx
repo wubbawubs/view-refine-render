@@ -38,7 +38,7 @@ const OverOns = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 relative">
+      <section className="py-16 bg-white relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Text Content - Left Column */}
@@ -68,16 +68,8 @@ const OverOns = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-300/20 via-purple-400/15 to-orange-300/20"></div>
-        
-        {/* Fade in from top */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 from-0% to-transparent to-25%"></div>
-        
-        {/* Fade out to bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 from-0% to-transparent to-25%"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-16 bg-gray-50 relative">
+        <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">Wat ons drijft</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -86,7 +78,7 @@ const OverOns = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="p-8 text-center bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <Card className="p-8 text-center bg-white shadow-lg border border-gray-100 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-gradient-to-br from-kk-fuchsia to-kk-violet rounded-xl flex items-center justify-center mx-auto mb-6">
                 <Users className="w-6 h-6 text-white" />
               </div>
@@ -97,7 +89,7 @@ const OverOns = () => {
               </p>
             </Card>
             
-            <Card className="p-8 text-center bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <Card className="p-8 text-center bg-white shadow-lg border border-gray-100 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-gradient-to-br from-kk-orange to-kk-fuchsia rounded-xl flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="w-6 h-6 text-white" />
               </div>
@@ -108,7 +100,7 @@ const OverOns = () => {
               </p>
             </Card>
             
-            <Card className="p-8 text-center bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <Card className="p-8 text-center bg-white shadow-lg border border-gray-100 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-gradient-to-br from-kk-violet to-kk-fuchsia rounded-xl flex items-center justify-center mx-auto mb-6">
                 <Trophy className="w-6 h-6 text-white" />
               </div>
@@ -123,7 +115,7 @@ const OverOns = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">Waarom KlikKlaar?</h2>
