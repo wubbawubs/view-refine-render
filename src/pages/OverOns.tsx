@@ -6,16 +6,27 @@ import Footer from "@/components/layout/Footer";
 
 const OverOns = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-kk-orange/5 via-kk-fuchsia/5 to-kk-violet/5">
+    <div className="min-h-screen bg-gradient-to-r from-blue-300/40 via-purple-400/30 to-orange-300/40">
       <Header />
       
       {/* Header */}
-      <section className="py-20 bg-gradient-to-br from-kk-orange/10 via-kk-fuchsia/10 to-transparent relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-kk-orange/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-kk-fuchsia/10 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-300/40 via-purple-400/30 to-orange-300/40"></div>
+        
+        {/* Fade in from top */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 from-0% to-transparent to-25%"></div>
+        
+        {/* Fade out to bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 from-0% to-transparent to-25%"></div>
+        
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
         </div>
+        
+        {/* Subtle overlay for more blending */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-5xl font-bold mb-6 text-kk-gradient">Over KlikKlaar SEO</h1>
@@ -57,8 +68,15 @@ const OverOns = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 bg-gradient-to-r from-white to-kk-orange/5 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-kk-fuchsia/2 to-transparent"></div>
+      <section className="py-16 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-300/20 via-purple-400/15 to-orange-300/20"></div>
+        
+        {/* Fade in from top */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 from-0% to-transparent to-25%"></div>
+        
+        {/* Fade out to bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 from-0% to-transparent to-25%"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">Wat ons drijft</h2>
@@ -179,8 +197,16 @@ const OverOns = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-kk-orange/10 via-kk-fuchsia/10 to-transparent">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-300/40 via-purple-400/30 to-orange-300/40"></div>
+        
+        {/* Fade in from top */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 from-0% to-transparent to-25%"></div>
+        
+        {/* Fade out to bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 from-0% to-transparent to-25%"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl font-bold mb-6 text-gray-900">Klaar om te beginnen?</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Ontdek zelf waarom steeds meer ondernemers kiezen voor KlikKlaar's 
