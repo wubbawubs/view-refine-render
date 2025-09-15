@@ -25,9 +25,9 @@ const AlgemeneVoorwaarden = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl font-bold mb-6 text-gray-900">Algemene Voorwaarden</h1>
+          <h1 className="text-5xl font-bold mb-6 text-gray-900">Algemene Voorwaarden – KlikKlaar SEO</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Deze algemene voorwaarden zijn van toepassing op alle diensten van KlikKlaar SEO.
+            Deze algemene voorwaarden zijn van toepassing op alle aanbiedingen, diensten en overeenkomsten van KlikKlaar SEO, gevestigd te Olieslagerspoort 1, 1601AW Enkhuizen.
           </p>
         </div>
       </section>
@@ -41,13 +41,13 @@ const AlgemeneVoorwaarden = () => {
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">1. Toepasselijkheid</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Deze algemene voorwaarden zijn van toepassing op alle aanbiedingen, diensten en overeenkomsten 
-                  van KlikKlaar SEO, gevestigd te Olieslagers poort 1, 1601AW Enkhuizen.
+                  Deze voorwaarden zijn van toepassing op alle aanbiedingen, overeenkomsten en leveringen van KlikKlaar SEO, tenzij schriftelijk anders overeengekomen.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Door gebruik te maken van onze diensten accepteert de klant deze voorwaarden volledig.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Door gebruik te maken van onze diensten accepteert u deze voorwaarden volledig. 
-                  Afwijkende voorwaarden van de klant worden uitdrukkelijk van de hand gewezen, 
-                  tenzij schriftelijk anders overeengekomen.
+                  Afwijkende of aanvullende voorwaarden van de klant worden uitdrukkelijk van de hand gewezen, tenzij deze schriftelijk en uitdrukkelijk door KlikKlaar zijn aanvaard.
                 </p>
               </CardContent>
             </Card>
@@ -56,14 +56,16 @@ const AlgemeneVoorwaarden = () => {
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">2. Dienstverlening</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  KlikKlaar levert geautomatiseerde SEO-optimalisatie diensten voor websites. 
-                  Onze AI-gestuurde platform optimaliseert continu uw website voor betere vindbaarheid 
-                  in zoekmachines.
+                  KlikKlaar levert geautomatiseerde SEO-optimalisatie via een AI-gestuurd platform.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  KlikKlaar levert uitsluitend een inspanningsverbintenis en geen resultaatverbintenis.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Er worden geen garanties gegeven met betrekking tot zoekmachineposities, traffic, conversies of enig ander concreet resultaat.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Wij streven ernaar om de best mogelijke resultaten te behalen, maar kunnen geen 
-                  specifieke ranking-posities of traffic-aantallen garanderen, aangezien dit afhankelijk 
-                  is van vele externe factoren.
+                  Resultaten zijn afhankelijk van externe factoren zoals zoekalgoritmes, concurrentie, technische omstandigheden en marktontwikkelingen.
                 </p>
               </CardContent>
             </Card>
@@ -73,10 +75,11 @@ const AlgemeneVoorwaarden = () => {
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">3. Prijzen en Betaling</h2>
                 <ul className="space-y-3 text-gray-600">
                   <li>• Alle prijzen zijn exclusief BTW, tenzij anders vermeld</li>
-                  <li>• Betaling geschiedt vooraf via iDEAL, creditcard of andere geaccepteerde methoden</li>
-                  <li>• Bij maandelijkse abonnementen wordt automatisch verlengd, tenzij tijdig opgezegd</li>
-                  <li>• Kortingsperiodes (3 maanden, 6 maanden) worden vooraf in één keer gefactureerd</li>
-                  <li>• Prijswijzigingen worden minimaal 30 dagen van tevoren aangekondigd</li>
+                  <li>• Betaling geschiedt vooraf via iDEAL, creditcard of andere door KlikKlaar geaccepteerde methoden</li>
+                  <li>• Abonnementen worden automatisch verlengd, tenzij tijdig opgezegd</li>
+                  <li>• Kortingsabonnementen (bijv. 3 of 6 maanden) worden vooraf in één termijn betaald en kunnen niet tussentijds worden beëindigd of gerestitueerd</li>
+                  <li>• Zodra een klant zich registreert en een abonnement activeert, ontstaat een betalingsverplichting voor de volledige abonnementsperiode. Niet-gebruik van de dienst ontslaat de klant niet van zijn betalingsverplichting</li>
+                  <li>• KlikKlaar behoudt zich het recht voor prijzen te wijzigen met een aankondigingstermijn van minimaal 30 dagen</li>
                 </ul>
               </CardContent>
             </Card>
@@ -85,13 +88,13 @@ const AlgemeneVoorwaarden = () => {
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">4. Opzegging</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Maandelijkse abonnementen kunnen te allen tijde worden opgezegd met ingang van de 
-                  volgende facturatieperiode. Opzegging dient te geschieden via uw account dashboard 
-                  of per e-mail naar support@klikklaar.nl.
+                  Maandabonnementen kunnen te allen tijde worden opgezegd met ingang van de volgende facturatieperiode.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Vooruitbetaalde periodes (bijv. 3 of 6 maanden) kunnen niet tussentijds worden beëindigd of gerestitueerd.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Vooruitbetaalde periodes (3 of 6 maanden) kunnen niet tussentijds worden opgezegd. 
-                  Het abonnement loopt af aan het einde van de betaalde periode.
+                  Opzeggingen dienen via het klantdashboard of per e-mail te worden ingediend.
                 </p>
               </CardContent>
             </Card>
@@ -100,12 +103,13 @@ const AlgemeneVoorwaarden = () => {
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">5. Gegevens en Privacy</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Wij respecteren uw privacy en handelen conform de AVG. Voor het optimaliseren van 
-                  uw website hebben wij toegang nodig tot bepaalde website-gegevens en analytics.
+                  KlikKlaar handelt conform de Algemene Verordening Gegevensbescherming (AVG).
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Voor de uitvoering van de diensten kan toegang nodig zijn tot website-gegevens, statistieken of third-party platforms.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Uw gegevens worden uitsluitend gebruikt voor het leveren van onze diensten en 
-                  worden niet gedeeld met derden, behalve waar noodzakelijk voor de dienstverlening.
+                  Gegevens van klanten worden uitsluitend gebruikt voor de uitvoering van de dienstverlening en niet verkocht aan derden.
                 </p>
               </CardContent>
             </Card>
@@ -114,14 +118,16 @@ const AlgemeneVoorwaarden = () => {
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">6. Aansprakelijkheid</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Onze aansprakelijkheid is beperkt tot het bedrag van de door u betaalde maandelijkse 
-                  fee. Wij zijn niet aansprakelijk voor indirecte schade, gederfde winst of 
-                  gevolgschade.
+                  De totale aansprakelijkheid van KlikKlaar is in alle gevallen beperkt tot het bedrag dat de klant in de laatste maand aan KlikKlaar heeft betaald.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  KlikKlaar is niet aansprakelijk voor indirecte schade, gevolgschade, verlies van omzet of winst, reputatieschade, dataverlies of claims van derden.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  KlikKlaar is niet verantwoordelijk voor wijzigingen in zoekalgoritmes, storingen of beperkingen bij derden, hacks, beveiligingsincidenten of andere externe oorzaken die de dienstverlening beïnvloeden.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  KlikKlaar is niet verantwoordelijk voor wijzigingen in zoekalgoritmes, 
-                  technische problemen bij derden, of andere externe factoren die de resultaten 
-                  kunnen beïnvloeden.
+                  Gebruik van onze diensten is volledig op eigen risico van de klant.
                 </p>
               </CardContent>
             </Card>
@@ -129,31 +135,53 @@ const AlgemeneVoorwaarden = () => {
             <Card className="p-8 bg-white shadow-lg border border-gray-100 rounded-2xl">
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">7. Intellectueel Eigendom</h2>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Alle rechten op software, methodieken, data, analyses en rapportages berusten bij KlikKlaar.
+                </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Alle rechten op onze software, methodieken, en rapportages blijven eigendom van 
-                  KlikKlaar. Het is niet toegestaan om onze technieken te reproduceren of 
-                  door te verkopen aan derden.
+                  Het is niet toegestaan onze technologie, methodieken of content te kopiëren, reproduceren of door te verkopen, tenzij met uitdrukkelijke schriftelijke toestemming van KlikKlaar.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="p-8 bg-white shadow-lg border border-gray-100 rounded-2xl">
               <CardContent className="p-0">
-                <h2 className="text-2xl font-bold mb-4 text-gray-900">8. Wijzigingen</h2>
+                <h2 className="text-2xl font-bold mb-4 text-gray-900">8. Overmacht</h2>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  KlikKlaar is niet gehouden enige verplichting na te komen indien dit redelijkerwijs niet mogelijk is als gevolg van overmacht.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Onder overmacht wordt verstaan: iedere van de wil van KlikKlaar onafhankelijke omstandigheid die nakoming tijdelijk of blijvend verhindert.
+                </p>
                 <p className="text-gray-600 leading-relaxed">
-                  KlikKlaar behoudt zich het recht voor om deze algemene voorwaarden te wijzigen. 
-                  Wijzigingen worden minimaal 30 dagen van tevoren per e-mail aangekondigd. 
-                  Voortgezet gebruik van onze diensten geldt als acceptatie van de nieuwe voorwaarden.
+                  Hieronder vallen onder meer (maar niet uitsluitend): storingen in de infrastructuur van derden, internet- of hostingproblemen, virussen, hacks, pandemieën, natuurrampen, overheidsmaatregelen, oorlog, stakingen, brand en andere omstandigheden waarop KlikKlaar geen invloed kan uitoefenen.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="p-8 bg-white shadow-lg border border-gray-100 rounded-2xl">
               <CardContent className="p-0">
-                <h2 className="text-2xl font-bold mb-4 text-gray-900">9. Toepasselijk Recht</h2>
+                <h2 className="text-2xl font-bold mb-4 text-gray-900">9. Wijzigingen</h2>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  KlikKlaar behoudt zich het recht voor deze algemene voorwaarden te allen tijde te wijzigen.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Gewijzigde voorwaarden worden minimaal 30 dagen vooraf aan de klant bekendgemaakt.
+                </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Op deze overeenkomst is Nederlands recht van toepassing. Geschillen worden 
-                  voorgelegd aan de bevoegde rechter in Noord-Holland.
+                  Voortgezet gebruik van de diensten geldt als aanvaarding van de gewijzigde voorwaarden.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="p-8 bg-white shadow-lg border border-gray-100 rounded-2xl">
+              <CardContent className="p-0">
+                <h2 className="text-2xl font-bold mb-4 text-gray-900">10. Toepasselijk Recht</h2>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Op deze overeenkomst is uitsluitend Nederlands recht van toepassing.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  Geschillen worden voorgelegd aan de bevoegde rechter te Noord-Holland.
                 </p>
               </CardContent>
             </Card>
@@ -166,11 +194,11 @@ const AlgemeneVoorwaarden = () => {
                 </p>
                 <div className="text-gray-600">
                   <p><strong>KlikKlaar SEO</strong></p>
-                  <p>Olieslagers poort 1</p>
+                  <p>Olieslagerspoort 1</p>
                   <p>1601AW Enkhuizen</p>
                   <p>Nederland</p>
                   <p className="mt-2">
-                    E-mail: <a href="mailto:support@klikklaar.nl" className="text-kk-orange hover:underline">support@klikklaar.nl</a>
+                    E-mail: <a href="mailto:support@klikklaar.io" className="text-orange-500 hover:underline">support@klikklaar.io</a>
                   </p>
                 </div>
               </CardContent>
