@@ -13,11 +13,8 @@ const AlgemeneVoorwaarden = () => {
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-300/40 via-purple-400/30 to-orange-300/40"></div>
         
-        {/* Fade in from top */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 from-0% to-transparent to-25%"></div>
-        
-        {/* Fade out to bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 from-0% to-transparent to-25%"></div>
+        {/* Fade out to bottom - stronger fade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% via-transparent via-60% to-white to-100%"></div>
         
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
@@ -28,7 +25,7 @@ const AlgemeneVoorwaarden = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl font-bold mb-6 text-kk-gradient">Algemene Voorwaarden</h1>
+          <h1 className="text-5xl font-bold mb-6 text-gray-900">Algemene Voorwaarden</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Deze algemene voorwaarden zijn van toepassing op alle diensten van KlikKlaar SEO.
           </p>
@@ -185,14 +182,11 @@ const AlgemeneVoorwaarden = () => {
 
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
-        {/* Background Pattern */}
+        {/* Background Pattern - flowing in from bottom */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-300/40 via-purple-400/30 to-orange-300/40"></div>
         
-        {/* Fade in from top */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 from-0% to-transparent to-25%"></div>
-        
-        {/* Fade out to bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 from-0% to-transparent to-25%"></div>
+        {/* Fade in from top - creating flow effect */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white from-0% via-transparent via-40% to-transparent to-100%"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl font-bold mb-6 text-gray-900">Nog vragen?</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
