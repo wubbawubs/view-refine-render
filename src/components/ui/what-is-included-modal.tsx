@@ -82,43 +82,43 @@ export const WhatIsIncludedModal: React.FC<WhatIsIncludedModalProps> = ({ childr
             <div className="space-y-4">
               {!plan && (
                 <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
-                  Pro Plan - €149/maand <span className="text-sm font-normal text-purple-600">(Meest gekozen)</span>
+                  Pro Plan – €149/maand <span className="text-sm font-normal text-purple-600">(Meest gekozen)</span>
                 </h3>
               )}
               <div className="grid gap-3">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Alles van Basic, plus:</p>
-                    <p className="text-sm text-gray-600">Alle krachtige functies van het Basic plan zijn automatisch inbegrepen, plus extra premium features voor maximaal resultaat.</p>
+                    <p className="font-medium">Alles van Basic, plus premium power</p>
+                    <p className="text-sm text-gray-600">Alle functies van het Basic Plan, aangevuld met extra's die zorgen voor sneller resultaat en maximale dominantie in jouw markt.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="font-medium">Updates elke 2 weken</p>
-                    <p className="text-sm text-gray-600">Dubbel zo vaak optimalisaties betekent dubbel zo snel resultaat. Je website wordt om de 14 dagen geüpdatet met de nieuwste SEO-inzichten en marktveranderingen voor maximale groei.</p>
+                    <p className="text-sm text-gray-600">Dubbele updatefrequentie = dubbel tempo. Elke 14 dagen optimalisaties en verbeteringen, afgestemd op de nieuwste zoektrends en algoritme-veranderingen.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Uitgebreide concurrentie-analyse & gap-inzichten</p>
-                    <p className="text-sm text-gray-600">Krijg een gedetailleerd overzicht van je concurrenten: hun sterke en zwakke punten, hun SEO-strategieën en vooral waar jij ze kunt overtreffen. Inclusief wekelijkse concurrentie-updates.</p>
+                    <p className="font-medium">Uitgebreide concurrentie-analyse</p>
+                    <p className="text-sm text-gray-600">Volledige inzichten in de SEO-strategieën van je concurrenten. Zie hun sterke en zwakke punten en ontdek direct waar jij ze kunt overtreffen. Inclusief wekelijkse updates.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Sneller resultaat door dubbele optimalisatiefrequentie</p>
-                    <p className="text-sm text-gray-600">Door de verhoogde update-frequentie zie je gemiddeld 40% sneller resultaat. Ideaal voor ambitieuze ondernemers die snel willen groeien en marktaandeel willen winnen.</p>
+                    <p className="font-medium">Tot 40% sneller resultaat</p>
+                    <p className="text-sm text-gray-600">Dankzij de verhoogde optimalisatiefrequentie zie je gemiddeld 40% sneller vooruitgang in rankings en traffic. Ideaal voor ambitieuze bedrijven die niet willen wachten.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Extra focus op contentstrategie en marktdominantie</p>
-                    <p className="text-sm text-gray-600">Ontvang strategisch contentadvies en topic-clustering om je expertise te tonen en autoriteit op te bouwen. We helpen je niet alleen gevonden te worden, maar ook om de marktleider te worden.</p>
+                    <p className="font-medium">Contentstrategie & marktdominantie</p>
+                    <p className="text-sm text-gray-600">Strategisch contentadvies en slimme topic-clustering helpen je niet alleen beter gevonden te worden, maar ook de autoriteit in je branche te claimen.</p>
                   </div>
                 </div>
               </div>
