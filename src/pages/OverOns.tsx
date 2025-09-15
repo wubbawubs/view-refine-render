@@ -206,7 +206,7 @@ const OverOns = () => {
           </p>
           <Button 
             onClick={() => window.location.href = '/homepage#pricing'}
-            className="bg-kk-gradient hover:opacity-90 text-white font-semibold px-12 py-6 text-xl rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 hover:opacity-90 text-white font-semibold px-12 py-6 text-xl rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
             size="lg"
           >
             Bekijk onze pakketten
