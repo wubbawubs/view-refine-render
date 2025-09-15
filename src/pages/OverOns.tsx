@@ -76,7 +76,7 @@ const OverOns = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">Wat ons drijft</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Deze waarden vormen de basis van alles wat we doen bij KlikKlaar
+              Deze waarden vormen de basis van alles wat we doen bij KlikKlaar.
             </p>
           </div>
           
@@ -87,8 +87,8 @@ const OverOns = () => {
               </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">Klantgericht</h3>
               <p className="text-gray-600">
-                Jouw succes is ons succes. We bouwen tools die echt werken voor ondernemers 
-                die willen groeien zonder technische complexiteit.
+                Jouw groei is ons doel. We bouwen tools die écht werken voor ondernemers, 
+                zonder onnodige complexiteit.
               </p>
             </Card>
             
@@ -98,8 +98,8 @@ const OverOns = () => {
               </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">Eenvoud</h3>
               <p className="text-gray-600">
-                Geen ingewikkelde instellingen of onduidelijke rapportages. Alles is 
-                ontworpen om zo simpel en effectief mogelijk te zijn.
+                Geen gedoe, geen moeilijke instellingen. Alles wat we maken is 
+                helder, simpel en effectief.
               </p>
             </Card>
             
@@ -109,8 +109,8 @@ const OverOns = () => {
               </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">Resultaat</h3>
               <p className="text-gray-600">
-                We meten ons succes aan jouw groei. Onze AI werkt 24/7 om jouw 
-                online zichtbaarheid en conversies te verbeteren.
+                We meten succes aan wat jij bereikt. Onze AI werkt 24/7 om jouw 
+                zichtbaarheid en omzet te vergroten.
               </p>
             </Card>
           </div>
