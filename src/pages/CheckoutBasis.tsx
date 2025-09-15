@@ -7,6 +7,8 @@ import { SegmentedControl } from "@/components/ui/segmented-control";
 import { StickyCTA } from "@/components/ui/sticky-cta";
 import { PaymentTrustBar } from "@/components/ui/payment-trust-bar";
 import { FeaturesModal } from "@/components/ui/features-modal";
+import Header from "@/components/layout/Header";
+import { Link } from "react-router-dom";
 
 const CheckoutBasis = () => {
   const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'quarterly' | 'biannual'>('monthly');
@@ -97,6 +99,7 @@ const CheckoutBasis = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Header />
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
           {/* Header */}
@@ -124,7 +127,7 @@ const CheckoutBasis = () => {
             </div>
             {selectedPlan !== 'monthly' && (
               <p className="text-xs text-muted-foreground mt-1">
-                Eenmalig vooruit, automatisch niet-verlengd.
+                Automatisch verlengd.
               </p>
             )}
           </div>
@@ -173,7 +176,7 @@ const CheckoutBasis = () => {
             <div className="text-center">
               <p className="text-xs text-muted-foreground mb-2">
                 Door te starten ga je akkoord met de{" "}
-                <button className="underline hover:no-underline">voorwaarden</button>.
+                <Link to="/algemene-voorwaarden" className="underline hover:no-underline">algemene voorwaarden</Link>.
               </p>
               <PaymentTrustBar />
             </div>

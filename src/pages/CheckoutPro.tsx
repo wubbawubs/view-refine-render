@@ -9,6 +9,8 @@ import { StickyCTA } from "@/components/ui/sticky-cta";
 import { PaymentTrustBar } from "@/components/ui/payment-trust-bar";
 import { FeaturesModal } from "@/components/ui/features-modal";
 import { FeaturesModalPro } from "@/components/ui/features-modal-pro";
+import Header from "@/components/layout/Header";
+import { Link } from "react-router-dom";
 
 const CheckoutPro = () => {
   const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'quarterly' | 'biannual'>('monthly');
@@ -99,6 +101,7 @@ const CheckoutPro = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Header />
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
           {/* Header */}
@@ -118,7 +121,6 @@ const CheckoutPro = () => {
               options={segmentedOptions}
               value={selectedPlan}
               onValueChange={(value) => setSelectedPlan(value as typeof selectedPlan)}
-              className="[&_button[aria-checked=true]]:border-kk-fuchsia [&_button[aria-checked=true]]:bg-kk-fuchsia/5 [&_button]:hover:border-kk-fuchsia/30 [&_button[aria-checked=true]_div:first-child]:bg-kk-fuchsia [&_button[aria-checked=true]_div:first-child]:border-kk-fuchsia [&_button]:focus-visible:ring-kk-fuchsia"
             />
           </div>
 
@@ -130,7 +132,7 @@ const CheckoutPro = () => {
             </div>
             {selectedPlan !== 'monthly' && (
               <p className="text-xs text-muted-foreground mt-1">
-                Eenmalig vooruit, automatisch niet-verlengd.
+                Automatisch verlengd.
               </p>
             )}
           </div>
@@ -180,7 +182,7 @@ const CheckoutPro = () => {
             <div className="text-center">
               <p className="text-xs text-muted-foreground mb-2">
                 Door te starten ga je akkoord met de{" "}
-                <button className="underline hover:no-underline">voorwaarden</button>.
+                <Link to="/algemene-voorwaarden" className="underline hover:no-underline">algemene voorwaarden</Link>.
               </p>
               <PaymentTrustBar />
             </div>
