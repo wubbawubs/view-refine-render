@@ -58,10 +58,24 @@ const Homepage = () => {
             />
           </div>
           <div className="flex items-center space-x-4">
-            <Button variant="outline" className="text-purple-600 border-purple-300 hover:bg-purple-50">
+            <Button 
+              variant="outline" 
+              className="text-purple-600 border-purple-300 hover:bg-purple-50"
+              onClick={() => window.location.href = '/login'}
+            >
               Login
             </Button>
-            <Button className="bg-gray-800 hover:bg-gray-700 text-white">
+            <Button 
+              className="bg-gray-800 hover:bg-gray-700 text-white"
+              onClick={() => {
+                const pricingSection = document.getElementById('pricing');
+                if (pricingSection) {
+                  pricingSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/homepage#pricing';
+                }
+              }}
+            >
               Start nu
             </Button>
           </div>
@@ -83,6 +97,9 @@ const Homepage = () => {
           <Button 
             size="lg" 
             className="mb-12 sm:mb-16 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-gradient-to-r from-orange-400/70 via-pink-400/70 to-purple-500/70 hover:from-orange-500/80 hover:via-pink-500/80 hover:to-purple-600/80 text-white border-0 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            onClick={() => {
+              window.open('https://calendly.com/luuk-klikklaar/kennismakingsgesprek', '_blank', 'noopener,noreferrer');
+            }}
           >
             Even met elkaar bellen
           </Button>

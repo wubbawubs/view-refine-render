@@ -43,7 +43,14 @@ const Header = () => {
                 Login
               </Button>
               <Button 
-                onClick={() => window.location.href = '/homepage#pricing'}
+                onClick={() => {
+                  const pricingSection = document.getElementById('pricing');
+                  if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = '/homepage#pricing';
+                  }
+                }}
                 className="bg-gray-900 hover:bg-gray-800 text-white"
               >
                 Start nu
