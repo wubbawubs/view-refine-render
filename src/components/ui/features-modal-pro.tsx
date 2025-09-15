@@ -20,23 +20,23 @@ export const FeaturesModalPro: React.FC<FeaturesModalProProps> = ({ children }) 
     },
     {
       title: "Uitgebreide concurrentieanalyse",
-      description: "Wij analyseren je top 10 concurrenten en identificeren hun SEO-strategieën om jouw website beter te positioneren."
+      description: "We onderzoeken je 10 belangrijkste concurrenten en leggen hun SEO-strategieën bloot, zodat jij ze gericht kunt overtreffen."
     },
     {
-      title: "Keyword gap analyse",
-      description: "Ontdek voor welke zoekwoorden je concurrenten wel ranken, maar jij nog niet. Zo vind je nieuwe kansen."
+      title: "Keyword gap-analyse",
+      description: "Ontdek zoekwoorden waarop je concurrenten scoren, maar jij nog niet. Zo benut je direct nieuwe groeikansen."
     },
     {
       title: "Maandelijkse competitor monitoring",
-      description: "Elke maand krijg je een overzicht van wat je concurrenten doen en hoe jij daarop kunt reageren."
+      description: "Elke maand ontvang je een overzicht van de bewegingen van je concurrenten, inclusief adviezen om snel te reageren."
     },
     {
       title: "Geavanceerde ranking tracking",
-      description: "Volg niet alleen je eigen rankings, maar ook die van je concurrenten voor belangrijke zoekwoorden."
+      description: "Monitor niet alleen je eigen posities, maar ook die van je concurrenten op cruciale zoekwoorden."
     },
     {
-      title: "Dedicated account manager",
-      description: "Je hebt een vaste contactpersoon die je persoonlijk begeleidt en binnen 4 uur reageert op vragen."
+      title: "Dedicated accountmanager",
+      description: "Een vaste contactpersoon die je persoonlijk begeleidt en binnen 4 uur reageert op je vragen."
     }
   ];
 

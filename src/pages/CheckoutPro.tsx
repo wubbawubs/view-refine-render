@@ -145,10 +145,10 @@ const CheckoutPro = () => {
                 {[
                   "Alles van KlikKlaar Basis",
                   "Uitgebreide concurrentieanalyse",
-                  "Keyword gap analyse",
+                  "Keyword gap-analyse",
                   "Maandelijkse competitor monitoring",
                   "Geavanceerde ranking tracking",
-                  "Dedicated account manager"
+                  "Dedicated accountmanager"
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <div className="w-4 h-4 rounded-full bg-kk-gradient flex items-center justify-center flex-shrink-0">
