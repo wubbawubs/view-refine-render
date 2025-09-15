@@ -76,7 +76,7 @@ const OverOns = () => {
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Card className="p-8 text-center bg-white shadow-lg border border-gray-100 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="w-12 h-12 bg-gradient-to-br from-kk-fuchsia to-kk-violet rounded-xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6">
                 <Users className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">Klantgericht</h3>
@@ -87,7 +87,7 @@ const OverOns = () => {
             </Card>
             
             <Card className="p-8 text-center bg-white shadow-lg border border-gray-100 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="w-12 h-12 bg-gradient-to-br from-kk-orange to-kk-fuchsia rounded-xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">Eenvoud</h3>
@@ -98,7 +98,7 @@ const OverOns = () => {
             </Card>
             
             <Card className="p-8 text-center bg-white shadow-lg border border-gray-100 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="w-12 h-12 bg-gradient-to-br from-kk-violet to-kk-fuchsia rounded-xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6">
                 <Trophy className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">Resultaat</h3>
