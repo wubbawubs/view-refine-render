@@ -318,12 +318,11 @@ const Homepage = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent"></div>
               </div>
               <div className="p-10 text-center">
-                <h3 className="text-3xl font-bold mb-4 text-gray-900 leading-tight">
-                  Coming Soon
-                </h3>
-                <p className="text-lg text-gray-600 mb-8">
-                  We zijn hard aan het werk aan nieuwe blog content. Blijf op de hoogte voor de laatste updates over SEO en digitale marketing.
-                </p>
+                <img 
+                  src="/src/assets/blog-image.png"
+                  alt="Blog content image"
+                  className="w-full max-w-md mx-auto rounded-lg"
+                />
               </div>
             </Card>
           </div>
