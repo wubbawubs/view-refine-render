@@ -36,11 +36,11 @@ const AlgemeneVoorwaarden = () => {
       </section>
 
       {/* Content */}
-      <section className="py-16 relative">
+      <section className="py-16 bg-white relative">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-8">
             
-            <Card className="p-8 bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl">
+            <Card className="p-8 bg-white shadow-lg border border-gray-100 rounded-2xl">
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">1. Toepasselijkheid</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
@@ -55,7 +55,7 @@ const AlgemeneVoorwaarden = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-8 bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl">
+            <Card className="p-8 bg-white shadow-lg border border-gray-100 rounded-2xl">
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">2. Dienstverlening</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
@@ -71,7 +71,7 @@ const AlgemeneVoorwaarden = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-8 bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl">
+            <Card className="p-8 bg-white shadow-lg border border-gray-100 rounded-2xl">
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">3. Prijzen en Betaling</h2>
                 <ul className="space-y-3 text-gray-600">
@@ -84,7 +84,7 @@ const AlgemeneVoorwaarden = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-8 bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl">
+            <Card className="p-8 bg-white shadow-lg border border-gray-100 rounded-2xl">
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">4. Opzegging</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
@@ -99,7 +99,7 @@ const AlgemeneVoorwaarden = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-8 bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl">
+            <Card className="p-8 bg-white shadow-lg border border-gray-100 rounded-2xl">
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">5. Gegevens en Privacy</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
@@ -113,7 +113,7 @@ const AlgemeneVoorwaarden = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-8 bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl">
+            <Card className="p-8 bg-white shadow-lg border border-gray-100 rounded-2xl">
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">6. Aansprakelijkheid</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
@@ -129,7 +129,7 @@ const AlgemeneVoorwaarden = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-8 bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl">
+            <Card className="p-8 bg-white shadow-lg border border-gray-100 rounded-2xl">
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">7. Intellectueel Eigendom</h2>
                 <p className="text-gray-600 leading-relaxed">
@@ -140,7 +140,7 @@ const AlgemeneVoorwaarden = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-8 bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl">
+            <Card className="p-8 bg-white shadow-lg border border-gray-100 rounded-2xl">
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">8. Wijzigingen</h2>
                 <p className="text-gray-600 leading-relaxed">
@@ -151,7 +151,7 @@ const AlgemeneVoorwaarden = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-8 bg-white/80 backdrop-blur-sm shadow-luxury border-0 rounded-2xl">
+            <Card className="p-8 bg-white shadow-lg border border-gray-100 rounded-2xl">
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">9. Toepasselijk Recht</h2>
                 <p className="text-gray-600 leading-relaxed">
@@ -161,7 +161,7 @@ const AlgemeneVoorwaarden = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-8 bg-gradient-to-r from-gray-50/80 to-kk-orange/5 backdrop-blur-sm shadow-luxury border-0 rounded-2xl">
+            <Card className="p-8 bg-gradient-to-r from-gray-50 to-gray-50/80 shadow-lg border border-gray-100 rounded-2xl">
               <CardContent className="p-0">
                 <h2 className="text-2xl font-bold mb-4 text-gray-900">Contact</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
