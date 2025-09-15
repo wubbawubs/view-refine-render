@@ -123,7 +123,7 @@ const OverOns = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">Waarom KlikKlaar?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We zijn niet zomaar een SEO-bureau. We zijn de toekomst van zoekmachineoptimalisatie.
+              We zijn geen traditioneel SEO-bureau. We zijn de eerste volledig geautomatiseerde oplossing die resultaten levert zonder gedoe.
             </p>
           </div>
           
@@ -135,25 +135,25 @@ const OverOns = () => {
                   <div className="w-6 h-6 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-gray-600 text-xs">✗</span>
                   </div>
-                  <span className="text-gray-600">Maandelijkse rapporten die je moet interpreteren</span>
+                  <span className="text-gray-600">Rapporten die jij zelf moet ontcijferen</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-gray-600 text-xs">✗</span>
                   </div>
-                  <span className="text-gray-600">Lange contracten en onduidelijke kosten</span>
+                  <span className="text-gray-600">Dure contracten en verborgen kosten</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-gray-600 text-xs">✗</span>
                   </div>
-                  <span className="text-gray-600">Afhankelijk van menselijke capaciteit</span>
+                  <span className="text-gray-600">Afhankelijk van mensen en hun agenda's</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-gray-600 text-xs">✗</span>
                   </div>
-                  <span className="text-gray-600">Resultaten pas zichtbaar na maanden</span>
+                  <span className="text-gray-600">Maanden wachten op resultaat</span>
                 </li>
               </ul>
             </div>
@@ -165,25 +165,25 @@ const OverOns = () => {
                   <div className="w-6 h-6 rounded-full bg-kk-gradient flex items-center justify-center flex-shrink-0 mt-0.5">
                     <CheckCircle className="w-3 h-3 text-white" />
                   </div>
-                  <span className="text-gray-700">Real-time dashboard met duidelijke inzichten</span>
+                  <span className="text-gray-700">Direct dashboard met duidelijke inzichten</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-kk-gradient flex items-center justify-center flex-shrink-0 mt-0.5">
                     <CheckCircle className="w-3 h-3 text-white" />
                   </div>
-                  <span className="text-gray-700">Transparante pricing, opzegbaar wanneer je wilt</span>
+                  <span className="text-gray-700">Transparante prijzen, stop wanneer jij wilt</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-kk-gradient flex items-center justify-center flex-shrink-0 mt-0.5">
                     <CheckCircle className="w-3 h-3 text-white" />
                   </div>
-                  <span className="text-gray-700">AI werkt 24/7 zonder pauzes of vakanties</span>
+                  <span className="text-gray-700">AI die 24/7 doorwerkt, zonder pauzes</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-kk-gradient flex items-center justify-center flex-shrink-0 mt-0.5">
                     <CheckCircle className="w-3 h-3 text-white" />
                   </div>
-                  <span className="text-gray-700">Eerste verbeteringen binnen enkele weken</span>
+                  <span className="text-gray-700">Eerste verbeteringen zichtbaar binnen weken</span>
                 </li>
               </ul>
             </div>
