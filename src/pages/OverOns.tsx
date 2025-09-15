@@ -26,7 +26,7 @@ const OverOns = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl font-bold mb-6 text-kk-gradient">Over KlikKlaar SEO</h1>
+          <h1 className="text-5xl font-bold mb-6 text-gray-900">Over KlikKlaar SEO</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Wij zijn KlikKlaar - de eerste volledig geautomatiseerde SEO-oplossing die zorgt dat 
             jouw website altijd vindbaar blijft, zonder dat jij er omkijken naar hebt.
