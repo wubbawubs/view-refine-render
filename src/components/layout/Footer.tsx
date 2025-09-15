@@ -39,7 +39,7 @@ const Footer = () => {
               </li>
               <li><a href="/over-ons" className="hover:text-white cursor-pointer">Over ons</a></li>
               <li><a href="/algemene-voorwaarden" className="hover:text-white cursor-pointer">Algemene voorwaarden</a></li>
-              <li><a href="#" className="hover:text-white cursor-pointer">Neem contact op</a></li>
+              <li><a href="https://calendly.com/luuk-klikklaar/kennismakingsgesprek" target="_blank" rel="noopener noreferrer" className="hover:text-white cursor-pointer">Neem contact op</a></li>
             </ul>
           </div>
           
