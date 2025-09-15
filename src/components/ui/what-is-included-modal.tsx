@@ -28,50 +28,50 @@ export const WhatIsIncludedModal: React.FC<WhatIsIncludedModalProps> = ({ childr
             <div className="space-y-4">
               {!plan && (
                 <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
-                  Basic Plan - €99/maand
+                  Basic Plan – €99/maand
                 </h3>
               )}
               <div className="grid gap-3">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Volledig automatische SEO + AI optimalisatie</p>
-                    <p className="text-sm text-gray-600">Onze geavanceerde AI analyseert continu je website, detecteert SEO-problemen en voert automatisch technische optimalisaties uit. Van meta-tags tot interne linkstructuur - alles wordt geoptimaliseerd zonder dat je er omkijken naar hebt.</p>
+                    <p className="font-medium">Volledig automatische SEO + AI</p>
+                    <p className="text-sm text-gray-600">Onze AI analyseert en optimaliseert je website 24/7. Van meta-tags tot interne links: alle technische verbeteringen gebeuren automatisch, zonder dat jij iets hoeft te doen.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="font-medium">Updates elke 4 weken</p>
-                    <p className="text-sm text-gray-600">Elke maand krijg je nieuwe optimalisaties en verbeteringen. We monitoren zoektrends, algoritme-updates en je concurrentie om je website telkens een stapje verder te brengen in de zoekresultaten.</p>
+                    <p className="text-sm text-gray-600">Iedere maand nieuwe optimalisaties op basis van zoektrends, algoritme-updates en concurrentie. Je site blijft altijd voorop lopen.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Toegang tot alle dashboards & rapportages</p>
-                    <p className="text-sm text-gray-600">Krijg volledig inzicht in je SEO-prestaties met real-time dashboards. Zie je rankings, verkeer, conversies en ROI in één overzichtelijk platform. Inclusief maandelijkse rapporten en trendanalyses.</p>
+                    <p className="font-medium">Real-time dashboards & rapportages</p>
+                    <p className="text-sm text-gray-600">Volledige transparantie in je prestaties: rankings, verkeer en conversies direct inzichtelijk, inclusief maandelijkse trendanalyses.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Inzichten in snelheid, zoekwoorden & content</p>
-                    <p className="text-sm text-gray-600">Diepgaande analyses van je website-snelheid (Core Web Vitals), zoekwoordposities en content-prestaties. Ontdek welke pagina's het beste presteren en waar kansen liggen voor verbetering.</p>
+                    <p className="font-medium">Diepgaande prestatie-analyses</p>
+                    <p className="text-sm text-gray-600">Krijg helder inzicht in snelheid (Core Web Vitals), zoekwoorden en content-resultaten. Zie wat werkt en ontdek direct waar kansen liggen.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Analyse van marktkansen (gap-insights)</p>
-                    <p className="text-sm text-gray-600">Ontdek lucratieve zoekwoorden waar je concurrenten nog niet op focussen. Onze gap-analyse toont je precies welke kansen er liggen om marktaandeel te winnen en nieuwe klanten te bereiken.</p>
+                    <p className="font-medium">Marktkansen & gap-insights</p>
+                    <p className="text-sm text-gray-600">Ontdek waar jouw concurrenten kansen laten liggen. Onze AI toont direct winstgevende zoekwoorden en nieuwe groeimogelijkheden.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Focus op blijvende vindbaarheid</p>
-                    <p className="text-sm text-gray-600">Vergeet het gedoe met SEO-updates en technische aanpassingen. Onze AI zorgt ervoor dat je website altijd up-to-date blijft met de nieuwste SEO-best practices en algoritme-wijzigingen.</p>
+                    <p className="font-medium">Altijd vindbaar, zonder gedoe</p>
+                    <p className="text-sm text-gray-600">SEO-problemen? Altijd opgelost. Wij zorgen dat je site continu geoptimaliseerd blijft volgens de nieuwste best practices.</p>
                   </div>
                 </div>
               </div>
