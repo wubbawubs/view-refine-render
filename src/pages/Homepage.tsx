@@ -429,16 +429,9 @@ const Homepage = () => {
                 aan jouw groei
               </span>
             </h2>
-            <p className="text-black/80 text-lg max-w-2xl mx-auto mb-4">
+            <p className="text-black/80 text-lg max-w-2xl mx-auto">
               Kies het plan dat bij je past. Beide pakketten geven je volledige toegang tot dashboards, automatische optimalisaties en voortdurende SEO + AI verbeteringen.
             </p>
-            <div className="flex justify-center">
-              <WhatIsIncludedModal>
-                <Button variant="outline" className="text-purple-600 border-purple-300 hover:bg-purple-50">
-                  Wat zit er precies in? →
-                </Button>
-              </WhatIsIncludedModal>
-            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
@@ -483,7 +476,12 @@ const Homepage = () => {
                   </li>
                 </ul>
                 <div className="mt-6 pt-4 border-t border-gray-100">
-                  <p className="text-sm text-gray-600 italic">🔗 Perfect voor bedrijven die willen dat SEO gewoon geregeld is.</p>
+                  <p className="text-sm text-gray-600 italic mb-4">🔗 Perfect voor bedrijven die willen dat SEO gewoon geregeld is.</p>
+                  <WhatIsIncludedModal plan="basic">
+                    <Button variant="outline" className="w-full text-purple-600 border-purple-300 hover:bg-purple-50">
+                      Wat zit er precies in? →
+                    </Button>
+                  </WhatIsIncludedModal>
                 </div>
               </div>
             </Card>
@@ -530,7 +528,12 @@ const Homepage = () => {
                   </li>
                 </ul>
                 <div className="mt-6 pt-4 border-t border-gray-100">
-                  <p className="text-sm text-gray-600 italic">🔗 Voor ondernemers die hun concurrentie willen verslaan en sneller willen groeien.</p>
+                  <p className="text-sm text-gray-600 italic mb-4">🔗 Voor ondernemers die hun concurrentie willen verslaan en sneller willen groeien.</p>
+                  <WhatIsIncludedModal plan="pro">
+                    <Button variant="outline" className="w-full text-purple-600 border-purple-300 hover:bg-purple-50">
+                      Wat zit er precies in? →
+                    </Button>
+                  </WhatIsIncludedModal>
                 </div>
               </div>
             </Card>
@@ -550,7 +553,12 @@ const Homepage = () => {
                   Coming soon
                 </Button>
                 <div className="text-center text-gray-500 py-8">
-                  <p className="text-lg font-medium">Meer functies en maatwerk voor grotere organisaties.</p>
+                  <p className="text-lg font-medium mb-4">Meer functies en maatwerk voor grotere organisaties.</p>
+                  <WhatIsIncludedModal plan="enterprise">
+                    <Button variant="outline" className="w-full text-gray-400 border-gray-300 cursor-not-allowed" disabled>
+                      Meer info binnenkort →
+                    </Button>
+                  </WhatIsIncludedModal>
                 </div>
               </div>
             </Card>
