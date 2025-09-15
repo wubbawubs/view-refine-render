@@ -49,8 +49,14 @@ const OverOns = () => {
               <p className="text-lg text-gray-600 leading-relaxed">
                 Bij KlikKlaar geloven we dat SEO niet ingewikkeld hoeft te zijn. Daarom hebben we de 
                 eerste volledig geautomatiseerde SEO-tool ontwikkeld die AI en machine learning combineert 
-                om jouw website continu te optimaliseren. Jij zet het één keer op, wij zorgen dat je 
-                website altijd vindbaar blijft.
+                om websites continu te optimaliseren. Jij zet het één keer op, wij zorgen dat je 
+                altijd zichtbaar blijft.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed mt-4">
+                Wij bouwen met eerlijkheid en transparantie als kernwaarden. Geen loze beloftes, geen verborgen kosten, 
+                alleen tastbare resultaten waar je op kunt vertrouwen. Onze keuzes en manier van werken zijn geïnspireerd 
+                door moderne christelijke principes: dienstbaarheid, betrouwbaarheid en zorg voor de ander. Zo willen we 
+                niet alleen bedrijven laten groeien, maar ook bijdragen aan een eerlijkere digitale wereld.
               </p>
             </div>
             
