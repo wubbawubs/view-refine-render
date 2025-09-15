@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { IconGradientDefs } from "@/components/ui/icon-gradient-defs";
 import { IconBadge } from "@/components/ui/icon-badge";
 import { DesktopMockup } from "@/components/ui/desktop-mockup";
+import { WhatIsIncludedModal } from "@/components/ui/what-is-included-modal";
 import { Star, CheckCircle, Brain, Search, Lightbulb, Atom, CalendarCheck, Binoculars, TrendingUp, ScanSearch, Zap, Clock, Target } from "lucide-react";
 import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
 import dashboardMockup from "@/assets/dashboard-mockup.png";
@@ -428,9 +429,16 @@ const Homepage = () => {
                 aan jouw groei
               </span>
             </h2>
-            <p className="text-black/80 text-lg max-w-2xl mx-auto">
+            <p className="text-black/80 text-lg max-w-2xl mx-auto mb-4">
               Kies het plan dat bij je past. Beide pakketten geven je volledige toegang tot dashboards, automatische optimalisaties en voortdurende SEO + AI verbeteringen.
             </p>
+            <div className="flex justify-center">
+              <WhatIsIncludedModal>
+                <Button variant="outline" className="text-purple-600 border-purple-300 hover:bg-purple-50">
+                  Wat zit er precies in? →
+                </Button>
+              </WhatIsIncludedModal>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
