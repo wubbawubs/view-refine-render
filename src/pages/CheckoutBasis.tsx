@@ -138,10 +138,10 @@ const CheckoutBasis = () => {
               <h3 className="font-semibold mb-4">Inbegrepen:</h3>
               <div className="space-y-3">
                 {[
-                  "SEO-optimalisaties automatisch",
-                  "Snelle website-injectie (zonder gedoe)",
-                  "Wekelijkse updates in dashboard",
-                  "Rapporten en voortgang inzichtelijk",
+                  "Automatische SEO-optimalisaties",
+                  "Snelle website-injectie (binnen 24 uur)",
+                  "Wekelijkse updates in je dashboard",
+                  "Heldere rapporten en trendanalyses",
                   "Technische support per e-mail"
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">

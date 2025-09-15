@@ -15,24 +15,24 @@ interface FeaturesModalProps {
 export const FeaturesModal: React.FC<FeaturesModalProps> = ({ children }) => {
   const features = [
     {
-      title: "SEO-optimalisaties automatisch",
-      description: "Wij zorgen voor alle technische SEO-aanpassingen aan je website zonder dat jij er iets voor hoeft te doen."
+      title: "Automatische SEO-optimalisaties",
+      description: "Onze AI voert continu technische verbeteringen uit, zoals meta-tags, interne links en snelheid, zonder dat jij ernaar hoeft om te kijken."
     },
     {
-      title: "Snelle website-injectie (zonder gedoe)",
-      description: "Je website wordt binnen 24 uur geoptimaliseerd. Geen ingewikkelde installaties of handmatige aanpassingen."
+      title: "Snelle website-injectie",
+      description: "Binnen 24 uur staat je site live met de eerste optimalisaties. Geen installaties of ingewikkelde stappen nodig."
     },
     {
-      title: "Wekelijkse updates in dashboard",
-      description: "Elk week krijg je een overzicht van je SEO-voortgang, rankings en nieuwe optimalisaties."
+      title: "Wekelijkse updates in je dashboard",
+      description: "Elke week zie je precies welke verbeteringen zijn doorgevoerd, hoe je rankings zich ontwikkelen en waar nieuwe kansen liggen."
     },
     {
-      title: "Rapporten en voortgang inzichtelijk",
-      description: "Duidelijke grafieken en rapporten tonen je precies hoe je website presteert in zoekmachines."
+      title: "Heldere rapporten en trendanalyses",
+      description: "Grafieken en rapporten maken je voortgang inzichtelijk. Geen vage SEO-jargon, maar duidelijk resultaat."
     },
     {
       title: "Technische support per e-mail",
-      description: "Heb je vragen? Ons team helpt je binnen 24 uur via e-mail."
+      description: "Loop je ergens tegenaan? Ons supportteam reageert altijd binnen 24 uur."
     }
   ];
 
