@@ -112,7 +112,9 @@ const Dashboard = () => {
             {/* Title Section - Desktop */}
             <div className="hidden lg:block min-w-0 flex-1">
               <div className="bg-muted/30 rounded-lg px-4 py-2 inline-block">
-                <h1 className="text-xl lg:text-kk-h1 text-foreground mb-1 truncate">{t.title}</h1>
+                <h1 className="text-xl lg:text-kk-h1 text-foreground mb-1 truncate">
+                  <span className="text-muted-foreground">KlikKlaar.io</span> SEO Dashboard
+                </h1>
               </div>
               <div className="flex items-center gap-2 text-sm lg:text-kk-label text-muted-foreground">
                 <Clock className="w-4 h-4 shrink-0" />

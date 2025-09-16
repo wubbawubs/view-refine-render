@@ -5,8 +5,8 @@ const UpdatesFeed = () => {
   const updates = [
     {
       type: "ranking",
-      title: "Ranking stijgt naar #2 voor 'SEO software Nederland' (+3)",
-      impact: "Projectie: #3 positie in oktober verwacht",
+      title: "Verwachte ranking stijgt naar #3 voor 'SEO software Nederland'",
+      impact: "Projectie: stabilisatie rond positie #3 in oktober",
       timestamp: "1 uur geleden",
       badge: "Ranking"
     },

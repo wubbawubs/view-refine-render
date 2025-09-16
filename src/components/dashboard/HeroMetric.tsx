@@ -8,13 +8,13 @@ interface HeroMetricProps {
 const HeroMetric = ({ language = 'nl' }: HeroMetricProps) => {
 const texts = {
     nl: {
-      title: 'KlikKlaar.io zichtbaarheid deze maand',
+      title: '<span class="text-muted-foreground">KlikKlaar.io</span> zichtbaarheid deze maand',
       percentage: '+160%',
       improvement: 'Verbetering t.o.v. vorige maand voor SEO optimalisatie software.',
       trending: 'Trending up'
     },
     en: {
-      title: 'KlikKlaar.io visibility this month',
+      title: '<span class="text-muted-foreground">KlikKlaar.io</span> visibility this month',
       percentage: '+160%',
       improvement: 'Improvement vs. previous month for SEO optimization software.',
       trending: 'Trending up'
@@ -28,7 +28,7 @@ const texts = {
       <div className="flex items-center justify-between">
         <div className="flex-1">
           <div className="mb-4 lg:mb-6">
-            <h2 className="text-lg lg:text-kk-h1 text-foreground mb-2">{t.title}</h2>
+            <h2 className="text-lg lg:text-kk-h1 text-foreground mb-2" dangerouslySetInnerHTML={{ __html: t.title }}></h2>
             <div className="h-0.5 w-full max-w-md rounded-full bg-kk-gradient mb-4"></div>
           </div>
           
