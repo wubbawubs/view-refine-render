@@ -180,7 +180,7 @@ const Dashboard = () => {
           <KPICard
             icon={<TrendingUp />}
             label={t.estimatedGrowth}
-            value="+160%"
+            value="+85%"
             delta={t.prognosisBased}
             deltaType="up"
             helpText={t.estimatedGrowthHelp}
