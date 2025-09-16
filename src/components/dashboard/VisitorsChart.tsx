@@ -3,17 +3,21 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 const data = [
   { date: '1 Sep', visitors: 45, benchmark: 38 },
-  { date: '3 Sep', visitors: 52, benchmark: 41 },
-  { date: '5 Sep', visitors: 38, benchmark: 35 },
-  { date: '7 Sep', visitors: 67, benchmark: 43 },
-  { date: '9 Sep', visitors: 89, benchmark: 48 },
-  { date: '11 Sep', visitors: 76, benchmark: 45 },
-  { date: '13 Sep', visitors: 95, benchmark: 52 },
-  { date: '15 Sep', visitors: 114, benchmark: 58 },
-  { date: '17 Sep', visitors: 128, benchmark: 62 },
-  { date: '19 Sep', visitors: 142, benchmark: 65 },
-  { date: '21 Sep', visitors: 156, benchmark: 68 },
-  { date: '23 Sep', visitors: 167, benchmark: 72 }
+  { date: '2 Sep', visitors: 52, benchmark: 41 },
+  { date: '3 Sep', visitors: 38, benchmark: 35 },
+  { date: '4 Sep', visitors: 67, benchmark: 43 },
+  { date: '5 Sep', visitors: 89, benchmark: 48 },
+  { date: '6 Sep', visitors: 76, benchmark: 45 },
+  { date: '7 Sep', visitors: 95, benchmark: 52 },
+  { date: '8 Sep', visitors: 114, benchmark: 58 },
+  { date: '9 Sep', visitors: 128, benchmark: 62 },
+  { date: '10 Sep', visitors: 142, benchmark: 65 },
+  { date: '11 Sep', visitors: 156, benchmark: 68 },
+  { date: '12 Sep', visitors: 167, benchmark: 72 },
+  { date: '13 Sep', visitors: 145, benchmark: 69 },
+  { date: '14 Sep', visitors: 178, benchmark: 75 },
+  { date: '15 Sep', visitors: 189, benchmark: 78 },
+  { date: '16 Sep', visitors: 195, benchmark: 80 }
 ];
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -44,8 +48,8 @@ const VisitorsChart = () => {
   return (
     <Card className="glass-card p-4 sm:p-6 lg:p-8 shadow-luxury animate-fade-in rounded-2xl border border-border smooth-hover hover:shadow-elevated hover:scale-[1.01]">
       <div className="mb-4 sm:mb-6 lg:mb-8">
-        <h3 className="text-lg sm:text-xl lg:text-kk-h2 text-foreground mb-2">KlikKlaar.io organische bezoekers</h3>
-        <p className="text-xs sm:text-sm lg:text-kk-caption text-muted-foreground">SEO software groei afgelopen maand vs. B2B SaaS benchmark</p>
+        <h3 className="text-lg sm:text-xl lg:text-kk-h2 text-foreground mb-2">Organische bezoekers</h3>
+        <p className="text-xs sm:text-sm lg:text-kk-caption text-muted-foreground">Ontwikkeling 1-16 september vs. benchmark</p>
       </div>
       
       <div className="h-48 sm:h-56 lg:h-64 mb-4 w-full overflow-hidden">
@@ -102,7 +106,7 @@ const VisitorsChart = () => {
         </div>
         <div className="text-center">
           <div className="text-sm lg:text-kk-label font-semibold text-[hsl(var(--kk-violet))]">Best day</div>
-          <div className="text-xs lg:text-kk-caption text-muted-foreground">23 Sep: 167</div>
+          <div className="text-xs lg:text-kk-caption text-muted-foreground">16 Sep: 195</div>
         </div>
       </div>
     </Card>

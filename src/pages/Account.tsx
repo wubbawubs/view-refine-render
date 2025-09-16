@@ -142,19 +142,19 @@ const Account = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="first-name">{t.firstName}</Label>
-                  <Input id="first-name" placeholder="Jan" />
+                  <Input id="first-name" value="Luuk" readOnly />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="last-name">{t.lastName}</Label>
-                  <Input id="last-name" placeholder="Janssen" />
+                  <Input id="last-name" value="Wubs" readOnly />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">{t.email}</Label>
-                  <Input id="email" type="email" placeholder="jan@voorbeeld.nl" />
+                  <Input id="email" type="email" value="luuk@klikklaar.io" readOnly />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">{t.phone}</Label>
-                  <Input id="phone" placeholder="+31 6 12345678" />
+                  <Input id="phone" value="0631354936" readOnly />
                 </div>
               </div>
             </CardContent>
@@ -180,7 +180,7 @@ const Account = () => {
                       Actief
                     </Badge>
                   </div>
-                  <p className="text-sm text-muted-foreground">€49,99 per maand</p>
+                  <p className="text-sm text-muted-foreground">€149 per maand</p>
                   <p className="text-xs text-muted-foreground">Volgende betaling: 15 oktober 2025</p>
                 </div>
                 <Button variant="outline">Wijzig abonnement</Button>

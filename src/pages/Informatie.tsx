@@ -166,27 +166,28 @@ const Informatie = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="business-name">{t.businessName}</Label>
-                  <Input id="business-name" placeholder="KlikKlaar Kapsalon" />
+                  <Input id="business-name" value="KlikKlaar" readOnly />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="business-type">{t.businessType}</Label>
-                  <Input id="business-type" placeholder="Kapsalon" />
+                  <Input id="business-type" value="SEO Software & AI Automatisering" readOnly />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="address">{t.address}</Label>
-                  <Input id="address" placeholder="Hoofdstraat 123, 1621 AA Hoorn" />
+                  <Input id="address" value="Nederland (Remote)" readOnly />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">{t.phone}</Label>
-                  <Input id="phone" placeholder="+31 229 123456" />
+                  <Input id="phone" value="0631354936" readOnly />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="description">{t.description}</Label>
                 <Textarea 
                   id="description" 
-                  placeholder={t.descriptionPlaceholder}
+                  value="KlikKlaar is de eerste volledig automatische SEO software voor B2B bedrijven tot 15 FTE. Onze AI-gedreven oplossing automatiseert SEO-optimalisaties, keyword research en content optimalisatie zonder handmatig werk."
                   rows={3}
+                  readOnly
                 />
               </div>
             </CardContent>
@@ -252,14 +253,16 @@ const Informatie = () => {
                 <Label htmlFor="primary-keywords">{t.primaryKeywords}</Label>
                 <Input 
                   id="primary-keywords" 
-                  placeholder="kapper hoorn, kapsalon hoorn, haar knippen hoorn"
+                  value="SEO software Nederland, automatische SEO, AI SEO tool, SEO automatisering, B2B SEO software"
+                  readOnly
                 />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="location-keywords">{t.locationKeywords}</Label>
                 <Input 
                   id="location-keywords" 
-                  placeholder="hoorn, west-friesland, noord-holland"
+                  value="Nederland, Amsterdam, Rotterdam, Utrecht, B2B bedrijven Nederland"
+                  readOnly
                 />
               </div>
             </CardContent>
@@ -280,11 +283,11 @@ const Informatie = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="website-url">{t.websiteUrl}</Label>
-                  <Input id="website-url" placeholder="https://www.uwbedrijf.nl" />
+                  <Input id="website-url" value="https://www.klikklaar.io" readOnly />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="google-analytics">{t.googleAnalytics}</Label>
-                  <Input id="google-analytics" placeholder="G-XXXXXXXXXX" />
+                  <Input id="google-analytics" value="G-KK1234567890" readOnly />
                 </div>
               </div>
             </CardContent>

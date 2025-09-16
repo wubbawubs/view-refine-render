@@ -17,7 +17,7 @@ const Dashboard = () => {
   const texts = {
     nl: {
       title: 'KlikKlaar.io SEO Dashboard',
-      lastUpdated: 'Laatst bijgewerkt: 15 september 2025, 09:15',
+      lastUpdated: 'Laatst bijgewerkt: 16 september 2025, 14:45',
       thisWeek: 'Deze week',
       thisMonth: 'Deze maand',
       downloadReport: 'Download rapport (PDF)',
@@ -36,7 +36,7 @@ const Dashboard = () => {
     },
     en: {
       title: 'KlikKlaar.io SEO Dashboard',
-      lastUpdated: 'Last updated: September 15, 2025, 9:15 AM',
+      lastUpdated: 'Last updated: September 16, 2025, 2:45 PM',
       thisWeek: 'This week',  
       thisMonth: 'This month',
       downloadReport: 'Download report (PDF)',
@@ -111,7 +111,9 @@ const Dashboard = () => {
             
             {/* Title Section - Desktop */}
             <div className="hidden lg:block min-w-0 flex-1">
-              <h1 className="text-xl lg:text-kk-h1 text-foreground mb-1 truncate">{t.title}</h1>
+              <div className="bg-muted/30 rounded-lg px-4 py-2 inline-block">
+                <h1 className="text-xl lg:text-kk-h1 text-foreground mb-1 truncate">{t.title}</h1>
+              </div>
               <div className="flex items-center gap-2 text-sm lg:text-kk-label text-muted-foreground">
                 <Clock className="w-4 h-4 shrink-0" />
                 <span className="truncate">{t.lastUpdated}</span>

@@ -5,8 +5,8 @@ const UpdatesFeed = () => {
   const updates = [
     {
       type: "ranking",
-      title: "KlikKlaar.io ranking stijgt naar #2 voor 'SEO software Nederland' (+3)",
-      impact: "+45% verwacht organisch verkeer",
+      title: "Ranking stijgt naar #2 voor 'SEO software Nederland' (+3)",
+      impact: "Projectie: #3 positie in oktober verwacht",
       timestamp: "1 uur geleden",
       badge: "Ranking"
     },
@@ -36,8 +36,8 @@ const UpdatesFeed = () => {
   return (
     <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
       <div className="mb-6 pb-4 border-b border-border/50">
-        <h3 className="text-kk-h2 text-foreground">KlikKlaar.io SEO Updates</h3>
-        <p className="text-kk-caption text-muted-foreground mt-1">AI-gedreven optimalisaties en prestaties van deze week</p>
+        <h3 className="text-kk-h2 text-foreground">Recente updates</h3>
+        <p className="text-kk-caption text-muted-foreground mt-1">AI-gedreven optimalisaties van deze week</p>
       </div>
       
       <div className="space-y-6">
