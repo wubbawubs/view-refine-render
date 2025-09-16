@@ -1,4 +1,4 @@
-import { Settings, Edit3, Eye, Save, Globe, Menu, X, CheckCircle, Clock, Zap, Type, Image, FileText, Code } from "lucide-react";
+import { Settings, Edit3, Eye, Save, Globe, Menu, X, CheckCircle, Clock, Zap, Type, Image, FileText, Code, Brain, Search, Lightbulb, Atom, CalendarCheck, Binoculars, TrendingUp, ScanSearch } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import Sidebar from "@/components/dashboard/Sidebar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -450,6 +450,126 @@ const Aanpassingen = () => {
             editTitle="Alt Tekst Footer Logo Bewerken"
             editDescription="Pas de alt tekst voor de footer logo aan naar uw wensen"
             content="KlikKlaar SEO Logo - Automatische SEO optimalisatie voor B2B bedrijven"
+            setContent={() => {}}
+          />
+
+          {/* KlikKlaar AI Feature */}
+          <OptimizationCard
+            icon={Brain}
+            title="KlikKlaar AI"
+            subtitle="AI-assistent voor branche analyse en automatische optimalisaties"
+            originalLabel="Originele functionaliteit:"
+            originalValue="Standaard SEO tools zonder AI ondersteuning"
+            optimizedLabel="Geoptimaliseerde functionaliteit:"
+            optimizedValue="Onze ontwikkelde AI-assistent leert jouw branche begrijpen, concurrenten analyseren en direct optimalisaties aandraagt. Altijd relevant, nooit meer stilvallen."
+            editTitle="KlikKlaar AI Bewerken"
+            editDescription="Pas de KlikKlaar AI functionaliteit aan naar uw wensen"
+            content="Onze ontwikkelde AI-assistent leert jouw branche begrijpen, concurrenten analyseren en direct optimalisaties aandraagt. Altijd relevant, nooit meer stilvallen."
+            setContent={() => {}}
+          />
+
+          {/* Keyword Analyse Feature */}
+          <OptimizationCard
+            icon={Search}
+            title="Keyword Analyse"
+            subtitle="AI-gedreven zoekwoord onderzoek voor optimale resultaten"
+            originalLabel="Originele aanpak:"
+            originalValue="Handmatige zoekwoord selectie zonder data analyse"
+            optimizedLabel="Geoptimaliseerde aanpak:"
+            optimizedValue="Wij vinden de zoekwoorden die écht klanten opleveren. Wij analyseren volume, intentie en moeilijkheid, zodat jij weet waar je de meeste winst pakt."
+            editTitle="Keyword Analyse Bewerken"
+            editDescription="Pas de keyword analyse functionaliteit aan naar uw wensen"
+            content="Wij vinden de zoekwoorden die écht klanten opleveren. Wij analyseren volume, intentie en moeilijkheid, zodat jij weet waar je de meeste winst pakt."
+            setContent={() => {}}
+          />
+
+          {/* Ideeëngeneratie Feature */}
+          <OptimizationCard
+            icon={Lightbulb}
+            title="Ideeëngeneratie"
+            subtitle="AI-gegenereerde SEO ideeën en content suggesties"
+            originalLabel="Originele content creatie:"
+            originalValue="Handmatige brainstorm sessies zonder data onderbouwing"
+            optimizedLabel="Geoptimaliseerde content creatie:"
+            optimizedValue="Stop met gokken. Onze AI genereert concrete SEO-ideeën, pakkende titels en metateksten die klikken opleveren."
+            editTitle="Ideeëngeneratie Bewerken"
+            editDescription="Pas de ideeëngeneratie functionaliteit aan naar uw wensen"
+            content="Stop met gokken. Onze AI genereert concrete SEO-ideeën, pakkende titels en metateksten die klikken opleveren."
+            setContent={() => {}}
+          />
+
+          {/* Vindbaar op AI Feature */}
+          <OptimizationCard
+            icon={Atom}
+            title="Vindbaar op AI"
+            subtitle="Optimalisatie voor AI-gedreven zoekmachines"
+            originalLabel="Originele optimalisatie:"
+            originalValue="Focus alleen op traditionele Google SEO"
+            optimizedLabel="Geoptimaliseerde optimalisatie:"
+            optimizedValue="Onze software is ingericht om ook op AI vindbaar te zijn: KlikKlaar SEO is gebouwd om markt breed vindbaar te zijn en te blijven."
+            editTitle="Vindbaar op AI Bewerken"
+            editDescription="Pas de AI vindbaarheid optimalisatie aan naar uw wensen"
+            content="Onze software is ingericht om ook op AI vindbaar te zijn: KlikKlaar SEO is gebouwd om markt breed vindbaar te zijn en te blijven."
+            setContent={() => {}}
+          />
+
+          {/* Automatisch Geoptimaliseerd Feature */}
+          <OptimizationCard
+            icon={CalendarCheck}
+            title="Automatisch Geoptimaliseerd"
+            subtitle="Continue automatische SEO optimalisaties zonder handmatig werk"
+            originalLabel="Originele werkwijze:"
+            originalValue="Handmatige SEO taken die veel tijd kosten"
+            optimizedLabel="Geoptimaliseerde werkwijze:"
+            optimizedValue="Onze software kan via een slimme laag op je website ten aller tijde optimaliseren. 15 minuten opzet werk en je AI zorgt dat er consistent vindbaar blijft, zonder gedoe."
+            editTitle="Automatische Optimalisatie Bewerken"
+            editDescription="Pas de automatische optimalisatie functionaliteit aan naar uw wensen"
+            content="Onze software kan via een slimme laag op je website ten aller tijde optimaliseren. 15 minuten opzet werk en je AI zorgt dat er consistent vindbaar blijft, zonder gedoe."
+            setContent={() => {}}
+          />
+
+          {/* Volg je concurrent Feature */}
+          <OptimizationCard
+            icon={Binoculars}
+            title="Volg je concurrent"
+            subtitle="Continue monitoring van concurrentie prestaties"
+            originalLabel="Originele concurrentie analyse:"
+            originalValue="Geen inzicht in wat concurrenten doen"
+            optimizedLabel="Geoptimaliseerde concurrentie analyse:"
+            optimizedValue="Zie precies hoe je concurrenten scoren en gebruik hun zwakke plekken om ze in te halen. Jij krijgt de inzichten, wij doen het werk."
+            editTitle="Concurrentie Monitoring Bewerken"
+            editDescription="Pas de concurrentie monitoring functionaliteit aan naar uw wensen"
+            content="Zie precies hoe je concurrenten scoren en gebruik hun zwakke plekken om ze in te halen. Jij krijgt de inzichten, wij doen het werk."
+            setContent={() => {}}
+          />
+
+          {/* Rank Tracker Feature */}
+          <OptimizationCard
+            icon={TrendingUp}
+            title="Rank Tracker"
+            subtitle="Dagelijkse ranking monitoring en groei tracking"
+            originalLabel="Originele ranking monitoring:"
+            originalValue="Geen inzicht in Google posities en veranderingen"
+            optimizedLabel="Geoptimaliseerde ranking monitoring:"
+            optimizedValue="Hou dagelijks zicht op je posities in Google. Ontdek nieuwe groeikansen en bouw stap voor stap meer autoriteit op."
+            editTitle="Rank Tracker Bewerken"
+            editDescription="Pas de rank tracker functionaliteit aan naar uw wensen"
+            content="Hou dagelijks zicht op je posities in Google. Ontdek nieuwe groeikansen en bouw stap voor stap meer autoriteit op."
+            setContent={() => {}}
+          />
+
+          {/* SEO Analyse Feature */}
+          <OptimizationCard
+            icon={ScanSearch}
+            title="SEO Analyse"
+            subtitle="Volledige website analyse en automatische verbetering"
+            originalLabel="Originele website analyse:"
+            originalValue="Incidentele handmatige controles zonder follow-up"
+            optimizedLabel="Geoptimaliseerde website analyse:"
+            optimizedValue="Krijg een voortdurende check van je website. Van technische fouten tot optimalisatie-gaten: wij signaleren het en optimaliseren het direct."
+            editTitle="SEO Analyse Bewerken"
+            editDescription="Pas de SEO analyse functionaliteit aan naar uw wensen"
+            content="Krijg een voortdurende check van je website. Van technische fouten tot optimalisatie-gaten: wij signaleren het en optimaliseren het direct."
             setContent={() => {}}
           />
 
