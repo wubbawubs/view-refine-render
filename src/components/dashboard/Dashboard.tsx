@@ -16,41 +16,41 @@ const Dashboard = () => {
 
   const texts = {
     nl: {
-      title: 'SEO Dashboard',
-      lastUpdated: 'Laatst bijgewerkt: 9 september 2025, 14:32',
+      title: 'KlikKlaar.io SEO Dashboard',
+      lastUpdated: 'Laatst bijgewerkt: 15 september 2025, 09:15',
       thisWeek: 'Deze week',
       thisMonth: 'Deze maand',
       downloadReport: 'Download rapport (PDF)',
       seoScore: 'SEO Score',
-      seoScoreHelp: 'Hoe Google jou ziet',
-      totalAdjustments: 'Totale aanpassingen',
-      totalAdjustmentsHelp: 'Automatische optimalisaties',
-      estimatedGrowth: 'Geschatte groei',
-      estimatedGrowthHelp: 'Verwachte verbetering',
-      totalVisitors: 'Aantal bezoekers',
-      totalVisitorsHelp: 'Alle verkeersbronnen',
+      seoScoreHelp: 'Technische SEO prestaties voor KlikKlaar.io',
+      totalAdjustments: 'Automatische optimalisaties',
+      totalAdjustmentsHelp: 'AI-gedreven SEO verbeteringen toegepast',
+      estimatedGrowth: 'Organische groei',
+      estimatedGrowthHelp: 'Geschatte traffic verbetering door SEO',
+      totalVisitors: 'Website bezoekers',
+      totalVisitorsHelp: 'Unieke bezoekers KlikKlaar.io website',
       weekDelta: 'deze week',
       monthDelta: 'deze maand',
-      prognosisBased: 'Prognose op basis van trending',
+      prognosisBased: 'Prognose op basis van SEO trending',
       language: 'Taal'
     },
     en: {
-      title: 'SEO Dashboard',
-      lastUpdated: 'Last updated: September 9, 2025, 2:32 PM',
+      title: 'KlikKlaar.io SEO Dashboard',
+      lastUpdated: 'Last updated: September 15, 2025, 9:15 AM',
       thisWeek: 'This week',  
       thisMonth: 'This month',
       downloadReport: 'Download report (PDF)',
       seoScore: 'SEO Score',
-      seoScoreHelp: 'How Google sees you',
-      totalAdjustments: 'Total adjustments',
-      totalAdjustmentsHelp: 'Automatic optimizations',
-      estimatedGrowth: 'Estimated growth',
-      estimatedGrowthHelp: 'Expected improvement',
-      totalVisitors: 'Visitors',
-      totalVisitorsHelp: 'All traffic sources',
+      seoScoreHelp: 'Technical SEO performance for KlikKlaar.io',
+      totalAdjustments: 'Automatic optimizations',
+      totalAdjustmentsHelp: 'AI-driven SEO improvements applied',
+      estimatedGrowth: 'Organic growth',
+      estimatedGrowthHelp: 'Estimated traffic improvement through SEO',
+      totalVisitors: 'Website visitors',
+      totalVisitorsHelp: 'Unique visitors to KlikKlaar.io website',
       weekDelta: 'this week',
       monthDelta: 'this month',
-      prognosisBased: 'Forecast based on trending',
+      prognosisBased: 'Forecast based on SEO trending',
       language: 'Language'
     }
   };
@@ -104,7 +104,7 @@ const Dashboard = () => {
             <div className="flex items-center gap-2 lg:hidden shrink-0">
               <img 
                 src="/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png" 
-                alt="KlikKlaar SEO Logo"
+                alt="KlikKlaar.io SEO automatisatie software logo - dashboard voor B2B bedrijven"
                 className="h-12 w-auto"
               />
             </div>
@@ -160,23 +160,23 @@ const Dashboard = () => {
           <KPICard
             icon={<Eye />}
             label={t.seoScore}
-            value="3,8"
-            delta={`+0,3 ${t.weekDelta}`}
+            value="4,2"
+            delta={`+0,8 ${t.weekDelta}`}
             deltaType="up"
             helpText={t.seoScoreHelp}
           />
           <KPICard
             icon={<Settings />}
             label={t.totalAdjustments}
-            value="127"
-            delta={`+8 ${t.weekDelta}`}
+            value="89"
+            delta={`+12 ${t.weekDelta}`}
             deltaType="up"
             helpText={t.totalAdjustmentsHelp}
           />
           <KPICard
             icon={<TrendingUp />}
             label={t.estimatedGrowth}
-            value="+78%"
+            value="+160%"
             delta={t.prognosisBased}
             deltaType="up"
             helpText={t.estimatedGrowthHelp}
@@ -184,8 +184,8 @@ const Dashboard = () => {
           <KPICard
             icon={<Users />}
             label={t.totalVisitors}
-            value="8.542"
-            delta={`+15,2% ${t.monthDelta}`}
+            value="558"
+            delta={`+160% ${t.monthDelta}`}
             deltaType="up"
             helpText={t.totalVisitorsHelp}
           />

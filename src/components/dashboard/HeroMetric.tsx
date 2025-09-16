@@ -6,17 +6,17 @@ interface HeroMetricProps {
 }
 
 const HeroMetric = ({ language = 'nl' }: HeroMetricProps) => {
-  const texts = {
+const texts = {
     nl: {
-      title: 'Jouw zichtbaarheid deze maand',
-      percentage: '+64%',
-      improvement: 'Verbetering t.o.v. vorige maand.',
+      title: 'KlikKlaar.io zichtbaarheid deze maand',
+      percentage: '+160%',
+      improvement: 'Verbetering t.o.v. vorige maand voor SEO optimalisatie software.',
       trending: 'Trending up'
     },
     en: {
-      title: 'Your visibility this month',
-      percentage: '+64%',
-      improvement: 'Improvement vs. previous month.',
+      title: 'KlikKlaar.io visibility this month',
+      percentage: '+160%',
+      improvement: 'Improvement vs. previous month for SEO optimization software.',
       trending: 'Trending up'
     }
   };

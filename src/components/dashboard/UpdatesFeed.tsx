@@ -5,39 +5,39 @@ const UpdatesFeed = () => {
   const updates = [
     {
       type: "ranking",
-      title: "Nieuwe ranking: #3 voor 'kapper hoorn' (+2)",
-      impact: "+15% verwacht organisch verkeer",
-      timestamp: "2 uur geleden",
+      title: "KlikKlaar.io ranking stijgt naar #2 voor 'SEO software Nederland' (+3)",
+      impact: "+45% verwacht organisch verkeer",
+      timestamp: "1 uur geleden",
       badge: "Ranking"
     },
     {
       type: "technical", 
-      title: "Schema markup toegevoegd op 12 pagina's",
-      impact: "Verbeterde rich snippets",
-      timestamp: "3 dagen geleden",
-      badge: "Tech fix"
+      title: "Meta descriptions geoptimaliseerd voor 15 pagina's",
+      impact: "Verbeterde click-through rates",
+      timestamp: "2 dagen geleden",
+      badge: "Tech SEO"
     },
     {
       type: "content",
-      title: "Toplayer actief op Services, About, Home",
-      impact: "Geoptimaliseerde content",
-      timestamp: "1 dag geleden", 
+      title: "AI-gedreven H1 optimalisaties actief op Homepage, Prijzen, Contact",
+      impact: "Geoptimaliseerde content voor 'automatische SEO'",
+      timestamp: "6 uren geleden", 
       badge: "Content"
     },
     {
       type: "local",
-      title: "Google My Business profiel geüpdatet",
-      impact: "Lokale zichtbaarheid verbeterd",
-      timestamp: "45 minuten geleden",
-      badge: "Local"
+      title: "Schema markup voor SaaS software toegevoegd",
+      impact: "Lokale zichtbaarheid voor B2B bedrijven verbeterd",
+      timestamp: "3 dagen geleden",
+      badge: "Schema"
     }
   ];
 
   return (
     <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
       <div className="mb-6 pb-4 border-b border-border/50">
-        <h3 className="text-kk-h2 text-foreground">Recente updates</h3>
-        <p className="text-kk-caption text-muted-foreground mt-1">Data-gedreven inzichten van deze week</p>
+        <h3 className="text-kk-h2 text-foreground">KlikKlaar.io SEO Updates</h3>
+        <p className="text-kk-caption text-muted-foreground mt-1">AI-gedreven optimalisaties en prestaties van deze week</p>
       </div>
       
       <div className="space-y-6">

@@ -2,18 +2,18 @@ import { Card } from "@/components/ui/card";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { date: '1 Sep', visitors: 1200, benchmark: 950 },
-  { date: '3 Sep', visitors: 1350, benchmark: 980 },
-  { date: '5 Sep', visitors: 1180, benchmark: 920 },
-  { date: '7 Sep', visitors: 1420, benchmark: 1100 },
-  { date: '9 Sep', visitors: 1650, benchmark: 1200 },
-  { date: '11 Sep', visitors: 1380, benchmark: 1050 },
-  { date: '13 Sep', visitors: 1750, benchmark: 1300 },
-  { date: '15 Sep', visitors: 1890, benchmark: 1350 },
-  { date: '17 Sep', visitors: 2100, benchmark: 1400 },
-  { date: '19 Sep', visitors: 1980, benchmark: 1380 },
-  { date: '21 Sep', visitors: 2250, benchmark: 1500 },
-  { date: '23 Sep', visitors: 2347, benchmark: 1520 }
+  { date: '1 Sep', visitors: 45, benchmark: 38 },
+  { date: '3 Sep', visitors: 52, benchmark: 41 },
+  { date: '5 Sep', visitors: 38, benchmark: 35 },
+  { date: '7 Sep', visitors: 67, benchmark: 43 },
+  { date: '9 Sep', visitors: 89, benchmark: 48 },
+  { date: '11 Sep', visitors: 76, benchmark: 45 },
+  { date: '13 Sep', visitors: 95, benchmark: 52 },
+  { date: '15 Sep', visitors: 114, benchmark: 58 },
+  { date: '17 Sep', visitors: 128, benchmark: 62 },
+  { date: '19 Sep', visitors: 142, benchmark: 65 },
+  { date: '21 Sep', visitors: 156, benchmark: 68 },
+  { date: '23 Sep', visitors: 167, benchmark: 72 }
 ];
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -44,8 +44,8 @@ const VisitorsChart = () => {
   return (
     <Card className="glass-card p-4 sm:p-6 lg:p-8 shadow-luxury animate-fade-in rounded-2xl border border-border smooth-hover hover:shadow-elevated hover:scale-[1.01]">
       <div className="mb-4 sm:mb-6 lg:mb-8">
-        <h3 className="text-lg sm:text-xl lg:text-kk-h2 text-foreground mb-2">Organische bezoekers</h3>
-        <p className="text-xs sm:text-sm lg:text-kk-caption text-muted-foreground">Ontwikkeling afgelopen maand vs. concurrenten</p>
+        <h3 className="text-lg sm:text-xl lg:text-kk-h2 text-foreground mb-2">KlikKlaar.io organische bezoekers</h3>
+        <p className="text-xs sm:text-sm lg:text-kk-caption text-muted-foreground">SEO software groei afgelopen maand vs. B2B SaaS benchmark</p>
       </div>
       
       <div className="h-48 sm:h-56 lg:h-64 mb-4 w-full overflow-hidden">
@@ -68,7 +68,6 @@ const VisitorsChart = () => {
               axisLine={false}
               tickLine={false}
               tick={{ fontSize: 12, fill: 'hsl(var(--muted-foreground))' }}
-              tickFormatter={(value) => `${(value / 1000).toFixed(1)}k`}
             />
             <Tooltip content={<CustomTooltip />} />
             <Area
@@ -95,15 +94,15 @@ const VisitorsChart = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-border">
         <div className="text-center">
           <div className="text-sm lg:text-kk-label font-semibold text-foreground">Totaal bezoekers</div>
-          <div className="text-xs lg:text-kk-caption text-muted-foreground">21.450 deze maand</div>
+          <div className="text-xs lg:text-kk-caption text-muted-foreground">558 deze maand</div>
         </div>
         <div className="text-center">
           <div className="text-sm lg:text-kk-label font-semibold text-[hsl(var(--kk-success))]">Groei</div>
-          <div className="text-xs lg:text-kk-caption text-muted-foreground">+24,7% vs vorige maand</div>
+          <div className="text-xs lg:text-kk-caption text-muted-foreground">+160% vs vorige maand</div>
         </div>
         <div className="text-center">
           <div className="text-sm lg:text-kk-label font-semibold text-[hsl(var(--kk-violet))]">Best day</div>
-          <div className="text-xs lg:text-kk-caption text-muted-foreground">23 Sep: 2.347</div>
+          <div className="text-xs lg:text-kk-caption text-muted-foreground">23 Sep: 167</div>
         </div>
       </div>
     </Card>
