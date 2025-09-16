@@ -393,20 +393,133 @@ const Aanpassingen = () => {
             setContent={setH2Content}
           />
 
-          {/* Alt Texts */}
-          <OptimizationCard
-            icon={Image}
-            title={t.altTitle}
-            subtitle={t.altSubtitle}
-            originalLabel={t.originalAlt}
-            originalValue="Dashboard screenshot"
-            optimizedLabel={t.optimizedAlt}
-            optimizedValue={altContent}
-            editTitle={t.editAlt}
-            editDescription="Pas de alt tekst aan naar uw wensen"
-            content={altContent}
-            setContent={setAltContent}
-          />
+          {/* Alt Texts Block 1 - Header Logo */}
+          <Card className="p-6 shadow-sm">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-lg font-semibold text-gray-900">Alt text - Header Logo</h3>
+              <Button 
+                size="sm" 
+                variant="outline"
+                className="text-purple-600 border-purple-300 hover:bg-purple-50"
+              >
+                Pas aan
+              </Button>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-red-700">Origineel</span>
+                </div>
+                <p className="text-sm text-red-600">KlikKlaar SEO Logo</p>
+              </div>
+              
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-green-700">Geoptimaliseerd</span>
+                </div>
+                <p className="text-sm text-green-600">KlikKlaar SEO Logo - Automatische SEO software voor B2B bedrijven</p>
+              </div>
+            </div>
+          </Card>
+
+          {/* Alt Texts Block 2 - Dashboard Screenshot */}
+          <Card className="p-6 shadow-sm">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-lg font-semibold text-gray-900">Alt text - Dashboard Screenshot</h3>
+              <Button 
+                size="sm" 
+                variant="outline"
+                className="text-purple-600 border-purple-300 hover:bg-purple-50"
+              >
+                Pas aan
+              </Button>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-red-700">Origineel</span>
+                </div>
+                <p className="text-sm text-red-600">KlikKlaar SEO Dashboard showing +64% visibility improvement, SEO score 3.8, 127 total adjustments, +78% estimated growth, and 8,542 visitors</p>
+              </div>
+              
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-green-700">Geoptimaliseerd</span>
+                </div>
+                <p className="text-sm text-green-600">KlikKlaar SEO Dashboard toont +64% zichtbaarheidsverbetering, SEO score 3.8, 127 totale optimalisaties, +78% geschatte groei en 8.542 bezoekers - automatische SEO software</p>
+              </div>
+            </div>
+          </Card>
+
+          {/* Alt Texts Block 3 - Blog Image */}
+          <Card className="p-6 shadow-sm">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-lg font-semibold text-gray-900">Alt text - Blog Afbeelding</h3>
+              <Button 
+                size="sm" 
+                variant="outline"
+                className="text-purple-600 border-purple-300 hover:bg-purple-50"
+              >
+                Pas aan
+              </Button>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-red-700">Origineel</span>
+                </div>
+                <p className="text-sm text-red-600">Abstract watercolor art with blue, purple, and orange tones</p>
+              </div>
+              
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-green-700">Geoptimaliseerd</span>
+                </div>
+                <p className="text-sm text-green-600">SEO blog afbeelding met abstracte aquarel kunst in blauwe, paarse en oranje tinten - KlikKlaar SEO tips</p>
+              </div>
+            </div>
+          </Card>
+
+          {/* Alt Texts Block 4 - Footer Logo */}
+          <Card className="p-6 shadow-sm">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-lg font-semibold text-gray-900">Alt text - Footer Logo</h3>
+              <Button 
+                size="sm" 
+                variant="outline"
+                className="text-purple-600 border-purple-300 hover:bg-purple-50"
+              >
+                Pas aan
+              </Button>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-red-700">Origineel</span>
+                </div>
+                <p className="text-sm text-red-600">KlikKlaar SEO Logo</p>
+              </div>
+              
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-green-700">Geoptimaliseerd</span>
+                </div>
+                <p className="text-sm text-green-600">KlikKlaar SEO Logo - Automatische SEO optimalisatie voor B2B bedrijven</p>
+              </div>
+            </div>
+          </Card>
 
           {/* Content Optimization */}
           <OptimizationCard
