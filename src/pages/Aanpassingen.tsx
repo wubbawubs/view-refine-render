@@ -1,4 +1,4 @@
-import { Settings, Edit3, Eye, Save, Globe, Menu, X, CheckCircle, Clock, Zap } from "lucide-react";
+import { Settings, Edit3, Eye, Save, Globe, Menu, X, CheckCircle, Clock, Zap, Type, Image, FileText, Code } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import Sidebar from "@/components/dashboard/Sidebar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,24 +15,40 @@ const Aanpassingen = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [h1Content, setH1Content] = useState('Master jouw SEO met de Power van AI - KlikKlaar');
   const [metaContent, setMetaContent] = useState('Dé eerste volledig automatische SEO software. KlikKlaar automatiseert al je SEO-taken met AI. Geen gedoe, wel blijvende zichtbaarheid en groei voor B2B bedrijven.');
+  const [h2Content, setH2Content] = useState('Wat KlikKlaar SEO voor jou doet');
+  const [altContent, setAltContent] = useState('KlikKlaar SEO Dashboard showing +64% visibility improvement, SEO score 3.8, 127 total adjustments, +78% estimated growth, and 8,542 visitors');
+  const [contentContent, setContentContent] = useState('KlikKlaar is de eerste tool die SEO en AI volledig automatisch optimaliseert. Jij zet het één keer op, wij zorgen dat je website altijd vindbaar blijft. Terwijl jij je focust op je bedrijf, bouwen wij continu door achter de schermen. Geen ingewikkelde instellingen, geen gedoe, wél blijvende zichtbaarheid en groei.');
+  const [schemaContent, setSchemaContent] = useState('{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "KlikKlaar SEO", "applicationCategory": "BusinessApplication", "offers": {"@type": "Offer", "price": "49", "priceCurrency": "EUR"}}');
 
   const texts = {
     nl: {
       title: 'Aanpassingen',
       subtitle: 'Bekijk en beheer alle automatische AI-gedreven SEO optimalisaties',
       save: 'Wijzigingen opslaan',
-      totalOptimizations: 'Totaal optimalisaties',
-      activeOptimizations: 'Actief',
-      completedOptimizations: 'Voltooid',
-      scheduledOptimizations: 'Gepland',
       h1Title: 'H1 Optimalisatie',
       h1Subtitle: 'AI-gegenereerde hoofdtitel geoptimaliseerd voor SEO',
       metaTitle: 'Meta Beschrijving',
       metaSubtitle: 'AI-geoptimaliseerde pagina beschrijving voor betere CTR',
+      h2Title: 'H2 Optimalisatie',
+      h2Subtitle: 'AI-gegenereerde subkoppen geoptimaliseerd voor structuur',
+      altTitle: 'Alt Teksten',
+      altSubtitle: 'AI-gegenereerde alt teksten voor betere toegankelijkheid',
+      contentTitle: 'Content Optimalisatie',
+      contentSubtitle: 'AI-geoptimaliseerde content voor betere leesbaarheid',
+      schemaTitle: 'Schema Markup',
+      schemaSubtitle: 'Gestructureerde data voor betere SERP weergave',
       originalTitle: 'Originele titel:',
       originalDescription: 'Originele beschrijving:',
+      originalH2: 'Originele H2:',
+      originalAlt: 'Originele alt tekst:',
+      originalContent: 'Originele content:',
+      originalSchema: 'Originele schema:',
       optimizedTitle: 'Geoptimaliseerde titel:',
       optimizedDescription: 'Geoptimaliseerde beschrijving:',
+      optimizedH2: 'Geoptimaliseerde H2:',
+      optimizedAlt: 'Geoptimaliseerde alt tekst:',
+      optimizedContent: 'Geoptimaliseerde content:',
+      optimizedSchema: 'Geoptimaliseerde schema:',
       edit: 'Bewerken',
       examples: 'Voorbeelden',
       active: 'Actief',
@@ -41,27 +57,42 @@ const Aanpassingen = () => {
       pending: 'Wachtend',
       editH1: 'H1 Titel Bewerken',
       editMeta: 'Meta Beschrijving Bewerken',
+      editH2: 'H2 Titel Bewerken',
+      editAlt: 'Alt Tekst Bewerken',
+      editContent: 'Content Bewerken',
+      editSchema: 'Schema Bewerken',
       cancel: 'Annuleren',
       language: 'Taal',
-      optimizationsOverview: 'Optimalisaties Overzicht',
       recentOptimizations: 'Recente Optimalisaties'
     },
     en: {
       title: 'Adjustments',
       subtitle: 'View and manage all automatic AI-driven SEO optimizations',
       save: 'Save Changes',
-      totalOptimizations: 'Total optimizations',
-      activeOptimizations: 'Active',
-      completedOptimizations: 'Completed',
-      scheduledOptimizations: 'Scheduled',
       h1Title: 'H1 Optimization',
       h1Subtitle: 'AI-generated main title optimized for SEO',
       metaTitle: 'Meta Description',
       metaSubtitle: 'AI-optimized page description for better CTR',
+      h2Title: 'H2 Optimization',
+      h2Subtitle: 'AI-generated subheadings optimized for structure',
+      altTitle: 'Alt Texts',
+      altSubtitle: 'AI-generated alt texts for better accessibility',
+      contentTitle: 'Content Optimization',
+      contentSubtitle: 'AI-optimized content for better readability',
+      schemaTitle: 'Schema Markup',
+      schemaSubtitle: 'Structured data for better SERP display',
       originalTitle: 'Original title:',
       originalDescription: 'Original description:',
+      originalH2: 'Original H2:',
+      originalAlt: 'Original alt text:',
+      originalContent: 'Original content:',
+      originalSchema: 'Original schema:',
       optimizedTitle: 'Optimized title:',
       optimizedDescription: 'Optimized description:',
+      optimizedH2: 'Optimized H2:',
+      optimizedAlt: 'Optimized alt text:',
+      optimizedContent: 'Optimized content:',
+      optimizedSchema: 'Optimized schema:',
       edit: 'Edit',
       examples: 'Examples',
       active: 'Active',
@@ -70,9 +101,12 @@ const Aanpassingen = () => {
       pending: 'Pending',
       editH1: 'Edit H1 Title',
       editMeta: 'Edit Meta Description',
+      editH2: 'Edit H2 Title',
+      editAlt: 'Edit Alt Text',
+      editContent: 'Edit Content',
+      editSchema: 'Edit Schema',
       cancel: 'Cancel',
       language: 'Language',
-      optimizationsOverview: 'Optimizations Overview',
       recentOptimizations: 'Recent Optimizations'
     }
   };
@@ -142,9 +176,104 @@ const Aanpassingen = () => {
     }
   };
 
-  const completedCount = optimizations.filter(opt => opt.status === 'completed').length;
-  const activeCount = optimizations.filter(opt => opt.status === 'active').length;
-  const scheduledCount = optimizations.filter(opt => opt.status === 'scheduled').length;
+  const OptimizationCard = ({ 
+    icon: Icon, 
+    title, 
+    subtitle, 
+    originalLabel, 
+    originalValue, 
+    optimizedLabel, 
+    optimizedValue, 
+    editTitle, 
+    editDescription,
+    content,
+    setContent 
+  }: {
+    icon: any;
+    title: string;
+    subtitle: string;
+    originalLabel: string;
+    originalValue: string;
+    optimizedLabel: string;
+    optimizedValue: string;
+    editTitle: string;
+    editDescription: string;
+    content: string;
+    setContent: (value: string) => void;
+  }) => (
+    <Card className="border border-border/50">
+      <CardHeader className="pb-4">
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex-1 min-w-0">
+            <CardTitle className="flex items-center gap-2 text-base lg:text-lg">
+              <Icon className="w-4 h-4 lg:w-5 lg:h-5 text-[hsl(var(--kk-violet))] flex-shrink-0" />
+              <span className="truncate">{title}</span>
+            </CardTitle>
+            <CardDescription className="text-xs lg:text-sm text-muted-foreground mt-1">
+              {subtitle}
+            </CardDescription>
+          </div>
+          <Badge variant="secondary" className="bg-green-50 text-green-700 border-green-200 text-xs whitespace-nowrap">
+            {t.active}
+          </Badge>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-4 lg:space-y-6">
+        <div>
+          <p className="text-xs lg:text-sm text-muted-foreground mb-2">{originalLabel}</p>
+          <div className="p-3 bg-muted/30 rounded-md border">
+            <p className="text-xs lg:text-sm font-medium">{originalValue}</p>
+          </div>
+        </div>
+        
+        <div>
+          <p className="text-xs lg:text-sm text-muted-foreground mb-2">{optimizedLabel}</p>
+          <div className="p-3 bg-[hsl(var(--kk-violet))]/5 rounded-md border border-[hsl(var(--kk-violet))]/20">
+            <p className="text-xs lg:text-sm font-medium break-words">{optimizedValue}</p>
+          </div>
+        </div>
+        
+        <div className="flex gap-2 pt-2">
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="outline" size="sm" className="flex-1 text-xs lg:text-sm">
+                <Edit3 className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
+                {t.edit}
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md mx-4">
+              <DialogHeader>
+                <DialogTitle className="text-base lg:text-lg">{editTitle}</DialogTitle>
+                <DialogDescription className="text-xs lg:text-sm">
+                  {editDescription}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="space-y-2">
+                <Label htmlFor="content" className="text-sm">{title}</Label>
+                <Textarea 
+                  id="content"
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                  className="min-h-[80px] text-sm"
+                />
+              </div>
+              <DialogFooter className="flex gap-2">
+                <Button variant="outline" className="text-sm">{t.cancel}</Button>
+                <Button className="bg-kk-gradient text-white text-sm">
+                  {t.save}
+                </Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+          
+          <Button variant="outline" size="sm" className="flex-1 text-xs lg:text-sm">
+            <Eye className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
+            {t.examples}
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
 
   return (
     <div className="flex min-h-screen premium-dashboard-bg">
@@ -216,184 +345,99 @@ const Aanpassingen = () => {
           </div>
         </div>
 
-        {/* Stats Overview */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          <Card className="p-4">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-foreground">{optimizations.length}</div>
-              <div className="text-sm text-muted-foreground">{t.totalOptimizations}</div>
-            </div>
-          </Card>
-          <Card className="p-4">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">{completedCount}</div>
-              <div className="text-sm text-muted-foreground">{t.completedOptimizations}</div>
-            </div>
-          </Card>
-          <Card className="p-4">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">{activeCount}</div>
-              <div className="text-sm text-muted-foreground">{t.activeOptimizations}</div>
-            </div>
-          </Card>
-          <Card className="p-4">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-orange-600">{scheduledCount}</div>
-              <div className="text-sm text-muted-foreground">{t.scheduledOptimizations}</div>
-            </div>
-          </Card>
-        </div>
-
-        {/* Key Optimizations */}
+        {/* Key Optimizations Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          
           {/* H1 Optimization */}
-          <Card className="border border-border/50">
-            <CardHeader className="pb-4">
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex-1 min-w-0">
-                  <CardTitle className="flex items-center gap-2 text-base lg:text-lg">
-                    <Edit3 className="w-4 h-4 lg:w-5 lg:h-5 text-[hsl(var(--kk-violet))] flex-shrink-0" />
-                    <span className="truncate">{t.h1Title}</span>
-                  </CardTitle>
-                  <CardDescription className="text-xs lg:text-sm text-muted-foreground mt-1">
-                    {t.h1Subtitle}
-                  </CardDescription>
-                </div>
-                <Badge variant="secondary" className="bg-green-50 text-green-700 border-green-200 text-xs whitespace-nowrap">
-                  {t.active}
-                </Badge>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4 lg:space-y-6">
-              <div>
-                <p className="text-xs lg:text-sm text-muted-foreground mb-2">{t.originalTitle}</p>
-                <div className="p-3 bg-muted/30 rounded-md border">
-                  <p className="text-xs lg:text-sm font-medium">Welkom bij onze SEO software</p>
-                </div>
-              </div>
-              
-              <div>
-                <p className="text-xs lg:text-sm text-muted-foreground mb-2">{t.optimizedTitle}</p>
-                <div className="p-3 bg-[hsl(var(--kk-violet))]/5 rounded-md border border-[hsl(var(--kk-violet))]/20">
-                  <p className="text-xs lg:text-sm font-medium break-words">{h1Content}</p>
-                </div>
-              </div>
-              
-              <div className="flex gap-2 pt-2">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button variant="outline" size="sm" className="flex-1 text-xs lg:text-sm">
-                      <Edit3 className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
-                      {t.edit}
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-md mx-4">
-                    <DialogHeader>
-                      <DialogTitle className="text-base lg:text-lg">{t.editH1}</DialogTitle>
-                      <DialogDescription className="text-xs lg:text-sm">
-                        Pas de H1 titel aan naar uw wensen
-                      </DialogDescription>
-                    </DialogHeader>
-                    <div className="space-y-2">
-                      <Label htmlFor="h1-content" className="text-sm">H1 Titel</Label>
-                      <Textarea 
-                        id="h1-content"
-                        value={h1Content}
-                        onChange={(e) => setH1Content(e.target.value)}
-                        className="min-h-[80px] text-sm"
-                      />
-                    </div>
-                    <DialogFooter className="flex gap-2">
-                      <Button variant="outline" className="text-sm">{t.cancel}</Button>
-                      <Button className="bg-kk-gradient text-white text-sm">
-                        {t.save}
-                      </Button>
-                    </DialogFooter>
-                  </DialogContent>
-                </Dialog>
-                
-                <Button variant="outline" size="sm" className="flex-1 text-xs lg:text-sm">
-                  <Eye className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
-                  {t.examples}
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          <OptimizationCard
+            icon={Edit3}
+            title={t.h1Title}
+            subtitle={t.h1Subtitle}
+            originalLabel={t.originalTitle}
+            originalValue="Welkom bij onze SEO software"
+            optimizedLabel={t.optimizedTitle}
+            optimizedValue={h1Content}
+            editTitle={t.editH1}
+            editDescription="Pas de H1 titel aan naar uw wensen"
+            content={h1Content}
+            setContent={setH1Content}
+          />
 
           {/* Meta Description */}
-          <Card className="border border-border/50">
-            <CardHeader className="pb-4">
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex-1 min-w-0">
-                  <CardTitle className="flex items-center gap-2 text-base lg:text-lg">
-                    <Settings className="w-4 h-4 lg:w-5 lg:h-5 text-[hsl(var(--kk-violet))] flex-shrink-0" />
-                    <span className="truncate">{t.metaTitle}</span>
-                  </CardTitle>
-                  <CardDescription className="text-xs lg:text-sm text-muted-foreground mt-1">
-                    {t.metaSubtitle}
-                  </CardDescription>
-                </div>
-                <Badge variant="secondary" className="bg-green-50 text-green-700 border-green-200 text-xs whitespace-nowrap">
-                  {t.active}
-                </Badge>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4 lg:space-y-6">
-              <div>
-                <p className="text-xs lg:text-sm text-muted-foreground mb-2">{t.originalDescription}</p>
-                <div className="p-3 bg-muted/30 rounded-md border">
-                  <p className="text-xs lg:text-sm">Een website voor SEO diensten en automatisering</p>
-                </div>
-              </div>
-              
-              <div>
-                <p className="text-xs lg:text-sm text-muted-foreground mb-2">{t.optimizedDescription}</p>
-                <div className="p-3 bg-[hsl(var(--kk-violet))]/5 rounded-md border border-[hsl(var(--kk-violet))]/20">
-                  <p className="text-xs lg:text-sm break-words">{metaContent}</p>
-                </div>
-              </div>
-              
-              <div className="flex gap-2 pt-2">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button variant="outline" size="sm" className="flex-1 text-xs lg:text-sm">
-                      <Edit3 className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
-                      {t.edit}
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-md mx-4">
-                    <DialogHeader>
-                      <DialogTitle className="text-base lg:text-lg">{t.editMeta}</DialogTitle>
-                      <DialogDescription className="text-xs lg:text-sm">
-                        Pas de meta beschrijving aan naar uw wensen
-                      </DialogDescription>
-                    </DialogHeader>
-                    <div className="space-y-2">
-                      <Label htmlFor="meta-content" className="text-sm">Meta Beschrijving</Label>
-                      <Textarea 
-                        id="meta-content"
-                        value={metaContent}
-                        onChange={(e) => setMetaContent(e.target.value)}
-                        className="min-h-[100px] text-sm"
-                        placeholder="Voer uw meta beschrijving in..."
-                      />
-                    </div>
-                    <DialogFooter className="flex gap-2">
-                      <Button variant="outline" className="text-sm">{t.cancel}</Button>
-                      <Button className="bg-kk-gradient text-white text-sm">
-                        {t.save}
-                      </Button>
-                    </DialogFooter>
-                  </DialogContent>
-                </Dialog>
-                
-                <Button variant="outline" size="sm" className="flex-1 text-xs lg:text-sm">
-                  <Eye className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
-                  {t.examples}
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          <OptimizationCard
+            icon={Settings}
+            title={t.metaTitle}
+            subtitle={t.metaSubtitle}
+            originalLabel={t.originalDescription}
+            originalValue="Een website voor SEO diensten en automatisering"
+            optimizedLabel={t.optimizedDescription}
+            optimizedValue={metaContent}
+            editTitle={t.editMeta}
+            editDescription="Pas de meta beschrijving aan naar uw wensen"
+            content={metaContent}
+            setContent={setMetaContent}
+          />
+
+          {/* H2 Optimization */}
+          <OptimizationCard
+            icon={Type}
+            title={t.h2Title}
+            subtitle={t.h2Subtitle}
+            originalLabel={t.originalH2}
+            originalValue="Onze diensten"
+            optimizedLabel={t.optimizedH2}
+            optimizedValue={h2Content}
+            editTitle={t.editH2}
+            editDescription="Pas de H2 titel aan naar uw wensen"
+            content={h2Content}
+            setContent={setH2Content}
+          />
+
+          {/* Alt Texts */}
+          <OptimizationCard
+            icon={Image}
+            title={t.altTitle}
+            subtitle={t.altSubtitle}
+            originalLabel={t.originalAlt}
+            originalValue="Dashboard screenshot"
+            optimizedLabel={t.optimizedAlt}
+            optimizedValue={altContent}
+            editTitle={t.editAlt}
+            editDescription="Pas de alt tekst aan naar uw wensen"
+            content={altContent}
+            setContent={setAltContent}
+          />
+
+          {/* Content Optimization */}
+          <OptimizationCard
+            icon={FileText}
+            title={t.contentTitle}
+            subtitle={t.contentSubtitle}
+            originalLabel={t.originalContent}
+            originalValue="Wij bieden SEO diensten aan voor bedrijven die hun online zichtbaarheid willen verbeteren."
+            optimizedLabel={t.optimizedContent}
+            optimizedValue={contentContent}
+            editTitle={t.editContent}
+            editDescription="Pas de content aan naar uw wensen"
+            content={contentContent}
+            setContent={setContentContent}
+          />
+
+          {/* Schema Markup */}
+          <OptimizationCard
+            icon={Code}
+            title={t.schemaTitle}
+            subtitle={t.schemaSubtitle}
+            originalLabel={t.originalSchema}
+            originalValue="Geen schema markup"
+            optimizedLabel={t.optimizedSchema}
+            optimizedValue={schemaContent}
+            editTitle={t.editSchema}
+            editDescription="Pas de schema markup aan naar uw wensen"
+            content={schemaContent}
+            setContent={setSchemaContent}
+          />
+
         </div>
 
         {/* All Optimizations List */}
