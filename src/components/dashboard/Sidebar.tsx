@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useTheme } from "next-themes";
 import { 
   LayoutDashboard, 
   HelpCircle, 
@@ -30,6 +31,9 @@ const sidebarItems: SidebarItem[] = [
 
 const Sidebar = () => {
   const location = useLocation();
+  const { theme } = useTheme();
+  
+  const logoSrc = theme === 'dark' ? '/klikklaar-logo-dark.png' : '/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png';
 
   return (
     <div className="w-64 premium-sidebar-bg h-screen flex flex-col">
@@ -37,7 +41,7 @@ const Sidebar = () => {
       <div className="p-5 border-b border-sidebar-border">
         <div className="flex items-center gap-3 h-14">
           <img 
-            src="/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png" 
+            src={logoSrc}
             alt="KlikKlaar SEO Logo"
             className="h-16 w-auto"
           />
