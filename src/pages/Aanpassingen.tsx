@@ -393,133 +393,65 @@ const Aanpassingen = () => {
             setContent={setH2Content}
           />
 
-          {/* Alt Texts Block 1 - Header Logo */}
-          <Card className="p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-semibold text-gray-900">Alt text - Header Logo</h3>
-              <Button 
-                size="sm" 
-                variant="outline"
-                className="text-purple-600 border-purple-300 hover:bg-purple-50"
-              >
-                Pas aan
-              </Button>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-red-700">Origineel</span>
-                </div>
-                <p className="text-sm text-red-600">KlikKlaar SEO Logo</p>
-              </div>
-              
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-green-700">Geoptimaliseerd</span>
-                </div>
-                <p className="text-sm text-green-600">KlikKlaar SEO Logo - Automatische SEO software voor B2B bedrijven</p>
-              </div>
-            </div>
-          </Card>
+          {/* Alt Texts Header Logo */}
+          <OptimizationCard
+            icon={Image}
+            title="Alt text - Header Logo"
+            subtitle="AI-geoptimaliseerde alt tekst voor header logo afbeelding"
+            originalLabel="Originele alt tekst:"
+            originalValue="KlikKlaar SEO Logo"
+            optimizedLabel="Geoptimaliseerde alt tekst:"
+            optimizedValue="KlikKlaar SEO Logo - Automatische SEO software voor B2B bedrijven"
+            editTitle="Alt Tekst Header Logo Bewerken"
+            editDescription="Pas de alt tekst voor de header logo aan naar uw wensen"
+            content="KlikKlaar SEO Logo - Automatische SEO software voor B2B bedrijven"
+            setContent={() => {}}
+          />
 
-          {/* Alt Texts Block 2 - Dashboard Screenshot */}
-          <Card className="p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-semibold text-gray-900">Alt text - Dashboard Screenshot</h3>
-              <Button 
-                size="sm" 
-                variant="outline"
-                className="text-purple-600 border-purple-300 hover:bg-purple-50"
-              >
-                Pas aan
-              </Button>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-red-700">Origineel</span>
-                </div>
-                <p className="text-sm text-red-600">KlikKlaar SEO Dashboard showing +64% visibility improvement, SEO score 3.8, 127 total adjustments, +78% estimated growth, and 8,542 visitors</p>
-              </div>
-              
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-green-700">Geoptimaliseerd</span>
-                </div>
-                <p className="text-sm text-green-600">KlikKlaar SEO Dashboard toont +64% zichtbaarheidsverbetering, SEO score 3.8, 127 totale optimalisaties, +78% geschatte groei en 8.542 bezoekers - automatische SEO software</p>
-              </div>
-            </div>
-          </Card>
+          {/* Alt Texts Dashboard Screenshot */}
+          <OptimizationCard
+            icon={Image}
+            title="Alt text - Dashboard Screenshot"
+            subtitle="AI-geoptimaliseerde alt tekst voor dashboard screenshot"
+            originalLabel="Originele alt tekst:"
+            originalValue="KlikKlaar SEO Dashboard showing +64% visibility improvement, SEO score 3.8, 127 total adjustments, +78% estimated growth, and 8,542 visitors"
+            optimizedLabel="Geoptimaliseerde alt tekst:"
+            optimizedValue="KlikKlaar SEO Dashboard toont +64% zichtbaarheidsverbetering, SEO score 3.8, 127 totale optimalisaties, +78% geschatte groei en 8.542 bezoekers - automatische SEO software"
+            editTitle="Alt Tekst Dashboard Bewerken"
+            editDescription="Pas de alt tekst voor de dashboard screenshot aan naar uw wensen"
+            content="KlikKlaar SEO Dashboard toont +64% zichtbaarheidsverbetering, SEO score 3.8, 127 totale optimalisaties, +78% geschatte groei en 8.542 bezoekers - automatische SEO software"
+            setContent={() => {}}
+          />
 
-          {/* Alt Texts Block 3 - Blog Image */}
-          <Card className="p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-semibold text-gray-900">Alt text - Blog Afbeelding</h3>
-              <Button 
-                size="sm" 
-                variant="outline"
-                className="text-purple-600 border-purple-300 hover:bg-purple-50"
-              >
-                Pas aan
-              </Button>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-red-700">Origineel</span>
-                </div>
-                <p className="text-sm text-red-600">Abstract watercolor art with blue, purple, and orange tones</p>
-              </div>
-              
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-green-700">Geoptimaliseerd</span>
-                </div>
-                <p className="text-sm text-green-600">SEO blog afbeelding met abstracte aquarel kunst in blauwe, paarse en oranje tinten - KlikKlaar SEO tips</p>
-              </div>
-            </div>
-          </Card>
+          {/* Alt Texts Blog Image */}
+          <OptimizationCard
+            icon={Image}
+            title="Alt text - Blog Afbeelding"
+            subtitle="AI-geoptimaliseerde alt tekst voor blog afbeelding"
+            originalLabel="Originele alt tekst:"
+            originalValue="Abstract watercolor art with blue, purple, and orange tones"
+            optimizedLabel="Geoptimaliseerde alt tekst:"
+            optimizedValue="SEO blog afbeelding met abstracte aquarel kunst in blauwe, paarse en oranje tinten - KlikKlaar SEO tips"
+            editTitle="Alt Tekst Blog Afbeelding Bewerken"
+            editDescription="Pas de alt tekst voor de blog afbeelding aan naar uw wensen"
+            content="SEO blog afbeelding met abstracte aquarel kunst in blauwe, paarse en oranje tinten - KlikKlaar SEO tips"
+            setContent={() => {}}
+          />
 
-          {/* Alt Texts Block 4 - Footer Logo */}
-          <Card className="p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-semibold text-gray-900">Alt text - Footer Logo</h3>
-              <Button 
-                size="sm" 
-                variant="outline"
-                className="text-purple-600 border-purple-300 hover:bg-purple-50"
-              >
-                Pas aan
-              </Button>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-red-700">Origineel</span>
-                </div>
-                <p className="text-sm text-red-600">KlikKlaar SEO Logo</p>
-              </div>
-              
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-green-700">Geoptimaliseerd</span>
-                </div>
-                <p className="text-sm text-green-600">KlikKlaar SEO Logo - Automatische SEO optimalisatie voor B2B bedrijven</p>
-              </div>
-            </div>
-          </Card>
+          {/* Alt Texts Footer Logo */}
+          <OptimizationCard
+            icon={Image}
+            title="Alt text - Footer Logo"
+            subtitle="AI-geoptimaliseerde alt tekst voor footer logo afbeelding"
+            originalLabel="Originele alt tekst:"
+            originalValue="KlikKlaar SEO Logo"
+            optimizedLabel="Geoptimaliseerde alt tekst:"
+            optimizedValue="KlikKlaar SEO Logo - Automatische SEO optimalisatie voor B2B bedrijven"
+            editTitle="Alt Tekst Footer Logo Bewerken"
+            editDescription="Pas de alt tekst voor de footer logo aan naar uw wensen"
+            content="KlikKlaar SEO Logo - Automatische SEO optimalisatie voor B2B bedrijven"
+            setContent={() => {}}
+          />
 
           {/* Content Optimization */}
           <OptimizationCard
