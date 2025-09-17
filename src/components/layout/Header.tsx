@@ -13,7 +13,7 @@ const Header = () => {
                 <span key={star} className="text-yellow-400">★</span>
               ))}
             </div>
-            <span>63 reviews on</span>
+            <span>5+ reviews on</span>
             <span className="font-semibold">Trustpilot</span>
           </div>
         </div>
