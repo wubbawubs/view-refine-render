@@ -6,6 +6,7 @@ import { IconGradientDefs } from "@/components/ui/icon-gradient-defs";
 import { IconBadge } from "@/components/ui/icon-badge";
 import { DesktopMockup } from "@/components/ui/desktop-mockup";
 import { WhatIsIncludedModal } from "@/components/ui/what-is-included-modal";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Star, CheckCircle, Brain, Search, Lightbulb, Atom, CalendarCheck, Binoculars, TrendingUp, ScanSearch, Zap, Clock, Target } from "lucide-react";
 import dashboardScreenshot from "@/assets/dashboard-screenshot.png";
 import dashboardMockup from "@/assets/dashboard-mockup.png";
@@ -586,6 +587,78 @@ const Homepage = () => {
                 </div>
               </div>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              Veelgestelde vragen
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Antwoorden op de meest gestelde vragen over KlikKlaar SEO
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="text-left text-lg font-semibold">
+                  Hoe werkt KlikKlaar SEO precies?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 text-base leading-relaxed">
+                  KlikKlaar SEO werkt met een slimme toplayer-technologie die over je website wordt geplaatst. Onze AI analyseert continu je content, concurrenten en zoektrends, en past automatisch je SEO aan. Je hoeft niets te doen na de eerste setup - wij zorgen dat je website altijd geoptimaliseerd blijft.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-left text-lg font-semibold">
+                  Hoe lang duurt het voordat ik resultaten zie?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 text-base leading-relaxed">
+                  De eerste optimalisaties zijn direct zichtbaar na installatie. Voor merkbare SEO-resultaten zoals hogere rankings en meer bezoekers kun je rekenen op 4-12 weken, afhankelijk van je branche en concurrentie. Onze AI werkt 24/7 door om je positie te verbeteren.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-left text-lg font-semibold">
+                  Kan ik KlikKlaar SEO gebruiken op elke website?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 text-base leading-relaxed">
+                  Ja, KlikKlaar SEO werkt op vrijwel alle websites - WordPress, Shopify, Wix, Squarespace, custom websites en meer. Onze toplayer-technologie integreert naadloos zonder dat je bestaande website aangepast hoeft te worden.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-left text-lg font-semibold">
+                  Is er een setup fee of eenmalige kosten?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 text-base leading-relaxed">
+                  Nee, er zijn geen setup kosten of verborgen fees. Je betaalt alleen het maandelijks abonnement vanaf €49 per maand. We nemen de volledige installatie en configuratie voor onze rekening tijdens het gratis kennismakingsgesprek.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-5">
+                <AccordionTrigger className="text-left text-lg font-semibold">
+                  Wat onderscheidt KlikKlaar van andere SEO tools?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 text-base leading-relaxed">
+                  KlikKlaar is de enige tool die SEO volledig automatiseert. Terwijl andere tools alleen data geven, voeren wij de optimalisaties ook daadwerkelijk uit. Onze AI-gedreven aanpak zorgt voor betere resultaten met minder werk van jouw kant. Plus: we optimaliseren ook voor AI-zoekmachines zoals ChatGPT.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-6">
+                <AccordionTrigger className="text-left text-lg font-semibold">
+                  Kan ik het abonnement opzeggen wanneer ik wil?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 text-base leading-relaxed">
+                  Ja, je kunt maandelijks opzeggen zonder lange contracten of boetes. We zijn zo overtuigd van onze resultaten dat we geen klanten vast willen houden - we verdienen je vertrouwen elke maand opnieuw door uitstekende resultaten te leveren.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
