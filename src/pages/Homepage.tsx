@@ -49,7 +49,7 @@ const Homepage = () => {
                 <Star className="w-3 h-3 fill-yellow-400 text-yellow-400 absolute top-0 left-0" style={{ clipPath: 'inset(0 50% 0 0)' }} />
               </div>
             </div>
-            <span className="text-xs opacity-90">63 reviews on</span>
+            <span className="text-xs opacity-90">5+ reviews on</span>
             <span className="font-medium">Trustpilot</span>
           </div>
         </div>
