@@ -674,10 +674,6 @@ const Homepage = () => {
                   alt="KlikKlaar SEO Logo - Automatische SEO software voor B2B bedrijven"
                   className="h-12 w-auto"
                 />
-                <div className="text-white">
-                  <span className="text-xl font-bold">KlikKlaar</span>
-                  <span className="text-xl font-light text-gray-300 ml-1">SEO</span>
-                </div>
               </div>
               <p className="text-gray-400 text-sm mb-4">
                 KlikKlaar SEO maakt je vindbaar op zoekmachines zowel als AI, Volledig automatisch.
