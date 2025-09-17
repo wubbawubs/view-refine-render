@@ -6,7 +6,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/klikklaar-logo-gradient.png" 
+                src="/klikklaar-logo-gradient-new.png" 
                 alt="KlikKlaar SEO Logo - Automatische SEO software voor B2B bedrijven"
                 className="h-12 w-auto"
               />
