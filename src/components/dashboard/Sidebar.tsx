@@ -33,7 +33,7 @@ const Sidebar = () => {
   const location = useLocation();
   const { theme } = useTheme();
   
-  const logoSrc = theme === 'dark' ? '/klikklaar-logo-dark.png' : '/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png';
+  const logoSrc = theme === 'dark' ? '/klikklaar-logo-gradient.png' : '/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png';
 
   return (
     <div className="w-64 premium-sidebar-bg h-screen flex flex-col">
