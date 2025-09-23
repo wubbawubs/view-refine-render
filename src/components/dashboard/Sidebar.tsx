@@ -61,7 +61,7 @@ const Sidebar = () => {
               className={cn(
                 "w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left transition-all duration-200 relative block",
                 isActive
-                  ? "bg-kk-gradient-muted text-[hsl(var(--kk-gray-700))] shadow-lg border-l-2 border-white/20"
+                  ? "bg-kk-gradient-muted text-white shadow-lg border-l-2 border-white/20"
                   : item.danger
                   ? "text-destructive hover:bg-gradient-to-r hover:from-destructive/10 hover:to-destructive/5"
                   : "text-sidebar-foreground hover:bg-gradient-to-r hover:from-sidebar-accent/70 hover:to-sidebar-accent/30"
