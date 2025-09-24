@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -30,6 +31,70 @@ const Homepage = () => {
   }, [trustIndicators.length]);
 
   return (
+    <>
+      <Helmet>
+        <title>KlikKlaar - Automatische SEO Software met AI | Nederland #1</title>
+        <meta name="description" content="KlikKlaar automatiseert al je SEO-taken met AI. Geen gedoe, wel blijvende zichtbaarheid en groei voor B2B bedrijven. Start vandaag nog!" />
+        <meta name="keywords" content="automatische SEO software, AI SEO tool, SEO automatisering, KlikKlaar, B2B SEO, Nederlandse SEO software" />
+        <link rel="canonical" href="https://klikklaar.io/homepage" />
+        <meta name="robots" content="index, follow" />
+        <html lang="nl" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="KlikKlaar - Automatische SEO Software met AI | Nederland #1" />
+        <meta property="og:description" content="KlikKlaar automatiseert al je SEO-taken met AI. Geen gedoe, wel blijvende zichtbaarheid en groei voor B2B bedrijven." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://klikklaar.io/homepage" />
+        <meta property="og:image" content="https://klikklaar.io/lovable-uploads/f506cedb-82da-4a28-94aa-4ba7d6af1922.png" />
+        <meta property="og:locale" content="nl_NL" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="KlikKlaar - Automatische SEO Software met AI" />
+        <meta name="twitter:description" content="Automatiseer je SEO met AI. Voor B2B bedrijven die groei willen zonder gedoe." />
+        <meta name="twitter:image" content="https://klikklaar.io/lovable-uploads/f506cedb-82da-4a28-94aa-4ba7d6af1922.png" />
+      </Helmet>
+      
+      {/* Schema.org JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "KlikKlaar SEO Software",
+          "description": "Automatische SEO software met AI voor B2B bedrijven",
+          "url": "https://klikklaar.io",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "offers": {
+            "@type": "Offer",
+            "price": "49",
+            "priceCurrency": "EUR",
+            "priceValidUntil": "2025-12-31"
+          },
+          "creator": {
+            "@type": "Organization",
+            "name": "KlikKlaar",
+            "url": "https://klikklaar.io"
+          }
+        })
+      }} />
+      
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "KlikKlaar",
+          "url": "https://klikklaar.io",
+          "logo": "https://klikklaar.io/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png",
+          "description": "Automatische SEO software met AI voor Nederlandse B2B bedrijven",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "url": "https://calendly.com/luuk-klikklaar/kennismakingsgesprek"
+          }
+        })
+      }} />
+      
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50/30 to-purple-50/20">
       <IconGradientDefs />
       {/* Trustpilot Badge */}
@@ -61,7 +126,7 @@ const Homepage = () => {
           <div className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png" 
-              alt="KlikKlaar SEO Logo"
+              alt="KlikKlaar automatische SEO software logo - AI-gedreven SEO optimalisatie voor Nederlandse B2B bedrijven"
               className="h-24 w-auto"
             />
           </div>
@@ -153,7 +218,7 @@ const Homepage = () => {
             <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-200 p-1">
               <img 
                 src="/lovable-uploads/f506cedb-82da-4a28-94aa-4ba7d6af1922.png" 
-                alt="KlikKlaar SEO Dashboard showing +64% visibility improvement, SEO score 3.8, 127 total adjustments, +78% estimated growth, and 8,542 visitors"
+                alt="KlikKlaar automatische SEO software dashboard - +64% zichtbaarheidsverbetering, SEO score 3.8, 127 automatische optimalisaties, +78% geschatte groei, en 8.542 bezoekers voor Nederlandse B2B bedrijven"
                 className="w-full rounded-xl"
               />
             </div>
@@ -730,6 +795,7 @@ const Homepage = () => {
         </div>
       </footer>
     </div>
+    </>
   );
 };
 
