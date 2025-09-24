@@ -17,7 +17,7 @@ const Dashboard = () => {
   const texts = {
     nl: {
       title: 'KlikKlaar.io SEO Dashboard',
-      lastUpdated: 'Laatst bijgewerkt: 16 september 2025, 14:45',
+      lastUpdated: 'Laatst bijgewerkt: 24 september 2025, 14:45',
       thisWeek: 'Deze week',
       thisMonth: 'Deze maand',
       downloadReport: 'Download rapport (PDF)',
@@ -36,7 +36,7 @@ const Dashboard = () => {
     },
     en: {
       title: 'KlikKlaar.io SEO Dashboard',
-      lastUpdated: 'Last updated: September 16, 2025, 2:45 PM',
+      lastUpdated: 'Last updated: September 24, 2025, 2:45 PM',
       thisWeek: 'This week',  
       thisMonth: 'This month',
       downloadReport: 'Download report (PDF)',

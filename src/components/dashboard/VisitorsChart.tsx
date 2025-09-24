@@ -17,7 +17,15 @@ const data = [
   { date: '13 Sep', visitors: 145, benchmark: 69 },
   { date: '14 Sep', visitors: 178, benchmark: 75 },
   { date: '15 Sep', visitors: 189, benchmark: 78 },
-  { date: '16 Sep', visitors: 195, benchmark: 80 }
+  { date: '16 Sep', visitors: 195, benchmark: 80 },
+  { date: '17 Sep', visitors: 203, benchmark: 82 },
+  { date: '18 Sep', visitors: 198, benchmark: 84 },
+  { date: '19 Sep', visitors: 214, benchmark: 86 },
+  { date: '20 Sep', visitors: 227, benchmark: 88 },
+  { date: '21 Sep', visitors: 235, benchmark: 90 },
+  { date: '22 Sep', visitors: 219, benchmark: 92 },
+  { date: '23 Sep', visitors: 248, benchmark: 94 },
+  { date: '24 Sep', visitors: 256, benchmark: 96 }
 ];
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -49,7 +57,7 @@ const VisitorsChart = () => {
     <Card className="glass-card p-4 sm:p-6 lg:p-8 shadow-luxury animate-fade-in rounded-2xl border border-border smooth-hover hover:shadow-elevated hover:scale-[1.01]">
       <div className="mb-4 sm:mb-6 lg:mb-8">
         <h3 className="text-lg sm:text-xl lg:text-kk-h2 text-foreground mb-2">Organische bezoekers</h3>
-        <p className="text-xs sm:text-sm lg:text-kk-caption text-muted-foreground">Ontwikkeling 1-16 september vs. benchmark</p>
+        <p className="text-xs sm:text-sm lg:text-kk-caption text-muted-foreground">Ontwikkeling 1-24 september vs. benchmark</p>
       </div>
       
       <div className="h-48 sm:h-56 lg:h-64 mb-4 w-full overflow-hidden">
@@ -98,15 +106,15 @@ const VisitorsChart = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-border">
         <div className="text-center">
           <div className="text-sm lg:text-kk-label font-semibold text-foreground">Totaal bezoekers</div>
-          <div className="text-xs lg:text-kk-caption text-muted-foreground">558 deze maand</div>
+          <div className="text-xs lg:text-kk-caption text-muted-foreground">816 deze maand</div>
         </div>
         <div className="text-center">
           <div className="text-sm lg:text-kk-label font-semibold text-[hsl(var(--kk-success))]">Groei</div>
-          <div className="text-xs lg:text-kk-caption text-muted-foreground">+160% vs vorige maand</div>
+          <div className="text-xs lg:text-kk-caption text-muted-foreground">+180% vs vorige maand</div>
         </div>
         <div className="text-center">
           <div className="text-sm lg:text-kk-label font-semibold text-[hsl(var(--kk-violet))]">Best day</div>
-          <div className="text-xs lg:text-kk-caption text-muted-foreground">16 Sep: 195</div>
+          <div className="text-xs lg:text-kk-caption text-muted-foreground">24 Sep: 256</div>
         </div>
       </div>
     </Card>

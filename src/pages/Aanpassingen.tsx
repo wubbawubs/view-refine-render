@@ -453,18 +453,18 @@ const Aanpassingen = () => {
             setContent={() => {}}
           />
 
-          {/* KlikKlaar AI Feature */}
+          {/* Content Card Feature */}
           <OptimizationCard
-            icon={Brain}
-            title="KlikKlaar AI"
-            subtitle="AI-assistent voor branche analyse en automatische optimalisaties"
-            originalLabel="Originele functionaliteit:"
-            originalValue="Standaard SEO tools zonder AI ondersteuning"
-            optimizedLabel="Geoptimaliseerde functionaliteit:"
-            optimizedValue="Onze ontwikkelde AI-assistent leert jouw branche begrijpen, concurrenten analyseren en direct optimalisaties aandraagt. Altijd relevant, nooit meer stilvallen."
-            editTitle="KlikKlaar AI Bewerken"
-            editDescription="Pas de KlikKlaar AI functionaliteit aan naar uw wensen"
-            content="Onze ontwikkelde AI-assistent leert jouw branche begrijpen, concurrenten analyseren en direct optimalisaties aandraagt. Altijd relevant, nooit meer stilvallen."
+            icon={FileText}
+            title="Content Card"
+            subtitle="AI-gegenereerde content optimalisatie voor betere leesbaarheid"
+            originalLabel="Originele content:"
+            originalValue="Standaard content zonder AI optimalisatie"
+            optimizedLabel="Geoptimaliseerde content:"
+            optimizedValue="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
+            editTitle="Content Card Bewerken"
+            editDescription="Pas de AI content optimalisatie aan naar uw wensen"
+            content="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
             setContent={() => {}}
           />
 
