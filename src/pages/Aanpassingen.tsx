@@ -453,123 +453,108 @@ const Aanpassingen = () => {
             setContent={() => {}}
           />
 
-          {/* Content Card Feature */}
+          {/* Content Block Optimalisatie 1 */}
           <OptimizationCard
             icon={FileText}
-            title="Content Card"
-            subtitle="AI-gegenereerde content optimalisatie voor betere leesbaarheid"
+            title="Content Block Optimalisatie"
+            subtitle="AI-geoptimaliseerde content optimalisatie voor betere leesbaarheid"
             originalLabel="Originele content:"
             originalValue="Standaard content zonder AI optimalisatie"
             optimizedLabel="Geoptimaliseerde content:"
             optimizedValue="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
-            editTitle="Content Card Bewerken"
-            editDescription="Pas de AI content optimalisatie aan naar uw wensen"
+            editTitle="Content Block Optimalisatie Bewerken"
+            editDescription="Pas de content optimalisatie aan naar uw wensen"
             content="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
             setContent={() => {}}
           />
 
-          {/* Keyword Content Optimization */}
-          <OptimizationCard
-            icon={Search}
-            title="Keyword Content Optimalisatie"
-            subtitle="AI-geoptimaliseerde content voor je belangrijkste zoekwoorden"
-            originalLabel="Originele content aanpak:"
-            originalValue="Content geschreven zonder keyword strategie en SEO focus"
-            optimizedLabel="Geoptimaliseerde content:"
-            optimizedValue="Elke pagina wordt geoptimaliseerd voor je beste keywords. Onze AI zorgt dat je content natuurlijk leest én hoog rankt voor de zoektermen die klanten gebruiken."
-            editTitle="Keyword Content Optimalisatie Bewerken"
-            editDescription="Pas de keyword content optimalisatie aan naar uw wensen"
-            content="Elke pagina wordt geoptimaliseerd voor je beste keywords. Onze AI zorgt dat je content natuurlijk leest én hoog rankt voor de zoektermen die klanten gebruiken."
-            setContent={() => {}}
-          />
-
-          {/* Content Ideeën Generatie */}
+          {/* Content Block Optimalisatie 2 */}
           <OptimizationCard
             icon={Lightbulb}
-            title="Content Ideeën Generatie"
-            subtitle="AI genereert relevante content ideeën voor je doelgroep"
-            originalLabel="Originele content planning:"
-            originalValue="Handmatige brainstormsessies zonder data of inzichten"
-            optimizedLabel="Geoptimaliseerde content planning:"
-            optimizedValue="Onze AI analyseert je branche en genereert wekelijks concrete content ideeën die aansluiten bij wat je klanten zoeken. Nooit meer een leeg scherm."
-            editTitle="Content Ideeën Generatie Bewerken"
-            editDescription="Pas de content ideeën generatie aan naar uw wensen"
-            content="Onze AI analyseert je branche en genereert wekelijks concrete content ideeën die aansluiten bij wat je klanten zoeken. Nooit meer een leeg scherm."
+            title="Content Block Optimalisatie"
+            subtitle="AI-geoptimaliseerde content optimalisatie voor betere leesbaarheid"
+            originalLabel="Originele content:"
+            originalValue="Standaard content zonder AI optimalisatie"
+            optimizedLabel="Geoptimaliseerde content:"
+            optimizedValue="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
+            editTitle="Content Block Optimalisatie Bewerken"
+            editDescription="Pas de content optimalisatie aan naar uw wensen"
+            content="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
             setContent={() => {}}
           />
 
-          {/* AI Content Herschrijving */}
+          {/* Content Block Optimalisatie 3 */}
           <OptimizationCard
             icon={Atom}
-            title="AI Content Herschrijving"
-            subtitle="Bestaande content automatisch optimaliseren voor betere prestaties"
-            originalLabel="Originele content updates:"
-            originalValue="Content blijft statisch en veroudert langzaam"
-            optimizedLabel="Geoptimaliseerde content updates:"
-            optimizedValue="Onze AI analyseert je bestaande content en herwerkt deze automatisch voor betere SEO prestaties, leesbaarheid en conversie. Altijd up-to-date content."
-            editTitle="AI Content Herschrijving Bewerken"
-            editDescription="Pas de AI content herschrijving aan naar uw wensen"
-            content="Onze AI analyseert je bestaande content en herwerkt deze automatisch voor betere SEO prestaties, leesbaarheid en conversie. Altijd up-to-date content."
+            title="Content Block Optimalisatie"
+            subtitle="AI-geoptimaliseerde content optimalisatie voor betere leesbaarheid"
+            originalLabel="Originele content:"
+            originalValue="Standaard content zonder AI optimalisatie"
+            optimizedLabel="Geoptimaliseerde content:"
+            optimizedValue="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
+            editTitle="Content Block Optimalisatie Bewerken"
+            editDescription="Pas de content optimalisatie aan naar uw wensen"
+            content="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
             setContent={() => {}}
           />
 
-          {/* Automatische Content Updates */}
+          {/* Content Block Optimalisatie 4 */}
           <OptimizationCard
             icon={CalendarCheck}
-            title="Automatische Content Updates"
-            subtitle="Content wordt continu geoptimaliseerd op basis van performance data"
-            originalLabel="Originele content beheer:"
-            originalValue="Content wordt zelden bijgewerkt na publicatie"
-            optimizedLabel="Geoptimaliseerde content beheer:"
-            optimizedValue="Onze AI monitort de prestaties van elke pagina en past automatisch titels, beschrijvingen en content aan voor betere resultaten. Set-and-forget content optimalisatie."
-            editTitle="Automatische Content Updates Bewerken"
-            editDescription="Pas de automatische content updates aan naar uw wensen"
-            content="Onze AI monitort de prestaties van elke pagina en past automatisch titels, beschrijvingen en content aan voor betere resultaten. Set-and-forget content optimalisatie."
+            title="Content Block Optimalisatie"
+            subtitle="AI-geoptimaliseerde content optimalisatie voor betere leesbaarheid"
+            originalLabel="Originele content:"
+            originalValue="Standaard content zonder AI optimalisatie"
+            optimizedLabel="Geoptimaliseerde content:"
+            optimizedValue="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
+            editTitle="Content Block Optimalisatie Bewerken"
+            editDescription="Pas de content optimalisatie aan naar uw wensen"
+            content="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
             setContent={() => {}}
           />
 
-          {/* Concurrent Content Analyse */}
+          {/* Content Block Optimalisatie 5 */}
           <OptimizationCard
             icon={Binoculars}
-            title="Concurrent Content Analyse"
-            subtitle="Leer van je concurrenten en creëer betere content"
-            originalLabel="Originele content strategie:"
-            originalValue="Geen inzicht in wat concurrenten doen qua content"
-            optimizedLabel="Geoptimaliseerde content strategie:"
-            optimizedValue="Onze AI analyseert de content van je concurrenten en toont precies waar jij kansen hebt. Creëer content die beter is dan de rest en win marktaandeel."
-            editTitle="Concurrent Content Analyse Bewerken"
-            editDescription="Pas de concurrent content analyse aan naar uw wensen"
-            content="Onze AI analyseert de content van je concurrenten en toont precies waar jij kansen hebt. Creëer content die beter is dan de rest en win marktaandeel."
+            title="Content Block Optimalisatie"
+            subtitle="AI-geoptimaliseerde content optimalisatie voor betere leesbaarheid"
+            originalLabel="Originele content:"
+            originalValue="Standaard content zonder AI optimalisatie"
+            optimizedLabel="Geoptimaliseerde content:"
+            optimizedValue="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
+            editTitle="Content Block Optimalisatie Bewerken"
+            editDescription="Pas de content optimalisatie aan naar uw wensen"
+            content="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
             setContent={() => {}}
           />
 
-          {/* Content Performance Tracking */}
+          {/* Content Block Optimalisatie 6 */}
           <OptimizationCard
             icon={TrendingUp}
-            title="Content Performance Tracking"
-            subtitle="Meet en optimaliseer de prestaties van elke content pagina"
-            originalLabel="Originele content monitoring:"
-            originalValue="Geen inzicht in welke content werkt en welke niet"
-            optimizedLabel="Geoptimaliseerde content monitoring:"
-            optimizedValue="Zie precies welke content het beste presteert, waar bezoekers afhaken en welke pagina's meer traffic verdienen. Data-gedreven content optimalisatie."
-            editTitle="Content Performance Tracking Bewerken"
-            editDescription="Pas de content performance tracking aan naar uw wensen"
-            content="Zie precies welke content het beste presteert, waar bezoekers afhaken en welke pagina's meer traffic verdienen. Data-gedreven content optimalisatie."
+            title="Content Block Optimalisatie"
+            subtitle="AI-geoptimaliseerde content optimalisatie voor betere leesbaarheid"
+            originalLabel="Originele content:"
+            originalValue="Standaard content zonder AI optimalisatie"
+            optimizedLabel="Geoptimaliseerde content:"
+            optimizedValue="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
+            editTitle="Content Block Optimalisatie Bewerken"
+            editDescription="Pas de content optimalisatie aan naar uw wensen"
+            content="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
             setContent={() => {}}
           />
 
-          {/* Content SEO Audit */}
+          {/* Content Block Optimalisatie 7 */}
           <OptimizationCard
             icon={ScanSearch}
-            title="Content SEO Audit"
-            subtitle="Diepgaande analyse van je content voor SEO optimalisatie"
-            originalLabel="Originele content controle:"
-            originalValue="Sporadische handmatige checks zonder systematische aanpak"
-            optimizedLabel="Geoptimaliseerde content controle:"
-            optimizedValue="Onze AI scant elke pagina op SEO-problemen: van ontbrekende titels tot slechte interne links. Alles wordt automatisch gedetecteerd en opgelost."
-            editTitle="Content SEO Audit Bewerken"
-            editDescription="Pas de content SEO audit aan naar uw wensen"
-            content="Onze AI scant elke pagina op SEO-problemen: van ontbrekende titels tot slechte interne links. Alles wordt automatisch gedetecteerd en opgelost."
+            title="Content Block Optimalisatie"
+            subtitle="AI-geoptimaliseerde content optimalisatie voor betere leesbaarheid"
+            originalLabel="Originele content:"
+            originalValue="Standaard content zonder AI optimalisatie"
+            optimizedLabel="Geoptimaliseerde content:"
+            optimizedValue="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
+            editTitle="Content Block Optimalisatie Bewerken"
+            editDescription="Pas de content optimalisatie aan naar uw wensen"
+            content="AI-geoptimaliseerde content die je doelgroep aanspreekt, beter converteert en hoger rankt. Altijd relevant en gericht op je specifieke branche."
             setContent={() => {}}
           />
 
