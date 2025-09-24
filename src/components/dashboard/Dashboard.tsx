@@ -172,8 +172,8 @@ const Dashboard = () => {
           <KPICard
             icon={<Settings />}
             label={t.totalAdjustments}
-            value="89"
-            delta={`+12 ${t.weekDelta}`}
+            value="132"
+            delta={`+18 ${t.weekDelta}`}
             deltaType="up"
             helpText={t.totalAdjustmentsHelp}
           />
@@ -188,8 +188,8 @@ const Dashboard = () => {
           <KPICard
             icon={<Users />}
             label={t.totalVisitors}
-            value="558"
-            delta={`+160% ${t.monthDelta}`}
+            value="3.676"
+            delta={`+245% ${t.monthDelta}`}
             deltaType="up"
             helpText={t.totalVisitorsHelp}
           />
