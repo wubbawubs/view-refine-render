@@ -106,11 +106,11 @@ const VisitorsChart = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-border">
         <div className="text-center">
           <div className="text-sm lg:text-kk-label font-semibold text-foreground">Totaal bezoekers</div>
-          <div className="text-xs lg:text-kk-caption text-muted-foreground">816 deze maand</div>
+          <div className="text-xs lg:text-kk-caption text-muted-foreground">3,676 deze maand</div>
         </div>
         <div className="text-center">
           <div className="text-sm lg:text-kk-label font-semibold text-[hsl(var(--kk-success))]">Groei</div>
-          <div className="text-xs lg:text-kk-caption text-muted-foreground">+180% vs vorige maand</div>
+          <div className="text-xs lg:text-kk-caption text-muted-foreground">+245% vs vorige maand</div>
         </div>
         <div className="text-center">
           <div className="text-sm lg:text-kk-label font-semibold text-[hsl(var(--kk-violet))]">Best day</div>
