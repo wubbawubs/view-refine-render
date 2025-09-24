@@ -468,108 +468,108 @@ const Aanpassingen = () => {
             setContent={() => {}}
           />
 
-          {/* Keyword Analyse Feature */}
+          {/* Keyword Content Optimization */}
           <OptimizationCard
             icon={Search}
-            title="Keyword Analyse"
-            subtitle="AI-gedreven zoekwoord onderzoek voor optimale resultaten"
-            originalLabel="Originele aanpak:"
-            originalValue="Handmatige zoekwoord selectie zonder data analyse"
-            optimizedLabel="Geoptimaliseerde aanpak:"
-            optimizedValue="Wij vinden de zoekwoorden die écht klanten opleveren. Wij analyseren volume, intentie en moeilijkheid, zodat jij weet waar je de meeste winst pakt."
-            editTitle="Keyword Analyse Bewerken"
-            editDescription="Pas de keyword analyse functionaliteit aan naar uw wensen"
-            content="Wij vinden de zoekwoorden die écht klanten opleveren. Wij analyseren volume, intentie en moeilijkheid, zodat jij weet waar je de meeste winst pakt."
+            title="Keyword Content Optimalisatie"
+            subtitle="AI-geoptimaliseerde content voor je belangrijkste zoekwoorden"
+            originalLabel="Originele content aanpak:"
+            originalValue="Content geschreven zonder keyword strategie en SEO focus"
+            optimizedLabel="Geoptimaliseerde content:"
+            optimizedValue="Elke pagina wordt geoptimaliseerd voor je beste keywords. Onze AI zorgt dat je content natuurlijk leest én hoog rankt voor de zoektermen die klanten gebruiken."
+            editTitle="Keyword Content Optimalisatie Bewerken"
+            editDescription="Pas de keyword content optimalisatie aan naar uw wensen"
+            content="Elke pagina wordt geoptimaliseerd voor je beste keywords. Onze AI zorgt dat je content natuurlijk leest én hoog rankt voor de zoektermen die klanten gebruiken."
             setContent={() => {}}
           />
 
-          {/* Ideeëngeneratie Feature */}
+          {/* Content Ideeën Generatie */}
           <OptimizationCard
             icon={Lightbulb}
-            title="Ideeëngeneratie"
-            subtitle="AI-gegenereerde SEO ideeën en content suggesties"
-            originalLabel="Originele content creatie:"
-            originalValue="Handmatige brainstorm sessies zonder data onderbouwing"
-            optimizedLabel="Geoptimaliseerde content creatie:"
-            optimizedValue="Stop met gokken. Onze AI genereert concrete SEO-ideeën, pakkende titels en metateksten die klikken opleveren."
-            editTitle="Ideeëngeneratie Bewerken"
-            editDescription="Pas de ideeëngeneratie functionaliteit aan naar uw wensen"
-            content="Stop met gokken. Onze AI genereert concrete SEO-ideeën, pakkende titels en metateksten die klikken opleveren."
+            title="Content Ideeën Generatie"
+            subtitle="AI genereert relevante content ideeën voor je doelgroep"
+            originalLabel="Originele content planning:"
+            originalValue="Handmatige brainstormsessies zonder data of inzichten"
+            optimizedLabel="Geoptimaliseerde content planning:"
+            optimizedValue="Onze AI analyseert je branche en genereert wekelijks concrete content ideeën die aansluiten bij wat je klanten zoeken. Nooit meer een leeg scherm."
+            editTitle="Content Ideeën Generatie Bewerken"
+            editDescription="Pas de content ideeën generatie aan naar uw wensen"
+            content="Onze AI analyseert je branche en genereert wekelijks concrete content ideeën die aansluiten bij wat je klanten zoeken. Nooit meer een leeg scherm."
             setContent={() => {}}
           />
 
-          {/* Vindbaar op AI Feature */}
+          {/* AI Content Herschrijving */}
           <OptimizationCard
             icon={Atom}
-            title="Vindbaar op AI"
-            subtitle="Optimalisatie voor AI-gedreven zoekmachines"
-            originalLabel="Originele optimalisatie:"
-            originalValue="Focus alleen op traditionele Google SEO"
-            optimizedLabel="Geoptimaliseerde optimalisatie:"
-            optimizedValue="Onze software is ingericht om ook op AI vindbaar te zijn: KlikKlaar SEO is gebouwd om markt breed vindbaar te zijn en te blijven."
-            editTitle="Vindbaar op AI Bewerken"
-            editDescription="Pas de AI vindbaarheid optimalisatie aan naar uw wensen"
-            content="Onze software is ingericht om ook op AI vindbaar te zijn: KlikKlaar SEO is gebouwd om markt breed vindbaar te zijn en te blijven."
+            title="AI Content Herschrijving"
+            subtitle="Bestaande content automatisch optimaliseren voor betere prestaties"
+            originalLabel="Originele content updates:"
+            originalValue="Content blijft statisch en veroudert langzaam"
+            optimizedLabel="Geoptimaliseerde content updates:"
+            optimizedValue="Onze AI analyseert je bestaande content en herwerkt deze automatisch voor betere SEO prestaties, leesbaarheid en conversie. Altijd up-to-date content."
+            editTitle="AI Content Herschrijving Bewerken"
+            editDescription="Pas de AI content herschrijving aan naar uw wensen"
+            content="Onze AI analyseert je bestaande content en herwerkt deze automatisch voor betere SEO prestaties, leesbaarheid en conversie. Altijd up-to-date content."
             setContent={() => {}}
           />
 
-          {/* Automatisch Geoptimaliseerd Feature */}
+          {/* Automatische Content Updates */}
           <OptimizationCard
             icon={CalendarCheck}
-            title="Automatisch Geoptimaliseerd"
-            subtitle="Continue automatische SEO optimalisaties zonder handmatig werk"
-            originalLabel="Originele werkwijze:"
-            originalValue="Handmatige SEO taken die veel tijd kosten"
-            optimizedLabel="Geoptimaliseerde werkwijze:"
-            optimizedValue="Onze software kan via een slimme laag op je website ten aller tijde optimaliseren. 15 minuten opzet werk en je AI zorgt dat er consistent vindbaar blijft, zonder gedoe."
-            editTitle="Automatische Optimalisatie Bewerken"
-            editDescription="Pas de automatische optimalisatie functionaliteit aan naar uw wensen"
-            content="Onze software kan via een slimme laag op je website ten aller tijde optimaliseren. 15 minuten opzet werk en je AI zorgt dat er consistent vindbaar blijft, zonder gedoe."
+            title="Automatische Content Updates"
+            subtitle="Content wordt continu geoptimaliseerd op basis van performance data"
+            originalLabel="Originele content beheer:"
+            originalValue="Content wordt zelden bijgewerkt na publicatie"
+            optimizedLabel="Geoptimaliseerde content beheer:"
+            optimizedValue="Onze AI monitort de prestaties van elke pagina en past automatisch titels, beschrijvingen en content aan voor betere resultaten. Set-and-forget content optimalisatie."
+            editTitle="Automatische Content Updates Bewerken"
+            editDescription="Pas de automatische content updates aan naar uw wensen"
+            content="Onze AI monitort de prestaties van elke pagina en past automatisch titels, beschrijvingen en content aan voor betere resultaten. Set-and-forget content optimalisatie."
             setContent={() => {}}
           />
 
-          {/* Volg je concurrent Feature */}
+          {/* Concurrent Content Analyse */}
           <OptimizationCard
             icon={Binoculars}
-            title="Volg je concurrent"
-            subtitle="Continue monitoring van concurrentie prestaties"
-            originalLabel="Originele concurrentie analyse:"
-            originalValue="Geen inzicht in wat concurrenten doen"
-            optimizedLabel="Geoptimaliseerde concurrentie analyse:"
-            optimizedValue="Zie precies hoe je concurrenten scoren en gebruik hun zwakke plekken om ze in te halen. Jij krijgt de inzichten, wij doen het werk."
-            editTitle="Concurrentie Monitoring Bewerken"
-            editDescription="Pas de concurrentie monitoring functionaliteit aan naar uw wensen"
-            content="Zie precies hoe je concurrenten scoren en gebruik hun zwakke plekken om ze in te halen. Jij krijgt de inzichten, wij doen het werk."
+            title="Concurrent Content Analyse"
+            subtitle="Leer van je concurrenten en creëer betere content"
+            originalLabel="Originele content strategie:"
+            originalValue="Geen inzicht in wat concurrenten doen qua content"
+            optimizedLabel="Geoptimaliseerde content strategie:"
+            optimizedValue="Onze AI analyseert de content van je concurrenten en toont precies waar jij kansen hebt. Creëer content die beter is dan de rest en win marktaandeel."
+            editTitle="Concurrent Content Analyse Bewerken"
+            editDescription="Pas de concurrent content analyse aan naar uw wensen"
+            content="Onze AI analyseert de content van je concurrenten en toont precies waar jij kansen hebt. Creëer content die beter is dan de rest en win marktaandeel."
             setContent={() => {}}
           />
 
-          {/* Rank Tracker Feature */}
+          {/* Content Performance Tracking */}
           <OptimizationCard
             icon={TrendingUp}
-            title="Rank Tracker"
-            subtitle="Dagelijkse ranking monitoring en groei tracking"
-            originalLabel="Originele ranking monitoring:"
-            originalValue="Geen inzicht in Google posities en veranderingen"
-            optimizedLabel="Geoptimaliseerde ranking monitoring:"
-            optimizedValue="Hou dagelijks zicht op je posities in Google. Ontdek nieuwe groeikansen en bouw stap voor stap meer autoriteit op."
-            editTitle="Rank Tracker Bewerken"
-            editDescription="Pas de rank tracker functionaliteit aan naar uw wensen"
-            content="Hou dagelijks zicht op je posities in Google. Ontdek nieuwe groeikansen en bouw stap voor stap meer autoriteit op."
+            title="Content Performance Tracking"
+            subtitle="Meet en optimaliseer de prestaties van elke content pagina"
+            originalLabel="Originele content monitoring:"
+            originalValue="Geen inzicht in welke content werkt en welke niet"
+            optimizedLabel="Geoptimaliseerde content monitoring:"
+            optimizedValue="Zie precies welke content het beste presteert, waar bezoekers afhaken en welke pagina's meer traffic verdienen. Data-gedreven content optimalisatie."
+            editTitle="Content Performance Tracking Bewerken"
+            editDescription="Pas de content performance tracking aan naar uw wensen"
+            content="Zie precies welke content het beste presteert, waar bezoekers afhaken en welke pagina's meer traffic verdienen. Data-gedreven content optimalisatie."
             setContent={() => {}}
           />
 
-          {/* SEO Analyse Feature */}
+          {/* Content SEO Audit */}
           <OptimizationCard
             icon={ScanSearch}
-            title="SEO Analyse"
-            subtitle="Volledige website analyse en automatische verbetering"
-            originalLabel="Originele website analyse:"
-            originalValue="Incidentele handmatige controles zonder follow-up"
-            optimizedLabel="Geoptimaliseerde website analyse:"
-            optimizedValue="Krijg een voortdurende check van je website. Van technische fouten tot optimalisatie-gaten: wij signaleren het en optimaliseren het direct."
-            editTitle="SEO Analyse Bewerken"
-            editDescription="Pas de SEO analyse functionaliteit aan naar uw wensen"
-            content="Krijg een voortdurende check van je website. Van technische fouten tot optimalisatie-gaten: wij signaleren het en optimaliseren het direct."
+            title="Content SEO Audit"
+            subtitle="Diepgaande analyse van je content voor SEO optimalisatie"
+            originalLabel="Originele content controle:"
+            originalValue="Sporadische handmatige checks zonder systematische aanpak"
+            optimizedLabel="Geoptimaliseerde content controle:"
+            optimizedValue="Onze AI scant elke pagina op SEO-problemen: van ontbrekende titels tot slechte interne links. Alles wordt automatisch gedetecteerd en opgelost."
+            editTitle="Content SEO Audit Bewerken"
+            editDescription="Pas de content SEO audit aan naar uw wensen"
+            content="Onze AI scant elke pagina op SEO-problemen: van ontbrekende titels tot slechte interne links. Alles wordt automatisch gedetecteerd en opgelost."
             setContent={() => {}}
           />
 
