@@ -6,19 +6,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
-import Homepage from "./pages/Homepage";
 import Aanpassingen from "./pages/Aanpassingen";
-import Informatie from "./pages/Informatie";
 import SEOPlan from "./pages/SEOPlan";
 import Account from "./pages/Account";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
-import CheckoutBasis from "./pages/CheckoutBasis";
-import CheckoutPro from "./pages/CheckoutPro";
-import PaymentSuccess from "./pages/PaymentSuccess";
-import PaymentCancelled from "./pages/PaymentCancelled";
-import OverOns from "./pages/OverOns";
-import AlgemeneVoorwaarden from "./pages/AlgemeneVoorwaarden";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,19 +25,11 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/homepage" element={<Homepage />} />
               <Route path="/aanpassingen" element={<Aanpassingen />} />
-              <Route path="/informatie" element={<Informatie />} />
               <Route path="/seo-plan" element={<SEOPlan />} />
               <Route path="/account" element={<Account />} />
               <Route path="/login" element={<Login />} />
               <Route path="/logout" element={<Logout />} />
-              <Route path="/checkout/basis" element={<CheckoutBasis />} />
-              <Route path="/checkout/pro" element={<CheckoutPro />} />
-              <Route path="/payment-success" element={<PaymentSuccess />} />
-              <Route path="/payment-cancelled" element={<PaymentCancelled />} />
-              <Route path="/over-ons" element={<OverOns />} />
-              <Route path="/algemene-voorwaarden" element={<AlgemeneVoorwaarden />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
