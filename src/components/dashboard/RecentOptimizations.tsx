@@ -1,40 +1,56 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MoreHorizontal } from "lucide-react";
-
-const optimizations = [
-  {
-    name: "3 zoekwoorden toegevoegd",
-    page: "Home pagina",
-    reason: "Hierdoor vinden meer mensen je website als ze zoeken naar jouw diensten",
-    impact: "Meer bezoekers verwacht",
-    date: "06-06-2025",
-    status: "bezig" as const
-  },
-  {
-    name: "Tekstje aangepast", 
-    page: "Over ons",
-    reason: "Duidelijkere uitleg zodat bezoekers beter begrijpen wat je doet",
-    impact: "15% meer interesse",
-    date: "05-06-2025", 
-    status: "voltooid" as const
-  },
-  {
-    name: "Website sneller gemaakt",
-    page: "Alle pagina's", 
-    reason: "Snellere website = bezoekers blijven langer",
-    impact: "25% snellere website",
-    date: "04-06-2025",
-    status: "voltooid" as const
-  }
-];
+import type { Optimization } from "@/types/dashboard";
+import { EmptyState } from "@/components/ui/empty-state";
+import { TableSkeleton } from "@/components/ui/loading-skeleton";
 
 const statusStyles = {
   bezig: "bg-yellow-100 text-yellow-800 border-yellow-200",
   voltooid: "bg-green-100 text-green-800 border-green-200"
 };
 
-const RecentOptimizations = () => {
+interface RecentOptimizationsProps {
+  optimizations?: Optimization[];
+  loading?: boolean;
+  error?: Error | null;
+}
+
+const RecentOptimizations = ({ optimizations = [], loading = false, error = null }: RecentOptimizationsProps) => {
+  if (loading) {
+    return (
+      <Card className="p-6 border bg-card shadow-md animate-slide-up">
+        <div className="mb-6">
+          <h3 className="text-lg font-semibold text-card-foreground">Recente aanpassingen</h3>
+          <p className="text-sm text-muted-foreground">Overzicht van de laatste optimalisaties aan je website</p>
+        </div>
+        <TableSkeleton />
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card className="p-8">
+        <EmptyState
+          title="Fout bij laden"
+          description="Er is een fout opgetreden bij het laden van optimalisaties."
+          icon="alert"
+        />
+      </Card>
+    );
+  }
+
+  if (!optimizations || optimizations.length === 0) {
+    return (
+      <Card className="p-8">
+        <EmptyState
+          title="Geen optimalisaties"
+          description="Verbind uw backend om optimalisatie data te laden."
+        />
+      </Card>
+    );
+  }
   return (
     <Card className="p-6 border bg-card shadow-md animate-slide-up">
       <div className="flex items-center justify-between mb-6">

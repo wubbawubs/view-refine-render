@@ -1,19 +1,42 @@
 import { Card } from "@/components/ui/card";
 import { ArrowUp, ArrowDown, Minus } from "lucide-react";
-import { cn } from "@/lib/utils";
+import type { Keyword } from "@/types/dashboard";
+import { EmptyState } from "@/components/ui/empty-state";
+import { KeywordsTableSkeleton } from "@/components/ui/loading-skeleton";
 
-const keywords = [
-  { term: "kapper hoorn", position: 3, delta: 2, deltaType: "up", ctr: 8.4, visits: 234 },
-  { term: "kapsalon hoorn centrum", position: 1, delta: 0, deltaType: "neutral", ctr: 12.1, visits: 189 },
-  { term: "hair salon hoorn", position: 7, delta: -1, deltaType: "down", ctr: 4.2, visits: 87 },
-  { term: "kapper hoorn stationsstraat", position: 2, delta: 1, deltaType: "up", ctr: 9.8, visits: 156 },
-  { term: "kapsalon hoorn", position: 4, delta: 3, deltaType: "up", ctr: 7.3, visits: 123 },
-  { term: "herenkapper hoorn", position: 5, delta: 0, deltaType: "neutral", ctr: 6.1, visits: 98 },
-  { term: "hairstylist hoorn", position: 8, delta: -2, deltaType: "down", ctr: 3.8, visits: 67 },
-  { term: "kapper hoorn online afspraak", position: 6, delta: 1, deltaType: "up", ctr: 5.4, visits: 89 }
-];
+interface TopKeywordsProps {
+  keywords?: Keyword[];
+  loading?: boolean;
+  error?: Error | null;
+}
 
-const TopKeywords = () => {
+const TopKeywords = ({ keywords = [], loading = false, error = null }: TopKeywordsProps) => {
+  if (loading) {
+    return <KeywordsTableSkeleton />;
+  }
+
+  if (error) {
+    return (
+      <Card className="p-8">
+        <EmptyState
+          title="Fout bij laden"
+          description="Er is een fout opgetreden bij het laden van keywords."
+          icon="alert"
+        />
+      </Card>
+    );
+  }
+
+  if (!keywords || keywords.length === 0) {
+    return (
+      <Card className="p-8">
+        <EmptyState
+          title="Geen keywords"
+          description="Verbind uw backend om keyword data te laden."
+        />
+      </Card>
+    );
+  }
   return (
     <Card className="glass-card p-8 shadow-luxury animate-slide-up rounded-2xl border border-white/20 smooth-hover hover:shadow-elevated hover:scale-[1.02]">
       <div className="flex items-center justify-between mb-8">

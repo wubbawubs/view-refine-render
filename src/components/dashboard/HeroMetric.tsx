@@ -1,12 +1,17 @@
 import { TrendingUp } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import type { HeroMetricData } from "@/types/dashboard";
 
 interface HeroMetricProps {
   language?: 'nl' | 'en';
+  data?: HeroMetricData | null;
+  loading?: boolean;
 }
 
-const HeroMetric = ({ language = 'nl' }: HeroMetricProps) => {
-const texts = {
+const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetricProps) => {
+  // Default texts if no data is provided
+  const defaultTexts = {
     nl: {
       title: '<span class="text-muted-foreground">KlikKlaar.io</span> zichtbaarheid deze maand',
       percentage: '+160%',
@@ -21,7 +26,22 @@ const texts = {
     }
   };
 
-  const t = texts[language];
+  const t = data || defaultTexts[language];
+
+  if (loading) {
+    return (
+      <Card className="p-6 lg:p-8 shadow-card animate-fade-in rounded-2xl border border-border bg-card">
+        <div className="flex items-center justify-between">
+          <div className="flex-1">
+            <Skeleton className="h-10 w-64 mb-4" />
+            <Skeleton className="h-12 w-32 mb-2" />
+            <Skeleton className="h-5 w-48" />
+          </div>
+          <Skeleton className="w-16 h-16 rounded-full" />
+        </div>
+      </Card>
+    );
+  }
 
   return (
     <Card className="p-6 lg:p-8 shadow-card animate-fade-in rounded-2xl border border-border bg-card">
