@@ -1,6 +1,12 @@
 // React Query hooks for dashboard data fetching
 
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import type {
+  OptimizationContent,
+  NotificationSettings,
+  AuthCredentials,
+  SEOTask,
+} from '@/types/dashboard';
 import {
   fetchKeywords,
   fetchOptimizations,
@@ -12,6 +18,14 @@ import {
   fetchUserProfile,
   updateSEOTaskStatus,
   markNotificationAsRead,
+  fetchOptimizationContent,
+  updateOptimizationContent,
+  updateUserProfile,
+  updateNotificationSettings,
+  loginUser,
+  signupUser,
+  logoutUser,
+  getCurrentUser,
 } from '@/services/api';
 
 // Query keys for React Query
@@ -142,5 +156,104 @@ export const useMarkNotificationAsRead = () => {
       // Invalidate and refetch notifications
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.NOTIFICATIONS });
     },
+  });
+};
+
+/**
+ * Hook to fetch optimization content
+ */
+export const useOptimizationContent = () => {
+  return useQuery({
+    queryKey: ['optimizationContent'],
+    queryFn: fetchOptimizationContent,
+    staleTime: 5 * 60 * 1000,
+  });
+};
+
+/**
+ * Mutation hook to update optimization content
+ */
+export const useUpdateOptimizationContent = () => {
+  const queryClient = useQueryClient();
+  
+  return useMutation({
+    mutationFn: ({ id, updates }: { id: string; updates: Partial<OptimizationContent> }) =>
+      updateOptimizationContent(id, updates),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['optimizationContent'] });
+    },
+  });
+};
+
+/**
+ * Mutation hook to update user profile
+ */
+export const useUpdateUserProfile = () => {
+  const queryClient = useQueryClient();
+  
+  return useMutation({
+    mutationFn: ({ userId, updates }: { userId: string; updates: Partial<any> }) =>
+      updateUserProfile(userId, updates),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: QUERY_KEYS.USER_PROFILE });
+    },
+  });
+};
+
+/**
+ * Mutation hook to update notification settings
+ */
+export const useUpdateNotificationSettings = () => {
+  const queryClient = useQueryClient();
+  
+  return useMutation({
+    mutationFn: ({ userId, settings }: { userId: string; settings: NotificationSettings }) =>
+      updateNotificationSettings(userId, settings),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: QUERY_KEYS.USER_PROFILE });
+    },
+  });
+};
+
+/**
+ * Mutation hook for user login
+ */
+export const useLogin = () => {
+  return useMutation({
+    mutationFn: (credentials: AuthCredentials) => loginUser(credentials),
+  });
+};
+
+/**
+ * Mutation hook for user signup
+ */
+export const useSignup = () => {
+  return useMutation({
+    mutationFn: (credentials: AuthCredentials) => signupUser(credentials),
+  });
+};
+
+/**
+ * Mutation hook for user logout
+ */
+export const useLogout = () => {
+  const queryClient = useQueryClient();
+  
+  return useMutation({
+    mutationFn: () => logoutUser(),
+    onSuccess: () => {
+      queryClient.clear();
+    },
+  });
+};
+
+/**
+ * Hook to get current authenticated user
+ */
+export const useCurrentUser = () => {
+  return useQuery({
+    queryKey: ['currentUser'],
+    queryFn: getCurrentUser,
+    staleTime: 10 * 60 * 1000,
   });
 };

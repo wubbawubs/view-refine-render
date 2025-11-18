@@ -75,15 +75,48 @@ export interface Notification {
 }
 
 export interface UserProfile {
-  name: string;
+  id: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  company: string;
-  website: string;
+  phone?: string;
+  company?: string;
+  website?: string;
   plan: string;
   createdAt: string;
+  notifications?: NotificationSettings;
+}
+
+export interface NotificationSettings {
+  emailNotifications: boolean;
+  weeklyReports: boolean;
+  seoAlerts: boolean;
+  performanceUpdates: boolean;
 }
 
 export interface DashboardMetrics {
   heroMetric: HeroMetricData;
   kpiMetrics: KPIMetric[];
+}
+
+export interface OptimizationContent {
+  id: string;
+  type: 'h1' | 'meta' | 'h2' | 'alt' | 'content' | 'schema';
+  page: string;
+  originalValue: string;
+  optimizedValue: string;
+  status: 'active' | 'pending' | 'completed';
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AuthCredentials {
+  email: string;
+  password: string;
+}
+
+export interface AuthResponse {
+  success: boolean;
+  error?: string;
+  user?: UserProfile;
 }

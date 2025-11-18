@@ -1,32 +1,30 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Loader2 } from "lucide-react";
+import { useLogout } from "@/hooks/useDashboardData";
 
 const Logout = () => {
+  const navigate = useNavigate();
+  const logout = useLogout();
+
   useEffect(() => {
-    // Here you'll handle the logout logic with your backend
-    // For now, we'll just redirect to login after a brief moment
     const handleLogout = async () => {
       try {
-        // Add your logout API call here
-        console.log('Logging out...');
+        await logout.mutateAsync();
         
-        // Clear any local storage or session data
-        localStorage.clear();
-        sessionStorage.clear();
-        
-        // Redirect to login page after a brief delay
+        // Redirect to login page after logout
         setTimeout(() => {
-          window.location.href = '/login';
-        }, 1500);
+          navigate('/login');
+        }, 1000);
       } catch (error) {
         console.error('Logout error:', error);
         // Still redirect to login even if there's an error
-        window.location.href = '/login';
+        navigate('/login');
       }
     };
 
     handleLogout();
-  }, []);
+  }, [logout, navigate]);
 
   return (
     <div className="min-h-screen flex items-center justify-center premium-dashboard-bg">
