@@ -1,4 +1,4 @@
-import { Eye, Users, Target, Download, Clock, Settings, TrendingUp, Globe, Menu, X } from "lucide-react";
+import { Eye, Users, Target, Clock, Settings, TrendingUp, Globe, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
@@ -6,9 +6,11 @@ import { useState } from "react";
 import Sidebar from "./Sidebar";
 import HeroMetric from "./HeroMetric";
 import KPICard from "./KPICard";
-import VisitorsChart from "./VisitorsChart";
+import WebsiteSuggestions from "./WebsiteSuggestions";
 import UpdatesFeed from "./UpdatesFeed";
 import ActionsAlerts from "./ActionsAlerts";
+import NotificationsPopover from "./NotificationsPopover";
+import DownloadReportDialog from "./DownloadReportDialog";
 
 const Dashboard = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
@@ -125,6 +127,9 @@ const Dashboard = () => {
           
           {/* Controls */}
           <div className="flex gap-2 items-center shrink-0">
+            {/* Notifications */}
+            <NotificationsPopover />
+            
             {/* Language Selector */}
             <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
               <SelectTrigger className="w-[60px] sm:w-[70px] lg:w-[120px] text-xs h-8 lg:h-9">
@@ -196,16 +201,9 @@ const Dashboard = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 mb-6 w-full max-w-none">
-          {/* Left Column - Chart */}
-          <div className="lg:col-span-2 w-full">
-            <VisitorsChart />
-          </div>
-
-          {/* Right Column - Updates Feed */}
-          <div className="space-y-4 lg:space-y-6 w-full">
-            <UpdatesFeed />
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 w-full max-w-none">
+          <WebsiteSuggestions />
+          <UpdatesFeed />
         </div>
       </main>
     </div>
