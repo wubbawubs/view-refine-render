@@ -13,6 +13,10 @@ import type {
   Notification,
   UserProfile,
   DashboardMetrics,
+  OptimizationContent,
+  NotificationSettings,
+  AuthCredentials,
+  AuthResponse,
 } from '@/types/dashboard';
 
 // TODO: Replace with actual Firebase imports
@@ -131,4 +135,88 @@ export const updateSEOTaskStatus = async (
 export const markNotificationAsRead = async (notificationId: number): Promise<void> => {
   // Placeholder - implement actual update logic
   console.log('Mark notification as read:', notificationId);
+};
+
+/**
+ * Fetch optimization content
+ * TODO: Replace with actual Firestore query
+ */
+export const fetchOptimizationContent = async (): Promise<OptimizationContent[]> => {
+  return [];
+};
+
+/**
+ * Update optimization content
+ * TODO: Replace with actual Firestore update
+ */
+export const updateOptimizationContent = async (
+  id: string,
+  updates: Partial<OptimizationContent>
+): Promise<void> => {
+  console.log('Update optimization content:', id, updates);
+};
+
+/**
+ * Update user profile
+ * TODO: Replace with actual Firestore update
+ */
+export const updateUserProfile = async (
+  userId: string,
+  updates: Partial<UserProfile>
+): Promise<void> => {
+  console.log('Update user profile:', userId, updates);
+};
+
+/**
+ * Update notification settings
+ * TODO: Replace with actual Firestore update
+ */
+export const updateNotificationSettings = async (
+  userId: string,
+  settings: NotificationSettings
+): Promise<void> => {
+  console.log('Update notification settings:', userId, settings);
+};
+
+/**
+ * Login user
+ * TODO: Replace with actual Firebase Auth call
+ */
+export const loginUser = async (credentials: AuthCredentials): Promise<AuthResponse> => {
+  console.log('Login user:', credentials.email);
+  return {
+    success: false,
+    error: 'Authentication not implemented. Please connect Firebase.'
+  };
+};
+
+/**
+ * Signup user
+ * TODO: Replace with actual Firebase Auth call
+ */
+export const signupUser = async (credentials: AuthCredentials): Promise<AuthResponse> => {
+  console.log('Signup user:', credentials.email);
+  return {
+    success: false,
+    error: 'Authentication not implemented. Please connect Firebase.'
+  };
+};
+
+/**
+ * Logout user
+ * TODO: Replace with actual Firebase Auth call
+ */
+export const logoutUser = async (): Promise<void> => {
+  console.log('Logout user');
+  localStorage.clear();
+  sessionStorage.clear();
+};
+
+/**
+ * Get current authenticated user
+ * TODO: Replace with actual Firebase Auth call
+ */
+export const getCurrentUser = async (): Promise<UserProfile | null> => {
+  console.log('Get current user');
+  return null;
 };
