@@ -8,9 +8,8 @@ import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import Homepage from "./pages/Homepage";
 import Aanpassingen from "./pages/Aanpassingen";
-import Audit from "./pages/Audit";
 import Informatie from "./pages/Informatie";
-import Hulp from "./pages/Hulp";
+import SEOPlan from "./pages/SEOPlan";
 import Account from "./pages/Account";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
@@ -36,9 +35,8 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/homepage" element={<Homepage />} />
               <Route path="/aanpassingen" element={<Aanpassingen />} />
-              <Route path="/audit" element={<Audit />} />
               <Route path="/informatie" element={<Informatie />} />
-              <Route path="/hulp" element={<Hulp />} />
+              <Route path="/seo-plan" element={<SEOPlan />} />
               <Route path="/account" element={<Account />} />
               <Route path="/login" element={<Login />} />
               <Route path="/logout" element={<Logout />} />

@@ -3,12 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "next-themes";
 import { 
   LayoutDashboard, 
-  HelpCircle, 
   Settings, 
-  FileSearch, 
   Info, 
   User, 
-  LogOut
+  LogOut,
+  Target
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -22,9 +21,8 @@ interface SidebarItem {
 const sidebarItems: SidebarItem[] = [
   { name: "Dashboard", path: "/", icon: LayoutDashboard },
   { name: "Aanpassingen", path: "/aanpassingen", icon: Settings },
-  { name: "Audit", path: "/audit", icon: FileSearch },
+  { name: "SEO Plan", path: "/seo-plan", icon: Target },
   { name: "Informatie", path: "/informatie", icon: Info },
-  { name: "Hulp", path: "/hulp", icon: HelpCircle },
   { name: "Account", path: "/account", icon: User },
   { name: "Uitloggen", path: "/logout", icon: LogOut, danger: true },
 ];
