@@ -10,23 +10,15 @@ interface HeroMetricProps {
 }
 
 const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetricProps) => {
-  // Default texts if no data is provided
-  const defaultTexts = {
-    nl: {
-      title: '<span class="text-muted-foreground">KlikKlaar.io</span> zichtbaarheid deze maand',
-      percentage: '+160%',
-      improvement: 'Verbetering t.o.v. vorige maand voor SEO optimalisatie software.',
-      trending: 'Trending up'
-    },
-    en: {
-      title: '<span class="text-muted-foreground">KlikKlaar.io</span> visibility this month',
-      percentage: '+160%',
-      improvement: 'Improvement vs. previous month for SEO optimization software.',
-      trending: 'Trending up'
-    }
+  // When no data is provided, show neutral "N/A" placeholders
+  const fallback: HeroMetricData = {
+    title: 'N/A',
+    percentage: 'N/A',
+    improvement: 'N/A',
+    trending: 'N/A',
   };
 
-  const t = data || defaultTexts[language];
+  const t = data ?? fallback;
 
   if (loading) {
     return (

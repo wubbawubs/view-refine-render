@@ -11,10 +11,12 @@ import UpdatesFeed from "./UpdatesFeed";
 import ActionsAlerts from "./ActionsAlerts";
 import NotificationsPopover from "./NotificationsPopover";
 import DownloadReportDialog from "./DownloadReportDialog";
+import { useDashboardMetrics } from "@/hooks/useDashboardData";
 
 const Dashboard = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { data: dashboardMetrics, isLoading: metricsLoading } = useDashboardMetrics();
 
   const texts = {
     nl: {
@@ -161,7 +163,11 @@ const Dashboard = () => {
 
         {/* Hero Metric */}
         <div className="mb-4 sm:mb-6 w-full max-w-none">
-          <HeroMetric language={language} />
+          <HeroMetric
+            language={language}
+            data={dashboardMetrics?.heroMetric ?? null}
+            loading={metricsLoading}
+          />
         </div>
 
         {/* KPI Cards Grid */}
@@ -169,34 +175,34 @@ const Dashboard = () => {
           <KPICard
             icon={<Eye />}
             label={t.seoScore}
-            value="4,2"
-            delta={`+0,8 ${t.weekDelta}`}
-            deltaType="up"
-            helpText={t.seoScoreHelp}
+            value={dashboardMetrics?.kpiMetrics?.[0]?.value ?? 'N/A'}
+            delta={dashboardMetrics?.kpiMetrics?.[0]?.delta ?? 'N/A'}
+            deltaType={dashboardMetrics?.kpiMetrics?.[0]?.deltaType ?? 'neutral'}
+            helpText={dashboardMetrics?.kpiMetrics?.[0]?.helpText ?? t.seoScoreHelp}
           />
           <KPICard
             icon={<Settings />}
             label={t.totalAdjustments}
-            value="132"
-            delta={`+18 ${t.weekDelta}`}
-            deltaType="up"
-            helpText={t.totalAdjustmentsHelp}
+            value={dashboardMetrics?.kpiMetrics?.[1]?.value ?? 'N/A'}
+            delta={dashboardMetrics?.kpiMetrics?.[1]?.delta ?? 'N/A'}
+            deltaType={dashboardMetrics?.kpiMetrics?.[1]?.deltaType ?? 'neutral'}
+            helpText={dashboardMetrics?.kpiMetrics?.[1]?.helpText ?? t.totalAdjustmentsHelp}
           />
           <KPICard
             icon={<TrendingUp />}
             label={t.estimatedGrowth}
-            value="+85%"
-            delta={t.prognosisBased}
-            deltaType="up"
-            helpText={t.estimatedGrowthHelp}
+            value={dashboardMetrics?.kpiMetrics?.[2]?.value ?? 'N/A'}
+            delta={dashboardMetrics?.kpiMetrics?.[2]?.delta ?? 'N/A'}
+            deltaType={dashboardMetrics?.kpiMetrics?.[2]?.deltaType ?? 'neutral'}
+            helpText={dashboardMetrics?.kpiMetrics?.[2]?.helpText ?? t.estimatedGrowthHelp}
           />
           <KPICard
             icon={<Users />}
             label={t.totalVisitors}
-            value="3.676"
-            delta={`+245% ${t.monthDelta}`}
-            deltaType="up"
-            helpText={t.totalVisitorsHelp}
+            value={dashboardMetrics?.kpiMetrics?.[3]?.value ?? 'N/A'}
+            delta={dashboardMetrics?.kpiMetrics?.[3]?.delta ?? 'N/A'}
+            deltaType={dashboardMetrics?.kpiMetrics?.[3]?.deltaType ?? 'neutral'}
+            helpText={dashboardMetrics?.kpiMetrics?.[3]?.helpText ?? t.totalVisitorsHelp}
           />
         </div>
 
