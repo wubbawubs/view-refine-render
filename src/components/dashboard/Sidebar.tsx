@@ -4,7 +4,6 @@ import { useTheme } from "next-themes";
 import { 
   LayoutDashboard, 
   Settings, 
-  Info, 
   User, 
   LogOut,
   Target
@@ -22,7 +21,6 @@ const sidebarItems: SidebarItem[] = [
   { name: "Dashboard", path: "/", icon: LayoutDashboard },
   { name: "Aanpassingen", path: "/aanpassingen", icon: Settings },
   { name: "SEO Plan", path: "/seo-plan", icon: Target },
-  { name: "Informatie", path: "/informatie", icon: Info },
   { name: "Account", path: "/account", icon: User },
   { name: "Uitloggen", path: "/logout", icon: LogOut, danger: true },
 ];
