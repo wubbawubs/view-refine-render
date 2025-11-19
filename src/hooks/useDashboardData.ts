@@ -30,6 +30,8 @@ import {
   fetchWeeklySummary,
   fetchActionAlerts,
   fetchSuccessInsights,
+  fetchSEOOptimizations,
+  fetchSEOPlanCategories,
 } from '@/services/api';
 
 // Query keys for React Query
@@ -307,6 +309,28 @@ export const useSuccessInsights = () => {
   return useQuery({
     queryKey: QUERY_KEYS.SUCCESS_INSIGHTS,
     queryFn: fetchSuccessInsights,
+    staleTime: 5 * 60 * 1000,
+  });
+};
+
+/**
+ * Hook to fetch SEO optimizations for Aanpassingen page
+ */
+export const useSEOOptimizations = () => {
+  return useQuery({
+    queryKey: ['seoOptimizations'],
+    queryFn: fetchSEOOptimizations,
+    staleTime: 5 * 60 * 1000,
+  });
+};
+
+/**
+ * Hook to fetch SEO plan categories
+ */
+export const useSEOPlanCategories = () => {
+  return useQuery({
+    queryKey: ['seoPlanCategories'],
+    queryFn: fetchSEOPlanCategories,
     staleTime: 5 * 60 * 1000,
   });
 };
