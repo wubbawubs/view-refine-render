@@ -252,3 +252,19 @@ export const fetchActionAlerts = async (): Promise<import('@/types/dashboard').A
 export const fetchSuccessInsights = async (): Promise<import('@/types/dashboard').SuccessInsight[]> => {
   return [];
 };
+
+/**
+ * Fetch SEO optimizations for Aanpassingen page
+ * TODO: Replace with actual Firestore query
+ */
+export const fetchSEOOptimizations = async (): Promise<import('@/types/dashboard').SEOOptimization[]> => {
+  return [];
+};
+
+/**
+ * Fetch SEO plan categories
+ * TODO: Replace with actual Firestore query
+ */
+export const fetchSEOPlanCategories = async (): Promise<import('@/types/dashboard').SEOPlanCategory[]> => {
+  return [];
+};

@@ -149,3 +149,26 @@ export interface SuccessInsight {
   time: string;
   type: "success" | "improvement" | "metric" | "automation";
 }
+
+// Aanpassingen (Adjustments) Page Types
+export interface SEOOptimization {
+  type: 'h1' | 'meta' | 'h2' | 'alt' | 'content' | 'schema';
+  original: string;
+  optimized: string;
+  status: 'active' | 'completed' | 'scheduled' | 'pending';
+  page: string;
+  date?: string;
+}
+
+// SEO Plan Page Types
+export interface SEOPlanTask {
+  title: string;
+  status: 'completed' | 'in-progress' | 'pending';
+  priority: 'high' | 'medium' | 'low';
+}
+
+export interface SEOPlanCategory {
+  category: string;
+  progress: number;
+  tasks: SEOPlanTask[];
+}
