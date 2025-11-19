@@ -11,10 +11,7 @@ import UpdatesFeed from "./UpdatesFeed";
 import ActionsAlerts from "./ActionsAlerts";
 import NotificationsPopover from "./NotificationsPopover";
 import DownloadReportDialog from "./DownloadReportDialog";
-import { useDashboardMetrics, useUpdates, useWebsiteSuggestions, useVisitorsChart, useWeeklySummary, useActionAlerts, useSuccessInsights } from "@/hooks/useDashboardData";
-import VisitorsChart from "./VisitorsChart";
-import WeeklySummary from "./WeeklySummary";
-import SuccessInsights from "./SuccessInsights";
+import { useDashboardMetrics, useUpdates, useWebsiteSuggestions } from "@/hooks/useDashboardData";
 
 const Dashboard = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
@@ -22,10 +19,6 @@ const Dashboard = () => {
   const { data: dashboardMetrics, isLoading: metricsLoading } = useDashboardMetrics();
   const { data: updates, isLoading: updatesLoading } = useUpdates();
   const { data: suggestions, isLoading: suggestionsLoading } = useWebsiteSuggestions();
-  const { data: chartData, isLoading: chartLoading } = useVisitorsChart();
-  const { data: weeklySummary, isLoading: summaryLoading } = useWeeklySummary();
-  const { data: alerts, isLoading: alertsLoading } = useActionAlerts();
-  const { data: insights, isLoading: insightsLoading } = useSuccessInsights();
 
   const texts = {
     nl: {
@@ -216,22 +209,9 @@ const Dashboard = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 w-full max-w-none">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 w-full max-w-none">
           <WebsiteSuggestions suggestions={suggestions} loading={suggestionsLoading} />
           <UpdatesFeed updates={updates} loading={updatesLoading} />
-        </div>
-
-        {/* Additional Sections */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mb-6">
-          <div className="lg:col-span-2">
-            <VisitorsChart data={chartData} loading={chartLoading} />
-          </div>
-          <WeeklySummary summary={weeklySummary} loading={summaryLoading} />
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-          <ActionsAlerts alerts={alerts} loading={alertsLoading} />
-          <SuccessInsights insights={insights} loading={insightsLoading} />
         </div>
       </main>
     </div>
