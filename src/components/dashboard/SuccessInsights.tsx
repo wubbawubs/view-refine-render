@@ -1,36 +1,21 @@
 import { Card } from "@/components/ui/card";
 import { TrendingUp, Users, Zap, Target } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { EmptyState } from "@/components/ui/empty-state";
+import type { SuccessInsight } from "@/types/dashboard";
 
-const insights = [
-  {
-    icon: TrendingUp,
-    title: "Nieuwe ranking: #3 voor 'kapper Hoorn'",
-    description: "Positie verbeterd met +2 plekken. Geschatte 15% meer organisch verkeer.",
-    time: "2 uur geleden",
-    type: "success" as const
-  },
-  {
-    icon: Users,
-    title: "31% meer organische zichtbaarheid",
-    description: "Verbeterde rankings voor 47 zoektermen in de afgelopen week.",
-    time: "1 dag geleden", 
-    type: "improvement" as const
-  },
-  {
-    icon: Target,
-    title: "2,347 nieuwe organische bezoekers", 
-    description: "47% van het verkeer komt uit lokale zoekopdrachten.",
-    time: "Deze week",
-    type: "metric" as const
-  },
-  {
-    icon: Zap,
-    title: "114 technische optimalisaties uitgevoerd",
-    description: "Page speed verbeterd naar 94/100. Core Web Vitals geoptimaliseerd.",
-    time: "1 week geleden",
-    type: "automation" as const
-  }
-];
+interface SuccessInsightsProps {
+  insights?: SuccessInsight[];
+  loading?: boolean;
+  error?: Error | null;
+}
+
+const iconMap = {
+  TrendingUp,
+  Users,
+  Target,
+  Zap,
+};
 
 const typeStyles = {
   success: "bg-growth",
@@ -39,7 +24,70 @@ const typeStyles = {
   automation: "bg-warning-soft"
 };
 
-const SuccessInsights = () => {
+const SuccessInsights = ({ insights = [], loading = false, error = null }: SuccessInsightsProps) => {
+  if (loading) {
+    return (
+      <Card className="p-6 border bg-white shadow-enterprise animate-slide-up">
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            <Skeleton className="w-10 h-10 rounded-lg" />
+            <div>
+              <Skeleton className="h-5 w-32 mb-2" />
+              <Skeleton className="h-4 w-48" />
+            </div>
+          </div>
+        </div>
+        <div className="space-y-3">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="flex gap-4 p-4 rounded-lg bg-background-subtle border border-border/50">
+              <Skeleton className="w-10 h-10 rounded-lg" />
+              <div className="flex-1">
+                <Skeleton className="h-4 w-3/4 mb-2" />
+                <Skeleton className="h-3 w-full mb-2" />
+                <Skeleton className="h-3 w-20" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card className="p-6 border bg-white shadow-enterprise animate-slide-up">
+        <EmptyState
+          title="Unable to load insights"
+          description="There was an error loading success insights. Please try again."
+          icon="alert"
+        />
+      </Card>
+    );
+  }
+
+  if (!insights || insights.length === 0) {
+    return (
+      <Card className="p-6 border bg-white shadow-enterprise animate-slide-up">
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-foreground rounded-lg flex items-center justify-center">
+              <TrendingUp className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-foreground">Recente updates</h3>
+              <p className="text-sm text-muted-foreground">Data-driven inzichten van deze week</p>
+            </div>
+          </div>
+        </div>
+        <EmptyState
+          title="Geen inzichten beschikbaar"
+          description="Er zijn momenteel geen updates om weer te geven."
+          icon="database"
+        />
+      </Card>
+    );
+  }
+
   return (
     <Card className="p-6 border bg-white shadow-enterprise animate-slide-up">
       <div className="flex items-center justify-between mb-6">
@@ -56,14 +104,14 @@ const SuccessInsights = () => {
 
       <div className="space-y-3">
         {insights.map((insight, index) => {
-          const Icon = insight.icon;
+          const IconComponent = iconMap[insight.icon as keyof typeof iconMap] || TrendingUp;
           return (
             <div 
               key={index}
               className="flex gap-4 p-4 rounded-lg bg-background-subtle hover:bg-muted/30 transition-colors duration-200 border border-border/50"
             >
               <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${typeStyles[insight.type]}`}>
-                <Icon className="w-5 h-5 text-white" />
+                <IconComponent className="w-5 h-5 text-white" />
               </div>
               
               <div className="flex-1 min-w-0">

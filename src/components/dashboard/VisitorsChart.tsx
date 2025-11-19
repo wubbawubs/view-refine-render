@@ -1,38 +1,20 @@
 import { Card } from "@/components/ui/card";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Skeleton } from "@/components/ui/skeleton";
+import { EmptyState } from "@/components/ui/empty-state";
+import type { ChartDataPoint } from "@/types/dashboard";
 
-const data = [
-  { date: '1 Sep', visitors: 45, benchmark: 38 },
-  { date: '2 Sep', visitors: 52, benchmark: 41 },
-  { date: '3 Sep', visitors: 38, benchmark: 35 },
-  { date: '4 Sep', visitors: 67, benchmark: 43 },
-  { date: '5 Sep', visitors: 89, benchmark: 48 },
-  { date: '6 Sep', visitors: 76, benchmark: 45 },
-  { date: '7 Sep', visitors: 95, benchmark: 52 },
-  { date: '8 Sep', visitors: 114, benchmark: 58 },
-  { date: '9 Sep', visitors: 128, benchmark: 62 },
-  { date: '10 Sep', visitors: 142, benchmark: 65 },
-  { date: '11 Sep', visitors: 156, benchmark: 68 },
-  { date: '12 Sep', visitors: 167, benchmark: 72 },
-  { date: '13 Sep', visitors: 145, benchmark: 69 },
-  { date: '14 Sep', visitors: 178, benchmark: 75 },
-  { date: '15 Sep', visitors: 189, benchmark: 78 },
-  { date: '16 Sep', visitors: 195, benchmark: 80 },
-  { date: '17 Sep', visitors: 203, benchmark: 82 },
-  { date: '18 Sep', visitors: 198, benchmark: 84 },
-  { date: '19 Sep', visitors: 214, benchmark: 86 },
-  { date: '20 Sep', visitors: 227, benchmark: 88 },
-  { date: '21 Sep', visitors: 235, benchmark: 90 },
-  { date: '22 Sep', visitors: 219, benchmark: 92 },
-  { date: '23 Sep', visitors: 248, benchmark: 94 },
-  { date: '24 Sep', visitors: 256, benchmark: 96 }
-];
+interface VisitorsChartProps {
+  data?: ChartDataPoint[];
+  loading?: boolean;
+  error?: Error | null;
+}
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     const visitors = payload[0]?.value || 0;
     const benchmark = payload[1]?.value || 0;
-    const diff = ((visitors - benchmark) / benchmark * 100).toFixed(1);
+    const diff = benchmark > 0 ? ((visitors - benchmark) / benchmark * 100).toFixed(1) : '0';
     
     return (
       <div className="bg-card p-3 border border-border rounded-lg shadow-card">
@@ -52,12 +34,64 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-const VisitorsChart = () => {
+const VisitorsChart = ({ data = [], loading = false, error = null }: VisitorsChartProps) => {
+  if (loading) {
+    return (
+      <Card className="glass-card p-4 sm:p-6 lg:p-8 shadow-luxury animate-fade-in rounded-2xl border border-border smooth-hover">
+        <div className="mb-4 sm:mb-6 lg:mb-8">
+          <Skeleton className="h-6 w-48 mb-2" />
+          <Skeleton className="h-4 w-64" />
+        </div>
+        <Skeleton className="h-48 sm:h-56 lg:h-64 w-full" />
+        <div className="grid grid-cols-3 gap-4 mt-4">
+          <Skeleton className="h-16" />
+          <Skeleton className="h-16" />
+          <Skeleton className="h-16" />
+        </div>
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card className="glass-card p-4 sm:p-6 lg:p-8 shadow-luxury animate-fade-in rounded-2xl border border-border">
+        <EmptyState
+          title="Unable to load chart"
+          description="There was an error loading the visitors chart. Please try again."
+          icon="alert"
+        />
+      </Card>
+    );
+  }
+
+  if (!data || data.length === 0) {
+    return (
+      <Card className="glass-card p-4 sm:p-6 lg:p-8 shadow-luxury animate-fade-in rounded-2xl border border-border smooth-hover">
+        <div className="mb-4 sm:mb-6 lg:mb-8">
+          <h3 className="text-lg sm:text-xl lg:text-kk-h2 text-foreground mb-2">Organische bezoekers</h3>
+          <p className="text-xs sm:text-sm lg:text-kk-caption text-muted-foreground">Ontwikkeling vs. benchmark</p>
+        </div>
+        <EmptyState
+          title="Geen data beschikbaar"
+          description="Er zijn momenteel geen bezoekersgegevens om weer te geven."
+          icon="database"
+        />
+      </Card>
+    );
+  }
+
+  // Calculate summary stats
+  const totalVisitors = data.reduce((sum, d) => sum + d.visitors, 0);
+  const avgBenchmark = data.reduce((sum, d) => sum + d.benchmark, 0) / data.length;
+  const avgVisitors = totalVisitors / data.length;
+  const growth = avgBenchmark > 0 ? ((avgVisitors - avgBenchmark) / avgBenchmark * 100).toFixed(1) : 'N/A';
+  const bestDay = data.reduce((max, d) => d.visitors > max.visitors ? d : max, data[0]);
+
   return (
     <Card className="glass-card p-4 sm:p-6 lg:p-8 shadow-luxury animate-fade-in rounded-2xl border border-border smooth-hover hover:shadow-elevated hover:scale-[1.01]">
       <div className="mb-4 sm:mb-6 lg:mb-8">
         <h3 className="text-lg sm:text-xl lg:text-kk-h2 text-foreground mb-2">Organische bezoekers</h3>
-        <p className="text-xs sm:text-sm lg:text-kk-caption text-muted-foreground">Ontwikkeling 1-24 september vs. benchmark</p>
+        <p className="text-xs sm:text-sm lg:text-kk-caption text-muted-foreground">Ontwikkeling vs. benchmark</p>
       </div>
       
       <div className="h-48 sm:h-56 lg:h-64 mb-4 w-full overflow-hidden">

@@ -120,3 +120,32 @@ export interface AuthResponse {
   error?: string;
   user?: UserProfile;
 }
+
+export interface ChartDataPoint {
+  date: string;
+  visitors: number;
+  benchmark: number;
+}
+
+export interface WeeklySummaryData {
+  weekNumber: number;
+  achievements: string[];
+  focusArea: string;
+}
+
+export interface ActionAlert {
+  severity: "warning" | "info" | "success";
+  icon: string;
+  title: string;
+  description: string;
+  cta: string;
+  route: string;
+}
+
+export interface SuccessInsight {
+  icon: string;
+  title: string;
+  description: string;
+  time: string;
+  type: "success" | "improvement" | "metric" | "automation";
+}

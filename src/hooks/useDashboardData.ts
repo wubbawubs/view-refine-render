@@ -26,6 +26,10 @@ import {
   signupUser,
   logoutUser,
   getCurrentUser,
+  fetchVisitorsChartData,
+  fetchWeeklySummary,
+  fetchActionAlerts,
+  fetchSuccessInsights,
 } from '@/services/api';
 
 // Query keys for React Query
@@ -38,6 +42,11 @@ export const QUERY_KEYS = {
   SEO_TASKS: ['seoTasks'],
   NOTIFICATIONS: ['notifications'],
   USER_PROFILE: ['userProfile'],
+  VISITORS_CHART: ['visitorsChart'],
+  WEEKLY_SUMMARY: ['weeklySummary'],
+  ACTION_ALERTS: ['actionAlerts'],
+  SUCCESS_INSIGHTS: ['successInsights'],
+  OPTIMIZATION_CONTENT: ['optimizationContent'],
 };
 
 /**
@@ -255,5 +264,49 @@ export const useCurrentUser = () => {
     queryKey: ['currentUser'],
     queryFn: getCurrentUser,
     staleTime: 10 * 60 * 1000,
+  });
+};
+
+/**
+ * Hook to fetch visitors chart data
+ */
+export const useVisitorsChart = () => {
+  return useQuery({
+    queryKey: QUERY_KEYS.VISITORS_CHART,
+    queryFn: fetchVisitorsChartData,
+    staleTime: 5 * 60 * 1000,
+  });
+};
+
+/**
+ * Hook to fetch weekly summary
+ */
+export const useWeeklySummary = () => {
+  return useQuery({
+    queryKey: QUERY_KEYS.WEEKLY_SUMMARY,
+    queryFn: fetchWeeklySummary,
+    staleTime: 5 * 60 * 1000,
+  });
+};
+
+/**
+ * Hook to fetch action alerts
+ */
+export const useActionAlerts = () => {
+  return useQuery({
+    queryKey: QUERY_KEYS.ACTION_ALERTS,
+    queryFn: fetchActionAlerts,
+    staleTime: 5 * 60 * 1000,
+  });
+};
+
+/**
+ * Hook to fetch success insights
+ */
+export const useSuccessInsights = () => {
+  return useQuery({
+    queryKey: QUERY_KEYS.SUCCESS_INSIGHTS,
+    queryFn: fetchSuccessInsights,
+    staleTime: 5 * 60 * 1000,
   });
 };

@@ -8,42 +8,64 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import { EmptyState } from "@/components/ui/empty-state";
+import type { Update } from "@/types/dashboard";
 
-const UpdatesFeed = () => {
-  const updates = [
-    {
-      type: "ranking",
-      title: "Verwachte ranking stijgt naar #3 voor 'SEO software Nederland'",
-      impact: "Projectie: stabilisatie rond positie #3 in oktober",
-      timestamp: "1 uur geleden",
-      badge: "Ranking",
-      details: "Je ranking voor het zoekwoord 'SEO software Nederland' is gestegen van positie #7 naar #5. Op basis van de huidige trend verwachten we dat je binnen 2-3 weken positie #3 bereikt. Focus op het verbeteren van je backlink profiel om deze positie te behouden."
-    },
-    {
-      type: "technical", 
-      title: "Meta descriptions geoptimaliseerd voor 15 pagina's",
-      impact: "Verbeterde click-through rates",
-      timestamp: "2 dagen geleden",
-      badge: "Tech SEO",
-      details: "Onze AI heeft automatisch 15 meta descriptions herschreven om beter aan te sluiten bij zoekintentie. De nieuwe descriptions zijn geoptimaliseerd voor een lengte van 150-160 karakters en bevatten relevante keywords. Verwachte CTR verbetering: +12%."
-    },
-    {
-      type: "content",
-      title: "AI-gedreven H1 optimalisaties actief op Homepage, Prijzen, Contact",
-      impact: "Geoptimaliseerde content voor 'automatische SEO'",
-      timestamp: "6 uren geleden", 
-      badge: "Content",
-      details: "De H1 tags op je belangrijkste pagina's zijn geoptimaliseerd voor betere keyword targeting. Wijzigingen: Homepage (nu gericht op 'automatische SEO software'), Prijzen pagina (focus op 'betaalbare SEO oplossingen'), Contact pagina (lokale SEO optimalisatie)."
-    },
-    {
-      type: "local",
-      title: "Schema markup voor SaaS software toegevoegd",
-      impact: "Lokale zichtbaarheid voor B2B bedrijven verbeterd",
-      timestamp: "3 dagen geleden",
-      badge: "Schema",
-      details: "We hebben SoftwareApplication schema markup geïmplementeerd inclusief aggregateRating, offers, en applicationCategory. Dit helpt Google om je software beter te begrijpen en kan leiden tot rich snippets in zoekresultaten met sterrenbeoordelingen."
-    }
-  ];
+interface UpdatesFeedProps {
+  updates?: Update[];
+  loading?: boolean;
+  error?: Error | null;
+}
+
+const UpdatesFeed = ({ updates = [], loading = false, error = null }: UpdatesFeedProps) => {
+  if (loading) {
+    return (
+      <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
+        <div className="mb-6 pb-4 border-b border-border/50">
+          <Skeleton className="h-6 w-40 mb-2" />
+          <Skeleton className="h-4 w-64" />
+        </div>
+        <div className="space-y-6">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="bg-muted/20 rounded-lg p-4 border border-border/30">
+              <Skeleton className="h-4 w-20 mb-3" />
+              <Skeleton className="h-5 w-full mb-2" />
+              <Skeleton className="h-4 w-3/4" />
+            </div>
+          ))}
+        </div>
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
+        <EmptyState
+          title="Unable to load updates"
+          description="There was an error loading the updates feed. Please try again."
+          icon="alert"
+        />
+      </Card>
+    );
+  }
+
+  if (!updates || updates.length === 0) {
+    return (
+      <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
+        <div className="mb-6 pb-4 border-b border-border/50">
+          <h3 className="text-kk-h2 text-foreground">Recente updates</h3>
+          <p className="text-kk-caption text-muted-foreground mt-1">AI-gedreven optimalisaties van deze week</p>
+        </div>
+        <EmptyState
+          title="Geen updates beschikbaar"
+          description="Er zijn momenteel geen recente updates om te tonen."
+          icon="file"
+        />
+      </Card>
+    );
+  }
 
   return (
     <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
