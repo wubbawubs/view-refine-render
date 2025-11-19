@@ -220,3 +220,35 @@ export const getCurrentUser = async (): Promise<UserProfile | null> => {
   console.log('Get current user');
   return null;
 };
+
+/**
+ * Fetch visitors chart data
+ * TODO: Replace with actual Firestore query
+ */
+export const fetchVisitorsChartData = async (): Promise<import('@/types/dashboard').ChartDataPoint[]> => {
+  return [];
+};
+
+/**
+ * Fetch weekly summary data
+ * TODO: Replace with actual Firestore query
+ */
+export const fetchWeeklySummary = async (): Promise<import('@/types/dashboard').WeeklySummaryData | null> => {
+  return null;
+};
+
+/**
+ * Fetch action alerts
+ * TODO: Replace with actual Firestore query
+ */
+export const fetchActionAlerts = async (): Promise<import('@/types/dashboard').ActionAlert[]> => {
+  return [];
+};
+
+/**
+ * Fetch success insights
+ * TODO: Replace with actual Firestore query
+ */
+export const fetchSuccessInsights = async (): Promise<import('@/types/dashboard').SuccessInsight[]> => {
+  return [];
+};

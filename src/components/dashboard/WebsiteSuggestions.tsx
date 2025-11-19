@@ -9,50 +9,77 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Skeleton } from "@/components/ui/skeleton";
+import { EmptyState } from "@/components/ui/empty-state";
+import type { WebsiteSuggestion } from "@/types/dashboard";
 
-const WebsiteSuggestions = () => {
-  const suggestions = [
-    {
-      id: 1,
-      title: "Blog: 'Top 10 SEO trends voor 2025'",
-      category: "Content Marketing",
-      priority: "Hoog",
-      description: "Schrijf een uitgebreide blog over de belangrijkste SEO trends in 2025. Focus op AI-gestuurde optimalisatie en voice search.",
-      keywords: ["SEO trends", "AI optimalisatie", "voice search"],
-      estimatedImpact: "+15% organisch verkeer",
-      icon: FileText,
-    },
-    {
-      id: 2,
-      title: "Landingspagina: 'Automatische SEO voor webshops'",
-      category: "Conversion",
-      priority: "Hoog",
-      description: "Creëer een gerichte landingspagina voor e-commerce bedrijven. Benadruk automatische product optimalisatie en structured data.",
-      keywords: ["webshop SEO", "e-commerce optimalisatie", "productpagina's"],
-      estimatedImpact: "+25% conversies",
-      icon: Target,
-    },
-    {
-      id: 3,
-      title: "Case Study: 'Hoe Bedrijf X 200% meer bezoekers kreeg'",
-      category: "Social Proof",
-      priority: "Middel",
-      description: "Documenteer een succesverhaal van een bestaande klant. Gebruik concrete cijfers en voor-en-na screenshots.",
-      keywords: ["case study", "klant succes", "SEO resultaten"],
-      estimatedImpact: "+40% trust signals",
-      icon: TrendingUp,
-    },
-    {
-      id: 4,
-      title: "FAQ pagina: 'Alles over lokale SEO'",
-      category: "Support Content",
-      priority: "Middel",
-      description: "Maak een uitgebreide FAQ over lokale SEO optimalisatie. Beantwoord veelgestelde vragen met rich snippets.",
-      keywords: ["lokale SEO", "Google Maps", "bedrijfsprofiel"],
-      estimatedImpact: "+10% featured snippets",
-      icon: Lightbulb,
-    }
-  ];
+interface WebsiteSuggestionsProps {
+  suggestions?: WebsiteSuggestion[];
+  loading?: boolean;
+  error?: Error | null;
+}
+
+const iconMap = {
+  FileText,
+  Target,
+  TrendingUp,
+  Lightbulb,
+};
+
+const WebsiteSuggestions = ({ suggestions = [], loading = false, error = null }: WebsiteSuggestionsProps) => {
+  if (loading) {
+    return (
+      <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
+        <div className="mb-6 pb-4 border-b border-border/50">
+          <Skeleton className="h-6 w-48 mb-2" />
+          <Skeleton className="h-4 w-64" />
+        </div>
+        <div className="space-y-4">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="bg-muted/20 rounded-lg p-4 border border-border/30">
+              <div className="flex items-start gap-4">
+                <Skeleton className="w-9 h-9 rounded-lg" />
+                <div className="flex-1">
+                  <Skeleton className="h-5 w-3/4 mb-2" />
+                  <Skeleton className="h-4 w-full" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
+        <EmptyState
+          title="Unable to load suggestions"
+          description="There was an error loading website suggestions. Please try again."
+          icon="alert"
+        />
+      </Card>
+    );
+  }
+
+  if (!suggestions || suggestions.length === 0) {
+    return (
+      <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
+        <div className="mb-6 pb-4 border-b border-border/50">
+          <h3 className="text-kk-h2 text-foreground">Website suggesties</h3>
+          <p className="text-kk-caption text-muted-foreground mt-1">
+            Hier delen we content ideeën voor jouw website
+          </p>
+        </div>
+        <EmptyState
+          title="Geen suggesties beschikbaar"
+          description="Er zijn momenteel geen website suggesties om te tonen."
+          icon="file"
+        />
+      </Card>
+    );
+  }
 
   return (
     <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
@@ -65,14 +92,14 @@ const WebsiteSuggestions = () => {
 
       <div className="space-y-4">
         {suggestions.map((suggestion) => {
-          const Icon = suggestion.icon;
+          const IconComponent = iconMap[suggestion.icon as keyof typeof iconMap] || Lightbulb;
           return (
             <Dialog key={suggestion.id}>
               <DialogTrigger asChild>
                 <div className="bg-muted/20 rounded-lg p-4 border border-border/30 hover:border-[hsl(var(--kk-violet))]/50 transition-all cursor-pointer group">
                   <div className="flex items-start gap-4">
-                    <div className="mt-1 p-2 rounded-lg bg-[hsl(var(--kk-violet))]/10 text-[hsl(var(--kk-violet))] group-hover:bg-[hsl(var(--kk-violet))]/20 transition-colors">
-                      <Icon className="w-5 h-5" />
+                  <div className="mt-1 p-2 rounded-lg bg-[hsl(var(--kk-violet))]/10 text-[hsl(var(--kk-violet))] group-hover:bg-[hsl(var(--kk-violet))]/20 transition-colors">
+                      <IconComponent className="w-5 h-5" />
                     </div>
                     
                     <div className="flex-1 min-w-0">
@@ -83,7 +110,9 @@ const WebsiteSuggestions = () => {
                         <span className={`px-2 py-0.5 rounded text-xs font-medium whitespace-nowrap ${
                           suggestion.priority === "Hoog" 
                             ? "bg-red-500/10 text-red-600 dark:text-red-400" 
-                            : "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400"
+                            : suggestion.priority === "Gemiddeld"
+                            ? "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400"
+                            : "bg-blue-500/10 text-blue-600 dark:text-blue-400"
                         }`}>
                           {suggestion.priority}
                         </span>
