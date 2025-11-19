@@ -6,7 +6,8 @@ import {
   Settings, 
   User, 
   LogOut,
-  Target
+  Target,
+  Lightbulb
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +22,7 @@ const sidebarItems: SidebarItem[] = [
   { name: "Dashboard", path: "/", icon: LayoutDashboard },
   { name: "Aanpassingen", path: "/aanpassingen", icon: Settings },
   { name: "SEO Plan", path: "/seo-plan", icon: Target },
+  { name: "Content Ideeen", path: "/content-ideas", icon: Lightbulb },
   { name: "Account", path: "/account", icon: User },
   { name: "Uitloggen", path: "/logout", icon: LogOut, danger: true },
 ];

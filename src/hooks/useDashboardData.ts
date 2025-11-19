@@ -32,6 +32,7 @@ import {
   fetchSuccessInsights,
   fetchSEOOptimizations,
   fetchSEOPlanCategories,
+  fetchContentIdeas,
 } from '@/services/api';
 
 // Query keys for React Query
@@ -331,6 +332,17 @@ export const useSEOPlanCategories = () => {
   return useQuery({
     queryKey: ['seoPlanCategories'],
     queryFn: fetchSEOPlanCategories,
+    staleTime: 5 * 60 * 1000,
+  });
+};
+
+/**
+ * Hook to fetch content ideas
+ */
+export const useContentIdeas = () => {
+  return useQuery({
+    queryKey: ['contentIdeas'],
+    queryFn: fetchContentIdeas,
     staleTime: 5 * 60 * 1000,
   });
 };

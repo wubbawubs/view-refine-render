@@ -172,3 +172,16 @@ export interface SEOPlanCategory {
   progress: number;
   tasks: SEOPlanTask[];
 }
+
+// Content Ideas Page Types
+export interface ContentIdea {
+  id: string;
+  title: string;
+  type: 'blog' | 'page' | 'social' | 'email';
+  description: string;
+  keywords: string[];
+  estimatedImpact: string;
+  priority: 'high' | 'medium' | 'low';
+  status: 'draft' | 'planned' | 'published';
+  createdAt: string;
+}

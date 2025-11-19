@@ -268,3 +268,11 @@ export const fetchSEOOptimizations = async (): Promise<import('@/types/dashboard
 export const fetchSEOPlanCategories = async (): Promise<import('@/types/dashboard').SEOPlanCategory[]> => {
   return [];
 };
+
+/**
+ * Fetch content ideas
+ * TODO: Replace with actual Firestore query
+ */
+export const fetchContentIdeas = async (): Promise<import('@/types/dashboard').ContentIdea[]> => {
+  return [];
+};
