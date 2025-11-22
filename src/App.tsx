@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
+import Homepage from "./pages/Homepage";
 import Aanpassingen from "./pages/Aanpassingen";
 import SEOPlan from "./pages/SEOPlan";
 import ContentIdeas from "./pages/ContentIdeas";
@@ -26,6 +27,7 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/homepage" element={<Homepage />} />
               <Route path="/aanpassingen" element={<Aanpassingen />} />
               <Route path="/seo-plan" element={<SEOPlan />} />
               <Route path="/content-ideas" element={<ContentIdeas />} />
