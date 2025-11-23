@@ -78,8 +78,12 @@ const Login = () => {
       <Card className="w-full max-w-md mx-auto shadow-luxury border-border/50 bg-card/95 backdrop-blur-sm relative z-10">
         <CardHeader className="text-center space-y-4 pb-6">
           {/* Logo */}
-          <div className="mx-auto w-16 h-16 bg-kk-gradient rounded-2xl flex items-center justify-center shadow-lg">
-            <span className="text-white font-bold text-2xl">K</span>
+          <div className="mx-auto w-20 h-20 flex items-center justify-center">
+            <img 
+              src="/klikklaar-logo-gradient-new.png" 
+              alt="KlikKlaar Logo" 
+              className="w-full h-full object-contain"
+            />
           </div>
           
           {/* Title */}

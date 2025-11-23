@@ -30,8 +30,12 @@ const Logout = () => {
     <div className="min-h-screen flex items-center justify-center premium-dashboard-bg">
       <div className="text-center">
         {/* Logo */}
-        <div className="mx-auto w-16 h-16 bg-kk-gradient rounded-2xl flex items-center justify-center shadow-lg mb-6">
-          <span className="text-white font-bold text-2xl">K</span>
+        <div className="mx-auto w-20 h-20 flex items-center justify-center mb-6">
+          <img 
+            src="/klikklaar-logo-gradient-new.png" 
+            alt="KlikKlaar Logo" 
+            className="w-full h-full object-contain"
+          />
         </div>
         
         {/* Loading Spinner */}
