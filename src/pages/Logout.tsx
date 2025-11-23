@@ -1,11 +1,15 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "next-themes";
 import { Loader2 } from "lucide-react";
 import { useLogout } from "@/hooks/useDashboardData";
 
 const Logout = () => {
+  const { theme } = useTheme();
   const navigate = useNavigate();
   const logout = useLogout();
+
+  const logoSrc = theme === 'dark' ? '/klikklaar-logo-gradient.png' : '/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png';
 
   useEffect(() => {
     const handleLogout = async () => {
@@ -30,11 +34,11 @@ const Logout = () => {
     <div className="min-h-screen flex items-center justify-center premium-dashboard-bg">
       <div className="text-center">
         {/* Logo */}
-        <div className="mx-auto w-20 h-20 flex items-center justify-center mb-6">
+        <div className="mx-auto h-16 flex items-center justify-center mb-6">
           <img 
-            src="/klikklaar-logo-gradient-new.png" 
+            src={logoSrc}
             alt="KlikKlaar Logo" 
-            className="w-full h-full object-contain"
+            className="h-16 w-auto object-contain"
           />
         </div>
         

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Eye, EyeOff, Mail, Lock, ArrowRight } from "lucide-react";
+import { useTheme } from "next-themes";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,10 +9,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const Login = () => {
+  const { theme } = useTheme();
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const logoSrc = theme === 'dark' ? '/klikklaar-logo-gradient.png' : '/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png';
 
   const texts = {
     nl: {
@@ -78,11 +82,11 @@ const Login = () => {
       <Card className="w-full max-w-md mx-auto shadow-luxury border-border/50 bg-card/95 backdrop-blur-sm relative z-10">
         <CardHeader className="text-center space-y-4 pb-6">
           {/* Logo */}
-          <div className="mx-auto w-20 h-20 flex items-center justify-center">
+          <div className="mx-auto h-16 flex items-center justify-center">
             <img 
-              src="/klikklaar-logo-gradient-new.png" 
+              src={logoSrc}
               alt="KlikKlaar Logo" 
-              className="w-full h-full object-contain"
+              className="h-16 w-auto object-contain"
             />
           </div>
           
@@ -157,7 +161,7 @@ const Login = () => {
             {/* Login Button */}
             <Button 
               type="submit" 
-              className="w-full bg-kk-gradient hover:opacity-90 text-white h-11 font-medium shadow-lg transition-all duration-200"
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-11 font-medium shadow-sm transition-all duration-200"
             >
               {t.loginButton}
               <ArrowRight className="w-4 h-4 ml-2" />
