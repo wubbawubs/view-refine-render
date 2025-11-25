@@ -25,11 +25,11 @@ export const EmptyState = ({
   return (
     <Card className={`p-12 text-center ${className}`}>
       <div className="flex flex-col items-center justify-center">
-        <div className="w-16 h-16 rounded-full bg-kk-gray-100 flex items-center justify-center mb-4">
-          <Icon className="w-8 h-8 text-kk-gray-400" />
+        <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mb-4">
+          <Icon className="w-8 h-8 text-muted-foreground" />
         </div>
-        <h3 className="text-kk-h3 text-kk-eggplant mb-2">{title}</h3>
-        <p className="text-kk-body text-kk-gray-500 max-w-md">{description}</p>
+        <h3 className="text-kk-h3 text-foreground mb-2">{title}</h3>
+        <p className="text-kk-body text-muted-foreground max-w-md">{description}</p>
       </div>
     </Card>
   );
@@ -45,13 +45,13 @@ export const ErrorState = ({
   onRetry?: () => void;
 }) => {
   return (
-    <Card className="p-12 text-center border-kk-warning/30">
+    <Card className="p-12 text-center border-destructive/30">
       <div className="flex flex-col items-center justify-center">
-        <div className="w-16 h-16 rounded-full bg-kk-warning/10 flex items-center justify-center mb-4">
-          <AlertCircle className="w-8 h-8 text-kk-warning" />
+        <div className="w-16 h-16 rounded-full bg-destructive/10 flex items-center justify-center mb-4">
+          <AlertCircle className="w-8 h-8 text-destructive" />
         </div>
-        <h3 className="text-kk-h3 text-kk-eggplant mb-2">{title}</h3>
-        <p className="text-kk-body text-kk-gray-500 max-w-md mb-4">{description}</p>
+        <h3 className="text-kk-h3 text-foreground mb-2">{title}</h3>
+        <p className="text-kk-body text-muted-foreground max-w-md mb-4">{description}</p>
         {onRetry && (
           <button
             onClick={onRetry}
