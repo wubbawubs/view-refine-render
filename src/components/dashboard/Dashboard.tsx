@@ -24,8 +24,6 @@ const Dashboard = () => {
     nl: {
       title: 'KlikKlaar.io SEO Dashboard',
       lastUpdated: 'Laatst bijgewerkt: 24 september 2025, 07:30',
-      thisWeek: 'Deze week',
-      thisMonth: 'Deze maand',
       downloadReport: 'Download rapport (PDF)',
       seoScore: 'SEO Score',
       seoScoreHelp: 'Technische SEO prestaties voor KlikKlaar.io',
@@ -43,8 +41,6 @@ const Dashboard = () => {
     en: {
       title: 'KlikKlaar.io SEO Dashboard',
       lastUpdated: 'Last updated: September 24, 2025, 7:30 AM',
-      thisWeek: 'This week',  
-      thisMonth: 'This month',
       downloadReport: 'Download report (PDF)',
       seoScore: 'SEO Score',
       seoScoreHelp: 'Technical SEO performance for KlikKlaar.io',
@@ -149,16 +145,6 @@ const Dashboard = () => {
             {/* Theme Toggle */}
             <div className="[&>button]:h-8 [&>button]:w-8 lg:[&>button]:h-9 lg:[&>button]:w-9 shrink-0">
               <ThemeToggle />
-            </div>
-            
-            {/* Time Period Buttons - Hidden on mobile */}
-            <div className="hidden md:flex gap-2">
-              <button className="px-2 lg:px-3 py-1.5 text-xs font-medium text-muted-foreground bg-card border border-border rounded-md hover:bg-accent transition-colors whitespace-nowrap">
-                {t.thisWeek}
-              </button>
-              <button className="px-2 lg:px-3 py-1.5 text-xs font-medium text-[hsl(var(--kk-violet))] bg-card border border-[hsl(var(--kk-violet))] rounded-md whitespace-nowrap">
-                {t.thisMonth}
-              </button>
             </div>
           </div>
         </div>
