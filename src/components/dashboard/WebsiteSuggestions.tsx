@@ -82,47 +82,50 @@ const WebsiteSuggestions = ({ suggestions = [], loading = false, error = null }:
   }
 
   return (
-    <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
+    <Card className="p-6 shadow-lg animate-fade-in rounded-2xl border border-border bg-card">
       <div className="mb-6 pb-4 border-b border-border/50">
-        <h3 className="text-kk-h2 text-foreground">Website suggesties</h3>
-        <p className="text-kk-caption text-muted-foreground mt-1">
+        <div className="flex items-center gap-2 mb-1">
+          <Lightbulb className="w-5 h-5 text-primary" />
+          <h3 className="text-lg font-bold text-foreground">Website suggesties</h3>
+        </div>
+        <p className="text-sm text-muted-foreground">
           Hier delen we content ideeën voor jouw website
         </p>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-3">
         {suggestions.map((suggestion) => {
           const IconComponent = iconMap[suggestion.icon as keyof typeof iconMap] || Lightbulb;
           return (
             <Dialog key={suggestion.id}>
               <DialogTrigger asChild>
-                <div className="bg-muted/20 rounded-lg p-4 border border-border/30 hover:border-[hsl(var(--kk-violet))]/50 transition-all cursor-pointer group">
-                  <div className="flex items-start gap-4">
-                  <div className="mt-1 p-2 rounded-lg bg-[hsl(var(--kk-violet))]/10 text-[hsl(var(--kk-violet))] group-hover:bg-[hsl(var(--kk-violet))]/20 transition-colors">
-                      <IconComponent className="w-5 h-5" />
+                <div className="bg-muted/30 rounded-xl p-4 border border-border hover:border-primary/40 hover:bg-muted/50 transition-all cursor-pointer group">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors shrink-0">
+                      <IconComponent className="w-4 h-4" />
                     </div>
                     
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between gap-2 mb-2">
-                        <h4 className="text-kk-label font-semibold text-foreground leading-tight">
+                      <div className="flex items-start justify-between gap-2 mb-1.5">
+                        <h4 className="text-sm font-semibold text-foreground leading-tight group-hover:text-primary transition-colors">
                           {suggestion.title}
                         </h4>
-                        <span className={`px-2 py-0.5 rounded text-xs font-medium whitespace-nowrap ${
+                        <span className={`px-2 py-0.5 rounded-full text-xs font-semibold whitespace-nowrap ${
                           suggestion.priority === "Hoog" 
-                            ? "bg-red-500/10 text-red-600 dark:text-red-400" 
+                            ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" 
                             : suggestion.priority === "Gemiddeld"
-                            ? "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400"
-                            : "bg-blue-500/10 text-blue-600 dark:text-blue-400"
+                            ? "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
+                            : "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
                         }`}>
                           {suggestion.priority}
                         </span>
                       </div>
                       
-                      <p className="text-kk-caption text-muted-foreground mb-2">
+                      <p className="text-xs text-muted-foreground mb-2">
                         {suggestion.category} • {suggestion.estimatedImpact}
                       </p>
                       
-                      <button className="text-kk-caption text-[hsl(var(--kk-violet))] hover:underline font-medium">
+                      <button className="text-xs text-primary hover:underline font-medium">
                         Bekijk details →
                       </button>
                     </div>
@@ -132,27 +135,27 @@ const WebsiteSuggestions = ({ suggestions = [], loading = false, error = null }:
               
               <DialogContent className="max-w-2xl">
                 <DialogHeader>
-                  <DialogTitle className="text-2xl">{suggestion.title}</DialogTitle>
-                  <DialogDescription className="text-base mt-2">
+                  <DialogTitle className="text-xl font-bold">{suggestion.title}</DialogTitle>
+                  <DialogDescription className="text-sm mt-2">
                     {suggestion.category} • Prioriteit: {suggestion.priority}
                   </DialogDescription>
                 </DialogHeader>
                 
-                <div className="space-y-6 mt-4">
+                <div className="space-y-5 mt-4">
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">Beschrijving</h4>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <h4 className="font-semibold text-foreground mb-2 text-sm">Beschrijving</h4>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
                       {suggestion.description}
                     </p>
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">Focus keywords</h4>
+                    <h4 className="font-semibold text-foreground mb-2 text-sm">Focus keywords</h4>
                     <div className="flex flex-wrap gap-2">
                       {suggestion.keywords.map((keyword, idx) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 rounded-full text-sm bg-muted text-muted-foreground border border-border"
+                          className="px-3 py-1 rounded-full text-xs bg-muted text-muted-foreground border border-border font-medium"
                         >
                           {keyword}
                         </span>
@@ -160,9 +163,9 @@ const WebsiteSuggestions = ({ suggestions = [], loading = false, error = null }:
                     </div>
                   </div>
                   
-                  <div className="bg-[hsl(var(--kk-violet))]/5 border border-[hsl(var(--kk-violet))]/20 rounded-lg p-4">
-                    <h4 className="font-semibold text-foreground mb-1">Verwachte impact</h4>
-                    <p className="text-[hsl(var(--kk-violet))] font-medium">
+                  <div className="bg-primary/5 border border-primary/20 rounded-xl p-4">
+                    <h4 className="font-semibold text-foreground mb-1 text-sm">Verwachte impact</h4>
+                    <p className="text-primary font-semibold">
                       {suggestion.estimatedImpact}
                     </p>
                   </div>
