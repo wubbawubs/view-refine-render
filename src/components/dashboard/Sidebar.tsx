@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "next-themes";
 import { 
@@ -7,7 +6,9 @@ import {
   User, 
   LogOut,
   Target,
-  Lightbulb
+  Lightbulb,
+  HelpCircle,
+  Shield
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -16,6 +17,7 @@ interface SidebarItem {
   path: string;
   icon: React.ElementType;
   danger?: boolean;
+  adminOnly?: boolean;
 }
 
 const sidebarItems: SidebarItem[] = [
@@ -23,7 +25,9 @@ const sidebarItems: SidebarItem[] = [
   { name: "Aanpassingen", path: "/aanpassingen", icon: Settings },
   { name: "SEO Plan", path: "/seo-plan", icon: Target },
   { name: "Content Ideeen", path: "/content-ideas", icon: Lightbulb },
+  { name: "Help", path: "/help", icon: HelpCircle },
   { name: "Account", path: "/account", icon: User },
+  { name: "Admin", path: "/admin", icon: Shield, adminOnly: true },
   { name: "Uitloggen", path: "/logout", icon: LogOut, danger: true },
 ];
 

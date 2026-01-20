@@ -1,7 +1,12 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { ArrowUp, ArrowDown } from "lucide-react";
+import { ArrowUp, ArrowDown, HelpCircle, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface KPICardProps {
   label: string | ReactNode;
@@ -24,49 +29,61 @@ const KPICard = ({
 }: KPICardProps) => {
   return (
     <Card 
-      className="relative overflow-hidden bg-card border border-border rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer h-full"
+      className="relative overflow-hidden bg-card border border-border rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 h-full group"
       onClick={onClick}
     >
-      {/* Gradient top bar for branding */}
-      <div className="h-1 w-full bg-kk-gradient"></div>
+      {/* Gradient top bar */}
+      <div className="h-1 w-full bg-gradient-to-r from-primary via-primary/80 to-primary/60"></div>
       
-      <div className="p-4 h-full flex flex-col justify-between">
-        <div className="space-y-4">
-          {/* Icon and label */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-[hsl(var(--kk-violet))]/10 to-[hsl(var(--kk-fuchsia))]/10 rounded-xl flex items-center justify-center border border-[hsl(var(--kk-violet))]/20 shrink-0">
-              <div className="w-5 h-5 text-[hsl(var(--kk-violet))] flex items-center justify-center">
-                {icon}
+      <div className="p-4 lg:p-5 h-full flex flex-col justify-between">
+        <div className="space-y-3">
+          {/* Icon, label, and help */}
+          <div className="flex items-start justify-between gap-2">
+            <div className="flex items-center gap-3 flex-1 min-w-0">
+              <div className="w-10 h-10 lg:w-11 lg:h-11 bg-gradient-to-br from-primary/15 to-primary/5 rounded-xl flex items-center justify-center border border-primary/20 shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-5 h-5 text-primary flex items-center justify-center">
+                  {icon}
+                </div>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-sm font-semibold text-foreground leading-snug truncate">{label}</h3>
               </div>
             </div>
-            <div className="flex-1 min-w-0">
-              <h3 className="text-sm font-medium text-foreground leading-snug">{label}</h3>
-            </div>
+            
+            {/* Help tooltip */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button 
+                  className="w-6 h-6 rounded-full bg-muted/50 hover:bg-muted flex items-center justify-center shrink-0 transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <HelpCircle className="w-3.5 h-3.5 text-muted-foreground" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent side="top" className="max-w-[200px] text-center">
+                <p className="text-xs">{helpText}</p>
+              </TooltipContent>
+            </Tooltip>
           </div>
           
           {/* Value */}
           <div>
-            <div className="text-2xl font-bold text-foreground">{value}</div>
+            <div className="text-2xl lg:text-3xl font-bold text-foreground tracking-tight">{value}</div>
           </div>
           
           {/* Delta */}
           <div>
             <div className={cn(
-              "inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium",
-              deltaType === "up" && "bg-emerald-50 text-emerald-600 border border-emerald-100",
-              deltaType === "down" && "bg-red-50 text-red-600 border border-red-100",
-              deltaType === "neutral" && "bg-gray-50 text-gray-600 border border-gray-100"
+              "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold transition-all",
+              deltaType === "up" && "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400",
+              deltaType === "down" && "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
+              deltaType === "neutral" && "bg-muted text-muted-foreground"
             )}>
               {deltaType === "up" && <ArrowUp className="w-3 h-3" />}
               {deltaType === "down" && <ArrowDown className="w-3 h-3" />}
               <span>{delta}</span>
             </div>
           </div>
-        </div>
-        
-        {/* Help text - anchored to bottom */}
-        <div className="mt-4">
-          <p className="text-xs text-muted-foreground leading-relaxed">{helpText}</p>
         </div>
       </div>
     </Card>

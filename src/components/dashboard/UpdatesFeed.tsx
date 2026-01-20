@@ -1,3 +1,4 @@
+import { TrendingUp } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import {
   Dialog,
@@ -68,34 +69,37 @@ const UpdatesFeed = ({ updates = [], loading = false, error = null }: UpdatesFee
   }
 
   return (
-    <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
+    <Card className="p-6 shadow-lg animate-fade-in rounded-2xl border border-border bg-card">
       <div className="mb-6 pb-4 border-b border-border/50">
-        <h3 className="text-kk-h2 text-foreground">Recente updates</h3>
-        <p className="text-kk-caption text-muted-foreground mt-1">AI-gedreven optimalisaties van deze week</p>
+        <div className="flex items-center gap-2 mb-1">
+          <TrendingUp className="w-5 h-5 text-primary" />
+          <h3 className="text-lg font-bold text-foreground">Recente updates</h3>
+        </div>
+        <p className="text-sm text-muted-foreground">AI-gedreven optimalisaties van deze week</p>
       </div>
       
-      <div className="space-y-6">
+      <div className="space-y-3">
         {updates.map((update, index) => (
           <Dialog key={index}>
             <DialogTrigger asChild>
-              <div className="bg-muted/20 rounded-lg p-4 border border-border/30 hover:border-[hsl(var(--kk-violet))]/50 transition-all cursor-pointer group">
-                <div className="flex items-start justify-between mb-3">
-                  <span className="px-3 py-1 rounded-full text-kk-caption font-medium bg-muted/60 text-muted-foreground border border-border/30">
+              <div className="bg-muted/30 rounded-xl p-4 border border-border hover:border-primary/40 hover:bg-muted/50 transition-all cursor-pointer group">
+                <div className="flex items-start justify-between mb-2">
+                  <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
                     {update.badge}
                   </span>
-                  <span className="text-kk-caption text-muted-foreground">{update.timestamp}</span>
+                  <span className="text-xs text-muted-foreground">{update.timestamp}</span>
                 </div>
                 
-                <div className="space-y-2">
-                  <h4 className="text-kk-label font-semibold text-foreground leading-tight">
+                <div className="space-y-1.5">
+                  <h4 className="text-sm font-semibold text-foreground leading-tight group-hover:text-primary transition-colors">
                     {update.title}
                   </h4>
                   
-                  <p className="text-kk-caption text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     {update.impact}
                   </p>
                   
-                  <button className="text-kk-caption text-[hsl(var(--kk-violet))] hover:underline font-medium">
+                  <button className="text-xs text-primary hover:underline font-medium">
                     Bekijk details →
                   </button>
                 </div>
