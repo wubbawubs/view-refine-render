@@ -20,7 +20,9 @@ import {
   Calendar,
   BarChart3,
   Settings,
-  ChevronRight
+  ChevronRight,
+  Trash2,
+  Send
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -61,6 +63,18 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { toast } from "sonner";
+import EmailPreview from "@/components/email/EmailPreview";
+import BulkMailDialog from "@/components/email/BulkMailDialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 // Extended customer data type
 interface CustomerData {
