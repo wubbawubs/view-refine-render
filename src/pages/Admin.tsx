@@ -610,7 +610,71 @@ const Admin = () => {
             </TableBody>
           </Table>
         </Card>
+          </TabsContent>
+
+          <TabsContent value="mailing">
+            <div className="space-y-6">
+              <Card className="p-6 bg-card border border-border">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                      <Mail className="w-5 h-5 text-[hsl(var(--kk-violet))]" />
+                      E-mail Templates & Preview
+                    </h2>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Bekijk en verstuur e-mail templates naar klanten
+                    </p>
+                  </div>
+                  <Button 
+                    className="bg-kk-gradient text-white hover:opacity-90"
+                    onClick={() => setBulkMailOpen(true)}
+                  >
+                    <Send className="w-4 h-4 mr-2" />
+                    Bulk versturen
+                  </Button>
+                </div>
+                <EmailPreview />
+              </Card>
+
+              {/* Send History */}
+              <Card className="p-6 bg-card border border-border">
+                <h3 className="text-lg font-semibold text-foreground mb-4">Verzendgeschiedenis</h3>
+                <div className="text-center py-8 text-muted-foreground">
+                  <Mail className="w-8 h-8 mx-auto mb-2 opacity-50" />
+                  <p className="text-sm">Nog geen e-mails verstuurd</p>
+                  <p className="text-xs mt-1">Activeer Lovable Cloud om e-mails te kunnen versturen</p>
+                </div>
+              </Card>
+            </div>
+          </TabsContent>
+        </Tabs>
       </main>
+
+      {/* Bulk Mail Dialog */}
+      <BulkMailDialog 
+        customers={customers.map(c => ({ id: c.id, name: c.name, email: c.email, status: c.status, plan: c.plan }))}
+        open={bulkMailOpen}
+        onOpenChange={setBulkMailOpen}
+      />
+
+      {/* Delete Confirmation Dialog */}
+      <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Klant verwijderen?</AlertDialogTitle>
+            <AlertDialogDescription>
+              Weet je zeker dat je <strong>{customerToDelete?.name}</strong> wilt verwijderen? 
+              Dit kan niet ongedaan worden gemaakt.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Annuleren</AlertDialogCancel>
+            <AlertDialogAction onClick={confirmDelete} className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
+              Verwijderen
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
 
       {/* Customer Detail Sheet */}
       <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
