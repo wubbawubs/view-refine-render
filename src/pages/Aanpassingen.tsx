@@ -1,13 +1,14 @@
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, Settings } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import Sidebar from "@/components/dashboard/Sidebar";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
 import { useSEOOptimizations } from "@/hooks/useDashboardData";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
+import PageBanner from "@/components/ui/page-banner";
+import { GradientCard } from "@/components/ui/gradient-card";
 
 const Aanpassingen = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
@@ -17,15 +18,13 @@ const Aanpassingen = () => {
   const texts = {
     nl: {
       title: 'Aanpassingen',
-      subtitle: 'Bekijk en beheer alle automatische AI-gedreven SEO optimalisaties',
-      language: 'Taal',
+      subtitle: 'Bekijk en beheer alle automatische AI-gedreven SEO optimalisaties die we voor jouw website doorvoeren.',
       noData: 'Geen data beschikbaar',
       noDataDesc: 'Er zijn momenteel geen SEO optimalisaties om weer te geven.',
     },
     en: {
       title: 'Adjustments',
-      subtitle: 'View and manage all automatic AI-driven SEO optimizations',
-      language: 'Language',
+      subtitle: 'View and manage all automatic AI-driven SEO optimizations we apply to your website.',
       noData: 'No data available',
       noDataDesc: 'There are currently no SEO optimizations to display.',
     }
@@ -35,27 +34,14 @@ const Aanpassingen = () => {
 
   return (
     <div className="flex min-h-screen premium-dashboard-bg">
-      {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-          onClick={() => setSidebarOpen(false)}
-        />
+        <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
       )}
       
-      {/* Sidebar */}
-      <div className={`
-        fixed lg:relative lg:block z-50 h-screen transition-transform duration-300 ease-in-out
-        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-      `}>
+      <div className={`fixed lg:relative lg:block z-50 h-screen transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         <div className="relative h-full">
           <Sidebar />
-          <Button
-            variant="ghost"
-            size="sm"
-            className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent z-10"
-            onClick={() => setSidebarOpen(false)}
-          >
+          <Button variant="ghost" size="sm" className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent z-10" onClick={() => setSidebarOpen(false)}>
             <X className="w-4 h-4" />
           </Button>
         </div>
@@ -65,25 +51,10 @@ const Aanpassingen = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 sm:mb-6 lg:mb-8 pb-3 sm:pb-4 border-b border-border">
           <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="lg:hidden shrink-0 p-1.5"
-              onClick={() => setSidebarOpen(true)}
-            >
+            <Button variant="ghost" size="sm" className="lg:hidden shrink-0 p-1.5" onClick={() => setSidebarOpen(true)}>
               <Menu className="w-4 h-4" />
             </Button>
-            
-            <div className="min-w-0 flex-1">
-              <h1 className="text-xl lg:text-kk-h1 text-foreground mb-1 truncate">
-                {t.title}
-              </h1>
-              <p className="text-sm lg:text-kk-label text-muted-foreground truncate">
-                {t.subtitle}
-              </p>
-            </div>
           </div>
-          
           <div className="flex gap-2 items-center shrink-0">
             <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
               <SelectTrigger className="w-[60px] sm:w-[70px] lg:w-[120px] text-xs h-8 lg:h-9">
@@ -95,36 +66,42 @@ const Aanpassingen = () => {
                 <SelectItem value="en">EN</SelectItem>
               </SelectContent>
             </Select>
-            
             <div className="[&>button]:h-8 [&>button]:w-8 lg:[&>button]:h-9 lg:[&>button]:w-9 shrink-0">
               <ThemeToggle />
             </div>
           </div>
         </div>
 
+        {/* Page Banner */}
+        <div className="mb-6">
+          <PageBanner
+            label="Aanpassingen"
+            title={t.title}
+            description={t.subtitle}
+            icon={<Settings className="w-4 h-4 text-white" />}
+          />
+        </div>
+
         {/* Content */}
         {isLoading ? (
-          <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
-            <div className="space-y-4">
+          <GradientCard className="p-6 animate-fade-in">
+            <div className="space-y-4 p-6">
               <Skeleton className="h-8 w-64" />
               <Skeleton className="h-24 w-full" />
               <Skeleton className="h-24 w-full" />
-              <Skeleton className="h-24 w-full" />
             </div>
-          </Card>
+          </GradientCard>
         ) : !seoOptimizations || seoOptimizations.length === 0 ? (
-          <Card className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
-            <EmptyState
-              title={t.noData}
-              description={t.noDataDesc}
-              icon="database"
-            />
-          </Card>
+          <GradientCard className="animate-fade-in">
+            <div className="p-6">
+              <EmptyState title={t.noData} description={t.noDataDesc} icon="database" />
+            </div>
+          </GradientCard>
         ) : (
           <div className="space-y-4">
             {seoOptimizations.map((opt, index) => (
-              <Card key={index} className="p-6 shadow-card animate-fade-in rounded-2xl border border-border">
-                <div className="flex justify-between items-start">
+              <GradientCard key={index} className="animate-fade-in">
+                <div className="p-6 flex justify-between items-start">
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">
                       {opt.type.toUpperCase()} - {opt.page}
@@ -139,14 +116,14 @@ const Aanpassingen = () => {
                     </div>
                   </div>
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    opt.status === 'completed' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
+                    opt.status === 'completed' ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400' :
                     opt.status === 'active' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' :
-                    'bg-gray-100 text-gray-700 dark:bg-gray-900/30 dark:text-gray-400'
+                    'bg-muted text-muted-foreground'
                   }`}>
                     {opt.status}
                   </span>
                 </div>
-              </Card>
+              </GradientCard>
             ))}
           </div>
         )}
