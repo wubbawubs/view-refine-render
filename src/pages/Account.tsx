@@ -203,23 +203,23 @@ const Account = () => {
             </CardContent>
           </Card>
 
-          {/* Notifications */}
-          <Card>
+          {/* Email Preferences */}
+          <Card className="border border-border/50">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Bell className="w-5 h-5" />
-                Notificaties
+                <Bell className="w-5 h-5 text-[hsl(var(--kk-violet))]" />
+                E-mail Voorkeuren
               </CardTitle>
               <CardDescription>
-                Configureer wanneer u meldingen wilt ontvangen
+                Beheer welke e-mails u van ons ontvangt
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
-                  <Label>E-mail notificaties</Label>
+                  <Label>Wekelijks SEO Rapport</Label>
                   <p className="text-sm text-muted-foreground">
-                    Ontvang updates over nieuwe optimalisaties
+                    Ontvang elke maandag een samenvatting van uw SEO prestaties
                   </p>
                 </div>
                 <Switch defaultChecked />
@@ -227,9 +227,19 @@ const Account = () => {
               
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
-                  <Label>Wekelijkse rapporten</Label>
+                  <Label>"We zijn bezig" updates</Label>
                   <p className="text-sm text-muted-foreground">
-                    Automatische SEO prestatie samenvatting
+                    Tussentijdse updates over lopende optimalisaties
+                  </p>
+                </div>
+                <Switch defaultChecked />
+              </div>
+
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <Label>SEO Alerts</Label>
+                  <p className="text-sm text-muted-foreground">
+                    Directe meldingen bij urgente SEO issues
                   </p>
                 </div>
                 <Switch defaultChecked />
@@ -237,12 +247,65 @@ const Account = () => {
               
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
-                  <Label>Marketing e-mails</Label>
+                  <Label>Aankondigingen & nieuws</Label>
                   <p className="text-sm text-muted-foreground">
-                    Tips, updates en aanbiedingen van KlikKlaar
+                    Updates over nieuwe features en verbeteringen
                   </p>
                 </div>
-                <Switch />
+                <Switch defaultChecked />
+              </div>
+
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <Label>E-mail frequentie</Label>
+                  <p className="text-sm text-muted-foreground">
+                    Hoe vaak wilt u rapporten ontvangen
+                  </p>
+                </div>
+                <Select defaultValue="weekly">
+                  <SelectTrigger className="w-[160px]">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="weekly">Wekelijks</SelectItem>
+                    <SelectItem value="biweekly">Tweewekelijks</SelectItem>
+                    <SelectItem value="monthly">Maandelijks</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Notifications */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Bell className="w-5 h-5" />
+                Dashboard Notificaties
+              </CardTitle>
+              <CardDescription>
+                Configureer in-app meldingen
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <Label>Optimalisatie meldingen</Label>
+                  <p className="text-sm text-muted-foreground">
+                    Melding wanneer een optimalisatie is toegepast
+                  </p>
+                </div>
+                <Switch defaultChecked />
+              </div>
+              
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <Label>Ranking veranderingen</Label>
+                  <p className="text-sm text-muted-foreground">
+                    Melding bij significante ranking veranderingen
+                  </p>
+                </div>
+                <Switch defaultChecked />
               </div>
             </CardContent>
           </Card>

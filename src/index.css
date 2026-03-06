@@ -324,6 +324,24 @@
     pointer-events: none;
   }
   
+  /* Staggered animation utilities */
+  .animate-stagger-1 { animation: fadeIn 0.4s ease-out 0.05s both; }
+  .animate-stagger-2 { animation: fadeIn 0.4s ease-out 0.1s both; }
+  .animate-stagger-3 { animation: fadeIn 0.4s ease-out 0.15s both; }
+  .animate-stagger-4 { animation: fadeIn 0.4s ease-out 0.2s both; }
+  .animate-stagger-5 { animation: fadeIn 0.4s ease-out 0.25s both; }
+  .animate-stagger-6 { animation: fadeIn 0.4s ease-out 0.3s both; }
+
+  /* Pulse glow for important elements */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(var(--kk-violet) / 0.2); }
+    50% { box-shadow: 0 0 20px 4px hsl(var(--kk-violet) / 0.15); }
+  }
+
   /* Scrollbar utilities */
   .scrollbar-hide {
     -ms-overflow-style: none;  /* IE and Edge */

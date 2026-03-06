@@ -20,7 +20,9 @@ import {
   Calendar,
   BarChart3,
   Settings,
-  ChevronRight
+  ChevronRight,
+  Trash2,
+  Send
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -61,6 +63,18 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { toast } from "sonner";
+import EmailPreview from "@/components/email/EmailPreview";
+import BulkMailDialog from "@/components/email/BulkMailDialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 // Extended customer data type
 interface CustomerData {
@@ -331,6 +345,10 @@ const Admin = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [customers, setCustomers] = useState<CustomerData[]>(initialCustomers);
   const [editedCustomer, setEditedCustomer] = useState<CustomerData | null>(null);
+  const [activeTab, setActiveTab] = useState<string>("klanten");
+  const [bulkMailOpen, setBulkMailOpen] = useState(false);
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+  const [customerToDelete, setCustomerToDelete] = useState<CustomerData | null>(null);
 
   const handleCustomerClick = (customer: CustomerData) => {
     setSelectedCustomer(customer);
@@ -362,6 +380,23 @@ const Admin = () => {
       setCustomers(prev => prev.map(c => c.id === updated.id ? updated : c));
       setSelectedCustomer(updated);
       toast.success(action === "apply" ? "Optimalisatie toegepast" : "Optimalisatie afgewezen");
+    }
+  };
+
+  const handleDeleteCustomer = (customer: CustomerData) => {
+    setCustomerToDelete(customer);
+    setDeleteDialogOpen(true);
+  };
+
+  const confirmDelete = () => {
+    if (customerToDelete) {
+      setCustomers(prev => prev.filter(c => c.id !== customerToDelete.id));
+      setSheetOpen(false);
+      setDeleteDialogOpen(false);
+      toast.success("Klant verwijderd", {
+        description: `${customerToDelete.name} is verwijderd uit het systeem.`
+      });
+      setCustomerToDelete(null);
     }
   };
 
@@ -417,8 +452,33 @@ const Admin = () => {
             </div>
           </div>
           
-          <ThemeToggle />
+          <div className="flex gap-2 items-center">
+            <Button 
+              size="sm" 
+              className="bg-kk-gradient text-white hover:opacity-90"
+              onClick={() => setBulkMailOpen(true)}
+            >
+              <Send className="w-4 h-4 mr-2" />
+              Bulk E-mail
+            </Button>
+            <ThemeToggle />
+          </div>
         </div>
+
+        {/* Main Tabs */}
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
+          <TabsList className="h-10">
+            <TabsTrigger value="klanten" className="text-sm">
+              <Users className="w-4 h-4 mr-1" />
+              Klanten
+            </TabsTrigger>
+            <TabsTrigger value="mailing" className="text-sm">
+              <Mail className="w-4 h-4 mr-1" />
+              Mailing
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="klanten">
 
         {/* Key Metrics Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
@@ -550,7 +610,71 @@ const Admin = () => {
             </TableBody>
           </Table>
         </Card>
+          </TabsContent>
+
+          <TabsContent value="mailing">
+            <div className="space-y-6">
+              <Card className="p-6 bg-card border border-border">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                      <Mail className="w-5 h-5 text-[hsl(var(--kk-violet))]" />
+                      E-mail Templates & Preview
+                    </h2>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Bekijk en verstuur e-mail templates naar klanten
+                    </p>
+                  </div>
+                  <Button 
+                    className="bg-kk-gradient text-white hover:opacity-90"
+                    onClick={() => setBulkMailOpen(true)}
+                  >
+                    <Send className="w-4 h-4 mr-2" />
+                    Bulk versturen
+                  </Button>
+                </div>
+                <EmailPreview />
+              </Card>
+
+              {/* Send History */}
+              <Card className="p-6 bg-card border border-border">
+                <h3 className="text-lg font-semibold text-foreground mb-4">Verzendgeschiedenis</h3>
+                <div className="text-center py-8 text-muted-foreground">
+                  <Mail className="w-8 h-8 mx-auto mb-2 opacity-50" />
+                  <p className="text-sm">Nog geen e-mails verstuurd</p>
+                  <p className="text-xs mt-1">Activeer Lovable Cloud om e-mails te kunnen versturen</p>
+                </div>
+              </Card>
+            </div>
+          </TabsContent>
+        </Tabs>
       </main>
+
+      {/* Bulk Mail Dialog */}
+      <BulkMailDialog 
+        customers={customers.map(c => ({ id: c.id, name: c.name, email: c.email, status: c.status, plan: c.plan }))}
+        open={bulkMailOpen}
+        onOpenChange={setBulkMailOpen}
+      />
+
+      {/* Delete Confirmation Dialog */}
+      <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Klant verwijderen?</AlertDialogTitle>
+            <AlertDialogDescription>
+              Weet je zeker dat je <strong>{customerToDelete?.name}</strong> wilt verwijderen? 
+              Dit kan niet ongedaan worden gemaakt.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Annuleren</AlertDialogCancel>
+            <AlertDialogAction onClick={confirmDelete} className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
+              Verwijderen
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
 
       {/* Customer Detail Sheet */}
       <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
@@ -566,6 +690,7 @@ const Admin = () => {
                       {getPlanBadge(selectedCustomer.plan)}
                     </SheetDescription>
                   </div>
+                  <div className="flex gap-2">
                   <Button 
                     variant={isEditing ? "default" : "outline"} 
                     size="sm"
@@ -583,6 +708,7 @@ const Admin = () => {
                       </>
                     )}
                   </Button>
+                  </div>
                 </div>
               </SheetHeader>
 
@@ -847,6 +973,25 @@ const Admin = () => {
                             disabled={!isEditing}
                           />
                         </div>
+                      </div>
+                    </div>
+
+                    {/* Danger Zone */}
+                    <div className="space-y-4 pt-4 border-t border-destructive/20">
+                      <h4 className="font-semibold text-destructive">Gevarenzone</h4>
+                      <div className="flex items-center justify-between p-3 rounded-lg bg-destructive/5 border border-destructive/20">
+                        <div>
+                          <p className="text-sm font-medium text-foreground">Klant verwijderen</p>
+                          <p className="text-xs text-muted-foreground">Dit verwijdert alle data permanent</p>
+                        </div>
+                        <Button 
+                          variant="destructive" 
+                          size="sm"
+                          onClick={() => handleDeleteCustomer(selectedCustomer)}
+                        >
+                          <Trash2 className="w-4 h-4 mr-1" />
+                          Verwijderen
+                        </Button>
                       </div>
                     </div>
                   </div>
