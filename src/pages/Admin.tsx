@@ -452,8 +452,33 @@ const Admin = () => {
             </div>
           </div>
           
-          <ThemeToggle />
+          <div className="flex gap-2 items-center">
+            <Button 
+              size="sm" 
+              className="bg-kk-gradient text-white hover:opacity-90"
+              onClick={() => setBulkMailOpen(true)}
+            >
+              <Send className="w-4 h-4 mr-2" />
+              Bulk E-mail
+            </Button>
+            <ThemeToggle />
+          </div>
         </div>
+
+        {/* Main Tabs */}
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
+          <TabsList className="h-10">
+            <TabsTrigger value="klanten" className="text-sm">
+              <Users className="w-4 h-4 mr-1" />
+              Klanten
+            </TabsTrigger>
+            <TabsTrigger value="mailing" className="text-sm">
+              <Mail className="w-4 h-4 mr-1" />
+              Mailing
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="klanten">
 
         {/* Key Metrics Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
