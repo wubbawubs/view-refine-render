@@ -33,7 +33,7 @@ const KPICard = ({
       onClick={onClick}
     >
       {/* Gradient top bar */}
-      <div className="h-1 w-full bg-gradient-to-r from-primary via-primary/80 to-primary/60"></div>
+      <div className="h-1 w-full bg-gradient-to-r from-[hsl(var(--kk-violet))] via-[hsl(var(--kk-fuchsia))] to-[hsl(var(--kk-orange))]"></div>
       
       <div className="p-4 lg:p-5 h-full flex flex-col justify-between">
         <div className="space-y-3">
