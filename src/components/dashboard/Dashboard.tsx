@@ -6,23 +6,16 @@ import { useState } from "react";
 import Sidebar from "./Sidebar";
 import HeroMetric from "./HeroMetric";
 import KPICard from "./KPICard";
-import WebsiteSuggestions from "./WebsiteSuggestions";
 import UpdatesFeed from "./UpdatesFeed";
-import ActionsAlerts from "./ActionsAlerts";
-import SuccessInsights from "./SuccessInsights";
 import VisitorsChart from "./VisitorsChart";
 import WeeklySummary from "./WeeklySummary";
 import WelcomeBanner from "./WelcomeBanner";
 import NotificationsPopover from "./NotificationsPopover";
-import DownloadReportDialog from "./DownloadReportDialog";
 import { 
   useDashboardMetrics, 
   useUpdates, 
-  useWebsiteSuggestions, 
   useVisitorsChart, 
   useWeeklySummary, 
-  useActionAlerts, 
-  useSuccessInsights 
 } from "@/hooks/useDashboardData";
 
 const Dashboard = () => {
@@ -30,17 +23,13 @@ const Dashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { data: dashboardMetrics, isLoading: metricsLoading } = useDashboardMetrics();
   const { data: updates, isLoading: updatesLoading } = useUpdates();
-  const { data: suggestions, isLoading: suggestionsLoading } = useWebsiteSuggestions();
   const { data: visitorsChart, isLoading: chartLoading } = useVisitorsChart();
   const { data: weeklySummary, isLoading: summaryLoading } = useWeeklySummary();
-  const { data: actionAlerts, isLoading: alertsLoading } = useActionAlerts();
-  const { data: successInsights, isLoading: insightsLoading } = useSuccessInsights();
 
   const texts = {
     nl: {
       title: 'KlikKlaar.io SEO Dashboard',
       lastUpdated: 'Laatst bijgewerkt: 24 september 2025, 07:30',
-      downloadReport: 'Download rapport (PDF)',
       seoScore: 'SEO Score',
       seoScoreHelp: 'Technische SEO prestaties voor KlikKlaar.io',
       totalAdjustments: 'Automatische optimalisaties',
@@ -49,15 +38,10 @@ const Dashboard = () => {
       estimatedGrowthHelp: 'Geschatte traffic verbetering door SEO',
       totalVisitors: 'Website bezoekers',
       totalVisitorsHelp: 'Unieke bezoekers KlikKlaar.io website',
-      weekDelta: 'deze week',
-      monthDelta: 'deze maand',
-      prognosisBased: 'Prognose op basis van SEO trending',
-      language: 'Taal'
     },
     en: {
       title: 'KlikKlaar.io SEO Dashboard',
       lastUpdated: 'Last updated: September 24, 2025, 7:30 AM',
-      downloadReport: 'Download report (PDF)',
       seoScore: 'SEO Score',
       seoScoreHelp: 'Technical SEO performance for KlikKlaar.io',
       totalAdjustments: 'Automatic optimizations',
@@ -66,10 +50,6 @@ const Dashboard = () => {
       estimatedGrowthHelp: 'Estimated traffic improvement through SEO',
       totalVisitors: 'Website visitors',
       totalVisitorsHelp: 'Unique visitors to KlikKlaar.io website',
-      weekDelta: 'this week',
-      monthDelta: 'this month',
-      prognosisBased: 'Forecast based on SEO trending',
-      language: 'Language'
     }
   };
 
@@ -77,28 +57,14 @@ const Dashboard = () => {
 
   return (
     <div className="flex min-h-screen premium-dashboard-bg">
-      {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-          onClick={() => setSidebarOpen(false)}
-        />
+        <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
       )}
       
-      {/* Sidebar */}
-      <div className={`
-        fixed lg:relative lg:block z-50 h-screen transition-transform duration-300 ease-in-out
-        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-      `}>
+      <div className={`fixed lg:relative lg:block z-50 h-screen transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         <div className="relative h-full">
           <Sidebar />
-          {/* Mobile Close Button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent z-10"
-            onClick={() => setSidebarOpen(false)}
-          >
+          <Button variant="ghost" size="sm" className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent z-10" onClick={() => setSidebarOpen(false)}>
             <X className="w-4 h-4" />
           </Button>
         </div>
@@ -108,26 +74,12 @@ const Dashboard = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 sm:mb-6 lg:mb-8 pb-3 sm:pb-4 border-b border-border">
           <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="lg:hidden shrink-0 p-1.5"
-              onClick={() => setSidebarOpen(true)}
-            >
+            <Button variant="ghost" size="sm" className="lg:hidden shrink-0 p-1.5" onClick={() => setSidebarOpen(true)}>
               <Menu className="w-4 h-4" />
             </Button>
-            
-            {/* Mobile Branding */}
             <div className="flex items-center gap-2 lg:hidden shrink-0">
-              <img 
-                src="/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png" 
-                alt="KlikKlaar.io SEO automatisatie software logo - dashboard voor B2B bedrijven"
-                className="h-12 w-auto"
-              />
+              <img src="/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png" alt="KlikKlaar.io" className="h-12 w-auto" />
             </div>
-            
-            {/* Title Section - Desktop */}
             <div className="hidden lg:block min-w-0 flex-1">
               <div className="bg-muted/30 rounded-lg px-4 py-2 inline-block">
                 <h1 className="text-xl lg:text-kk-h1 text-foreground mb-1 truncate">
@@ -140,13 +92,8 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          
-          {/* Controls */}
           <div className="flex gap-2 items-center shrink-0">
-            {/* Notifications */}
             <NotificationsPopover />
-            
-            {/* Language Selector */}
             <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
               <SelectTrigger className="w-[60px] sm:w-[70px] lg:w-[120px] text-xs h-8 lg:h-9">
                 <Globe className="w-3 h-3 sm:mr-1" />
@@ -157,8 +104,6 @@ const Dashboard = () => {
                 <SelectItem value="en">EN</SelectItem>
               </SelectContent>
             </Select>
-            
-            {/* Theme Toggle */}
             <div className="[&>button]:h-8 [&>button]:w-8 lg:[&>button]:h-9 lg:[&>button]:w-9 shrink-0">
               <ThemeToggle />
             </div>
@@ -172,11 +117,7 @@ const Dashboard = () => {
 
         {/* Hero Metric */}
         <div className="mb-4 sm:mb-6 w-full max-w-none animate-stagger-2">
-          <HeroMetric
-            language={language}
-            data={dashboardMetrics?.heroMetric ?? null}
-            loading={metricsLoading}
-          />
+          <HeroMetric language={language} data={dashboardMetrics?.heroMetric ?? null} loading={metricsLoading} />
         </div>
 
         {/* KPI Cards Grid */}
@@ -200,25 +141,14 @@ const Dashboard = () => {
           ))}
         </div>
 
-        {/* Actions & Alerts */}
-        <div className="mb-4 sm:mb-6 w-full max-w-none">
-          <ActionsAlerts alerts={actionAlerts} loading={alertsLoading} />
-        </div>
-
         {/* Visitors Chart - Full width */}
         <div className="mb-4 sm:mb-6 w-full max-w-none">
           <VisitorsChart data={visitorsChart} loading={chartLoading} />
         </div>
 
-        {/* Main Content Grid - 2 columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 w-full max-w-none mb-4 sm:mb-6">
-          <WebsiteSuggestions suggestions={suggestions} loading={suggestionsLoading} />
-          <UpdatesFeed updates={updates} loading={updatesLoading} />
-        </div>
-
-        {/* Bottom row - Success Insights + Weekly Summary */}
+        {/* Content Grid - Updates + Monthly Summary */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 w-full max-w-none">
-          <SuccessInsights insights={successInsights} loading={insightsLoading} />
+          <UpdatesFeed updates={updates} loading={updatesLoading} />
           <WeeklySummary summary={weeklySummary} loading={summaryLoading} />
         </div>
       </main>
