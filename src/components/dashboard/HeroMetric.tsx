@@ -1,5 +1,5 @@
 import { TrendingUp, Sparkles } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { GradientCard } from "@/components/ui/gradient-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { HeroMetricData } from "@/types/dashboard";
 
@@ -21,8 +21,8 @@ const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetri
 
   if (loading) {
     return (
-      <Card className="p-6 lg:p-8 shadow-lg animate-fade-in rounded-2xl border border-border bg-gradient-to-br from-card via-card to-muted/20">
-        <div className="flex items-center justify-between">
+      <GradientCard className="bg-gradient-to-br from-card via-card to-muted/20">
+        <div className="p-6 lg:p-8 flex items-center justify-between">
           <div className="flex-1">
             <Skeleton className="h-10 w-64 mb-4" />
             <Skeleton className="h-12 w-32 mb-2" />
@@ -30,17 +30,17 @@ const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetri
           </div>
           <Skeleton className="w-16 h-16 rounded-full" />
         </div>
-      </Card>
+      </GradientCard>
     );
   }
 
   return (
-    <Card className="relative overflow-hidden p-6 lg:p-8 shadow-lg animate-fade-in rounded-2xl border border-border bg-gradient-to-br from-card via-card to-primary/5">
+    <GradientCard className="bg-gradient-to-br from-card via-card to-primary/5">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-2xl" />
       <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-primary/5 to-transparent rounded-full blur-xl" />
       
-      <div className="relative flex items-center justify-between">
+      <div className="relative p-6 lg:p-8 flex items-center justify-between">
         <div className="flex-1">
           <div className="mb-4 lg:mb-6">
             <div className="flex items-center gap-2 mb-3">
@@ -64,7 +64,7 @@ const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetri
           <div className="text-xs lg:text-sm text-muted-foreground font-medium">{t.trending}</div>
         </div>
       </div>
-    </Card>
+    </GradientCard>
   );
 };
 
