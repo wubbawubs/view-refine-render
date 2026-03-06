@@ -9,9 +9,21 @@ import KPICard from "./KPICard";
 import WebsiteSuggestions from "./WebsiteSuggestions";
 import UpdatesFeed from "./UpdatesFeed";
 import ActionsAlerts from "./ActionsAlerts";
+import SuccessInsights from "./SuccessInsights";
+import VisitorsChart from "./VisitorsChart";
+import WeeklySummary from "./WeeklySummary";
+import WelcomeBanner from "./WelcomeBanner";
 import NotificationsPopover from "./NotificationsPopover";
 import DownloadReportDialog from "./DownloadReportDialog";
-import { useDashboardMetrics, useUpdates, useWebsiteSuggestions } from "@/hooks/useDashboardData";
+import { 
+  useDashboardMetrics, 
+  useUpdates, 
+  useWebsiteSuggestions, 
+  useVisitorsChart, 
+  useWeeklySummary, 
+  useActionAlerts, 
+  useSuccessInsights 
+} from "@/hooks/useDashboardData";
 
 const Dashboard = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
@@ -19,6 +31,10 @@ const Dashboard = () => {
   const { data: dashboardMetrics, isLoading: metricsLoading } = useDashboardMetrics();
   const { data: updates, isLoading: updatesLoading } = useUpdates();
   const { data: suggestions, isLoading: suggestionsLoading } = useWebsiteSuggestions();
+  const { data: visitorsChart, isLoading: chartLoading } = useVisitorsChart();
+  const { data: weeklySummary, isLoading: summaryLoading } = useWeeklySummary();
+  const { data: actionAlerts, isLoading: alertsLoading } = useActionAlerts();
+  const { data: successInsights, isLoading: insightsLoading } = useSuccessInsights();
 
   const texts = {
     nl: {
@@ -149,8 +165,13 @@ const Dashboard = () => {
           </div>
         </div>
 
+        {/* Welcome Banner */}
+        <div className="mb-4 sm:mb-6 w-full max-w-none animate-stagger-1">
+          <WelcomeBanner />
+        </div>
+
         {/* Hero Metric */}
-        <div className="mb-4 sm:mb-6 w-full max-w-none">
+        <div className="mb-4 sm:mb-6 w-full max-w-none animate-stagger-2">
           <HeroMetric
             language={language}
             data={dashboardMetrics?.heroMetric ?? null}
@@ -160,44 +181,45 @@ const Dashboard = () => {
 
         {/* KPI Cards Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-4 sm:mb-6 mt-4 w-full max-w-none grid-rows-1">
-          <KPICard
-            icon={<Eye />}
-            label={t.seoScore}
-            value={dashboardMetrics?.kpiMetrics?.[0]?.value ?? 'N/A'}
-            delta={dashboardMetrics?.kpiMetrics?.[0]?.delta ?? 'N/A'}
-            deltaType={dashboardMetrics?.kpiMetrics?.[0]?.deltaType ?? 'neutral'}
-            helpText={dashboardMetrics?.kpiMetrics?.[0]?.helpText ?? t.seoScoreHelp}
-          />
-          <KPICard
-            icon={<Settings />}
-            label={t.totalAdjustments}
-            value={dashboardMetrics?.kpiMetrics?.[1]?.value ?? 'N/A'}
-            delta={dashboardMetrics?.kpiMetrics?.[1]?.delta ?? 'N/A'}
-            deltaType={dashboardMetrics?.kpiMetrics?.[1]?.deltaType ?? 'neutral'}
-            helpText={dashboardMetrics?.kpiMetrics?.[1]?.helpText ?? t.totalAdjustmentsHelp}
-          />
-          <KPICard
-            icon={<TrendingUp />}
-            label={t.estimatedGrowth}
-            value={dashboardMetrics?.kpiMetrics?.[2]?.value ?? 'N/A'}
-            delta={dashboardMetrics?.kpiMetrics?.[2]?.delta ?? 'N/A'}
-            deltaType={dashboardMetrics?.kpiMetrics?.[2]?.deltaType ?? 'neutral'}
-            helpText={dashboardMetrics?.kpiMetrics?.[2]?.helpText ?? t.estimatedGrowthHelp}
-          />
-          <KPICard
-            icon={<Users />}
-            label={t.totalVisitors}
-            value={dashboardMetrics?.kpiMetrics?.[3]?.value ?? 'N/A'}
-            delta={dashboardMetrics?.kpiMetrics?.[3]?.delta ?? 'N/A'}
-            deltaType={dashboardMetrics?.kpiMetrics?.[3]?.deltaType ?? 'neutral'}
-            helpText={dashboardMetrics?.kpiMetrics?.[3]?.helpText ?? t.totalVisitorsHelp}
-          />
+          {[
+            { icon: <Eye />, label: t.seoScore, idx: 0, help: t.seoScoreHelp },
+            { icon: <Settings />, label: t.totalAdjustments, idx: 1, help: t.totalAdjustmentsHelp },
+            { icon: <TrendingUp />, label: t.estimatedGrowth, idx: 2, help: t.estimatedGrowthHelp },
+            { icon: <Users />, label: t.totalVisitors, idx: 3, help: t.totalVisitorsHelp },
+          ].map((kpi, i) => (
+            <div key={kpi.idx} className={`animate-stagger-${i + 3}`}>
+              <KPICard
+                icon={kpi.icon}
+                label={kpi.label}
+                value={dashboardMetrics?.kpiMetrics?.[kpi.idx]?.value ?? 'N/A'}
+                delta={dashboardMetrics?.kpiMetrics?.[kpi.idx]?.delta ?? 'N/A'}
+                deltaType={dashboardMetrics?.kpiMetrics?.[kpi.idx]?.deltaType ?? 'neutral'}
+                helpText={dashboardMetrics?.kpiMetrics?.[kpi.idx]?.helpText ?? kpi.help}
+              />
+            </div>
+          ))}
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 w-full max-w-none">
+        {/* Actions & Alerts */}
+        <div className="mb-4 sm:mb-6 w-full max-w-none">
+          <ActionsAlerts alerts={actionAlerts} loading={alertsLoading} />
+        </div>
+
+        {/* Visitors Chart - Full width */}
+        <div className="mb-4 sm:mb-6 w-full max-w-none">
+          <VisitorsChart data={visitorsChart} loading={chartLoading} />
+        </div>
+
+        {/* Main Content Grid - 2 columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 w-full max-w-none mb-4 sm:mb-6">
           <WebsiteSuggestions suggestions={suggestions} loading={suggestionsLoading} />
           <UpdatesFeed updates={updates} loading={updatesLoading} />
+        </div>
+
+        {/* Bottom row - Success Insights + Weekly Summary */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 w-full max-w-none">
+          <SuccessInsights insights={successInsights} loading={insightsLoading} />
+          <WeeklySummary summary={weeklySummary} loading={summaryLoading} />
         </div>
       </main>
     </div>
