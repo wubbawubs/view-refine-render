@@ -345,6 +345,10 @@ const Admin = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [customers, setCustomers] = useState<CustomerData[]>(initialCustomers);
   const [editedCustomer, setEditedCustomer] = useState<CustomerData | null>(null);
+  const [activeTab, setActiveTab] = useState<string>("klanten");
+  const [bulkMailOpen, setBulkMailOpen] = useState(false);
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+  const [customerToDelete, setCustomerToDelete] = useState<CustomerData | null>(null);
 
   const handleCustomerClick = (customer: CustomerData) => {
     setSelectedCustomer(customer);
@@ -376,6 +380,23 @@ const Admin = () => {
       setCustomers(prev => prev.map(c => c.id === updated.id ? updated : c));
       setSelectedCustomer(updated);
       toast.success(action === "apply" ? "Optimalisatie toegepast" : "Optimalisatie afgewezen");
+    }
+  };
+
+  const handleDeleteCustomer = (customer: CustomerData) => {
+    setCustomerToDelete(customer);
+    setDeleteDialogOpen(true);
+  };
+
+  const confirmDelete = () => {
+    if (customerToDelete) {
+      setCustomers(prev => prev.filter(c => c.id !== customerToDelete.id));
+      setSheetOpen(false);
+      setDeleteDialogOpen(false);
+      toast.success("Klant verwijderd", {
+        description: `${customerToDelete.name} is verwijderd uit het systeem.`
+      });
+      setCustomerToDelete(null);
     }
   };
 
