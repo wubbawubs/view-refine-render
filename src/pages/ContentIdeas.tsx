@@ -2,7 +2,7 @@ import { useState } from "react";
 import Sidebar from "@/components/dashboard/Sidebar";
 import { Menu, X, Globe, Lightbulb, FileText, Share2, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -10,6 +10,8 @@ import { useContentIdeas } from "@/hooks/useDashboardData";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import PageBanner from "@/components/ui/page-banner";
+import { GradientCard } from "@/components/ui/gradient-card";
 
 const ContentIdeas = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -19,36 +21,20 @@ const ContentIdeas = () => {
 
   const texts = {
     nl: {
-      title: 'Content Ideeen',
-      subtitle: 'AI-gegenereerde content suggesties voor optimale SEO resultaten',
-      all: 'Alle',
-      blog: 'Blog',
-      page: 'Pagina',
-      social: 'Social Media',
-      email: 'Email',
+      title: 'Content Ideeën',
+      subtitle: 'AI-gegenereerde content suggesties op basis van jouw SEO data. Gebruik deze ideeën om je online zichtbaarheid te vergroten.',
+      all: 'Alle', blog: 'Blog', page: 'Pagina', social: 'Social Media', email: 'Email',
       noData: 'Geen content ideeen beschikbaar',
       noDataDesc: 'Er zijn momenteel geen content ideeen om weer te geven.',
-      keywords: 'Zoekwoorden',
-      impact: 'Geschatte impact',
-      priority: 'Prioriteit',
-      status: 'Status',
-      language: 'Taal',
+      keywords: 'Zoekwoorden', impact: 'Geschatte impact',
     },
     en: {
       title: 'Content Ideas',
-      subtitle: 'AI-generated content suggestions for optimal SEO results',
-      all: 'All',
-      blog: 'Blog',
-      page: 'Page',
-      social: 'Social Media',
-      email: 'Email',
+      subtitle: 'AI-generated content suggestions based on your SEO data. Use these ideas to boost your online visibility.',
+      all: 'All', blog: 'Blog', page: 'Page', social: 'Social Media', email: 'Email',
       noData: 'No content ideas available',
       noDataDesc: 'There are currently no content ideas to display.',
-      keywords: 'Keywords',
-      impact: 'Estimated impact',
-      priority: 'Priority',
-      status: 'Status',
-      language: 'Language',
+      keywords: 'Keywords', impact: 'Estimated impact',
     }
   };
 
@@ -56,8 +42,7 @@ const ContentIdeas = () => {
 
   const getTypeIcon = (type: string) => {
     switch (type) {
-      case 'blog': return FileText;
-      case 'page': return FileText;
+      case 'blog': case 'page': return FileText;
       case 'social': return Share2;
       case 'email': return Mail;
       default: return Lightbulb;
@@ -65,86 +50,46 @@ const ContentIdeas = () => {
   };
 
   const getPriorityColor = (priority: string) => {
-    switch (priority) {
-      case 'high': return 'destructive';
-      case 'medium': return 'default';
-      case 'low': return 'secondary';
-      default: return 'outline';
-    }
+    switch (priority) { case 'high': return 'destructive'; case 'medium': return 'default'; case 'low': return 'secondary'; default: return 'outline'; }
   };
 
   const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'published': return 'default';
-      case 'planned': return 'secondary';
-      case 'draft': return 'outline';
-      default: return 'outline';
-    }
+    switch (status) { case 'published': return 'default'; case 'planned': return 'secondary'; default: return 'outline'; }
   };
 
   const getStatusText = (status: string) => {
-    const statusMap: Record<string, { nl: string; en: string }> = {
+    const map: Record<string, { nl: string; en: string }> = {
       published: { nl: 'Gepubliceerd', en: 'Published' },
       planned: { nl: 'Gepland', en: 'Planned' },
       draft: { nl: 'Concept', en: 'Draft' },
     };
-    return statusMap[status]?.[language] || status;
+    return map[status]?.[language] || status;
   };
 
-  const filteredIdeas = contentIdeas?.filter(idea => 
-    filterType === 'all' ? true : idea.type === filterType
-  ) || [];
+  const filteredIdeas = contentIdeas?.filter(idea => filterType === 'all' ? true : idea.type === filterType) || [];
 
   return (
     <div className="flex min-h-screen premium-dashboard-bg">
-      {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-          onClick={() => setSidebarOpen(false)}
-        />
+        <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
       )}
       
-      {/* Sidebar */}
-      <div className={`
-        fixed lg:relative lg:block z-50 h-screen transition-transform duration-300 ease-in-out
-        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-      `}>
+      <div className={`fixed lg:relative lg:block z-50 h-screen transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         <div className="relative h-full">
           <Sidebar />
-          <Button
-            variant="ghost"
-            size="sm"
-            className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent z-10"
-            onClick={() => setSidebarOpen(false)}
-          >
+          <Button variant="ghost" size="sm" className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent z-10" onClick={() => setSidebarOpen(false)}>
             <X className="w-4 h-4" />
           </Button>
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="flex-1 flex flex-col min-h-screen">
-        {/* Header */}
         <header className="premium-glass-card border-b border-border/40 px-6 py-4 sticky top-0 z-30">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="lg:hidden"
-                onClick={() => setSidebarOpen(!sidebarOpen)}
-              >
+              <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setSidebarOpen(!sidebarOpen)}>
                 {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </Button>
-              <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                  {t.title}
-                </h1>
-                <p className="text-sm text-muted-foreground mt-1">
-                  {t.subtitle}
-                </p>
-              </div>
             </div>
             <div className="flex gap-2 items-center">
               <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
@@ -162,8 +107,17 @@ const ContentIdeas = () => {
           </div>
         </header>
 
-        {/* Content */}
         <main className="flex-1 p-6">
+          {/* Page Banner */}
+          <div className="mb-6">
+            <PageBanner
+              label="Content Ideeën"
+              title={t.title}
+              description={t.subtitle}
+              icon={<Lightbulb className="w-4 h-4 text-white" />}
+            />
+          </div>
+
           {/* Filter Tabs */}
           <Tabs defaultValue="all" value={filterType} onValueChange={(v) => setFilterType(v as any)} className="mb-6">
             <TabsList>
@@ -178,47 +132,33 @@ const ContentIdeas = () => {
           {isLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[1, 2, 3, 4, 5, 6].map((i) => (
-                <Card key={i}>
-                  <CardHeader>
-                    <Skeleton className="h-6 w-3/4 mb-2" />
-                    <Skeleton className="h-4 w-full" />
-                  </CardHeader>
-                  <CardContent>
-                    <Skeleton className="h-20 w-full" />
-                  </CardContent>
-                </Card>
+                <GradientCard key={i}>
+                  <CardHeader><Skeleton className="h-6 w-3/4 mb-2" /><Skeleton className="h-4 w-full" /></CardHeader>
+                  <CardContent><Skeleton className="h-20 w-full" /></CardContent>
+                </GradientCard>
               ))}
             </div>
           ) : !filteredIdeas || filteredIdeas.length === 0 ? (
-            <Card>
+            <GradientCard>
               <CardContent className="pt-6">
-                <EmptyState
-                  title={t.noData}
-                  description={t.noDataDesc}
-                  icon="database"
-                />
+                <EmptyState title={t.noData} description={t.noDataDesc} icon="database" />
               </CardContent>
-            </Card>
+            </GradientCard>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredIdeas.map((idea) => {
                 const TypeIcon = getTypeIcon(idea.type);
-                
                 return (
-                  <Card key={idea.id} className="shadow-card hover:shadow-lg transition-shadow">
+                  <GradientCard key={idea.id} className="group">
                     <CardHeader>
                       <div className="flex items-start justify-between mb-2">
                         <div className="flex items-center gap-2">
                           <div className="p-2 rounded-lg bg-primary/10">
                             <TypeIcon className="w-4 h-4 text-primary" />
                           </div>
-                          <Badge variant="outline" className="text-xs">
-                            {idea.type}
-                          </Badge>
+                          <Badge variant="outline" className="text-xs">{idea.type}</Badge>
                         </div>
-                        <Badge variant={getPriorityColor(idea.priority)}>
-                          {idea.priority}
-                        </Badge>
+                        <Badge variant={getPriorityColor(idea.priority)}>{idea.priority}</Badge>
                       </div>
                       <CardTitle className="text-lg">{idea.title}</CardTitle>
                       <CardDescription>{idea.description}</CardDescription>
@@ -226,29 +166,22 @@ const ContentIdeas = () => {
                     <CardContent>
                       <div className="space-y-3">
                         <div>
-                          <p className="text-xs font-medium text-muted-foreground mb-1">
-                            {t.keywords}
-                          </p>
+                          <p className="text-xs font-medium text-muted-foreground mb-1">{t.keywords}</p>
                           <div className="flex flex-wrap gap-1">
                             {idea.keywords.map((keyword, idx) => (
-                              <Badge key={idx} variant="secondary" className="text-xs">
-                                {keyword}
-                              </Badge>
+                              <Badge key={idx} variant="secondary" className="text-xs">{keyword}</Badge>
                             ))}
                           </div>
                         </div>
-                        
                         <div className="flex items-center justify-between pt-2 border-t border-border">
                           <div className="text-xs text-muted-foreground">
                             {t.impact}: <span className="font-medium text-foreground">{idea.estimatedImpact}</span>
                           </div>
-                          <Badge variant={getStatusColor(idea.status)}>
-                            {getStatusText(idea.status)}
-                          </Badge>
+                          <Badge variant={getStatusColor(idea.status)}>{getStatusText(idea.status)}</Badge>
                         </div>
                       </div>
                     </CardContent>
-                  </Card>
+                  </GradientCard>
                 );
               })}
             </div>
