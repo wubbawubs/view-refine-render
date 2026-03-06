@@ -690,6 +690,7 @@ const Admin = () => {
                       {getPlanBadge(selectedCustomer.plan)}
                     </SheetDescription>
                   </div>
+                  <div className="flex gap-2">
                   <Button 
                     variant={isEditing ? "default" : "outline"} 
                     size="sm"
@@ -971,6 +972,25 @@ const Admin = () => {
                             disabled={!isEditing}
                           />
                         </div>
+                      </div>
+                    </div>
+
+                    {/* Danger Zone */}
+                    <div className="space-y-4 pt-4 border-t border-destructive/20">
+                      <h4 className="font-semibold text-destructive">Gevarenzone</h4>
+                      <div className="flex items-center justify-between p-3 rounded-lg bg-destructive/5 border border-destructive/20">
+                        <div>
+                          <p className="text-sm font-medium text-foreground">Klant verwijderen</p>
+                          <p className="text-xs text-muted-foreground">Dit verwijdert alle data permanent</p>
+                        </div>
+                        <Button 
+                          variant="destructive" 
+                          size="sm"
+                          onClick={() => handleDeleteCustomer(selectedCustomer)}
+                        >
+                          <Trash2 className="w-4 h-4 mr-1" />
+                          Verwijderen
+                        </Button>
                       </div>
                     </div>
                   </div>
