@@ -2,6 +2,8 @@ import { TrendingUp, Sparkles, Target, ArrowUpRight, Brain } from "lucide-react"
 import { GradientCard } from "@/components/ui/gradient-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Progress } from "@/components/ui/progress";
+import { useState } from "react";
+import ScoreBreakdownDialog from "./ScoreBreakdownDialog";
 import type { HeroMetricData } from "@/types/dashboard";
 
 interface HeroMetricProps {
@@ -36,6 +38,7 @@ const getScoreTrackColor = (score: number) => {
 };
 
 const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetricProps) => {
+  const [scoreDialogOpen, setScoreDialogOpen] = useState(false);
   if (loading) {
     return (
       <GradientCard className="bg-gradient-to-br from-card via-card to-muted/20">
@@ -57,6 +60,7 @@ const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetri
   const ins = mockInsights;
 
   return (
+    <>
     <GradientCard className="bg-gradient-to-br from-card via-card to-[hsl(var(--kk-violet)/0.03)]">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[hsl(var(--kk-violet)/0.08)] to-transparent rounded-full blur-3xl" />
@@ -75,7 +79,10 @@ const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetri
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-8">
           
           {/* Column 1: SEO Score */}
-          <div className="flex flex-col items-center text-center p-4 rounded-xl bg-muted/30 border border-border/50">
+          <button 
+            onClick={() => setScoreDialogOpen(true)}
+            className="flex flex-col items-center text-center p-4 rounded-xl bg-muted/30 border border-border/50 hover:bg-muted/50 hover:border-[hsl(var(--kk-violet)/0.3)] transition-all cursor-pointer group"
+          >
             <div className="relative w-24 h-24 mb-3">
               <svg className="w-24 h-24 -rotate-90" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="42" fill="none" stroke="hsl(var(--border))" strokeWidth="8" />
@@ -98,7 +105,10 @@ const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetri
               <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/30 px-1.5 py-0.5 rounded-full">{ins.scoreDelta}</span>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">{ins.scoreExplanation}</p>
-          </div>
+            <span className="text-[10px] text-[hsl(var(--kk-violet))] font-medium mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+              Klik voor details →
+            </span>
+          </button>
 
           {/* Column 2: Prognose */}
           <div className="flex flex-col p-4 rounded-xl bg-muted/30 border border-border/50">
@@ -146,6 +156,8 @@ const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetri
         </div>
       </div>
     </GradientCard>
+    <ScoreBreakdownDialog open={scoreDialogOpen} onOpenChange={setScoreDialogOpen} totalScore={ins.score} />
+    </>
   );
 };
 
