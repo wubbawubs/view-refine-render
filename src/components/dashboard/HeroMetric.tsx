@@ -60,6 +60,7 @@ const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetri
   const ins = mockInsights;
 
   return (
+    <>
     <GradientCard className="bg-gradient-to-br from-card via-card to-[hsl(var(--kk-violet)/0.03)]">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[hsl(var(--kk-violet)/0.08)] to-transparent rounded-full blur-3xl" />
