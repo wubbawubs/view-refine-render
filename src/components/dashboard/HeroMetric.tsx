@@ -155,6 +155,8 @@ const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetri
         </div>
       </div>
     </GradientCard>
+    <ScoreBreakdownDialog open={scoreDialogOpen} onOpenChange={setScoreDialogOpen} totalScore={ins.score} />
+    </>
   );
 };
 
