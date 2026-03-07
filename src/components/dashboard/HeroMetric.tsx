@@ -38,6 +38,7 @@ const getScoreTrackColor = (score: number) => {
 };
 
 const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetricProps) => {
+  const [scoreDialogOpen, setScoreDialogOpen] = useState(false);
   if (loading) {
     return (
       <GradientCard className="bg-gradient-to-br from-card via-card to-muted/20">
