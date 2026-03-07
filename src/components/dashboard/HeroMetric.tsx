@@ -4,6 +4,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Progress } from "@/components/ui/progress";
 import { useState } from "react";
 import ScoreBreakdownDialog from "./ScoreBreakdownDialog";
+import PrognoseDetailDialog from "./PrognoseDetailDialog";
+import OpportunityDetailDialog from "./OpportunityDetailDialog";
 import type { HeroMetricData } from "@/types/dashboard";
 
 interface HeroMetricProps {
