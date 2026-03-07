@@ -2,6 +2,8 @@ import { TrendingUp, Sparkles, Target, ArrowUpRight, Brain } from "lucide-react"
 import { GradientCard } from "@/components/ui/gradient-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Progress } from "@/components/ui/progress";
+import { useState } from "react";
+import ScoreBreakdownDialog from "./ScoreBreakdownDialog";
 import type { HeroMetricData } from "@/types/dashboard";
 
 interface HeroMetricProps {
