@@ -115,7 +115,10 @@ const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetri
           </button>
 
           {/* Column 2: Prognose */}
-          <div className="flex flex-col p-4 rounded-xl bg-muted/30 border border-border/50">
+          <button
+            onClick={() => setPrognoseDialogOpen(true)}
+            className="flex flex-col p-4 rounded-xl bg-muted/30 border border-border/50 hover:bg-muted/50 hover:border-emerald-500/30 transition-all cursor-pointer group text-left"
+          >
             <div className="flex items-center gap-2 mb-3">
               <div className="w-9 h-9 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 rounded-xl flex items-center justify-center border border-emerald-500/20">
                 <TrendingUp className="w-4.5 h-4.5 text-emerald-600 dark:text-emerald-400" />
@@ -136,7 +139,10 @@ const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetri
               </div>
               <Progress value={78} className={`h-1.5 ${getScoreTrackColor(78)}`} />
             </div>
-          </div>
+            <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-medium mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+              Klik voor details →
+            </span>
+          </button>
 
           {/* Column 3: Grootste Kans */}
           <div className="flex flex-col p-4 rounded-xl bg-muted/30 border border-border/50">
