@@ -145,7 +145,10 @@ const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetri
           </button>
 
           {/* Column 3: Grootste Kans */}
-          <div className="flex flex-col p-4 rounded-xl bg-muted/30 border border-border/50">
+          <button
+            onClick={() => setOpportunityDialogOpen(true)}
+            className="flex flex-col p-4 rounded-xl bg-muted/30 border border-border/50 hover:bg-muted/50 hover:border-[hsl(var(--kk-violet)/0.3)] transition-all cursor-pointer group text-left"
+          >
             <div className="flex items-center gap-2 mb-3">
               <div className="w-9 h-9 bg-gradient-to-br from-[hsl(var(--kk-violet)/0.2)] to-[hsl(var(--kk-violet)/0.05)] rounded-xl flex items-center justify-center border border-[hsl(var(--kk-violet)/0.2)]">
                 <Target className="w-4.5 h-4.5 text-[hsl(var(--kk-violet))]" />
@@ -162,11 +165,16 @@ const HeroMetric = ({ language = 'nl', data = null, loading = false }: HeroMetri
                 <span className="text-xs text-[hsl(var(--kk-violet))] font-medium">AI-gegenereerd op basis van jouw data</span>
               </div>
             </div>
-          </div>
+            <span className="text-[10px] text-[hsl(var(--kk-violet))] font-medium mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+              Klik voor details →
+            </span>
+          </button>
         </div>
       </div>
     </GradientCard>
     <ScoreBreakdownDialog open={scoreDialogOpen} onOpenChange={setScoreDialogOpen} totalScore={ins.score} />
+    <PrognoseDetailDialog open={prognoseDialogOpen} onOpenChange={setPrognoseDialogOpen} />
+    <OpportunityDetailDialog open={opportunityDialogOpen} onOpenChange={setOpportunityDialogOpen} />
     </>
   );
 };
