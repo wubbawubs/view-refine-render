@@ -46,7 +46,7 @@ const KPICard = ({
                 </div>
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-semibold text-foreground leading-snug truncate">{label}</h3>
+                <h3 className="text-xs lg:text-sm font-semibold text-foreground leading-snug">{label}</h3>
               </div>
             </div>
             
