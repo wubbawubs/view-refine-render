@@ -963,7 +963,7 @@ const Admin = () => {
           )}
         </SheetContent>
       </Sheet>
-    </div>
+    </DashboardLayout>
   );
 };
 
