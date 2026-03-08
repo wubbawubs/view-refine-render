@@ -243,8 +243,7 @@ const ContentIdeas = () => {
             </GradientCard>
           )}
         </main>
-      </div>
-    </div>
+    </DashboardLayout>
   );
 };
 
