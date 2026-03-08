@@ -15,7 +15,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import PageBanner from "@/components/ui/page-banner";
 import { GradientCard } from "@/components/ui/gradient-card";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 // --- Mock SEO Plan data (mirrors the real API format) ---
 
