@@ -7,6 +7,7 @@ import StepKlantKiezen from "@/components/onboarding/StepKlantKiezen";
 import StepGegevens from "@/components/onboarding/StepGegevens";
 import StepDiscovery from "@/components/onboarding/StepDiscovery";
 import StepSelectPages from "@/components/onboarding/StepSelectPages";
+import StepSEOPlans from "@/components/onboarding/StepSEOPlans";
 
 const Onboarding = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -44,6 +45,13 @@ const Onboarding = () => {
           <StepSelectPages
             onPrevious={() => setCurrentStep(3)}
             onContinue={() => setCurrentStep(5)}
+          />
+        );
+      case 5:
+        return (
+          <StepSEOPlans
+            onPrevious={() => setCurrentStep(4)}
+            onContinue={() => setCurrentStep(6)}
           />
         );
       default:
