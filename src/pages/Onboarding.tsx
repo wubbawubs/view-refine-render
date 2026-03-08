@@ -6,6 +6,7 @@ import OnboardingStepper from "@/components/onboarding/OnboardingStepper";
 import StepKlantKiezen from "@/components/onboarding/StepKlantKiezen";
 import StepGegevens from "@/components/onboarding/StepGegevens";
 import StepDiscovery from "@/components/onboarding/StepDiscovery";
+import StepSelectPages from "@/components/onboarding/StepSelectPages";
 
 const Onboarding = () => {
   const [currentStep, setCurrentStep] = useState(1);
