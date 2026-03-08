@@ -26,10 +26,11 @@ interface OnboardingStepperProps {
 const OnboardingStepper = ({ currentStep }: OnboardingStepperProps) => {
   return (
     <div className="relative">
-      {/* Progress bar behind */}
+      {/* Background track */}
       <div className="absolute top-5 left-0 right-0 h-0.5 bg-border mx-8 z-0" />
+      {/* Active gradient progress bar */}
       <div
-        className="absolute top-5 left-0 h-0.5 bg-primary mx-8 z-0 transition-all duration-500"
+        className="absolute top-5 left-0 h-0.5 mx-8 z-0 transition-all duration-500 rounded-full bg-gradient-to-r from-[hsl(var(--kk-violet))] via-[hsl(var(--kk-fuchsia))] to-[hsl(var(--kk-orange))]"
         style={{ width: `${((currentStep - 1) / (STEPS.length - 1)) * 100}%` }}
       />
 
@@ -52,9 +53,9 @@ const OnboardingStepper = ({ currentStep }: OnboardingStepperProps) => {
                 className={cn(
                   "w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 border-2",
                   isCompleted &&
-                    "bg-green-500 border-green-500 text-white shadow-md",
+                    "bg-gradient-to-br from-[hsl(var(--kk-violet))] to-[hsl(var(--kk-fuchsia))] border-transparent text-white shadow-md shadow-[hsl(var(--kk-violet)/0.3)]",
                   isCurrent &&
-                    "bg-primary border-primary text-primary-foreground shadow-lg shadow-primary/30",
+                    "bg-foreground border-foreground text-background shadow-lg shadow-foreground/20",
                   !isCompleted &&
                     !isCurrent &&
                     "bg-card border-border text-muted-foreground"
@@ -69,8 +70,8 @@ const OnboardingStepper = ({ currentStep }: OnboardingStepperProps) => {
               <span
                 className={cn(
                   "text-[10px] font-medium text-center leading-tight max-w-[70px]",
-                  isCurrent && "text-primary font-semibold",
-                  isCompleted && "text-foreground",
+                  isCurrent && "text-foreground font-semibold",
+                  isCompleted && "text-[hsl(var(--kk-violet))] font-semibold",
                   !isCompleted && !isCurrent && "text-muted-foreground"
                 )}
               >

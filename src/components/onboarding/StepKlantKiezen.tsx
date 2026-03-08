@@ -10,16 +10,20 @@ interface StepKlantKiezenProps {
 const StepKlantKiezen = ({ onNewClient, onNextStep }: StepKlantKiezenProps) => {
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold text-foreground">Klant Kiezen</h2>
+      <div className="space-y-1">
+        <h2 className="text-xl font-bold text-foreground">Klant Kiezen</h2>
+        <p className="text-sm text-muted-foreground">Start een nieuwe onboarding of ga verder met een bestaande klant.</p>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <motion.div
           whileHover={{ y: -2 }}
-          className="rounded-xl border border-border bg-gradient-to-br from-primary/5 to-transparent p-6 space-y-3 cursor-pointer transition-shadow hover:shadow-md"
+          className="relative overflow-hidden rounded-xl border border-[hsl(var(--kk-violet)/0.2)] bg-gradient-to-br from-[hsl(var(--kk-violet)/0.05)] via-card to-[hsl(var(--kk-fuchsia)/0.03)] p-6 space-y-3 cursor-pointer transition-shadow hover:shadow-lg hover:shadow-[hsl(var(--kk-violet)/0.1)]"
           onClick={onNewClient}
         >
-          <div className="p-2.5 rounded-lg bg-primary/10 w-fit">
-            <UserPlus className="w-5 h-5 text-primary" />
+          <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[hsl(var(--kk-violet))] to-[hsl(var(--kk-fuchsia))]" />
+          <div className="p-2.5 rounded-lg bg-gradient-to-br from-[hsl(var(--kk-violet)/0.12)] to-[hsl(var(--kk-fuchsia)/0.08)] w-fit">
+            <UserPlus className="w-5 h-5 text-[hsl(var(--kk-violet))]" />
           </div>
           <h3 className="text-lg font-semibold text-foreground">Nieuwe Klant</h3>
           <p className="text-sm text-muted-foreground">
@@ -33,14 +37,15 @@ const StepKlantKiezen = ({ onNewClient, onNextStep }: StepKlantKiezenProps) => {
 
         <motion.div
           whileHover={{ y: -2 }}
-          className="rounded-xl border border-border bg-gradient-to-br from-accent/5 to-transparent p-6 space-y-3 transition-shadow hover:shadow-md"
+          className="relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-[hsl(var(--kk-orange)/0.04)] via-card to-transparent p-6 space-y-3 transition-shadow hover:shadow-md"
         >
-          <div className="p-2.5 rounded-lg bg-accent/10 w-fit">
-            <FolderOpen className="w-5 h-5 text-accent-foreground" />
+          <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[hsl(var(--kk-fuchsia))] to-[hsl(var(--kk-orange))] opacity-50" />
+          <div className="p-2.5 rounded-lg bg-[hsl(var(--kk-orange)/0.08)] w-fit">
+            <FolderOpen className="w-5 h-5 text-[hsl(var(--kk-orange))]" />
           </div>
           <h3 className="text-lg font-semibold text-foreground">Bestaande Klanten</h3>
           <div className="flex flex-col items-center justify-center py-6">
-            <Loader2 className="w-7 h-7 animate-spin text-primary" />
+            <Loader2 className="w-7 h-7 animate-spin text-[hsl(var(--kk-violet))]" />
             <p className="text-sm text-muted-foreground mt-3">
               Klanten worden geladen...
             </p>

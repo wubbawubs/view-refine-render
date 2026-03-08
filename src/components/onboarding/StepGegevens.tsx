@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Building2, Globe, Mail, User, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -50,87 +50,44 @@ const StepGegevens = ({ onPrevious, onStartOnboarding }: StepGegevensProps) => {
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
 
+  const fields: { key: keyof ClientData; label: string; icon: React.ReactNode; placeholder: string; hint: string; required: boolean; type?: string; colSpan?: boolean }[] = [
+    { key: "bedrijfsnaam", label: "Bedrijfsnaam", icon: <Building2 className="w-4 h-4 text-muted-foreground" />, placeholder: "Bijv. Robaws", hint: "Naam van het bedrijf", required: true },
+    { key: "websiteUrl", label: "Website URL", icon: <Globe className="w-4 h-4 text-muted-foreground" />, placeholder: "https://example.nl", hint: "De hoofdpagina URL van de website", required: true },
+    { key: "email", label: "Klant Email", icon: <Mail className="w-4 h-4 text-muted-foreground" />, placeholder: "klant@example.nl", hint: "Emailadres voor account aanmaken", required: true, type: "email" },
+    { key: "klantNaam", label: "Klant Naam", icon: <User className="w-4 h-4 text-muted-foreground" />, placeholder: "Bijv. Jan Jansen", hint: "Naam van de contactpersoon", required: true },
+    { key: "locatie", label: "Locatie", icon: <MapPin className="w-4 h-4 text-muted-foreground" />, placeholder: "Bijv. Amsterdam", hint: "Stad of regio voor lokale SEO", required: false, colSpan: true },
+  ];
+
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold text-foreground">Klant Gegevens</h2>
+      <div className="space-y-1">
+        <h2 className="text-xl font-bold text-foreground">Klant Gegevens</h2>
+        <p className="text-sm text-muted-foreground">Vul de basisinformatie in van de klant die je wilt onboarden.</p>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
-        <div className="space-y-1.5">
-          <Label htmlFor="bedrijfsnaam">Bedrijfsnaam *</Label>
-          <Input
-            id="bedrijfsnaam"
-            placeholder="Bijv. Robaws"
-            value={form.bedrijfsnaam}
-            onChange={(e) => updateField("bedrijfsnaam", e.target.value)}
-            maxLength={100}
-          />
-          {errors.bedrijfsnaam ? (
-            <p className="text-xs text-destructive">{errors.bedrijfsnaam}</p>
-          ) : (
-            <p className="text-xs text-muted-foreground">Naam van het bedrijf</p>
-          )}
-        </div>
-
-        <div className="space-y-1.5">
-          <Label htmlFor="websiteUrl">Website URL *</Label>
-          <Input
-            id="websiteUrl"
-            placeholder="https://example.nl"
-            value={form.websiteUrl}
-            onChange={(e) => updateField("websiteUrl", e.target.value)}
-            maxLength={255}
-          />
-          {errors.websiteUrl ? (
-            <p className="text-xs text-destructive">{errors.websiteUrl}</p>
-          ) : (
-            <p className="text-xs text-muted-foreground">De hoofdpagina URL van de website</p>
-          )}
-        </div>
-
-        <div className="space-y-1.5">
-          <Label htmlFor="email">Klant Email *</Label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="klant@example.nl"
-            value={form.email}
-            onChange={(e) => updateField("email", e.target.value)}
-            maxLength={255}
-          />
-          {errors.email ? (
-            <p className="text-xs text-destructive">{errors.email}</p>
-          ) : (
-            <p className="text-xs text-muted-foreground">Emailadres voor account aanmaken</p>
-          )}
-        </div>
-
-        <div className="space-y-1.5">
-          <Label htmlFor="klantNaam">Klant Naam *</Label>
-          <Input
-            id="klantNaam"
-            placeholder="Bijv. Jan Jansen"
-            value={form.klantNaam}
-            onChange={(e) => updateField("klantNaam", e.target.value)}
-            maxLength={100}
-          />
-          {errors.klantNaam ? (
-            <p className="text-xs text-destructive">{errors.klantNaam}</p>
-          ) : (
-            <p className="text-xs text-muted-foreground">Naam van de contactpersoon</p>
-          )}
-        </div>
-
-        <div className="space-y-1.5 md:col-span-2">
-          <Label htmlFor="locatie">Locatie (optioneel)</Label>
-          <Input
-            id="locatie"
-            placeholder="Bijv. Amsterdam"
-            value={form.locatie}
-            onChange={(e) => updateField("locatie", e.target.value)}
-            maxLength={100}
-          />
-          <p className="text-xs text-muted-foreground">Stad of regio voor lokale SEO</p>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+        {fields.map(({ key, label, icon, placeholder, hint, required, type, colSpan }) => (
+          <div key={key} className={`space-y-1.5 ${colSpan ? "md:col-span-2" : ""}`}>
+            <Label htmlFor={key} className="flex items-center gap-1.5">
+              {icon}
+              {label} {required && <span className="text-[hsl(var(--kk-fuchsia))]">*</span>}
+            </Label>
+            <Input
+              id={key}
+              type={type || "text"}
+              placeholder={placeholder}
+              value={form[key]}
+              onChange={(e) => updateField(key, e.target.value)}
+              maxLength={key === "websiteUrl" || key === "email" ? 255 : 100}
+              className={errors[key] ? "border-destructive focus-visible:ring-destructive" : ""}
+            />
+            {errors[key] ? (
+              <p className="text-xs text-destructive">{errors[key]}</p>
+            ) : (
+              <p className="text-xs text-muted-foreground">{hint}</p>
+            )}
+          </div>
+        ))}
       </div>
 
       <div className="flex items-center justify-between border-t border-border pt-4">
@@ -138,7 +95,10 @@ const StepGegevens = ({ onPrevious, onStartOnboarding }: StepGegevensProps) => {
           <ArrowLeft className="w-4 h-4" />
           Vorige
         </Button>
-        <Button onClick={handleSubmit} className="gap-2">
+        <Button
+          onClick={handleSubmit}
+          className="gap-2 bg-gradient-to-r from-[hsl(var(--kk-violet))] to-[hsl(var(--kk-fuchsia))] hover:opacity-90 text-white border-0"
+        >
           Start Onboarding
           <ArrowRight className="w-4 h-4" />
         </Button>

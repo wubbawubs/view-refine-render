@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 
@@ -39,24 +39,32 @@ const StepSelectPages = ({ onPrevious, onContinue }: StepSelectPagesProps) => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold text-foreground">Selecteer Pagina's</h2>
+      <div className="space-y-1">
+        <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
+          <FileText className="w-5 h-5 text-[hsl(var(--kk-violet))]" />
+          Selecteer Pagina's
+        </h2>
+        <p className="text-sm text-muted-foreground">Kies welke pagina's je wilt meenemen in de SEO analyse.</p>
+      </div>
 
       <div>
-        <p className="text-sm font-medium text-foreground mb-3">
-          Selecteer pagina's voor SEO plans
-        </p>
         <div className="flex gap-2 mb-4">
-          <Button size="sm" onClick={selectAll}>
+          <Button size="sm" variant="outline" onClick={selectAll} className="text-xs">
             Selecteer alle
           </Button>
-          <Button size="sm" variant="secondary" onClick={selectFirst5}>
+          <Button size="sm" variant="outline" onClick={selectFirst5} className="text-xs">
             Selecteer eerste 5
           </Button>
+          {selected.size > 0 && (
+            <span className="inline-flex items-center text-xs font-medium text-[hsl(var(--kk-violet))] bg-[hsl(var(--kk-violet)/0.08)] px-2.5 py-1 rounded-full">
+              {selected.size} geselecteerd
+            </span>
+          )}
         </div>
 
-        <div className="border border-border rounded-lg overflow-hidden">
-          {/* Header */}
-          <div className="grid grid-cols-[40px_1fr_1fr_2fr] items-center px-4 py-2.5 bg-muted/50 border-b border-border text-xs font-medium text-muted-foreground">
+        <div className="border border-border rounded-xl overflow-hidden">
+          {/* Header with gradient accent */}
+          <div className="relative grid grid-cols-[40px_1fr_1fr_2fr] items-center px-4 py-2.5 bg-muted/50 border-b border-border text-xs font-medium text-muted-foreground">
             <Checkbox
               checked={selected.size === MOCK_PAGES.length}
               onCheckedChange={(checked) => {
@@ -69,19 +77,20 @@ const StepSelectPages = ({ onPrevious, onContinue }: StepSelectPagesProps) => {
             <span>Title</span>
           </div>
 
-          {/* Rows */}
           {MOCK_PAGES.map((page) => (
             <div
               key={page.slug}
-              className="grid grid-cols-[40px_1fr_1fr_2fr] items-center px-4 py-3 border-b border-border last:border-b-0 hover:bg-muted/30 transition-colors cursor-pointer"
+              className={`grid grid-cols-[40px_1fr_1fr_2fr] items-center px-4 py-3 border-b border-border last:border-b-0 hover:bg-[hsl(var(--kk-violet)/0.03)] transition-colors cursor-pointer ${
+                selected.has(page.slug) ? "bg-[hsl(var(--kk-violet)/0.04)]" : ""
+              }`}
               onClick={() => toggle(page.slug)}
             >
               <Checkbox
                 checked={selected.has(page.slug)}
                 onCheckedChange={() => toggle(page.slug)}
               />
-              <span className="text-sm text-foreground">{page.slug}</span>
-              <span className="text-sm text-muted-foreground">{page.type}</span>
+              <span className="text-sm font-mono text-foreground">{page.slug}</span>
+              <span className="text-sm text-muted-foreground capitalize">{page.type}</span>
               <span className="text-sm text-foreground">{page.title}</span>
             </div>
           ))}
@@ -98,7 +107,7 @@ const StepSelectPages = ({ onPrevious, onContinue }: StepSelectPagesProps) => {
           disabled={selected.size === 0}
           className="gap-2"
         >
-          Continue met geselecteerde pagina's
+          Continue met {selected.size} pagina's
           <ArrowRight className="w-4 h-4" />
         </Button>
       </div>

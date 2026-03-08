@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { CheckCircle2, Loader2, XCircle, ArrowLeft, ArrowRight } from "lucide-react";
+import { CheckCircle2, Loader2, XCircle, ArrowLeft, ArrowRight, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -25,9 +25,9 @@ const MOCK_PAGES: PageStatus[] = [
 const StatusIcon = ({ status }: { status: string }) => {
   switch (status) {
     case "done":
-      return <CheckCircle2 className="w-4 h-4 text-green-500" />;
+      return <CheckCircle2 className="w-4 h-4 text-[hsl(var(--kk-success))]" />;
     case "running":
-      return <Loader2 className="w-4 h-4 animate-spin text-primary" />;
+      return <Loader2 className="w-4 h-4 animate-spin text-[hsl(var(--kk-violet))]" />;
     case "failed":
       return <XCircle className="w-4 h-4 text-destructive" />;
     default:
@@ -39,7 +39,6 @@ const StepSEOPlans = ({ onPrevious, onContinue }: StepSEOPlansProps) => {
   const [pages, setPages] = useState<PageStatus[]>(MOCK_PAGES);
   const [progress, setProgress] = useState(10);
 
-  // Simulate polling progress
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => {
@@ -51,7 +50,6 @@ const StepSEOPlans = ({ onPrevious, onContinue }: StepSEOPlansProps) => {
       });
     }, 1500);
 
-    // Simulate pages completing
     const timeout1 = setTimeout(() => {
       setPages((prev) =>
         prev.map((p) =>
@@ -94,41 +92,55 @@ const StepSEOPlans = ({ onPrevious, onContinue }: StepSEOPlansProps) => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold text-foreground">SEO Plan Generatie</h2>
+      <div className="space-y-1">
+        <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
+          <Zap className="w-5 h-5 text-[hsl(var(--kk-fuchsia))]" />
+          SEO Plan Generatie
+        </h2>
+        <p className="text-sm text-muted-foreground">AI genereert je SEO plannen. Even geduld alsjeblieft.</p>
+      </div>
 
       {/* Status cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div className="rounded-lg border border-border p-3 space-y-1">
-          <p className="text-xs font-medium text-muted-foreground uppercase">Overall Status</p>
+        <div className="rounded-xl border border-border p-3 space-y-1 bg-gradient-to-br from-[hsl(var(--kk-violet)/0.04)] to-transparent">
+          <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">Overall</p>
           <Badge
-            variant={allDone ? "default" : "secondary"}
-            className={allDone ? "bg-green-500 hover:bg-green-600" : ""}
+            variant="secondary"
+            className={allDone ? "bg-[hsl(var(--kk-success)/0.12)] text-[hsl(var(--kk-success))]" : ""}
           >
             {overallStatus}
           </Badge>
         </div>
-        <div className="rounded-lg border border-border p-3 space-y-1">
-          <p className="text-xs font-medium text-muted-foreground uppercase">Ready</p>
-          <p className="text-lg font-semibold text-foreground">
-            {doneCount}/{pages.length}
+        <div className="rounded-xl border border-border p-3 space-y-1">
+          <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">Ready</p>
+          <p className="text-lg font-bold text-foreground">
+            {doneCount}<span className="text-muted-foreground font-normal">/{pages.length}</span>
           </p>
         </div>
-        <div className="rounded-lg border border-border p-3 space-y-1">
-          <p className="text-xs font-medium text-muted-foreground uppercase">Running</p>
-          <p className="text-lg font-semibold text-foreground">{runningCount}</p>
+        <div className="rounded-xl border border-border p-3 space-y-1">
+          <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">Running</p>
+          <p className="text-lg font-bold text-foreground">{runningCount}</p>
         </div>
-        <div className="rounded-lg border border-border p-3 space-y-1">
-          <p className="text-xs font-medium text-muted-foreground uppercase">Failed</p>
-          <p className="text-lg font-semibold text-foreground">{failedCount}</p>
+        <div className="rounded-xl border border-border p-3 space-y-1">
+          <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">Failed</p>
+          <p className="text-lg font-bold text-foreground">{failedCount}</p>
         </div>
       </div>
 
-      {/* Progress bar */}
-      <Progress value={Math.min(progress, 100)} className="h-2" />
+      {/* Branded progress bar */}
+      <div className="space-y-1.5">
+        <div className="h-2 w-full rounded-full bg-muted overflow-hidden">
+          <div
+            className="h-full rounded-full bg-gradient-to-r from-[hsl(var(--kk-violet))] via-[hsl(var(--kk-fuchsia))] to-[hsl(var(--kk-orange))] transition-all duration-500"
+            style={{ width: `${Math.min(progress, 100)}%` }}
+          />
+        </div>
+        <p className="text-xs text-muted-foreground text-right">{Math.min(Math.round(progress), 100)}%</p>
+      </div>
 
       {/* Table */}
-      <div className="border border-border rounded-lg overflow-hidden">
-        <div className="grid grid-cols-[1fr_80px_80px_120px_80px] items-center px-4 py-2.5 bg-muted/50 border-b border-border text-xs font-medium text-muted-foreground">
+      <div className="border border-border rounded-xl overflow-hidden">
+        <div className="grid grid-cols-[1fr_80px_80px_120px_80px] items-center px-4 py-2.5 bg-muted/50 border-b border-border text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
           <span>Slug</span>
           <span>Audit</span>
           <span>SEO Plan</span>
@@ -140,7 +152,7 @@ const StepSEOPlans = ({ onPrevious, onContinue }: StepSEOPlansProps) => {
             key={page.slug}
             className="grid grid-cols-[1fr_80px_80px_120px_80px] items-center px-4 py-3 border-b border-border last:border-b-0"
           >
-            <span className="text-sm text-foreground">{page.slug}</span>
+            <span className="text-sm font-mono text-foreground">{page.slug}</span>
             <StatusIcon status={page.audit} />
             <StatusIcon status={page.seoPlan} />
             <div className="flex items-center gap-1.5">
