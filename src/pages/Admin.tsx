@@ -53,8 +53,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
-import Sidebar from "@/components/dashboard/Sidebar";
-import {
+import DashboardLayout from "@/components/dashboard/DashboardLayout";
   Table,
   TableBody,
   TableCell,
