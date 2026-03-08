@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Sidebar from "@/components/dashboard/Sidebar";
+import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import { 
   Menu, X, Target, ChevronDown, ChevronUp, Globe, Info, 
   FileText, Type, Heading1, Heading2, HelpCircle, Code, Image, 
