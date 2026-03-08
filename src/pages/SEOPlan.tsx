@@ -20,10 +20,10 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 // --- Mock SEO Plan data (mirrors the real API format) ---
 
 const mockScores = [
-  { label: "SEO Relevance Score", score: 8, max: 10, status: "Uitstekend", icon: Target },
-  { label: "Content Depth Score", score: 8, max: 10, status: "Uitstekend", icon: FileText },
-  { label: "Technical Score", score: 8, max: 10, status: "Uitstekend", icon: Code },
-  { label: "Competitive Gap Score", score: 8, max: 10, status: "Uitstekend", icon: ListChecks },
+  { label: "SEO Relevance Score", score: 8, max: 10, status: "Uitstekend", icon: Target, tooltip: "Hoe goed je pagina aansluit bij de zoektermen waar je op wilt scoren. We kijken naar titels, koppen, teksten en zoekwoordgebruik." },
+  { label: "Content Depth Score", score: 8, max: 10, status: "Uitstekend", icon: FileText, tooltip: "Hoe uitgebreid en waardevol je content is. We meten tekstlengte, structuur, onderwerpsdekking en vergelijken met de best scorende concurrenten." },
+  { label: "Technical Score", score: 8, max: 10, status: "Uitstekend", icon: Code, tooltip: "De technische gezondheid van je website. Denk aan laadsnelheid, mobielvriendelijkheid, schema markup en of Google je pagina's goed kan lezen." },
+  { label: "Competitive Gap Score", score: 8, max: 10, status: "Uitstekend", icon: ListChecks, tooltip: "Hoe je presteert ten opzichte van concurrenten. We analyseren wat zij wél doen en jij nog niet, en waar jij juist voorloopt." },
 ];
 
 interface StrategySection {
