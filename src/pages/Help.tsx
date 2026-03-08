@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HelpCircle, Play, BookOpen, Settings, BarChart3, FileText, Lightbulb, Menu, X, Search, MessageCircle, Mail, Phone, ChevronDown, ChevronUp, ExternalLink, Clock, Star } from "lucide-react";
+import { HelpCircle, Play, BookOpen, Settings, BarChart3, FileText, Lightbulb, Search, MessageCircle, Mail, Phone, ChevronDown, ChevronUp, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Input } from "@/components/ui/input";
