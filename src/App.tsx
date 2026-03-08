@@ -12,6 +12,7 @@ import ContentIdeas from "./pages/ContentIdeas";
 import Account from "./pages/Account";
 import Help from "./pages/Help";
 import Admin from "./pages/Admin";
+import Onboarding from "./pages/Onboarding";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import NotFound from "./pages/NotFound";
@@ -34,6 +35,7 @@ const App = () => (
               <Route path="/account" element={<Account />} />
               <Route path="/help" element={<Help />} />
               <Route path="/admin" element={<Admin />} />
+              <Route path="/onboarding" element={<Onboarding />} />
               <Route path="/login" element={<Login />} />
               <Route path="/logout" element={<Logout />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
