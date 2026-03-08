@@ -78,43 +78,24 @@ const ContentIdeas = () => {
   const filteredIdeas = mockIdeas.filter(idea => filterType === 'all' ? true : idea.type === filterType);
 
   return (
-    <div className="flex min-h-screen premium-dashboard-bg">
-      {sidebarOpen && (
-        <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
-      )}
-      
-      <div className={`fixed lg:relative lg:block z-50 h-screen transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
-        <div className="relative h-full">
-          <Sidebar />
-          <Button variant="ghost" size="sm" className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent z-10" onClick={() => setSidebarOpen(false)}>
-            <X className="w-4 h-4" />
-          </Button>
-        </div>
-      </div>
-
-      <div className="flex-1 flex flex-col min-h-screen">
-        <header className="premium-glass-card border-b border-border/40 px-6 py-4 sticky top-0 z-30">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setSidebarOpen(!sidebarOpen)}>
-                {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </Button>
-            </div>
-            <div className="flex gap-2 items-center">
-              <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
-                <SelectTrigger className="w-[60px] sm:w-[70px] lg:w-[120px] text-xs h-8 lg:h-9">
-                  <Globe className="w-3 h-3 sm:mr-1" />
-                  <SelectValue className="hidden sm:inline" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="nl">NL</SelectItem>
-                  <SelectItem value="en">EN</SelectItem>
-                </SelectContent>
-              </Select>
-              <ThemeToggle />
-            </div>
+    <DashboardLayout>
+        {/* Header */}
+        <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-border">
+          <div />
+          <div className="flex gap-2 items-center">
+            <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
+              <SelectTrigger className="w-[60px] sm:w-[70px] lg:w-[120px] text-xs h-8 lg:h-9">
+                <Globe className="w-3 h-3 sm:mr-1" />
+                <SelectValue className="hidden sm:inline" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="nl">NL</SelectItem>
+                <SelectItem value="en">EN</SelectItem>
+              </SelectContent>
+            </Select>
+            <ThemeToggle />
           </div>
-        </header>
+        </div>
 
         <main className="flex-1 p-4 sm:p-6">
           {/* Page Banner */}
