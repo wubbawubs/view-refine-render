@@ -97,7 +97,7 @@ const ContentIdeas = () => {
           </div>
         </div>
 
-        <main className="flex-1 p-4 sm:p-6">
+        <main className="space-y-6">
           {/* Page Banner */}
           <div className="mb-6">
             <PageBanner
