@@ -339,7 +339,7 @@ const getOptimizationStatusBadge = (status: string) => {
 };
 
 const Admin = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  
   const [selectedCustomer, setSelectedCustomer] = useState<CustomerData | null>(null);
   const [sheetOpen, setSheetOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
