@@ -1,6 +1,6 @@
 import { Menu, X, Globe, Settings, CheckCircle2, Clock, Zap, ArrowUpRight, TrendingUp, Eye, ChevronDown, ChevronUp, Sparkles, Pencil } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import Sidebar from "@/components/dashboard/Sidebar";
+import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
