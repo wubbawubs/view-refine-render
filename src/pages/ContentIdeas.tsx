@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Sidebar from "@/components/dashboard/Sidebar";
-import { Menu, X, Globe, Lightbulb, FileText, Share2, Mail, TrendingUp, Eye, Clock, Sparkles, ChevronDown, ChevronUp, BookOpen, BarChart3 } from "lucide-react";
+import DashboardLayout from "@/components/dashboard/DashboardLayout";
+import { Globe, Lightbulb, FileText, Share2, Mail, TrendingUp, Eye, Clock, Sparkles, ChevronDown, ChevronUp, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
