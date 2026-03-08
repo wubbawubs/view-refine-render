@@ -56,6 +56,20 @@ const Onboarding = () => {
             onContinue={() => setCurrentStep(6)}
           />
         );
+      case 6:
+        return (
+          <StepReviewPlans
+            onPrevious={() => setCurrentStep(5)}
+            onContinue={() => setCurrentStep(7)}
+          />
+        );
+      case 7:
+        return (
+          <StepOptimalisaties
+            onPrevious={() => setCurrentStep(6)}
+            onContinue={() => setCurrentStep(8)}
+          />
+        );
       default:
         return (
           <div className="text-center py-16 text-muted-foreground">
