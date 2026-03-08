@@ -277,7 +277,6 @@ const AltTextContent = () => (
 // --- Main Component ---
 
 const SEOPlan = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [expandedSection, setExpandedSection] = useState<string | null>("meta");
   const [showExcluded, setShowExcluded] = useState(false);
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
