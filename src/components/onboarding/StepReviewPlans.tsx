@@ -14,7 +14,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { ChevronDown, Pencil } from "lucide-react";
+
 
 interface SEOPlanSection {
   label: string;
