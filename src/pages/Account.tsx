@@ -1,6 +1,6 @@
-import { User, CreditCard, Settings, Shield, Bell, Globe, Save, Menu, X } from "lucide-react";
+import { User, CreditCard, Shield, Bell, Globe, Save } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import Sidebar from "@/components/dashboard/Sidebar";
+import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,7 +14,6 @@ import { GradientCard } from "@/components/ui/gradient-card";
 
 const Account = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
-  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const texts = {
     nl: {
@@ -44,26 +43,10 @@ const Account = () => {
   const t = texts[language];
 
   return (
-    <div className="flex min-h-screen premium-dashboard-bg">
-      {sidebarOpen && (
-        <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
-      )}
-      
-      <div className={`fixed lg:relative lg:block z-50 h-full transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
-        <Sidebar />
-        <Button variant="ghost" size="sm" className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent" onClick={() => setSidebarOpen(false)}>
-          <X className="w-4 h-4" />
-        </Button>
-      </div>
-      
-      <main className="flex-1 px-3 sm:px-4 lg:px-8 py-4 sm:py-6 overflow-x-hidden overflow-y-auto relative z-10 w-full min-w-0">
+    <DashboardLayout>
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 sm:mb-6 lg:mb-8 pb-3 sm:pb-4 border-b border-border">
-          <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-            <Button variant="ghost" size="sm" className="lg:hidden shrink-0 p-1.5" onClick={() => setSidebarOpen(true)}>
-              <Menu className="w-4 h-4" />
-            </Button>
-          </div>
+          <div />
           <div className="flex gap-2 items-center shrink-0 w-full sm:w-auto">
             <Select value={language} onValueChange={(value: 'nl' | 'en') => setLanguage(value)}>
               <SelectTrigger className="w-[60px] sm:w-[80px] lg:w-[120px] text-xs lg:text-sm h-8 lg:h-9">
@@ -231,8 +214,7 @@ const Account = () => {
             </CardContent>
           </GradientCard>
         </div>
-      </main>
-    </div>
+    </DashboardLayout>
   );
 };
 

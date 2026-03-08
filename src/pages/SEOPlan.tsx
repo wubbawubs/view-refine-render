@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Sidebar from "@/components/dashboard/Sidebar";
+import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import { 
-  Menu, X, Target, ChevronDown, ChevronUp, Globe, Info, 
+  Target, ChevronDown, ChevronUp, Globe, Info, 
   FileText, Type, Heading1, Heading2, HelpCircle, Code, Image, 
   ListChecks, ArrowUp, ArrowDown, Minus, Sparkles, CheckCircle2,
   AlertTriangle, Clock
@@ -277,7 +277,6 @@ const AltTextContent = () => (
 // --- Main Component ---
 
 const SEOPlan = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [expandedSection, setExpandedSection] = useState<string | null>("meta");
   const [showExcluded, setShowExcluded] = useState(false);
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
@@ -292,48 +291,33 @@ const SEOPlan = () => {
   ];
 
   return (
-    <div className="flex min-h-screen premium-dashboard-bg">
-      {sidebarOpen && (
-        <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
-      )}
-      
-      <div className={`fixed lg:static inset-y-0 left-0 z-50 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-200 ease-in-out`}>
-        <Sidebar />
-      </div>
-
-      <div className="flex-1 flex flex-col min-h-screen">
-        <header className="premium-glass-card border-b border-border/40 px-4 sm:px-6 py-4 sticky top-0 z-30">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setSidebarOpen(!sidebarOpen)}>
-                {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </Button>
-              <div>
-                <h1 className="text-xl sm:text-2xl font-bold text-foreground">SEO Plan</h1>
-                <p className="text-sm text-muted-foreground hidden sm:block">Overzicht van alle SEO guidance en strategische aanbevelingen</p>
-              </div>
-            </div>
-            <div className="flex gap-2 items-center">
-              <div className="hidden sm:flex items-center gap-2 mr-2">
-                <Label htmlFor="show-excluded" className="text-xs text-muted-foreground">Toon uitgesloten</Label>
-                <Switch id="show-excluded" checked={showExcluded} onCheckedChange={setShowExcluded} />
-              </div>
-              <Select value={language} onValueChange={(v: 'nl' | 'en') => setLanguage(v)}>
-                <SelectTrigger className="w-[60px] sm:w-[70px] text-xs h-8">
-                  <Globe className="w-3 h-3 sm:mr-1" />
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="nl">NL</SelectItem>
-                  <SelectItem value="en">EN</SelectItem>
-                </SelectContent>
-              </Select>
-              <ThemeToggle />
-            </div>
+    <DashboardLayout>
+        {/* Header */}
+        <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-border">
+          <div>
+            <h1 className="text-xl sm:text-2xl font-bold text-foreground">SEO Plan</h1>
+            <p className="text-sm text-muted-foreground hidden sm:block">Overzicht van alle SEO guidance en strategische aanbevelingen</p>
           </div>
-        </header>
+          <div className="flex gap-2 items-center">
+            <div className="hidden sm:flex items-center gap-2 mr-2">
+              <Label htmlFor="show-excluded" className="text-xs text-muted-foreground">Toon uitgesloten</Label>
+              <Switch id="show-excluded" checked={showExcluded} onCheckedChange={setShowExcluded} />
+            </div>
+            <Select value={language} onValueChange={(v: 'nl' | 'en') => setLanguage(v)}>
+              <SelectTrigger className="w-[60px] sm:w-[70px] text-xs h-8">
+                <Globe className="w-3 h-3 sm:mr-1" />
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="nl">NL</SelectItem>
+                <SelectItem value="en">EN</SelectItem>
+              </SelectContent>
+            </Select>
+            <ThemeToggle />
+          </div>
+        </div>
 
-        <main className="flex-1 p-4 sm:p-6 space-y-6">
+        <div className="space-y-6">
           
           {/* Score Cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
@@ -440,9 +424,8 @@ const SEOPlan = () => {
             </div>
           </div>
 
-        </main>
-      </div>
-    </div>
+        </div>
+    </DashboardLayout>
   );
 };
 

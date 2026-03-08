@@ -1,9 +1,8 @@
-import { Eye, Users, Target, Clock, Settings, TrendingUp, Globe, Menu, X } from "lucide-react";
+import { Eye, Users, Target, Clock, Settings, TrendingUp, Globe } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import Sidebar from "./Sidebar";
+import DashboardLayout from "./DashboardLayout";
 import HeroMetric from "./HeroMetric";
 import KPICard from "./KPICard";
 import UpdatesFeed from "./UpdatesFeed";
@@ -20,7 +19,6 @@ import {
 
 const Dashboard = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   const { data: dashboardMetrics, isLoading: metricsLoading } = useDashboardMetrics();
   const { data: updates, isLoading: updatesLoading } = useUpdates();
   const { data: visitorsChart, isLoading: chartLoading } = useVisitorsChart();
@@ -56,27 +54,10 @@ const Dashboard = () => {
   const t = texts[language];
 
   return (
-    <div className="flex min-h-screen premium-dashboard-bg">
-      {sidebarOpen && (
-        <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
-      )}
-      
-      <div className={`fixed lg:block z-50 h-screen transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
-        <div className="relative h-full">
-          <Sidebar />
-          <Button variant="ghost" size="sm" className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent z-10" onClick={() => setSidebarOpen(false)}>
-            <X className="w-4 h-4" />
-          </Button>
-        </div>
-      </div>
-      
-      <main className="flex-1 lg:ml-64 px-3 sm:px-4 lg:px-8 py-4 sm:py-6 overflow-x-hidden overflow-y-auto relative z-10 w-full min-w-0">
+    <DashboardLayout>
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 sm:mb-6 lg:mb-8 pb-3 sm:pb-4 border-b border-border">
           <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-            <Button variant="ghost" size="sm" className="lg:hidden shrink-0 p-1.5" onClick={() => setSidebarOpen(true)}>
-              <Menu className="w-4 h-4" />
-            </Button>
             <div className="flex items-center gap-2 lg:hidden shrink-0">
               <img src="/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png" alt="KlikKlaar.io" className="h-12 w-auto" />
             </div>
@@ -151,8 +132,7 @@ const Dashboard = () => {
           <UpdatesFeed updates={updates} loading={updatesLoading} />
           <WeeklySummary summary={weeklySummary} loading={summaryLoading} />
         </div>
-      </main>
-    </div>
+    </DashboardLayout>
   );
 };
 
