@@ -347,16 +347,16 @@ const SEOPlan = () => {
                         <Icon className="w-4 h-4 text-[hsl(var(--kk-violet))]" />
                         <span className="text-xs sm:text-sm font-medium text-foreground leading-tight">{score.label}</span>
                       </div>
-                      <Tooltip delayDuration={0}>
-                        <TooltipTrigger asChild>
+                      <Popover>
+                        <PopoverTrigger asChild>
                           <button className="w-6 h-6 rounded-full bg-muted/50 hover:bg-muted flex items-center justify-center shrink-0 transition-colors">
                             <Info className="w-3.5 h-3.5 text-muted-foreground" />
                           </button>
-                        </TooltipTrigger>
-                        <TooltipContent side="bottom" className="max-w-[220px]">
-                          <p className="text-xs">{score.tooltip}</p>
-                        </TooltipContent>
-                      </Tooltip>
+                        </PopoverTrigger>
+                        <PopoverContent side="bottom" className="max-w-[240px] p-3">
+                          <p className="text-xs text-muted-foreground">{score.tooltip}</p>
+                        </PopoverContent>
+                      </Popover>
                     </div>
                     <p className={`text-2xl sm:text-3xl font-bold ${getScoreColor(score.score, score.max)}`}>
                       {score.score}/{score.max}
