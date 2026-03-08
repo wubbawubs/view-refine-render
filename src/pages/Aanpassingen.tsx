@@ -256,8 +256,7 @@ const Aanpassingen = () => {
             </div>
           </GradientCard>
         )}
-      </main>
-    </div>
+    </DashboardLayout>
   );
 };
 
