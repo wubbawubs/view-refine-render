@@ -1,12 +1,12 @@
 import { ReactNode, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { ArrowUp, ArrowDown, HelpCircle, X } from "lucide-react";
+import { ArrowUp, ArrowDown, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 interface KPICardProps {
   label: string | ReactNode;
@@ -51,19 +51,19 @@ const KPICard = ({
             </div>
             
             {/* Help tooltip */}
-            <Tooltip>
-              <TooltipTrigger asChild>
+            <Popover>
+              <PopoverTrigger asChild>
                 <button 
                   className="w-6 h-6 rounded-full bg-muted/50 hover:bg-muted flex items-center justify-center shrink-0 transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <HelpCircle className="w-3.5 h-3.5 text-muted-foreground" />
                 </button>
-              </TooltipTrigger>
-              <TooltipContent side="top" className="max-w-[200px] text-center">
-                <p className="text-xs">{helpText}</p>
-              </TooltipContent>
-            </Tooltip>
+              </PopoverTrigger>
+              <PopoverContent side="top" className="max-w-[220px] p-3">
+                <p className="text-xs text-muted-foreground">{helpText}</p>
+              </PopoverContent>
+            </Popover>
           </div>
           
           {/* Value */}
