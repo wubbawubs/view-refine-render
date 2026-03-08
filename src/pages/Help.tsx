@@ -54,28 +54,10 @@ const Help = () => {
   const faqCategories = ["all", ...Array.from(new Set(faqs.map(f => f.category)))];
 
   return (
-    <div className="flex min-h-screen premium-dashboard-bg">
-      {sidebarOpen && (
-        <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
-      )}
-      
-      <div className={`fixed lg:relative lg:block z-50 h-screen transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
-        <div className="relative h-full">
-          <Sidebar />
-          <Button variant="ghost" size="sm" className="absolute top-4 right-4 lg:hidden text-sidebar-foreground hover:bg-sidebar-accent z-10" onClick={() => setSidebarOpen(false)}>
-            <X className="w-4 h-4" />
-          </Button>
-        </div>
-      </div>
-      
-      <main className="flex-1 px-4 lg:px-8 py-6 overflow-y-auto relative z-10 w-full min-w-0">
+    <DashboardLayout>
         {/* Header */}
         <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-border">
-          <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" className="lg:hidden shrink-0 p-1.5" onClick={() => setSidebarOpen(true)}>
-              <Menu className="w-4 h-4" />
-            </Button>
-          </div>
+          <div />
           <ThemeToggle />
         </div>
 
