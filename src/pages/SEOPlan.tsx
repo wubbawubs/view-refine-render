@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Sidebar from "@/components/dashboard/Sidebar";
-import { Menu, X, Target, CheckCircle2, Clock, AlertCircle, TrendingUp, Calendar, Sparkles, ChevronDown, ChevronUp, Zap } from "lucide-react";
+import { Menu, X, Target, CheckCircle2, Clock, TrendingUp, Calendar, Sparkles, ChevronDown, ChevronUp, Zap, Settings, FileText, MapPin, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
