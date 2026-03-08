@@ -610,7 +610,7 @@ const Admin = () => {
             </div>
           </TabsContent>
         </Tabs>
-      </main>
+      
 
       {/* Bulk Mail Dialog */}
       <BulkMailDialog 
