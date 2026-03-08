@@ -132,8 +132,7 @@ const Dashboard = () => {
           <UpdatesFeed updates={updates} loading={updatesLoading} />
           <WeeklySummary summary={weeklySummary} loading={summaryLoading} />
         </div>
-      </main>
-    </div>
+    </DashboardLayout>
   );
 };
 
