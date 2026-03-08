@@ -14,7 +14,6 @@ import { GradientCard } from "@/components/ui/gradient-card";
 
 const Account = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
-  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const texts = {
     nl: {
