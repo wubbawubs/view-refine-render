@@ -1,4 +1,4 @@
-import { Menu, X, Globe, Settings, CheckCircle2, Clock, Zap, ArrowUpRight, TrendingUp, Eye, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
+import { Menu, X, Globe, Settings, CheckCircle2, Clock, Zap, ArrowUpRight, TrendingUp, Eye, ChevronDown, ChevronUp, Sparkles, Pencil } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import Sidebar from "@/components/dashboard/Sidebar";
 import { Button } from "@/components/ui/button";
@@ -234,16 +234,30 @@ const Aanpassingen = () => {
                     </div>
                   </div>
 
-                  {/* Expanded AI Explanation */}
+                  {/* Expanded: AI Explanation + Edit button */}
                   {isExpanded && (
-                    <div className="mt-4 p-3 rounded-lg bg-[hsl(var(--kk-violet)/0.05)] border border-[hsl(var(--kk-violet)/0.1)] animate-fade-in">
-                      <div className="flex items-start gap-2">
-                        <Sparkles className="w-4 h-4 text-[hsl(var(--kk-violet))] shrink-0 mt-0.5" />
-                        <div>
-                          <p className="text-xs font-semibold text-[hsl(var(--kk-violet))] mb-1">Waarom deze aanpassing?</p>
-                          <p className="text-xs text-muted-foreground">{opt.aiReason}</p>
+                    <div className="mt-4 space-y-3 animate-fade-in">
+                      <div className="p-3 rounded-lg bg-[hsl(var(--kk-violet)/0.05)] border border-[hsl(var(--kk-violet)/0.1)]">
+                        <div className="flex items-start gap-2">
+                          <Sparkles className="w-4 h-4 text-[hsl(var(--kk-violet))] shrink-0 mt-0.5" />
+                          <div>
+                            <p className="text-xs font-semibold text-[hsl(var(--kk-violet))] mb-1">Waarom deze aanpassing?</p>
+                            <p className="text-xs text-muted-foreground">{opt.aiReason}</p>
+                          </div>
                         </div>
                       </div>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="text-xs gap-1.5"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          // TODO: open edit dialog
+                        }}
+                      >
+                        <Pencil className="w-3.5 h-3.5" />
+                        Aanpassing bewerken
+                      </Button>
                     </div>
                   )}
                 </div>
