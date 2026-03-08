@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { CheckCircle2, Loader2, Copy, Package, PartyPopper } from "lucide-react";
+import { CheckCircle2, Loader2, Copy, Package, PartyPopper, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 
