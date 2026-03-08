@@ -33,7 +33,7 @@ const mockContentStats = {
 };
 
 const ContentIdeas = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
   const [filterType, setFilterType] = useState<string>('all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
