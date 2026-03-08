@@ -3,7 +3,7 @@ import { HelpCircle, Play, BookOpen, Settings, BarChart3, FileText, Lightbulb, S
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Input } from "@/components/ui/input";
-import Sidebar from "@/components/dashboard/Sidebar";
+import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import PageBanner from "@/components/ui/page-banner";
 import { GradientCard } from "@/components/ui/gradient-card";
 import { Badge } from "@/components/ui/badge";
