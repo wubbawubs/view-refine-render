@@ -10,6 +10,7 @@ import StepSelectPages from "@/components/onboarding/StepSelectPages";
 import StepSEOPlans from "@/components/onboarding/StepSEOPlans";
 import StepReviewPlans from "@/components/onboarding/StepReviewPlans";
 import StepOptimalisaties from "@/components/onboarding/StepOptimalisaties";
+import StepReviewOpts from "@/components/onboarding/StepReviewOpts";
 
 const Onboarding = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -68,6 +69,13 @@ const Onboarding = () => {
           <StepOptimalisaties
             onPrevious={() => setCurrentStep(6)}
             onContinue={() => setCurrentStep(8)}
+          />
+        );
+      case 8:
+        return (
+          <StepReviewOpts
+            onPrevious={() => setCurrentStep(7)}
+            onContinue={() => setCurrentStep(9)}
           />
         );
       default:
