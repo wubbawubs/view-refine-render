@@ -236,12 +236,12 @@ const StepReviewPlans = ({ onPrevious, onContinue }: StepReviewPlansProps) => {
       </div>
 
       <div className="flex items-center justify-between border-t border-border pt-4">
-        <Button variant="outline" onClick={onPrevious}>
-          ⬅ Vorige
+        <Button variant="outline" onClick={onPrevious} className="gap-2">
+          <ArrowLeft className="w-4 h-4" /> Vorige
         </Button>
         {allApproved && (
-          <Button onClick={onContinue}>
-            Volgende ➡
+          <Button onClick={onContinue} className="gap-2">
+            Volgende <ArrowRight className="w-4 h-4" />
           </Button>
         )}
       </div>
