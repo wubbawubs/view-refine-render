@@ -38,7 +38,7 @@ const Sidebar = () => {
   const logoSrc = theme === 'dark' ? '/klikklaar-logo-gradient.png' : '/lovable-uploads/746a8291-90ca-4e7e-a087-4feae21cec1d.png';
 
   return (
-    <div className="w-64 premium-sidebar-bg h-screen flex flex-col">
+    <div className="w-64 premium-sidebar-bg h-screen flex flex-col sticky top-0">
       {/* Logo */}
       <div className="p-5 border-b border-sidebar-border">
         <div className="flex items-center gap-3 h-14">
