@@ -13,10 +13,10 @@ import PageBanner from "@/components/ui/page-banner";
 import { GradientCard } from "@/components/ui/gradient-card";
 
 const mockRoadmap = [
-  { month: "Maart 2026", phase: "Technische Basis", description: "Website snelheid, mobile-first en crawlbaarheid optimaliseren", progress: 95, status: "bijna klaar" },
-  { month: "April 2026", phase: "On-Page SEO", description: "Meta tags, headers, interne links en content structuur", progress: 60, status: "bezig" },
-  { month: "Mei 2026", phase: "Content Strategie", description: "Keyword-gedreven content creatie en blog planning", progress: 20, status: "gestart" },
-  { month: "Juni 2026", phase: "Autoriteit Opbouwen", description: "Backlink strategie en lokale SEO versterken", progress: 0, status: "gepland" },
+  { month: "Maart 2026", phase: "Technische Basis", description: "Website sneller en mobielvriendelijk maken", progress: 95, status: "bijna klaar" },
+  { month: "April 2026", phase: "Pagina Optimalisatie", description: "Titels, beschrijvingen en koppenstructuur verbeteren", progress: 60, status: "bezig" },
+  { month: "Mei 2026", phase: "Content Strategie", description: "Nieuwe artikelen en pagina's schrijven voor meer bezoekers", progress: 20, status: "gestart" },
+  { month: "Juni 2026", phase: "Autoriteit Opbouwen", description: "Meer vermeldingen en lokale vindbaarheid versterken", progress: 0, status: "gepland" },
 ];
 
 const mockCategories = [
