@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { CheckCircle2, Loader2, XCircle } from "lucide-react";
+import { CheckCircle2, Loader2, XCircle, ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -153,12 +153,12 @@ const StepSEOPlans = ({ onPrevious, onContinue }: StepSEOPlansProps) => {
       </div>
 
       <div className="flex items-center justify-between border-t border-border pt-4">
-        <Button variant="outline" onClick={onPrevious}>
-          ⬅ Vorige
+        <Button variant="outline" onClick={onPrevious} className="gap-2">
+          <ArrowLeft className="w-4 h-4" /> Vorige
         </Button>
         {allDone && (
-          <Button onClick={onContinue}>
-            Volgende ➡
+          <Button onClick={onContinue} className="gap-2">
+            Volgende <ArrowRight className="w-4 h-4" />
           </Button>
         )}
       </div>

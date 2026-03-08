@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 
@@ -88,14 +89,17 @@ const StepSelectPages = ({ onPrevious, onContinue }: StepSelectPagesProps) => {
       </div>
 
       <div className="flex items-center justify-between border-t border-border pt-4">
-        <Button variant="outline" onClick={onPrevious}>
-          ⬅ Vorige
+        <Button variant="outline" onClick={onPrevious} className="gap-2">
+          <ArrowLeft className="w-4 h-4" />
+          Vorige
         </Button>
         <Button
           onClick={() => onContinue(MOCK_PAGES.filter((p) => selected.has(p.slug)))}
           disabled={selected.size === 0}
+          className="gap-2"
         >
           Continue met geselecteerde pagina's
+          <ArrowRight className="w-4 h-4" />
         </Button>
       </div>
     </div>

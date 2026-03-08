@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Loader2, CheckCircle2 } from "lucide-react";
+import { Loader2, CheckCircle2, ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface PageOptStatus {
@@ -60,12 +60,12 @@ const StepOptimalisaties = ({ onPrevious, onContinue }: StepOptimalisatiesProps)
       </div>
 
       <div className="flex items-center justify-between border-t border-border pt-4">
-        <Button variant="outline" onClick={onPrevious}>
-          ⬅ Vorige
+        <Button variant="outline" onClick={onPrevious} className="gap-2">
+          <ArrowLeft className="w-4 h-4" /> Vorige
         </Button>
         {allDone && (
-          <Button onClick={onContinue}>
-            Volgende ➡
+          <Button onClick={onContinue} className="gap-2">
+            Volgende <ArrowRight className="w-4 h-4" />
           </Button>
         )}
       </div>
