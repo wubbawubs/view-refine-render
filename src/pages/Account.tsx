@@ -1,6 +1,6 @@
-import { User, CreditCard, Settings, Shield, Bell, Globe, Save, Menu, X } from "lucide-react";
+import { User, CreditCard, Shield, Bell, Globe, Save } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import Sidebar from "@/components/dashboard/Sidebar";
+import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
