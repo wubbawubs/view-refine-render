@@ -189,7 +189,9 @@ const SEOPlan = () => {
                   >
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
-                        <span className="text-xl">{category.icon}</span>
+                        <div className="w-9 h-9 rounded-xl bg-[hsl(var(--kk-violet)/0.1)] flex items-center justify-center shrink-0">
+                          <category.icon className="w-4.5 h-4.5 text-[hsl(var(--kk-violet))]" />
+                        </div>
                         <div>
                           <CardTitle className="text-base">{category.category}</CardTitle>
                           <p className="text-xs text-muted-foreground">{category.tasks.filter(t => t.status === 'completed').length}/{category.tasks.length} taken voltooid</p>
