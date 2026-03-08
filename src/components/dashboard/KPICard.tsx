@@ -1,12 +1,12 @@
 import { ReactNode, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { ArrowUp, ArrowDown, HelpCircle, X } from "lucide-react";
+import { ArrowUp, ArrowDown, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 interface KPICardProps {
   label: string | ReactNode;
