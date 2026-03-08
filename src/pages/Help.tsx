@@ -39,7 +39,6 @@ const faqs = [
 ];
 
 const Help = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
