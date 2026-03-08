@@ -36,7 +36,7 @@ const mockOptimizations = [
 
 const Aanpassingen = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [filterTab, setFilterTab] = useState('all');
   const { data: seoOptimizations, isLoading } = useSEOOptimizations();
