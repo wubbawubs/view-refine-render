@@ -43,13 +43,13 @@ const Dashboard = () => {
       title: 'KlikKlaar.io SEO Dashboard',
       lastUpdated: 'Last updated: September 24, 2025, 7:30 AM',
       seoScore: 'SEO Score',
-      seoScoreHelp: 'Technical SEO performance for KlikKlaar.io',
+      seoScoreHelp: 'This number shows how well your website scores in Google. The higher, the easier people can find you.',
       totalAdjustments: 'Automatic optimizations',
-      totalAdjustmentsHelp: 'AI-driven SEO improvements applied',
+      totalAdjustmentsHelp: 'These are improvements we automatically made to your website so you rank higher in Google.',
       estimatedGrowth: 'Organic growth',
-      estimatedGrowthHelp: 'Estimated traffic improvement through SEO',
+      estimatedGrowthHelp: 'How many more people visit your website thanks to the improvements we made.',
       totalVisitors: 'Website visitors',
-      totalVisitorsHelp: 'Unique visitors to KlikKlaar.io website',
+      totalVisitorsHelp: 'The number of people who visited your website. More visitors = more potential customers!',
     }
   };
 
