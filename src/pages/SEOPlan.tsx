@@ -20,10 +20,10 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 // --- Mock SEO Plan data (mirrors the real API format) ---
 
 const mockScores = [
-  { label: "SEO Relevance Score", score: 8, max: 10, status: "Uitstekend", icon: Target, tooltip: "Hoe goed je pagina aansluit bij de zoektermen waar je op wilt scoren. We kijken naar titels, koppen, teksten en zoekwoordgebruik." },
-  { label: "Content Depth Score", score: 8, max: 10, status: "Uitstekend", icon: FileText, tooltip: "Hoe uitgebreid en waardevol je content is. We meten tekstlengte, structuur, onderwerpsdekking en vergelijken met de best scorende concurrenten." },
-  { label: "Technical Score", score: 8, max: 10, status: "Uitstekend", icon: Code, tooltip: "De technische gezondheid van je website. Denk aan laadsnelheid, mobielvriendelijkheid, schema markup en of Google je pagina's goed kan lezen." },
-  { label: "Competitive Gap Score", score: 8, max: 10, status: "Uitstekend", icon: ListChecks, tooltip: "Hoe je presteert ten opzichte van concurrenten. We analyseren wat zij wél doen en jij nog niet, en waar jij juist voorloopt." },
+  { label: "SEO Relevance Score", score: 8, max: 10, status: "Uitstekend", icon: Target, tooltip: "Past jouw website goed bij wat mensen zoeken in Google? Dit cijfer laat zien hoe goed jouw teksten aansluiten bij de zoekwoorden van je klanten." },
+  { label: "Content Depth Score", score: 8, max: 10, status: "Uitstekend", icon: FileText, tooltip: "Staat er genoeg nuttige informatie op je website? We kijken of je teksten compleet genoeg zijn om bezoekers (en Google) te overtuigen." },
+  { label: "Technical Score", score: 8, max: 10, status: "Uitstekend", icon: Code, tooltip: "Werkt je website lekker snel en goed op telefoons? Dit cijfer laat zien of alles technisch in orde is zodat Google je site goed kan lezen." },
+  { label: "Competitive Gap Score", score: 8, max: 10, status: "Uitstekend", icon: ListChecks, tooltip: "Hoe doe je het vergeleken met je concurrenten? We kijken wat zij doen en waar jij nog kansen laat liggen om ze voorbij te gaan." },
 ];
 
 interface StrategySection {
