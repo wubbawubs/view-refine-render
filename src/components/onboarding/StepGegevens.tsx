@@ -134,11 +134,13 @@ const StepGegevens = ({ onPrevious, onStartOnboarding }: StepGegevensProps) => {
       </div>
 
       <div className="flex items-center justify-between border-t border-border pt-4">
-        <Button variant="outline" onClick={onPrevious}>
-          ⬅ Vorige
+        <Button variant="outline" onClick={onPrevious} className="gap-2">
+          <ArrowLeft className="w-4 h-4" />
+          Vorige
         </Button>
-        <Button onClick={handleSubmit}>
+        <Button onClick={handleSubmit} className="gap-2">
           Start Onboarding
+          <ArrowRight className="w-4 h-4" />
         </Button>
       </div>
     </div>
