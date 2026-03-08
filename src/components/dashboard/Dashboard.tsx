@@ -19,7 +19,6 @@ import {
 
 const Dashboard = () => {
   const [language, setLanguage] = useState<'nl' | 'en'>('nl');
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   const { data: dashboardMetrics, isLoading: metricsLoading } = useDashboardMetrics();
   const { data: updates, isLoading: updatesLoading } = useUpdates();
   const { data: visitorsChart, isLoading: chartLoading } = useVisitorsChart();
