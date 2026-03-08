@@ -8,6 +8,8 @@ import StepGegevens from "@/components/onboarding/StepGegevens";
 import StepDiscovery from "@/components/onboarding/StepDiscovery";
 import StepSelectPages from "@/components/onboarding/StepSelectPages";
 import StepSEOPlans from "@/components/onboarding/StepSEOPlans";
+import StepReviewPlans from "@/components/onboarding/StepReviewPlans";
+import StepOptimalisaties from "@/components/onboarding/StepOptimalisaties";
 
 const Onboarding = () => {
   const [currentStep, setCurrentStep] = useState(1);
