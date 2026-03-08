@@ -20,6 +20,8 @@ import {
   CommandSeparator,
 } from "@/components/ui/command";
 
+import { Rocket } from "lucide-react";
+
 const pages = [
   { name: "Dashboard", path: "/", icon: LayoutDashboard, group: "Navigatie" },
   { name: "Aanpassingen", path: "/aanpassingen", icon: Settings, group: "Navigatie" },

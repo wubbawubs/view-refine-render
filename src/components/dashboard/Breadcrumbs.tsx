@@ -9,6 +9,7 @@ const routeNames: Record<string, string> = {
   "/help": "Help & Tutorials",
   "/account": "Account",
   "/admin": "Admin",
+  "/onboarding": "SEO Onboarding",
 };
 
 const Breadcrumbs = () => {
