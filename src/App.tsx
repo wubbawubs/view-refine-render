@@ -12,6 +12,7 @@ import ContentIdeas from "./pages/ContentIdeas";
 import Account from "./pages/Account";
 import Help from "./pages/Help";
 import Admin from "./pages/Admin";
+import Onboarding from "./pages/Onboarding";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import NotFound from "./pages/NotFound";
