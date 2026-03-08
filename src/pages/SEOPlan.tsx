@@ -424,9 +424,8 @@ const SEOPlan = () => {
             </div>
           </div>
 
-        </main>
-      </div>
-    </div>
+        </div>
+    </DashboardLayout>
   );
 };
 
