@@ -23,47 +23,47 @@ const mockCategories = [
   {
     category: "Technische SEO",
     progress: 92,
-    icon: "⚙️",
+    icon: Settings,
     tasks: [
-      { title: "Website snelheid optimalisatie", status: "completed", priority: "high", description: "Laadtijd teruggebracht van 4.2s naar 1.8s", impact: "+15% gebruikerservaring" },
-      { title: "Mobile-first indexering", status: "completed", priority: "high", description: "Responsive design volledig geïmplementeerd", impact: "+20% mobiel verkeer" },
-      { title: "XML Sitemap genereren", status: "completed", priority: "medium", description: "Automatisch bijgewerkte sitemap ingediend bij Google", impact: "+10% indexering" },
-      { title: "Robots.txt optimalisatie", status: "completed", priority: "low", description: "Crawl budget efficiëntie verbeterd", impact: "+5% crawling" },
-      { title: "Core Web Vitals verbeteren", status: "in-progress", priority: "high", description: "LCP en CLS scores verbeteren", impact: "+12% ranking signaal" },
+      { title: "Website sneller maken", status: "completed", priority: "high", description: "Laadtijd verbeterd van 4.2 naar 1.8 seconden", impact: "+15% betere ervaring" },
+      { title: "Mobiel-vriendelijk maken", status: "completed", priority: "high", description: "Website werkt nu perfect op telefoon en tablet", impact: "+20% mobiele bezoekers" },
+      { title: "Sitemap aanmaken", status: "completed", priority: "medium", description: "Google kan nu alle pagina's makkelijk vinden", impact: "+10% vindbaarheid" },
+      { title: "Zoekrobots optimaliseren", status: "completed", priority: "low", description: "Google kan je site nu efficiënter doorzoeken", impact: "+5% indexering" },
+      { title: "Laadsnelheid verder verbeteren", status: "in-progress", priority: "high", description: "De belangrijkste snelheidsscores nog verder verbeteren", impact: "+12% hogere ranking" },
     ]
   },
   {
     category: "On-Page SEO",
     progress: 65,
-    icon: "📝",
+    icon: FileText,
     tasks: [
-      { title: "Meta titles optimaliseren", status: "completed", priority: "high", description: "Alle pagina's voorzien van keyword-rijke titles", impact: "+18% CTR" },
-      { title: "Meta descriptions schrijven", status: "completed", priority: "high", description: "Overtuigende beschrijvingen met call-to-action", impact: "+22% CTR" },
-      { title: "Header structuur (H1-H6)", status: "in-progress", priority: "medium", description: "Logische hiërarchie implementeren", impact: "+8% content relevantie" },
-      { title: "Interne linking strategie", status: "in-progress", priority: "medium", description: "Contextual links toevoegen", impact: "+15% pageviews" },
-      { title: "Alt-teksten voor afbeeldingen", status: "pending", priority: "low", description: "Beschrijvende alt-teksten voor alle media", impact: "+10% image SEO" },
+      { title: "Paginatitels verbeteren", status: "completed", priority: "high", description: "Elke pagina heeft nu een aantrekkelijke titel voor Google", impact: "+18% meer kliks" },
+      { title: "Paginabeschrijvingen schrijven", status: "completed", priority: "high", description: "Overtuigende teksten die mensen aantrekken in Google", impact: "+22% meer kliks" },
+      { title: "Koppenstructuur verbeteren", status: "in-progress", priority: "medium", description: "Duidelijke koppen zodat Google de inhoud beter begrijpt", impact: "+8% relevantie" },
+      { title: "Pagina's onderling verbinden", status: "in-progress", priority: "medium", description: "Slimme links tussen gerelateerde pagina's", impact: "+15% meer paginaweergaven" },
+      { title: "Afbeeldingen beschrijven", status: "pending", priority: "low", description: "Beschrijvende teksten bij alle afbeeldingen", impact: "+10% afbeelding-verkeer" },
     ]
   },
   {
-    category: "Content & Keywords",
+    category: "Content & Zoekwoorden",
     progress: 30,
-    icon: "🎯",
+    icon: Search,
     tasks: [
-      { title: "Keyword research voltooien", status: "completed", priority: "high", description: "50+ relevante zoektermen geïdentificeerd", impact: "Basis voor strategie" },
-      { title: "Content gap analyse", status: "in-progress", priority: "high", description: "Ontbrekende topics identificeren vs concurrenten", impact: "+25% topical authority" },
-      { title: "Blog content planning", status: "pending", priority: "medium", description: "12 artikelen voor komende 3 maanden", impact: "+30% organisch verkeer" },
-      { title: "FAQ pagina's opzetten", status: "pending", priority: "medium", description: "Veelgestelde vragen per dienst categorie", impact: "+20% featured snippets" },
+      { title: "Zoekwoorden onderzoeken", status: "completed", priority: "high", description: "50+ relevante zoektermen gevonden voor jouw bedrijf", impact: "Basis voor je strategie" },
+      { title: "Ontbrekende onderwerpen vinden", status: "in-progress", priority: "high", description: "Kijken welke onderwerpen je concurrenten wel hebben", impact: "+25% meer expertise" },
+      { title: "Blog artikelen plannen", status: "pending", priority: "medium", description: "12 artikelen gepland voor de komende 3 maanden", impact: "+30% meer bezoekers" },
+      { title: "Veelgestelde vragen toevoegen", status: "pending", priority: "medium", description: "FAQ pagina's per dienst aanmaken", impact: "+20% kans op topresultaat" },
     ]
   },
   {
     category: "Lokale SEO",
     progress: 45,
-    icon: "📍",
+    icon: MapPin,
     tasks: [
-      { title: "Google Business Profile", status: "completed", priority: "high", description: "Profiel volledig ingevuld en geverifieerd", impact: "+35% lokale zichtbaarheid" },
-      { title: "NAP consistentie", status: "in-progress", priority: "medium", description: "Naam, adres, telefoon uniform op alle platforms", impact: "+10% lokale ranking" },
-      { title: "Lokale backlinks verkrijgen", status: "pending", priority: "medium", description: "Vermeldingen in lokale directories", impact: "+15% domain authority" },
-      { title: "Review strategie", status: "pending", priority: "low", description: "Systematisch reviews verzamelen", impact: "+20% vertrouwen" },
+      { title: "Google Bedrijfsprofiel", status: "completed", priority: "high", description: "Profiel volledig ingevuld en geverifieerd", impact: "+35% lokaal gevonden" },
+      { title: "Contactgegevens gelijktrekken", status: "in-progress", priority: "medium", description: "Naam, adres en telefoon overal hetzelfde maken", impact: "+10% lokale ranking" },
+      { title: "Lokale vermeldingen", status: "pending", priority: "medium", description: "Je bedrijf toevoegen aan lokale websites", impact: "+15% meer autoriteit" },
+      { title: "Reviews verzamelen", status: "pending", priority: "low", description: "Systematisch klantbeoordelingen verzamelen", impact: "+20% meer vertrouwen" },
     ]
   },
 ];
