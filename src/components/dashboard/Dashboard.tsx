@@ -1,9 +1,8 @@
-import { Eye, Users, Target, Clock, Settings, TrendingUp, Globe, Menu, X } from "lucide-react";
+import { Eye, Users, Target, Clock, Settings, TrendingUp, Globe } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import Sidebar from "./Sidebar";
+import DashboardLayout from "./DashboardLayout";
 import HeroMetric from "./HeroMetric";
 import KPICard from "./KPICard";
 import UpdatesFeed from "./UpdatesFeed";
