@@ -351,8 +351,8 @@ const SEOPlan = () => {
                         <TooltipTrigger>
                           <Info className="w-3.5 h-3.5 text-muted-foreground" />
                         </TooltipTrigger>
-                        <TooltipContent>
-                          <p className="text-xs">Score gebaseerd op analyse van je website</p>
+                        <TooltipContent side="bottom" className="max-w-[220px]">
+                          <p className="text-xs">{score.tooltip}</p>
                         </TooltipContent>
                       </Tooltip>
                     </div>
