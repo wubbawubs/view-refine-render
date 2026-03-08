@@ -5,15 +5,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Sidebar from "./Sidebar";
 import Breadcrumbs from "./Breadcrumbs";
-import CommandPalette from "./CommandPalette";
+import CommandPalette, { CommandPaletteProvider, useCommandPalette } from "./CommandPalette";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
 }
 
-const DashboardLayout = ({ children }: DashboardLayoutProps) => {
+const DashboardLayoutInner = ({ children }: DashboardLayoutProps) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [commandOpen, setCommandOpen] = useState(false);
+  const { setOpen: setCommandOpen } = useCommandPalette();
   const location = useLocation();
 
   return (
@@ -84,6 +84,14 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       {/* Command Palette */}
       <CommandPalette />
     </div>
+  );
+};
+
+const DashboardLayout = ({ children }: DashboardLayoutProps) => {
+  return (
+    <CommandPaletteProvider>
+      <DashboardLayoutInner>{children}</DashboardLayoutInner>
+    </CommandPaletteProvider>
   );
 };
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   LayoutDashboard,
@@ -9,7 +9,6 @@ import {
   User,
   Shield,
   LogOut,
-  Search,
 } from "lucide-react";
 import {
   CommandDialog,
@@ -32,9 +31,21 @@ const pages = [
   { name: "Uitloggen", path: "/logout", icon: LogOut, group: "Account" },
 ];
 
-const CommandPalette = () => {
+// Context for controlling the command palette from anywhere
+interface CommandPaletteContextType {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+}
+
+const CommandPaletteContext = createContext<CommandPaletteContextType>({
+  open: false,
+  setOpen: () => {},
+});
+
+export const useCommandPalette = () => useContext(CommandPaletteContext);
+
+export const CommandPaletteProvider = ({ children }: { children: React.ReactNode }) => {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -46,6 +57,17 @@ const CommandPalette = () => {
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
   }, []);
+
+  return (
+    <CommandPaletteContext.Provider value={{ open, setOpen }}>
+      {children}
+    </CommandPaletteContext.Provider>
+  );
+};
+
+const CommandPalette = () => {
+  const { open, setOpen } = useCommandPalette();
+  const navigate = useNavigate();
 
   const handleSelect = (path: string) => {
     setOpen(false);
