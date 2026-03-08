@@ -8,7 +8,8 @@ import {
   Target,
   Lightbulb,
   HelpCircle,
-  Shield
+  Shield,
+  Rocket
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
