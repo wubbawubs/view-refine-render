@@ -248,8 +248,7 @@ const Help = () => {
             </div>
           </GradientCard>
         </div>
-      </main>
-    </div>
+    </DashboardLayout>
   );
 };
 

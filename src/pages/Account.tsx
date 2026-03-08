@@ -214,8 +214,7 @@ const Account = () => {
             </CardContent>
           </GradientCard>
         </div>
-      </main>
-    </div>
+    </DashboardLayout>
   );
 };
 
