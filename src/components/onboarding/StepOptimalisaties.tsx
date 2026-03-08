@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Loader2, CheckCircle2, ArrowLeft, ArrowRight } from "lucide-react";
+import { Loader2, CheckCircle2, ArrowLeft, ArrowRight, Wand2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface PageOptStatus {
@@ -28,15 +28,20 @@ const StepOptimalisaties = ({ onPrevious, onContinue }: StepOptimalisatiesProps)
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold text-foreground">Generate Optimizations</h2>
-      <p className="text-sm text-muted-foreground">
-        We genereren nu optimalisaties per pagina op basis van je goedgekeurde plannen.
-      </p>
+      <div className="space-y-1">
+        <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
+          <Wand2 className="w-5 h-5 text-[hsl(var(--kk-fuchsia))]" />
+          Generate Optimizations
+        </h2>
+        <p className="text-sm text-muted-foreground">
+          We genereren nu optimalisaties per pagina op basis van je goedgekeurde plannen.
+        </p>
+      </div>
 
       <div className="space-y-2">
-        <h3 className="font-semibold text-foreground">Status per pagina</h3>
-        <div className="border border-border rounded-lg overflow-hidden">
-          <div className="grid grid-cols-2 items-center px-4 py-2.5 bg-muted/50 border-b border-border text-xs font-medium text-muted-foreground">
+        <h3 className="font-semibold text-foreground text-sm">Status per pagina</h3>
+        <div className="border border-border rounded-xl overflow-hidden">
+          <div className="grid grid-cols-2 items-center px-4 py-2.5 bg-muted/50 border-b border-border text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
             <span>Slug</span>
             <span>Status</span>
           </div>
@@ -45,14 +50,14 @@ const StepOptimalisaties = ({ onPrevious, onContinue }: StepOptimalisatiesProps)
               key={p.slug}
               className="grid grid-cols-2 items-center px-4 py-3 border-b border-border last:border-b-0"
             >
-              <span className="text-sm text-foreground">{p.slug}</span>
+              <span className="text-sm font-mono text-foreground">{p.slug}</span>
               <div className="flex items-center gap-1.5">
                 {p.status === "running" ? (
-                  <Loader2 className="w-4 h-4 animate-spin text-primary" />
+                  <Loader2 className="w-4 h-4 animate-spin text-[hsl(var(--kk-violet))]" />
                 ) : (
-                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  <CheckCircle2 className="w-4 h-4 text-[hsl(var(--kk-success))]" />
                 )}
-                <span className="text-sm capitalize text-foreground">{p.status === "done" ? "Done" : "Running"}</span>
+                <span className="text-sm text-foreground">{p.status === "done" ? "Done" : "Running"}</span>
               </div>
             </div>
           ))}

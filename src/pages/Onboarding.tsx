@@ -96,25 +96,28 @@ const Onboarding = () => {
       </Helmet>
 
       <div className="max-w-5xl mx-auto space-y-8">
-        {/* Premium Header */}
+        {/* Premium Header with KlikKlaar gradient */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary/10 via-card to-accent/10 p-8 text-center"
+          className="relative overflow-hidden rounded-2xl border border-border p-8 text-center"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 backdrop-blur-sm" />
+          {/* Gradient top bar */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[hsl(var(--kk-violet))] via-[hsl(var(--kk-fuchsia))] to-[hsl(var(--kk-orange))]" />
+          {/* Subtle gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--kk-violet)/0.06)] via-card to-[hsl(var(--kk-orange)/0.04)]" />
           <div className="relative z-10">
             <div className="flex items-center justify-center gap-3 mb-2">
-              <div className="p-2 rounded-xl bg-primary/10">
-                <Rocket className="w-6 h-6 text-primary" />
+              <div className="p-2.5 rounded-xl bg-gradient-to-br from-[hsl(var(--kk-violet)/0.15)] to-[hsl(var(--kk-fuchsia)/0.1)]">
+                <Rocket className="w-6 h-6 text-[hsl(var(--kk-violet))]" />
               </div>
               <h1 className="text-2xl font-bold text-foreground tracking-tight">
                 SEO Onboarding
               </h1>
               {clientName && (
-                <div className="flex items-center gap-1.5 bg-primary/10 px-3 py-1 rounded-full">
-                  <Sparkles className="w-3.5 h-3.5 text-primary" />
-                  <span className="text-sm font-medium text-primary">{clientName}</span>
+                <div className="flex items-center gap-1.5 bg-gradient-to-r from-[hsl(var(--kk-violet)/0.1)] to-[hsl(var(--kk-fuchsia)/0.1)] px-3 py-1 rounded-full border border-[hsl(var(--kk-violet)/0.2)]">
+                  <Sparkles className="w-3.5 h-3.5 text-[hsl(var(--kk-fuchsia))]" />
+                  <span className="text-sm font-medium text-[hsl(var(--kk-violet))]">{clientName}</span>
                 </div>
               )}
             </div>
@@ -137,8 +140,10 @@ const Onboarding = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-6 md:p-8 shadow-sm"
+            className="relative overflow-hidden rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-6 md:p-8 shadow-sm"
           >
+            {/* Subtle gradient top accent */}
+            <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[hsl(var(--kk-violet))] via-[hsl(var(--kk-fuchsia))] to-[hsl(var(--kk-orange))] opacity-40" />
             {renderStep()}
           </motion.div>
         </AnimatePresence>
