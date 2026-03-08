@@ -9,8 +9,6 @@ import {
   UserPlus,
   Activity,
   Eye,
-  Menu,
-  X,
   Edit3,
   Save,
   ExternalLink,
