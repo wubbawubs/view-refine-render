@@ -30,6 +30,7 @@ const pages = [
   { name: "Help & Tutorials", path: "/help", icon: HelpCircle, group: "Navigatie" },
   { name: "Account Instellingen", path: "/account", icon: User, group: "Account" },
   { name: "Admin Dashboard", path: "/admin", icon: Shield, group: "Account" },
+  { name: "SEO Onboarding", path: "/onboarding", icon: Rocket, group: "Account" },
   { name: "Uitloggen", path: "/logout", icon: LogOut, group: "Account" },
 ];
 
