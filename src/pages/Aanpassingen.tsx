@@ -1,4 +1,4 @@
-import { Menu, X, Globe, Settings, CheckCircle2, Clock, Zap, ArrowUpRight, TrendingUp, Eye, ChevronDown, ChevronUp, Sparkles, Pencil } from "lucide-react";
+import { Globe, Settings, CheckCircle2, Clock, Zap, ArrowUpRight, TrendingUp, ChevronDown, ChevronUp, Sparkles, Pencil } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import { Button } from "@/components/ui/button";
