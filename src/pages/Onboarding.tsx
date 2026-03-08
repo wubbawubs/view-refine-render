@@ -39,6 +39,13 @@ const Onboarding = () => {
         );
       case 3:
         return <StepDiscovery clientName={clientName} />;
+      case 4:
+        return (
+          <StepSelectPages
+            onPrevious={() => setCurrentStep(3)}
+            onContinue={() => setCurrentStep(5)}
+          />
+        );
       default:
         return (
           <div className="text-center py-16 text-muted-foreground">
