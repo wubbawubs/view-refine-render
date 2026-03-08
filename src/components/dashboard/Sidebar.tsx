@@ -29,6 +29,7 @@ const sidebarItems: SidebarItem[] = [
   { name: "Help", path: "/help", icon: HelpCircle },
   { name: "Account", path: "/account", icon: User },
   { name: "Admin", path: "/admin", icon: Shield, adminOnly: true },
+  { name: "Onboarding", path: "/onboarding", icon: Rocket, adminOnly: true },
   { name: "Uitloggen", path: "/logout", icon: LogOut, danger: true },
 ];
 
