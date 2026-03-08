@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Rocket } from "lucide-react";
+import { Rocket, Sparkles } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import OnboardingStepper from "@/components/onboarding/OnboardingStepper";
 import StepKlantKiezen from "@/components/onboarding/StepKlantKiezen";
@@ -11,6 +12,7 @@ import StepSEOPlans from "@/components/onboarding/StepSEOPlans";
 import StepReviewPlans from "@/components/onboarding/StepReviewPlans";
 import StepOptimalisaties from "@/components/onboarding/StepOptimalisaties";
 import StepReviewOpts from "@/components/onboarding/StepReviewOpts";
+import StepToplayer from "@/components/onboarding/StepToplayer";
 
 const Onboarding = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -78,13 +80,12 @@ const Onboarding = () => {
             onContinue={() => setCurrentStep(9)}
           />
         );
-      default:
+      case 9:
         return (
-          <div className="text-center py-16 text-muted-foreground">
-            <p className="text-lg font-medium">Stap {currentStep} - Binnenkort beschikbaar</p>
-            <p className="text-sm mt-2">Deze stap wordt nog gebouwd.</p>
-          </div>
+          <StepToplayer onPrevious={() => setCurrentStep(8)} />
         );
+      default:
+        return null;
     }
   };
 
@@ -94,28 +95,53 @@ const Onboarding = () => {
         <title>SEO Onboarding | KlikKlaar</title>
       </Helmet>
 
-      <div className="max-w-5xl mx-auto space-y-6">
-        {/* Header */}
-        <div className="rounded-xl border border-border bg-card p-6 text-center">
-          <div className="flex items-center justify-center gap-2 mb-1">
-            <Rocket className="w-6 h-6 text-primary" />
-            <h1 className="text-2xl font-bold text-foreground">SEO Onboarding</h1>
-            {clientName && (
-              <span className="text-muted-foreground font-normal">- {clientName}</span>
-            )}
+      <div className="max-w-5xl mx-auto space-y-8">
+        {/* Premium Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary/10 via-card to-accent/10 p-8 text-center"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 backdrop-blur-sm" />
+          <div className="relative z-10">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <div className="p-2 rounded-xl bg-primary/10">
+                <Rocket className="w-6 h-6 text-primary" />
+              </div>
+              <h1 className="text-2xl font-bold text-foreground tracking-tight">
+                SEO Onboarding
+              </h1>
+              {clientName && (
+                <div className="flex items-center gap-1.5 bg-primary/10 px-3 py-1 rounded-full">
+                  <Sparkles className="w-3.5 h-3.5 text-primary" />
+                  <span className="text-sm font-medium text-primary">{clientName}</span>
+                </div>
+              )}
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Onboard nieuwe klanten of beheer bestaande klanten
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground">
-            Onboard nieuwe klanten of beheer bestaande klanten
-          </p>
-        </div>
+        </motion.div>
 
         {/* Stepper */}
-        <OnboardingStepper currentStep={currentStep} />
-
-        {/* Step content */}
-        <div className="rounded-xl border border-border bg-card p-6">
-          {renderStep()}
+        <div className="px-2">
+          <OnboardingStepper currentStep={currentStep} />
         </div>
+
+        {/* Step content with animation */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentStep}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-6 md:p-8 shadow-sm"
+          >
+            {renderStep()}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </DashboardLayout>
   );
