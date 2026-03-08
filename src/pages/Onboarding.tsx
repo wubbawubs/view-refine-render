@@ -6,6 +6,7 @@ import OnboardingStepper from "@/components/onboarding/OnboardingStepper";
 import StepKlantKiezen from "@/components/onboarding/StepKlantKiezen";
 import StepGegevens from "@/components/onboarding/StepGegevens";
 import StepDiscovery from "@/components/onboarding/StepDiscovery";
+import StepSelectPages from "@/components/onboarding/StepSelectPages";
 
 const Onboarding = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -38,6 +39,13 @@ const Onboarding = () => {
         );
       case 3:
         return <StepDiscovery clientName={clientName} />;
+      case 4:
+        return (
+          <StepSelectPages
+            onPrevious={() => setCurrentStep(3)}
+            onContinue={() => setCurrentStep(5)}
+          />
+        );
       default:
         return (
           <div className="text-center py-16 text-muted-foreground">
