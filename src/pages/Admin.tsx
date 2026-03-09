@@ -612,6 +612,10 @@ const Admin = () => {
                   </Card>
                 </TabsContent>
 
+                <TabsContent value="kalender">
+                  <WeeklyMailCalendar />
+                </TabsContent>
+
                 <TabsContent value="custom">
                   <Card className="p-6 bg-card border border-border">
                     <div className="mb-6">
