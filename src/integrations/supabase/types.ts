@@ -14,7 +14,192 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      clients: {
+        Row: {
+          auto_optimize: boolean | null
+          created_at: string
+          email: string | null
+          ga4_property_id: string | null
+          id: string
+          name: string
+          notes: string | null
+          plan: string | null
+          seo_score: number | null
+          status: string | null
+          updated_at: string
+          website_url: string | null
+          weekly_report: boolean | null
+        }
+        Insert: {
+          auto_optimize?: boolean | null
+          created_at?: string
+          email?: string | null
+          ga4_property_id?: string | null
+          id?: string
+          name: string
+          notes?: string | null
+          plan?: string | null
+          seo_score?: number | null
+          status?: string | null
+          updated_at?: string
+          website_url?: string | null
+          weekly_report?: boolean | null
+        }
+        Update: {
+          auto_optimize?: boolean | null
+          created_at?: string
+          email?: string | null
+          ga4_property_id?: string | null
+          id?: string
+          name?: string
+          notes?: string | null
+          plan?: string | null
+          seo_score?: number | null
+          status?: string | null
+          updated_at?: string
+          website_url?: string | null
+          weekly_report?: boolean | null
+        }
+        Relationships: []
+      }
+      email_logs: {
+        Row: {
+          client_id: string | null
+          error_message: string | null
+          id: string
+          recipient_email: string
+          sent_at: string
+          status: string
+          subject: string
+          template_type: string
+        }
+        Insert: {
+          client_id?: string | null
+          error_message?: string | null
+          id?: string
+          recipient_email: string
+          sent_at?: string
+          status?: string
+          subject: string
+          template_type: string
+        }
+        Update: {
+          client_id?: string | null
+          error_message?: string | null
+          id?: string
+          recipient_email?: string
+          sent_at?: string
+          status?: string
+          subject?: string
+          template_type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "email_logs_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      keywords: {
+        Row: {
+          client_id: string
+          id: string
+          keyword: string
+          last_updated: string
+          page_url: string | null
+          position: number | null
+          previous_position: number | null
+          search_volume: number | null
+          tracked_since: string
+        }
+        Insert: {
+          client_id: string
+          id?: string
+          keyword: string
+          last_updated?: string
+          page_url?: string | null
+          position?: number | null
+          previous_position?: number | null
+          search_volume?: number | null
+          tracked_since?: string
+        }
+        Update: {
+          client_id?: string
+          id?: string
+          keyword?: string
+          last_updated?: string
+          page_url?: string | null
+          position?: number | null
+          previous_position?: number | null
+          search_volume?: number | null
+          tracked_since?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "keywords_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      optimizations: {
+        Row: {
+          accepted: boolean | null
+          accepted_at: string | null
+          client_id: string
+          completed_at: string | null
+          created_at: string
+          description: string | null
+          id: string
+          page_url: string | null
+          priority: string | null
+          status: string
+          title: string
+          type: string
+        }
+        Insert: {
+          accepted?: boolean | null
+          accepted_at?: string | null
+          client_id: string
+          completed_at?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          page_url?: string | null
+          priority?: string | null
+          status?: string
+          title: string
+          type?: string
+        }
+        Update: {
+          accepted?: boolean | null
+          accepted_at?: string | null
+          client_id?: string
+          completed_at?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          page_url?: string | null
+          priority?: string | null
+          status?: string
+          title?: string
+          type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "optimizations_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
