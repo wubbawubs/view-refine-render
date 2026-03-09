@@ -105,7 +105,7 @@ function wrapEmail(headerTitle: string, headerSubtitle: string, bodyHtml: string
   </td></tr>
   <tr><td style="background:#ffffff;padding:32px;text-align:center;border-radius:0 0 16px 16px;">
     ${ctaUrl ? `<a href="${ctaUrl}" style="display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#7c3aed,#d946ef);color:#fff;font-weight:600;font-size:14px;text-decoration:none;border-radius:12px;">${ctaText || 'Naar je dashboard →'}</a>` : ''}
-    <p style="font-size:11px;color:#9ca3af;margin:16px 0 0;">KlikKlaar SEO — hello@klikklaarseo.nl<br>Je ontvangt dit bericht omdat je klant bent bij KlikKlaar SEO.</p>
+    <p style="font-size:11px;color:#9ca3af;margin:16px 0 0;">KlikKlaar SEO | hello@klikklaarseo.nl<br>Je ontvangt dit bericht omdat je klant bent bij KlikKlaar SEO.</p>
   </td></tr>
 </table>
 </body></html>`;
