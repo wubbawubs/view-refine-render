@@ -66,6 +66,7 @@ import BulkMailDialog from "@/components/email/BulkMailDialog";
 import CustomEmailComposer from "@/components/email/CustomEmailComposer";
 import EmailHistory from "@/components/email/EmailHistory";
 import ScheduledEmailsOverview from "@/components/email/ScheduledEmailsOverview";
+import WeeklyMailCalendar from "@/components/email/WeeklyMailCalendar";
 import {
   AlertDialog,
   AlertDialogAction,
