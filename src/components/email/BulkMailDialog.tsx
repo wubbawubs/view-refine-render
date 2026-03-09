@@ -21,6 +21,7 @@ import {
 import { Send, Mail, Users, AlertTriangle } from "lucide-react";
 import EmailPreview from "./EmailPreview";
 import { toast } from "sonner";
+import { sendBulkEmail } from "@/services/email";
 
 interface Customer {
   id: number;
