@@ -21,6 +21,7 @@ import {
 import { Send, Mail, Users, AlertTriangle } from "lucide-react";
 import EmailPreview from "./EmailPreview";
 import { toast } from "sonner";
+import { sendBulkEmail } from "@/services/email";
 
 interface Customer {
   id: number;
@@ -60,12 +61,44 @@ const BulkMailDialog = ({ customers, open, onOpenChange }: BulkMailDialogProps) 
 
   const handleSend = async () => {
     setSending(true);
-    // Simulate sending
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      const selectedRecipients = customers
+        .filter(c => selectedIds.includes(c.id))
+        .map(c => ({ name: c.name, email: c.email }));
+
+      const result = await sendBulkEmail({
+        recipients: selectedRecipients,
+        template: templateType as "weekly-report" | "progress-update" | "announcement",
+        data: {
+          seoScore: 85,
+          seoScoreDelta: 4,
+          optimizationsCount: 12,
+          weekNumber: Math.ceil((new Date().getTime() - new Date(new Date().getFullYear(), 0, 1).getTime()) / 604800000),
+          topKeywordChanges: [],
+          tips: [],
+          dashboardUrl: "https://dashboard.klikklaar.io",
+          title: templateType === "progress-update" ? "We zijn bezig met je website" : "Nieuws van KlikKlaar",
+          message: templateType === "progress-update" 
+            ? "We werken momenteel aan optimalisaties voor jouw website. Google heeft tijd nodig om deze wijzigingen te indexeren — verwacht binnen 2-4 weken resultaten." 
+            : "We hebben spannend nieuws te delen!",
+        },
+      });
+
+      if (result.success) {
+        toast.success(`E-mail verstuurd naar ${result.sent} klanten`, {
+          description: result.failed ? `${result.failed} mislukt` : undefined,
+        });
+      } else {
+        toast.error("E-mail versturen mislukt", {
+          description: result.error || "Probeer het opnieuw",
+        });
+      }
+    } catch {
+      toast.error("E-mail versturen mislukt", {
+        description: "Controleer of RESEND_API_KEY is ingesteld in Cloud → Secrets",
+      });
+    }
     setSending(false);
-    toast.success(`E-mail verstuurd naar ${selectedIds.length} klanten`, {
-      description: `Template: ${templateType}`
-    });
     onOpenChange(false);
     setStep("select");
     setSelectedIds([]);
