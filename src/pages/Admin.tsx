@@ -580,11 +580,11 @@ const Admin = () => {
             <div className="space-y-6">
               {/* Sub-tabs for mailing */}
               <Tabs defaultValue="templates" className="space-y-4">
-                <TabsList className="h-9">
+                <TabsList className="h-9 flex-wrap">
                   <TabsTrigger value="templates" className="text-xs">📧 Templates</TabsTrigger>
-                  <TabsTrigger value="kalender" className="text-xs">📅 25-Weken Plan</TabsTrigger>
                   <TabsTrigger value="custom" className="text-xs">✉️ Custom Mail</TabsTrigger>
-                  <TabsTrigger value="scheduled" className="text-xs">⏰ Automatisch</TabsTrigger>
+                  <TabsTrigger value="kalender" className="text-xs">📅 25-Weken Plan</TabsTrigger>
+                  <TabsTrigger value="scheduled" className="text-xs">⏰ Gepland</TabsTrigger>
                   <TabsTrigger value="history" className="text-xs">📋 Geschiedenis</TabsTrigger>
                 </TabsList>
 
