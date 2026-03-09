@@ -105,7 +105,7 @@ function wrapEmail(headerTitle: string, headerSubtitle: string, bodyHtml: string
   </td></tr>
   <tr><td style="background:#ffffff;padding:32px;text-align:center;border-radius:0 0 16px 16px;">
     ${ctaUrl ? `<a href="${ctaUrl}" style="display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#7c3aed,#d946ef);color:#fff;font-weight:600;font-size:14px;text-decoration:none;border-radius:12px;">${ctaText || 'Naar je dashboard →'}</a>` : ''}
-    <p style="font-size:11px;color:#9ca3af;margin:16px 0 0;">KlikKlaar SEO | hello@klikklaarseo.nl<br>Je ontvangt dit bericht omdat je klant bent bij KlikKlaar SEO.</p>
+    <p style="font-size:11px;color:#9ca3af;margin:16px 0 0;">KlikKlaar SEO |ello@klikklaarseo.nl<br>Je ontvangt dit bericht omdat je klant bent bij KlikKlaar SEO.</p>
   </td></tr>
 </table>
 </body></html>`;
@@ -130,7 +130,7 @@ function generateWeeklyReportHTML(data: Record<string, unknown>, name: string): 
       ${keywordChanges.map(kw => {
         const improved = kw.newPosition < kw.oldPosition;
         return `<div style="padding:8px 12px;background:#f9fafb;border-radius:8px;margin-bottom:8px;font-size:14px;">
-          <strong>"${kw.keyword}"</strong> — <span style="color:${improved ? '#10b981' : '#ef4444'};font-weight:600;">${improved ? '↑' : '↓'} Positie ${kw.newPosition}</span> <span style="color:#9ca3af;">(was ${kw.oldPosition})</span>
+          <strong>"${kw.keyword}"</strong> �|span style="color:${improved ? '#10b981' : '#ef4444'};font-weight:600;">${improved ? '↑' : '↓'} Positie ${kw.newPosition}</span> <span style="color:#9ca3af;">(was ${kw.oldPosition})</span>
         </div>`;
       }).join('')}
     </td></tr>`;
