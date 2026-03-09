@@ -613,7 +613,7 @@ const Admin = () => {
                 </TabsContent>
 
                 <TabsContent value="kalender">
-                  <WeeklyMailCalendar />
+                  <WeeklyMailManager />
                 </TabsContent>
 
                 <TabsContent value="custom">
