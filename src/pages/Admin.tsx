@@ -577,37 +577,63 @@ const Admin = () => {
 
           <TabsContent value="mailing">
             <div className="space-y-6">
-              <Card className="p-6 bg-card border border-border">
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
-                      <Mail className="w-5 h-5 text-[hsl(var(--kk-violet))]" />
-                      E-mail Templates & Preview
-                    </h2>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Bekijk en verstuur e-mail templates naar klanten
-                    </p>
-                  </div>
-                  <Button 
-                    className="bg-kk-gradient text-white hover:opacity-90"
-                    onClick={() => setBulkMailOpen(true)}
-                  >
-                    <Send className="w-4 h-4 mr-2" />
-                    Bulk versturen
-                  </Button>
-                </div>
-                <EmailPreview />
-              </Card>
+              {/* Sub-tabs for mailing */}
+              <Tabs defaultValue="templates" className="space-y-4">
+                <TabsList className="h-9">
+                  <TabsTrigger value="templates" className="text-xs">📧 Templates</TabsTrigger>
+                  <TabsTrigger value="custom" className="text-xs">✉️ Custom Mail</TabsTrigger>
+                  <TabsTrigger value="scheduled" className="text-xs">📅 Gepland</TabsTrigger>
+                  <TabsTrigger value="history" className="text-xs">📋 Geschiedenis</TabsTrigger>
+                </TabsList>
 
-              {/* Send History */}
-              <Card className="p-6 bg-card border border-border">
-                <h3 className="text-lg font-semibold text-foreground mb-4">Verzendgeschiedenis</h3>
-                <div className="text-center py-8 text-muted-foreground">
-                  <Mail className="w-8 h-8 mx-auto mb-2 opacity-50" />
-                  <p className="text-sm">Nog geen e-mails verstuurd</p>
-                  <p className="text-xs mt-1">Activeer Lovable Cloud om e-mails te kunnen versturen</p>
-                </div>
-              </Card>
+                <TabsContent value="templates">
+                  <Card className="p-6 bg-card border border-border">
+                    <div className="flex items-center justify-between mb-6">
+                      <div>
+                        <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                          <Mail className="w-5 h-5 text-[hsl(var(--kk-violet))]" />
+                          E-mail Templates & Preview
+                        </h2>
+                        <p className="text-sm text-muted-foreground mt-1">
+                          Bekijk en verstuur bestaande e-mail templates naar klanten
+                        </p>
+                      </div>
+                      <Button 
+                        className="bg-kk-gradient text-white hover:opacity-90"
+                        onClick={() => setBulkMailOpen(true)}
+                      >
+                        <Send className="w-4 h-4 mr-2" />
+                        Bulk versturen
+                      </Button>
+                    </div>
+                    <EmailPreview />
+                  </Card>
+                </TabsContent>
+
+                <TabsContent value="custom">
+                  <Card className="p-6 bg-card border border-border">
+                    <div className="mb-6">
+                      <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                        ✉️ Custom E-mail Schrijven
+                      </h2>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Schrijf een eigen bericht en verstuur het naar geselecteerde klanten
+                      </p>
+                    </div>
+                    <CustomEmailComposer 
+                      customers={customers.map(c => ({ id: c.id, name: c.name, email: c.email, status: c.status }))}
+                    />
+                  </Card>
+                </TabsContent>
+
+                <TabsContent value="scheduled">
+                  <ScheduledEmailsOverview />
+                </TabsContent>
+
+                <TabsContent value="history">
+                  <EmailHistory />
+                </TabsContent>
+              </Tabs>
             </div>
           </TabsContent>
         </Tabs>
