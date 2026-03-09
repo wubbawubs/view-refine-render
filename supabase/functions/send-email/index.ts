@@ -18,6 +18,76 @@ interface EmailRequest {
   recipients: EmailRecipient[];
   template: "weekly-report" | "biweekly-report" | "progress-update" | "monthly-update" | "monthly-tips" | "announcement" | "custom";
   data: Record<string, unknown>;
+  auto?: boolean; // When true, fetch recipients from DB
+}
+
+function getSupabaseClient() {
+  return createClient(
+    Deno.env.get("SUPABASE_URL")!,
+    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
+  );
+}
+
+// ── Fetch active clients with weekly_report enabled ──
+async function fetchAutoRecipients(supabase: ReturnType<typeof createClient>) {
+  const { data: clients, error } = await supabase
+    .from("clients")
+    .select("id, name, email, seo_score, website_url")
+    .eq("status", "actief")
+    .eq("weekly_report", true)
+    .not("email", "is", null);
+
+  if (error) throw new Error(`Failed to fetch clients: ${error.message}`);
+  return clients || [];
+}
+
+// ── Fetch per-client keyword changes ──
+async function fetchKeywordChanges(supabase: ReturnType<typeof createClient>, clientId: string) {
+  const { data } = await supabase
+    .from("keywords")
+    .select("keyword, position, previous_position")
+    .eq("client_id", clientId)
+    .not("previous_position", "is", null)
+    .order("last_updated", { ascending: false })
+    .limit(5);
+
+  return (data || [])
+    .filter((k: { position: number | null; previous_position: number | null }) => k.position !== null && k.previous_position !== null)
+    .map((k: { keyword: string; position: number; previous_position: number }) => ({
+      keyword: k.keyword,
+      oldPosition: k.previous_position,
+      newPosition: k.position,
+    }));
+}
+
+// ── Fetch per-client optimization count (last 14 days) ──
+async function fetchRecentOptimizations(supabase: ReturnType<typeof createClient>, clientId: string) {
+  const twoWeeksAgo = new Date(Date.now() - 14 * 86400000).toISOString();
+  const { count } = await supabase
+    .from("optimizations")
+    .select("id", { count: "exact", head: true })
+    .eq("client_id", clientId)
+    .eq("status", "completed")
+    .gte("completed_at", twoWeeksAgo);
+
+  return count || 0;
+}
+
+// ── Fetch recent optimization descriptions for monthly update ──
+async function fetchRecentActions(supabase: ReturnType<typeof createClient>, clientId: string) {
+  const oneMonthAgo = new Date(Date.now() - 30 * 86400000).toISOString();
+  const { data } = await supabase
+    .from("optimizations")
+    .select("title, type, page_url")
+    .eq("client_id", clientId)
+    .eq("status", "completed")
+    .gte("completed_at", oneMonthAgo)
+    .order("completed_at", { ascending: false })
+    .limit(6);
+
+  return (data || []).map((o: { title: string; page_url: string | null }) =>
+    `${o.title}${o.page_url ? ` (${o.page_url})` : ""}`
+  );
 }
 
 // ── Shared HTML wrapper ──
@@ -55,7 +125,7 @@ function generateWeeklyReportHTML(data: Record<string, unknown>, name: string): 
 
   let keywordsSection = "";
   if (keywordChanges.length > 0) {
-    keywordsSection = `<td style="padding:24px 32px;border-top:1px solid #e5e7eb;">
+    keywordsSection = `<tr><td style="padding:24px 32px;border-top:1px solid #e5e7eb;">
       <h2 style="font-size:12px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 16px;">Ranking Veranderingen</h2>
       ${keywordChanges.map(kw => {
         const improved = kw.newPosition < kw.oldPosition;
@@ -63,22 +133,22 @@ function generateWeeklyReportHTML(data: Record<string, unknown>, name: string): 
           <strong>"${kw.keyword}"</strong> — <span style="color:${improved ? '#10b981' : '#ef4444'};font-weight:600;">${improved ? '↑' : '↓'} Positie ${kw.newPosition}</span> <span style="color:#9ca3af;">(was ${kw.oldPosition})</span>
         </div>`;
       }).join('')}
-    </td>`;
+    </td></tr>`;
   }
 
   let tipsSection = "";
   if (tips.length > 0) {
-    tipsSection = `<td style="padding:24px 32px;border-top:1px solid #e5e7eb;">
+    tipsSection = `<tr><td style="padding:24px 32px;border-top:1px solid #e5e7eb;">
       <h2 style="font-size:12px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 16px;">💡 Tips</h2>
       ${tips.map(tip => `<div style="font-size:14px;margin-bottom:8px;"><span style="color:#f97316;font-weight:bold;">•</span> ${tip}</div>`).join('')}
-    </td>`;
+    </td></tr>`;
   }
 
   const body = `
     <table width="100%" cellpadding="0" cellspacing="0">
     <tr><td style="padding:24px 32px;border-bottom:1px solid #e5e7eb;">
       <p style="font-size:16px;margin:0;">Hoi <strong>${name}</strong>,</p>
-      <p style="font-size:14px;color:#6b7280;margin:8px 0 0;">Hier is je wekelijkse SEO update!</p>
+      <p style="font-size:14px;color:#6b7280;margin:8px 0 0;">Hier is je SEO update!</p>
     </td></tr>
     <tr><td style="padding:24px 32px;border-bottom:1px solid #e5e7eb;">
       <h2 style="font-size:12px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 16px;">SEO Score</h2>
@@ -99,12 +169,12 @@ function generateWeeklyReportHTML(data: Record<string, unknown>, name: string): 
         </span>
       </div>
     </td></tr>
-    ${keywordsSection ? `<tr>${keywordsSection}</tr>` : ''}
-    ${tipsSection ? `<tr>${tipsSection}</tr>` : ''}
+    ${keywordsSection}
+    ${tipsSection}
     </table>`;
 
   const subject = `Wekelijks SEO Rapport — Week ${weekNumber}`;
-  return { html: wrapEmail("📊 Wekelijks SEO Rapport", `Week ${weekNumber}`, body, data.dashboardUrl as string), subject };
+  return { html: wrapEmail("📊 SEO Rapport", `Week ${weekNumber}`, body, data.dashboardUrl as string), subject };
 }
 
 function generateMonthlyUpdateHTML(data: Record<string, unknown>, name: string): { html: string; subject: string } {
@@ -185,7 +255,6 @@ function generateAnnouncementHTML(data: Record<string, unknown>, name: string): 
 function generateCustomHTML(data: Record<string, unknown>, name: string): { html: string; subject: string } {
   const subject = (data.subject as string) || "Bericht van KlikKlaar SEO";
   const bodyText = (data.body as string) || "";
-  // Replace newlines with <br> for HTML
   const htmlBody = bodyText.replace(/\n/g, '<br>');
 
   const body = `
@@ -199,6 +268,13 @@ function generateCustomHTML(data: Record<string, unknown>, name: string): { html
   return { html: wrapEmail("✉️ Bericht van KlikKlaar SEO", "", body, data.dashboardUrl as string), subject };
 }
 
+// ── Default tips for monthly-tips auto emails ──
+const defaultMonthlyTips = [
+  { title: "Houd je content up-to-date", description: "Google geeft de voorkeur aan verse, actuele content. Controleer of je belangrijkste pagina's nog kloppen en update ze regelmatig." },
+  { title: "Optimaliseer voor mobiel", description: "Meer dan 60% van de zoekopdrachten komt van mobiele apparaten. Zorg dat je website snel laadt en makkelijk te navigeren is op telefoons." },
+  { title: "Interne links zijn goud waard", description: "Link relevante pagina's aan elkaar op je website. Dit helpt Google je sitestructuur te begrijpen en verdeelt 'autoriteit' over je pagina's." },
+];
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -210,19 +286,117 @@ serve(async (req) => {
       throw new Error("RESEND_API_KEY is not configured");
     }
 
-    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-    const supabase = createClient(supabaseUrl, supabaseKey);
+    const supabase = getSupabaseClient();
+    const { recipients: manualRecipients, template, data, auto } = (await req.json()) as EmailRequest;
 
-    const { recipients, template, data } = (await req.json()) as EmailRequest;
+    // ── Auto mode: fetch recipients + per-client data from DB ──
+    if (auto) {
+      const clients = await fetchAutoRecipients(supabase);
+      if (clients.length === 0) {
+        return new Response(
+          JSON.stringify({ success: true, sent: 0, message: "No active clients with weekly_report enabled" }),
+          { headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
 
-    if (!recipients?.length) {
+      const results = [];
+      for (const client of clients) {
+        if (!client.email) continue;
+
+        let templateData: Record<string, unknown> = { ...data, dashboardUrl: "https://dashboard.klikklaar.io" };
+
+        // Enrich with per-client data based on template type
+        if (template === "biweekly-report" || template === "weekly-report") {
+          const [keywordChanges, optCount] = await Promise.all([
+            fetchKeywordChanges(supabase, client.id),
+            fetchRecentOptimizations(supabase, client.id),
+          ]);
+          templateData = {
+            ...templateData,
+            seoScore: client.seo_score || 0,
+            seoScoreDelta: 0, // Could compute from historical data
+            optimizationsCount: optCount,
+            topKeywordChanges: keywordChanges,
+            weekNumber: Math.ceil((Date.now() - new Date(new Date().getFullYear(), 0, 1).getTime()) / 604800000),
+            tips: [],
+          };
+        } else if (template === "monthly-update") {
+          const actions = await fetchRecentActions(supabase, client.id);
+          templateData = {
+            ...templateData,
+            recentActions: actions.length > 0 ? actions : ["We monitoren je website en werken aan verbeteringen"],
+            nextSteps: ["Content optimalisaties plannen", "Keyword posities blijven monitoren"],
+            month: new Date().toLocaleDateString('nl-NL', { month: 'long', year: 'numeric' }),
+          };
+        } else if (template === "monthly-tips") {
+          templateData = {
+            ...templateData,
+            tips: defaultMonthlyTips,
+            topTrends: [],
+            month: new Date().toLocaleDateString('nl-NL', { month: 'long', year: 'numeric' }),
+          };
+        }
+
+        let html: string;
+        let subject: string;
+
+        switch (template) {
+          case "weekly-report":
+          case "biweekly-report":
+            ({ html, subject } = generateWeeklyReportHTML(templateData, client.name));
+            break;
+          case "monthly-update":
+          case "progress-update":
+            ({ html, subject } = generateMonthlyUpdateHTML(templateData, client.name));
+            break;
+          case "monthly-tips":
+            ({ html, subject } = generateMonthlyTipsHTML(templateData, client.name));
+            break;
+          case "announcement":
+            ({ html, subject } = generateAnnouncementHTML(templateData, client.name));
+            break;
+          case "custom":
+            ({ html, subject } = generateCustomHTML(templateData, client.name));
+            break;
+          default:
+            throw new Error(`Unknown template: ${template}`);
+        }
+
+        const res = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${RESEND_API_KEY}` },
+          body: JSON.stringify({ from: FROM_EMAIL, to: [client.email], subject, html }),
+        });
+
+        const resData = await res.json();
+        const success = res.ok;
+
+        results.push({ email: client.email, success, id: resData.id || null, error: success ? null : resData.message || "Unknown error" });
+
+        await supabase.from("email_logs").insert({
+          recipient_email: client.email,
+          subject,
+          template_type: template,
+          status: success ? "sent" : "failed",
+          error_message: success ? null : (resData.message || "Unknown error"),
+          client_id: client.id,
+        });
+      }
+
+      const successCount = results.filter(r => r.success).length;
+      return new Response(
+        JSON.stringify({ success: true, sent: successCount, failed: results.length - successCount, results }),
+        { headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // ── Manual mode: use provided recipients ──
+    if (!manualRecipients?.length) {
       throw new Error("No recipients provided");
     }
 
     const results = [];
-
-    for (const recipient of recipients) {
+    for (const recipient of manualRecipients) {
       let html: string;
       let subject: string;
 
@@ -250,29 +424,15 @@ serve(async (req) => {
 
       const res = await fetch("https://api.resend.com/emails", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${RESEND_API_KEY}`,
-        },
-        body: JSON.stringify({
-          from: FROM_EMAIL,
-          to: [recipient.email],
-          subject,
-          html,
-        }),
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${RESEND_API_KEY}` },
+        body: JSON.stringify({ from: FROM_EMAIL, to: [recipient.email], subject, html }),
       });
 
       const resData = await res.json();
       const success = res.ok;
 
-      results.push({
-        email: recipient.email,
-        success,
-        id: resData.id || null,
-        error: success ? null : resData.message || "Unknown error",
-      });
+      results.push({ email: recipient.email, success, id: resData.id || null, error: success ? null : resData.message || "Unknown error" });
 
-      // Log to email_logs table
       await supabase.from("email_logs").insert({
         recipient_email: recipient.email,
         subject,
@@ -284,7 +444,6 @@ serve(async (req) => {
     }
 
     const successCount = results.filter(r => r.success).length;
-
     return new Response(
       JSON.stringify({ success: true, sent: successCount, failed: results.length - successCount, results }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
