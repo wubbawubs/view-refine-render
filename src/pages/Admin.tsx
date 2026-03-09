@@ -66,6 +66,7 @@ import BulkMailDialog from "@/components/email/BulkMailDialog";
 import CustomEmailComposer from "@/components/email/CustomEmailComposer";
 import EmailHistory from "@/components/email/EmailHistory";
 import ScheduledEmailsOverview from "@/components/email/ScheduledEmailsOverview";
+import WeeklyMailCalendar from "@/components/email/WeeklyMailCalendar";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -581,8 +582,9 @@ const Admin = () => {
               <Tabs defaultValue="templates" className="space-y-4">
                 <TabsList className="h-9">
                   <TabsTrigger value="templates" className="text-xs">📧 Templates</TabsTrigger>
+                  <TabsTrigger value="kalender" className="text-xs">📅 25-Weken Plan</TabsTrigger>
                   <TabsTrigger value="custom" className="text-xs">✉️ Custom Mail</TabsTrigger>
-                  <TabsTrigger value="scheduled" className="text-xs">📅 Gepland</TabsTrigger>
+                  <TabsTrigger value="scheduled" className="text-xs">⏰ Automatisch</TabsTrigger>
                   <TabsTrigger value="history" className="text-xs">📋 Geschiedenis</TabsTrigger>
                 </TabsList>
 
@@ -608,6 +610,10 @@ const Admin = () => {
                     </div>
                     <EmailPreview />
                   </Card>
+                </TabsContent>
+
+                <TabsContent value="kalender">
+                  <WeeklyMailCalendar />
                 </TabsContent>
 
                 <TabsContent value="custom">
