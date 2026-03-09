@@ -1,1 +1,7 @@
 project_id = "bsckrblljaqithdmnlto"
+
+[functions.send-email]
+verify_jwt = false
+
+[functions.fetch-ga4-data]
+verify_jwt = false
