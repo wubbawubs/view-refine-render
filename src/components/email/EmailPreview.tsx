@@ -90,9 +90,9 @@ const EmailPreview = ({ onSend, selectedCustomerName }: EmailPreviewProps) => {
         {/* Email header bar */}
         <div className="bg-muted/50 px-4 py-2 border-b border-border flex items-center gap-2 text-xs text-muted-foreground">
           <Mail className="w-3 h-3" />
-          <span className="font-medium">Van:</span> KlikKlaar.io &lt;info@klikklaar.io&gt;
+          <span className="font-medium">Van:</span> KlikKlaar SEO &lt;hello@klikklaarseo.nl&gt;
           <span className="mx-2">•</span>
-          <span className="font-medium">Onderwerp:</span> {templateLabels[activeTemplate]} — {customerName}
+          <span className="font-medium">Onderwerp:</span> {templateLabels[activeTemplate]} | {customerName}
         </div>
         
         <div 

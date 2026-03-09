@@ -79,7 +79,7 @@ const BulkMailDialog = ({ customers, open, onOpenChange }: BulkMailDialogProps) 
           dashboardUrl: "https://dashboard.klikklaar.io",
           title: templateType === "progress-update" ? "We zijn bezig met je website" : "Nieuws van KlikKlaar",
           message: templateType === "progress-update" 
-            ? "We werken momenteel aan optimalisaties voor jouw website. Google heeft tijd nodig om deze wijzigingen te indexeren — verwacht binnen 2-4 weken resultaten." 
+            ? "We werken momenteel aan optimalisaties voor jouw website. Google heeft tijd nodig om deze wijzigingen te indexeren, verwacht binnen 2-4 weken resultaten." 
             : "We hebben spannend nieuws te delen!",
         },
       });

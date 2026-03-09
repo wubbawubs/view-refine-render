@@ -63,7 +63,7 @@ const UpdateTemplate = ({ data }: UpdateTemplateProps) => {
                 Dit is normaal en betekent dat de verbeteringen die we nu doorvoeren, binnenkort zichtbaar worden in je rankings.
               </p>
               <p className="text-xs text-muted-foreground mt-2 italic">
-                Geduld loont — we zien bij al onze klanten dat consistente optimalisatie uiteindelijk resulteert in significante groei.
+                Geduld loont, we zien bij al onze klanten dat consistente optimalisatie uiteindelijk resulteert in significante groei.
               </p>
             </div>
           </div>
