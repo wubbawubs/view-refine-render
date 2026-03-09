@@ -317,6 +317,16 @@ const SEOPlan = () => {
           </div>
         </div>
 
+        {/* Page Banner */}
+        <div className="mb-6">
+          <PageBanner
+            label="SEO Plan"
+            title="SEO Plan"
+            description="Overzicht van alle SEO guidance en strategische aanbevelingen"
+            icon={<Target className="w-4 h-4 text-white" />}
+          />
+        </div>
+
         <div className="space-y-6">
           
           {/* Score Cards */}
