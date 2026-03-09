@@ -92,7 +92,7 @@ const EmailPreview = ({ onSend, selectedCustomerName }: EmailPreviewProps) => {
           <Mail className="w-3 h-3" />
           <span className="font-medium">Van:</span> KlikKlaar.io &lt;info@klikklaar.io&gt;
           <span className="mx-2">•</span>
-          <span className="font-medium">Onderwerp:</span> {templateLabels[activeTemplate]} — {customerName}
+          <span className="font-medium">Onderwerp:</span> {templateLabels[activeTemplate]} | {customerName}
         </div>
         
         <div 
