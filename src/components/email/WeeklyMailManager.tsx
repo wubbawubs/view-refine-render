@@ -15,11 +15,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
+  Dialog,
+  DialogContent,
+} from "@/components/ui/dialog";
 import {
   Calendar,
   Eye,
@@ -28,10 +26,11 @@ import {
   X,
   Plus,
   Trash2,
-  GripVertical,
   Copy,
   Search,
   Filter,
+  Monitor,
+  Smartphone,
 } from "lucide-react";
 import {
   weeklyMailTemplates,
@@ -40,6 +39,7 @@ import {
   type WeeklyMailTemplate,
 } from "@/data/weeklyMailTemplates";
 import { toast } from "sonner";
+import LiveEmailPreview from "./LiveEmailPreview";
 
 const typeColors: Record<WeeklyMailTemplate["type"], string> = {
   rapport: "bg-primary/10 text-primary border-primary/20",
@@ -60,9 +60,10 @@ const typeColorsDot: Record<WeeklyMailTemplate["type"], string> = {
 const WeeklyMailManager = () => {
   const [templates, setTemplates] = useState<WeeklyMailTemplate[]>([...weeklyMailTemplates]);
   const [editingTemplate, setEditingTemplate] = useState<WeeklyMailTemplate | null>(null);
-  const [sheetOpen, setSheetOpen] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [filterType, setFilterType] = useState<string>("all");
+  const [previewDevice, setPreviewDevice] = useState<"desktop" | "mobile">("desktop");
 
   const filteredTemplates = templates.filter((t) => {
     const matchesSearch =
@@ -75,7 +76,7 @@ const WeeklyMailManager = () => {
 
   const openEditor = (template: WeeklyMailTemplate) => {
     setEditingTemplate(JSON.parse(JSON.stringify(template)));
-    setSheetOpen(true);
+    setDialogOpen(true);
   };
 
   const handleSave = () => {
@@ -83,7 +84,7 @@ const WeeklyMailManager = () => {
     setTemplates((prev) =>
       prev.map((t) => (t.weekNumber === editingTemplate.weekNumber ? editingTemplate : t))
     );
-    setSheetOpen(false);
+    setDialogOpen(false);
     toast.success(`Template Week ${editingTemplate.weekNumber} opgeslagen`);
   };
 
@@ -204,75 +205,39 @@ const WeeklyMailManager = () => {
               className="p-0 border border-border hover:border-primary/30 transition-colors overflow-hidden"
             >
               <div className="flex items-center gap-0">
-                {/* Week indicator */}
-                <div
-                  className={`w-1.5 self-stretch ${typeColorsDot[template.type]}`}
-                />
-
+                <div className={`w-1.5 self-stretch ${typeColorsDot[template.type]}`} />
                 <div className="flex items-center gap-3 flex-1 px-4 py-3">
-                  {/* Week number */}
                   <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center shrink-0">
                     <span className="text-sm font-bold text-foreground">
                       W{template.weekNumber}
                     </span>
                   </div>
-
-                  {/* Content */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-0.5">
                       <span className="text-sm font-medium text-foreground truncate">
-                        {template.subject.replace(
-                          "{{weekNumber}}",
-                          String(template.weekNumber)
-                        )}
+                        {template.subject.replace("{{weekNumber}}", String(template.weekNumber))}
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Badge
-                        variant="outline"
-                        className={`text-xs ${typeColors[template.type]}`}
-                      >
-                        {templateTypeEmoji[template.type]}{" "}
-                        {templateTypeLabels[template.type]}
+                      <Badge variant="outline" className={`text-xs ${typeColors[template.type]}`}>
+                        {templateTypeEmoji[template.type]} {templateTypeLabels[template.type]}
                       </Badge>
                       {template.personalized && (
-                        <Badge variant="outline" className="text-xs">
-                          🎯 Gepersonaliseerd
-                        </Badge>
+                        <Badge variant="outline" className="text-xs">🎯 Gepersonaliseerd</Badge>
                       )}
                       <span className="text-xs text-muted-foreground hidden sm:inline">
                         {template.sections.length} secties
                       </span>
                     </div>
                   </div>
-
-                  {/* Actions */}
                   <div className="flex items-center gap-1 shrink-0">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-8 w-8"
-                      onClick={() => openEditor(template)}
-                      title="Bewerken"
-                    >
+                    <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => openEditor(template)} title="Bewerken">
                       <Edit3 className="w-4 h-4" />
                     </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-8 w-8"
-                      onClick={() => handleDuplicate(template)}
-                      title="Dupliceren"
-                    >
+                    <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => handleDuplicate(template)} title="Dupliceren">
                       <Copy className="w-4 h-4" />
                     </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-8 w-8 text-destructive hover:text-destructive"
-                      onClick={() => handleDelete(template.weekNumber)}
-                      title="Verwijderen"
-                    >
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive hover:text-destructive" onClick={() => handleDelete(template.weekNumber)} title="Verwijderen">
                       <Trash2 className="w-4 h-4" />
                     </Button>
                   </div>
@@ -290,201 +255,226 @@ const WeeklyMailManager = () => {
         </div>
       </ScrollArea>
 
-      {/* Edit Sheet */}
-      <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
-        <SheetContent className="w-full sm:max-w-xl overflow-y-auto">
+      {/* Edit Dialog with Live Preview */}
+      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+        <DialogContent className="max-w-[95vw] w-full max-h-[92vh] h-full p-0 gap-0 overflow-hidden">
           {editingTemplate && (
-            <>
-              <SheetHeader>
-                <SheetTitle className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center">
-                    <span className="text-xs font-bold">W{editingTemplate.weekNumber}</span>
-                  </div>
-                  Template bewerken
-                </SheetTitle>
-              </SheetHeader>
-
-              <div className="space-y-6 mt-6">
-                {/* Type & Personalized */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label className="text-xs">Type</Label>
-                    <Select
-                      value={editingTemplate.type}
-                      onValueChange={(v: WeeklyMailTemplate["type"]) =>
-                        setEditingTemplate({ ...editingTemplate, type: v })
-                      }
-                    >
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {(
-                          Object.keys(templateTypeLabels) as WeeklyMailTemplate["type"][]
-                        ).map((type) => (
-                          <SelectItem key={type} value={type}>
-                            {templateTypeEmoji[type]} {templateTypeLabels[type]}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-xs">Gepersonaliseerd</Label>
-                    <div className="flex items-center gap-2 h-10">
-                      <Switch
-                        checked={editingTemplate.personalized}
-                        onCheckedChange={(v) =>
-                          setEditingTemplate({ ...editingTemplate, personalized: v })
-                        }
-                      />
-                      <span className="text-sm text-muted-foreground">
-                        {editingTemplate.personalized ? "Ja, per klant" : "Nee, algemeen"}
-                      </span>
+            <div className="flex h-full">
+              {/* Left: Editor */}
+              <div className="w-full lg:w-[420px] xl:w-[460px] shrink-0 border-r border-border flex flex-col">
+                {/* Editor Header */}
+                <div className="px-5 py-4 border-b border-border flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center">
+                      <span className="text-xs font-bold text-foreground">W{editingTemplate.weekNumber}</span>
+                    </div>
+                    <div>
+                      <h2 className="text-sm font-semibold text-foreground">Template bewerken</h2>
+                      <p className="text-xs text-muted-foreground">Week {editingTemplate.weekNumber}</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Subject */}
-                <div className="space-y-2">
-                  <Label className="text-xs">Onderwerp</Label>
-                  <Input
-                    value={editingTemplate.subject}
-                    onChange={(e) =>
-                      setEditingTemplate({ ...editingTemplate, subject: e.target.value })
-                    }
-                  />
-                </div>
-
-                {/* Header */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label className="text-xs">Header titel</Label>
-                    <Input
-                      value={editingTemplate.headerTitle}
-                      onChange={(e) =>
-                        setEditingTemplate({
-                          ...editingTemplate,
-                          headerTitle: e.target.value,
-                        })
-                      }
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-xs">Header subtitel</Label>
-                    <Input
-                      value={editingTemplate.headerSubtitle}
-                      onChange={(e) =>
-                        setEditingTemplate({
-                          ...editingTemplate,
-                          headerSubtitle: e.target.value,
-                        })
-                      }
-                    />
-                  </div>
-                </div>
-
-                {/* Greeting */}
-                <div className="space-y-2">
-                  <Label className="text-xs">Begroeting</Label>
-                  <Textarea
-                    value={editingTemplate.greeting}
-                    onChange={(e) =>
-                      setEditingTemplate({ ...editingTemplate, greeting: e.target.value })
-                    }
-                    rows={2}
-                  />
-                </div>
-
-                {/* Sections */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <Label className="text-xs font-semibold">Secties</Label>
-                    <Button variant="outline" size="sm" className="h-7 text-xs" onClick={addSection}>
-                      <Plus className="w-3 h-3 mr-1" />
-                      Sectie toevoegen
-                    </Button>
-                  </div>
-
-                  {editingTemplate.sections.map((section, i) => (
-                    <Card
-                      key={i}
-                      className={`p-4 border space-y-3 ${
-                        section.highlight
-                          ? "border-primary/30 bg-primary/5"
-                          : "border-border"
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-medium text-muted-foreground">
-                          Sectie {i + 1}
-                        </span>
-                        <div className="flex items-center gap-1">
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            className="h-6 w-6"
-                            onClick={() => toggleSectionHighlight(i)}
-                            title={section.highlight ? "Highlight uit" : "Highlight aan"}
-                          >
-                            <Eye className={`w-3 h-3 ${section.highlight ? "text-primary" : ""}`} />
-                          </Button>
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            className="h-6 w-6 text-destructive"
-                            onClick={() => removeSection(i)}
-                          >
-                            <X className="w-3 h-3" />
-                          </Button>
+                {/* Editor Body */}
+                <ScrollArea className="flex-1">
+                  <div className="p-5 space-y-5">
+                    {/* Type & Personalized */}
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="space-y-1.5">
+                        <Label className="text-xs">Type</Label>
+                        <Select
+                          value={editingTemplate.type}
+                          onValueChange={(v: WeeklyMailTemplate["type"]) =>
+                            setEditingTemplate({ ...editingTemplate, type: v })
+                          }
+                        >
+                          <SelectTrigger className="h-9">
+                            <SelectValue />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {(Object.keys(templateTypeLabels) as WeeklyMailTemplate["type"][]).map((type) => (
+                              <SelectItem key={type} value={type}>
+                                {templateTypeEmoji[type]} {templateTypeLabels[type]}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="space-y-1.5">
+                        <Label className="text-xs">Gepersonaliseerd</Label>
+                        <div className="flex items-center gap-2 h-9">
+                          <Switch
+                            checked={editingTemplate.personalized}
+                            onCheckedChange={(v) =>
+                              setEditingTemplate({ ...editingTemplate, personalized: v })
+                            }
+                          />
+                          <span className="text-xs text-muted-foreground">
+                            {editingTemplate.personalized ? "Ja" : "Nee"}
+                          </span>
                         </div>
                       </div>
+                    </div>
+
+                    {/* Subject */}
+                    <div className="space-y-1.5">
+                      <Label className="text-xs">Onderwerp</Label>
                       <Input
-                        placeholder="Titel (optioneel)"
-                        value={section.title || ""}
-                        onChange={(e) => updateSection(i, "title", e.target.value)}
-                        className="text-sm"
+                        value={editingTemplate.subject}
+                        onChange={(e) =>
+                          setEditingTemplate({ ...editingTemplate, subject: e.target.value })
+                        }
+                        className="h-9"
                       />
+                    </div>
+
+                    {/* Header */}
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="space-y-1.5">
+                        <Label className="text-xs">Header titel</Label>
+                        <Input
+                          value={editingTemplate.headerTitle}
+                          onChange={(e) =>
+                            setEditingTemplate({ ...editingTemplate, headerTitle: e.target.value })
+                          }
+                          className="h-9"
+                        />
+                      </div>
+                      <div className="space-y-1.5">
+                        <Label className="text-xs">Header subtitel</Label>
+                        <Input
+                          value={editingTemplate.headerSubtitle}
+                          onChange={(e) =>
+                            setEditingTemplate({ ...editingTemplate, headerSubtitle: e.target.value })
+                          }
+                          className="h-9"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Greeting */}
+                    <div className="space-y-1.5">
+                      <Label className="text-xs">Begroeting</Label>
                       <Textarea
-                        placeholder="Inhoud..."
-                        value={section.content}
-                        onChange={(e) => updateSection(i, "content", e.target.value)}
-                        rows={3}
+                        value={editingTemplate.greeting}
+                        onChange={(e) =>
+                          setEditingTemplate({ ...editingTemplate, greeting: e.target.value })
+                        }
+                        rows={2}
                         className="text-sm"
                       />
-                    </Card>
-                  ))}
-                </div>
+                    </div>
 
-                {/* CTA */}
-                <div className="space-y-2">
-                  <Label className="text-xs">CTA tekst</Label>
-                  <Input
-                    value={editingTemplate.ctaText}
-                    onChange={(e) =>
-                      setEditingTemplate({ ...editingTemplate, ctaText: e.target.value })
-                    }
-                  />
-                </div>
+                    {/* Sections */}
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <Label className="text-xs font-semibold">Secties</Label>
+                        <Button variant="outline" size="sm" className="h-7 text-xs" onClick={addSection}>
+                          <Plus className="w-3 h-3 mr-1" />
+                          Toevoegen
+                        </Button>
+                      </div>
 
-                {/* Save */}
-                <div className="flex gap-2 pt-4 border-t border-border">
-                  <Button
-                    className="flex-1 bg-kk-gradient text-white hover:opacity-90"
-                    onClick={handleSave}
-                  >
+                      {editingTemplate.sections.map((section, i) => (
+                        <Card
+                          key={i}
+                          className={`p-3 border space-y-2 ${
+                            section.highlight ? "border-primary/30 bg-primary/5" : "border-border"
+                          }`}
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-medium text-muted-foreground">Sectie {i + 1}</span>
+                            <div className="flex items-center gap-0.5">
+                              <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => toggleSectionHighlight(i)}>
+                                <Eye className={`w-3 h-3 ${section.highlight ? "text-primary" : ""}`} />
+                              </Button>
+                              <Button variant="ghost" size="icon" className="h-6 w-6 text-destructive" onClick={() => removeSection(i)}>
+                                <X className="w-3 h-3" />
+                              </Button>
+                            </div>
+                          </div>
+                          <Input
+                            placeholder="Titel (optioneel)"
+                            value={section.title || ""}
+                            onChange={(e) => updateSection(i, "title", e.target.value)}
+                            className="text-sm h-8"
+                          />
+                          <Textarea
+                            placeholder="Inhoud..."
+                            value={section.content}
+                            onChange={(e) => updateSection(i, "content", e.target.value)}
+                            rows={2}
+                            className="text-sm"
+                          />
+                        </Card>
+                      ))}
+                    </div>
+
+                    {/* CTA */}
+                    <div className="space-y-1.5">
+                      <Label className="text-xs">CTA tekst</Label>
+                      <Input
+                        value={editingTemplate.ctaText}
+                        onChange={(e) =>
+                          setEditingTemplate({ ...editingTemplate, ctaText: e.target.value })
+                        }
+                        className="h-9"
+                      />
+                    </div>
+                  </div>
+                </ScrollArea>
+
+                {/* Editor Footer */}
+                <div className="px-5 py-3 border-t border-border flex gap-2">
+                  <Button className="flex-1 bg-kk-gradient text-white hover:opacity-90" onClick={handleSave}>
                     <Save className="w-4 h-4 mr-2" />
                     Opslaan
                   </Button>
-                  <Button variant="outline" onClick={() => setSheetOpen(false)}>
+                  <Button variant="outline" onClick={() => setDialogOpen(false)}>
                     Annuleren
                   </Button>
                 </div>
               </div>
-            </>
+
+              {/* Right: Live Preview */}
+              <div className="hidden lg:flex flex-col flex-1 bg-muted/30">
+                {/* Preview Header */}
+                <div className="px-5 py-3 border-b border-border flex items-center justify-between bg-background">
+                  <div className="flex items-center gap-2">
+                    <Eye className="w-4 h-4 text-muted-foreground" />
+                    <span className="text-sm font-medium text-foreground">Live Preview</span>
+                  </div>
+                  <div className="flex items-center gap-1 bg-muted rounded-lg p-0.5">
+                    <Button
+                      variant={previewDevice === "desktop" ? "secondary" : "ghost"}
+                      size="icon"
+                      className="h-7 w-7"
+                      onClick={() => setPreviewDevice("desktop")}
+                    >
+                      <Monitor className="w-3.5 h-3.5" />
+                    </Button>
+                    <Button
+                      variant={previewDevice === "mobile" ? "secondary" : "ghost"}
+                      size="icon"
+                      className="h-7 w-7"
+                      onClick={() => setPreviewDevice("mobile")}
+                    >
+                      <Smartphone className="w-3.5 h-3.5" />
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Preview Body */}
+                <ScrollArea className="flex-1">
+                  <div className="p-6">
+                    <LiveEmailPreview template={editingTemplate} deviceView={previewDevice} />
+                  </div>
+                </ScrollArea>
+              </div>
+            </div>
           )}
-        </SheetContent>
-      </Sheet>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
