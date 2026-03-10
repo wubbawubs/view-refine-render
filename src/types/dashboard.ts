@@ -123,7 +123,7 @@ export interface AuthResponse {
 
 export interface ChartDataPoint {
   date: string;
-  visitors: number;
+  impressions: number;
   benchmark: number;
 }
 
