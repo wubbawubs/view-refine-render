@@ -55,7 +55,7 @@ export const sendCustomEmail = async (
   return sendBulkEmail({
     recipients,
     template: "custom",
-    data: { subject, body, dashboardUrl: dashboardUrl || "https://dashboard.klikklaar.io" },
+    data: { subject, body, dashboardUrl: dashboardUrl || "https://app.klikklaarseo.nl" },
   });
 };
 
