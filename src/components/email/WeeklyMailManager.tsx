@@ -257,9 +257,9 @@ const WeeklyMailManager = () => {
 
       {/* Edit Dialog with Live Preview */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="max-w-[95vw] w-full max-h-[92vh] h-full p-0 gap-0 overflow-hidden">
+        <DialogContent className="max-w-[95vw] w-full h-[92vh] p-0 gap-0 overflow-hidden flex flex-col">
           {editingTemplate && (
-            <div className="flex h-full">
+            <div className="flex flex-1 min-h-0">
               {/* Left: Editor */}
               <div className="w-full lg:w-[420px] xl:w-[460px] shrink-0 border-r border-border flex flex-col overflow-hidden">
                 {/* Editor Header */}
