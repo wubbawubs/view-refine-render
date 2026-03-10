@@ -31,6 +31,8 @@ import {
   Filter,
   Monitor,
   Smartphone,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import {
   weeklyMailTemplates,
@@ -64,6 +66,8 @@ const WeeklyMailManager = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filterType, setFilterType] = useState<string>("all");
   const [previewDevice, setPreviewDevice] = useState<"desktop" | "mobile">("desktop");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   const filteredTemplates = templates.filter((t) => {
     const matchesSearch =
@@ -197,63 +201,112 @@ const WeeklyMailManager = () => {
       </div>
 
       {/* Template List */}
-      <ScrollArea className="max-h-[calc(100vh-400px)]">
-        <div className="space-y-2">
-          {filteredTemplates.map((template) => (
-            <Card
-              key={template.weekNumber}
-              className="p-0 border border-border hover:border-primary/30 transition-colors overflow-hidden"
-            >
-              <div className="flex items-center gap-0">
-                <div className={`w-1.5 self-stretch ${typeColorsDot[template.type]}`} />
-                <div className="flex items-center gap-3 flex-1 px-4 py-3">
-                  <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center shrink-0">
-                    <span className="text-sm font-bold text-foreground">
-                      W{template.weekNumber}
-                    </span>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-0.5">
-                      <span className="text-sm font-medium text-foreground truncate">
-                        {template.subject.replace("{{weekNumber}}", String(template.weekNumber))}
-                      </span>
+      {(() => {
+        const totalPages = Math.ceil(filteredTemplates.length / itemsPerPage);
+        const paginatedTemplates = filteredTemplates.slice(
+          (currentPage - 1) * itemsPerPage,
+          currentPage * itemsPerPage
+        );
+        return (
+          <>
+            <div className="space-y-2">
+              {paginatedTemplates.map((template) => (
+                <Card
+                  key={template.weekNumber}
+                  className="p-0 border border-border hover:border-primary/30 transition-colors overflow-hidden"
+                >
+                  <div className="flex items-center gap-0">
+                    <div className={`w-1.5 self-stretch ${typeColorsDot[template.type]}`} />
+                    <div className="flex items-center gap-3 flex-1 px-4 py-3">
+                      <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center shrink-0">
+                        <span className="text-sm font-bold text-foreground">
+                          W{template.weekNumber}
+                        </span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-0.5">
+                          <span className="text-sm font-medium text-foreground truncate">
+                            {template.subject.replace("{{weekNumber}}", String(template.weekNumber))}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Badge variant="outline" className={`text-xs ${typeColors[template.type]}`}>
+                            {templateTypeEmoji[template.type]} {templateTypeLabels[template.type]}
+                          </Badge>
+                          {template.personalized && (
+                            <Badge variant="outline" className="text-xs">🎯 Gepersonaliseerd</Badge>
+                          )}
+                          <span className="text-xs text-muted-foreground hidden sm:inline">
+                            {template.sections.length} secties
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-1 shrink-0">
+                        <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => openEditor(template)} title="Bewerken">
+                          <Edit3 className="w-4 h-4" />
+                        </Button>
+                        <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => handleDuplicate(template)} title="Dupliceren">
+                          <Copy className="w-4 h-4" />
+                        </Button>
+                        <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive hover:text-destructive" onClick={() => handleDelete(template.weekNumber)} title="Verwijderen">
+                          <Trash2 className="w-4 h-4" />
+                        </Button>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Badge variant="outline" className={`text-xs ${typeColors[template.type]}`}>
-                        {templateTypeEmoji[template.type]} {templateTypeLabels[template.type]}
-                      </Badge>
-                      {template.personalized && (
-                        <Badge variant="outline" className="text-xs">🎯 Gepersonaliseerd</Badge>
-                      )}
-                      <span className="text-xs text-muted-foreground hidden sm:inline">
-                        {template.sections.length} secties
-                      </span>
-                    </div>
                   </div>
-                  <div className="flex items-center gap-1 shrink-0">
-                    <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => openEditor(template)} title="Bewerken">
-                      <Edit3 className="w-4 h-4" />
+                </Card>
+              ))}
+
+              {filteredTemplates.length === 0 && (
+                <div className="text-center py-12 text-muted-foreground">
+                  <Calendar className="w-8 h-8 mx-auto mb-2 opacity-50" />
+                  <p>Geen templates gevonden</p>
+                </div>
+              )}
+            </div>
+
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="flex items-center justify-between pt-2">
+                <span className="text-xs text-muted-foreground">
+                  {(currentPage - 1) * itemsPerPage + 1}–{Math.min(currentPage * itemsPerPage, filteredTemplates.length)} van {filteredTemplates.length}
+                </span>
+                <div className="flex items-center gap-1">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="h-8 w-8"
+                    disabled={currentPage === 1}
+                    onClick={() => setCurrentPage((p) => p - 1)}
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </Button>
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                    <Button
+                      key={page}
+                      variant={page === currentPage ? "default" : "outline"}
+                      size="icon"
+                      className="h-8 w-8"
+                      onClick={() => setCurrentPage(page)}
+                    >
+                      {page}
                     </Button>
-                    <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => handleDuplicate(template)} title="Dupliceren">
-                      <Copy className="w-4 h-4" />
-                    </Button>
-                    <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive hover:text-destructive" onClick={() => handleDelete(template.weekNumber)} title="Verwijderen">
-                      <Trash2 className="w-4 h-4" />
-                    </Button>
-                  </div>
+                  ))}
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="h-8 w-8"
+                    disabled={currentPage === totalPages}
+                    onClick={() => setCurrentPage((p) => p + 1)}
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </Button>
                 </div>
               </div>
-            </Card>
-          ))}
-
-          {filteredTemplates.length === 0 && (
-            <div className="text-center py-12 text-muted-foreground">
-              <Calendar className="w-8 h-8 mx-auto mb-2 opacity-50" />
-              <p>Geen templates gevonden</p>
-            </div>
-          )}
-        </div>
-      </ScrollArea>
+            )}
+          </>
+        );
+      })()}
 
       {/* Edit Dialog with Live Preview */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
