@@ -87,7 +87,7 @@ function wrapEmail(headerTitle: string, headerSubtitle: string, bodyHtml: string
 <body style="margin:0;padding:0;background:#f3f4f6;font-family:'Segoe UI',Arial,sans-serif;">
 <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto;">
   <tr><td style="background:linear-gradient(135deg,#7c3aed,#d946ef,#f97316);padding:32px;text-align:center;border-radius:16px 16px 0 0;">
-    <img src="https://klikklaarseo.nl/logo-white.png" alt="KlikKlaar SEO" height="36" style="margin-bottom:12px;">
+    <img src="https://bsckrblljaqithdmnlto.supabase.co/storage/v1/object/public/email-assets/klikklaar-logo-white.png" alt="KlikKlaar SEO" height="36" style="margin-bottom:12px;">
     <h1 style="color:#fff;font-size:20px;font-weight:bold;margin:0;">${headerTitle}</h1>
     ${headerSubtitle ? `<p style="color:rgba(255,255,255,0.8);font-size:14px;margin:8px 0 0;">${headerSubtitle}</p>` : ''}
   </td></tr>
