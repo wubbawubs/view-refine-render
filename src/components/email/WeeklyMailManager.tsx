@@ -31,7 +31,8 @@ import {
   Filter,
   Monitor,
   Smartphone,
-} from "lucide-react";
+  ChevronLeft,
+  ChevronRight,
 import {
   weeklyMailTemplates,
   templateTypeLabels,
