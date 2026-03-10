@@ -226,7 +226,28 @@ export const getCurrentUser = async (): Promise<UserProfile | null> => {
  * TODO: Replace with actual Firestore query
  */
 export const fetchVisitorsChartData = async (): Promise<import('@/types/dashboard').ChartDataPoint[]> => {
-  return [];
+  // Mock data simulating Google Search Console clicks over 30 days
+  const mockData: import('@/types/dashboard').ChartDataPoint[] = [
+    { date: '1 Feb', visitors: 82, benchmark: 65 },
+    { date: '3 Feb', visitors: 95, benchmark: 68 },
+    { date: '5 Feb', visitors: 78, benchmark: 70 },
+    { date: '7 Feb', visitors: 110, benchmark: 72 },
+    { date: '9 Feb', visitors: 125, benchmark: 74 },
+    { date: '11 Feb', visitors: 98, benchmark: 75 },
+    { date: '13 Feb', visitors: 142, benchmark: 77 },
+    { date: '15 Feb', visitors: 156, benchmark: 80 },
+    { date: '17 Feb', visitors: 134, benchmark: 82 },
+    { date: '19 Feb', visitors: 168, benchmark: 85 },
+    { date: '21 Feb', visitors: 189, benchmark: 87 },
+    { date: '23 Feb', visitors: 175, benchmark: 90 },
+    { date: '25 Feb', visitors: 210, benchmark: 92 },
+    { date: '27 Feb', visitors: 198, benchmark: 95 },
+    { date: '1 Mrt', visitors: 225, benchmark: 98 },
+    { date: '3 Mrt', visitors: 245, benchmark: 100 },
+    { date: '5 Mrt', visitors: 232, benchmark: 102 },
+    { date: '7 Mrt', visitors: 256, benchmark: 105 },
+  ];
+  return mockData;
 };
 
 /**
