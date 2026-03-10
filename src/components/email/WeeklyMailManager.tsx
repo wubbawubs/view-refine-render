@@ -422,7 +422,7 @@ const WeeklyMailManager = () => {
                       />
                     </div>
                   </div>
-                </ScrollArea>
+                </div>
 
                 {/* Editor Footer */}
                 <div className="px-5 py-3 border-t border-border flex gap-2">
