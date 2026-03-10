@@ -257,11 +257,11 @@ const WeeklyMailManager = () => {
 
       {/* Edit Dialog with Live Preview */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="max-w-[95vw] w-full max-h-[92vh] h-full p-0 gap-0 overflow-hidden">
+        <DialogContent className="max-w-[95vw] w-full h-[92vh] p-0 gap-0 overflow-hidden flex flex-col">
           {editingTemplate && (
-            <div className="flex h-full">
+            <div className="flex flex-1 min-h-0">
               {/* Left: Editor */}
-              <div className="w-full lg:w-[420px] xl:w-[460px] shrink-0 border-r border-border flex flex-col overflow-hidden">
+              <div className="w-full lg:w-[420px] xl:w-[460px] shrink-0 border-r border-border flex flex-col min-h-0">
                 {/* Editor Header */}
                 <div className="px-5 py-4 border-b border-border flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -276,7 +276,7 @@ const WeeklyMailManager = () => {
                 </div>
 
                 {/* Editor Body */}
-                <ScrollArea className="flex-1">
+                <div className="flex-1 overflow-y-auto">
                   <div className="p-5 space-y-5">
                     {/* Type & Personalized */}
                     <div className="grid grid-cols-2 gap-3">
@@ -422,7 +422,7 @@ const WeeklyMailManager = () => {
                       />
                     </div>
                   </div>
-                </ScrollArea>
+                </div>
 
                 {/* Editor Footer */}
                 <div className="px-5 py-3 border-t border-border flex gap-2">
