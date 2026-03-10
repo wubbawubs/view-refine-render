@@ -291,7 +291,7 @@ serve(async (req) => {
       for (const client of clients) {
         if (!client.email) continue;
 
-        let templateData: Record<string, unknown> = { ...data, dashboardUrl: "https://dashboard.klikklaar.io" };
+        let templateData: Record<string, unknown> = { ...data, dashboardUrl: "https://app.klikklaarseo.nl" };
 
         if (template === "biweekly-report" || template === "weekly-report") {
           const [keywordChanges, optCount] = await Promise.all([
