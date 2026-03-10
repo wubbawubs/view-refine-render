@@ -276,7 +276,7 @@ const WeeklyMailManager = () => {
                 </div>
 
                 {/* Editor Body */}
-                <ScrollArea className="flex-1">
+                <div className="flex-1 overflow-y-auto">
                   <div className="p-5 space-y-5">
                     {/* Type & Personalized */}
                     <div className="grid grid-cols-2 gap-3">
