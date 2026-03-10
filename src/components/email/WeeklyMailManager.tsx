@@ -33,6 +33,7 @@ import {
   Smartphone,
   ChevronLeft,
   ChevronRight,
+} from "lucide-react";
 import {
   weeklyMailTemplates,
   templateTypeLabels,
