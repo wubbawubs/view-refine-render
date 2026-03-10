@@ -261,7 +261,7 @@ const WeeklyMailManager = () => {
           {editingTemplate && (
             <div className="flex h-full">
               {/* Left: Editor */}
-              <div className="w-full lg:w-[420px] xl:w-[460px] shrink-0 border-r border-border flex flex-col">
+              <div className="w-full lg:w-[420px] xl:w-[460px] shrink-0 border-r border-border flex flex-col overflow-hidden">
                 {/* Editor Header */}
                 <div className="px-5 py-4 border-b border-border flex items-center justify-between">
                   <div className="flex items-center gap-2">
