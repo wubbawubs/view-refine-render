@@ -226,26 +226,26 @@ export const getCurrentUser = async (): Promise<UserProfile | null> => {
  * TODO: Replace with actual Firestore query
  */
 export const fetchVisitorsChartData = async (): Promise<import('@/types/dashboard').ChartDataPoint[]> => {
-  // Mock data simulating Google Search Console clicks over 30 days
+  // Mock data simulating Google Search Console impressions over 30 days
   const mockData: import('@/types/dashboard').ChartDataPoint[] = [
-    { date: '1 Feb', visitors: 82, benchmark: 65 },
-    { date: '3 Feb', visitors: 95, benchmark: 68 },
-    { date: '5 Feb', visitors: 78, benchmark: 70 },
-    { date: '7 Feb', visitors: 110, benchmark: 72 },
-    { date: '9 Feb', visitors: 125, benchmark: 74 },
-    { date: '11 Feb', visitors: 98, benchmark: 75 },
-    { date: '13 Feb', visitors: 142, benchmark: 77 },
-    { date: '15 Feb', visitors: 156, benchmark: 80 },
-    { date: '17 Feb', visitors: 134, benchmark: 82 },
-    { date: '19 Feb', visitors: 168, benchmark: 85 },
-    { date: '21 Feb', visitors: 189, benchmark: 87 },
-    { date: '23 Feb', visitors: 175, benchmark: 90 },
-    { date: '25 Feb', visitors: 210, benchmark: 92 },
-    { date: '27 Feb', visitors: 198, benchmark: 95 },
-    { date: '1 Mrt', visitors: 225, benchmark: 98 },
-    { date: '3 Mrt', visitors: 245, benchmark: 100 },
-    { date: '5 Mrt', visitors: 232, benchmark: 102 },
-    { date: '7 Mrt', visitors: 256, benchmark: 105 },
+    { date: '1 Feb', impressions: 1240, benchmark: 980 },
+    { date: '3 Feb', impressions: 1385, benchmark: 1020 },
+    { date: '5 Feb', impressions: 1150, benchmark: 1050 },
+    { date: '7 Feb', impressions: 1620, benchmark: 1080 },
+    { date: '9 Feb', impressions: 1890, benchmark: 1110 },
+    { date: '11 Feb', impressions: 1540, benchmark: 1130 },
+    { date: '13 Feb', impressions: 2150, benchmark: 1160 },
+    { date: '15 Feb', impressions: 2380, benchmark: 1200 },
+    { date: '17 Feb', impressions: 2040, benchmark: 1230 },
+    { date: '19 Feb', impressions: 2650, benchmark: 1270 },
+    { date: '21 Feb', impressions: 2890, benchmark: 1310 },
+    { date: '23 Feb', impressions: 2720, benchmark: 1350 },
+    { date: '25 Feb', impressions: 3240, benchmark: 1380 },
+    { date: '27 Feb', impressions: 3050, benchmark: 1420 },
+    { date: '1 Mrt', impressions: 3480, benchmark: 1470 },
+    { date: '3 Mrt', impressions: 3820, benchmark: 1510 },
+    { date: '5 Mrt', impressions: 3650, benchmark: 1540 },
+    { date: '7 Mrt', impressions: 4120, benchmark: 1580 },
   ];
   return mockData;
 };
